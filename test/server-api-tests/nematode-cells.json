@@ -1,0 +1,4025 @@
+[
+  {
+    "name": "ADAL",
+    "class": "ADA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADAR",
+    "class": "ADA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADEL",
+    "class": "ADE",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADER",
+    "class": "ADE",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADFL",
+    "class": "ADF",
+    "type": "sn",
+    "neurotransmitter": "as",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADFR",
+    "class": "ADF",
+    "type": "sn",
+    "neurotransmitter": "as",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADLL",
+    "class": "ADL",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ADLR",
+    "class": "ADL",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AFDL",
+    "class": "AFD",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AFDR",
+    "class": "AFD",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIAL",
+    "class": "AIA",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIAR",
+    "class": "AIA",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIBL",
+    "class": "AIB",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIBR",
+    "class": "AIB",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIML",
+    "class": "AIM",
+    "type": "in",
+    "neurotransmitter": "ls",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIMR",
+    "class": "AIM",
+    "type": "in",
+    "neurotransmitter": "ls",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AINL",
+    "class": "AIN",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AINR",
+    "class": "AIN",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIYL",
+    "class": "AIY",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIYR",
+    "class": "AIY",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIZL",
+    "class": "AIZ",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AIZR",
+    "class": "AIZ",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ALA",
+    "class": "ALA",
+    "type": "sin",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ALML",
+    "class": "ALM",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ALMR",
+    "class": "ALM",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ALNL",
+    "class": "ALN",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ALNR",
+    "class": "ALN",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "analdep",
+    "class": "DefecationMuscles",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AQR",
+    "class": "AQR",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AS1",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS10",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS11",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "AS2",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS3",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS4",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS5",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS6",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS7",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS8",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "AS9",
+    "class": "ASn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "ASEL",
+    "class": "ASE",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASER",
+    "class": "ASE",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASGL",
+    "class": "ASG",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASGR",
+    "class": "ASG",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASHL",
+    "class": "ASH",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASHR",
+    "class": "ASH",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASIL",
+    "class": "ASI",
+    "type": "sn",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASIR",
+    "class": "ASI",
+    "type": "sn",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASJL",
+    "class": "ASJ",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASJR",
+    "class": "ASJ",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASKL",
+    "class": "ASK",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "ASKR",
+    "class": "ASK",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AUAL",
+    "class": "AUA",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AUAR",
+    "class": "AUA",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVAL",
+    "class": "AVA",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVAR",
+    "class": "AVA",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVBL",
+    "class": "AVB",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVBR",
+    "class": "AVB",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVDL",
+    "class": "AVD",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVDR",
+    "class": "AVD",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVEL",
+    "class": "AVE",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVER",
+    "class": "AVE",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVFL",
+    "class": "AVF",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVFR",
+    "class": "AVF",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVG",
+    "class": "AVG",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "AVHL",
+    "class": "AVH",
+    "type": "n",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVHR",
+    "class": "AVH",
+    "type": "n",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVJL",
+    "class": "AVJ",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVJR",
+    "class": "AVJ",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVKL",
+    "class": "AVK",
+    "type": "n",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVKR",
+    "class": "AVK",
+    "type": "n",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AVL",
+    "class": "AVL",
+    "type": "imn",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "AVM",
+    "class": "AVM",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWAL",
+    "class": "AWA",
+    "type": "s",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWAR",
+    "class": "AWA",
+    "type": "s",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWBL",
+    "class": "AWB",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWBR",
+    "class": "AWB",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWCL",
+    "class": "AWC",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "AWCR",
+    "class": "AWC",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BAGL",
+    "class": "BAG",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BAGR",
+    "class": "BAG",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BDUL",
+    "class": "BDU",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BDUR",
+    "class": "BDU",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL01",
+    "class": "BWM01",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL02",
+    "class": "BWM02",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL03",
+    "class": "BWM03",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL04",
+    "class": "BWM04",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL05",
+    "class": "BWM05",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL06",
+    "class": "BWM06",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL07",
+    "class": "BWM07",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL08",
+    "class": "BWM08",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL09",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL10",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL11",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL12",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL13",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL14",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL15",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL16",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL17",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL18",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL19",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL20",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL21",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL22",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL23",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DL24",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR01",
+    "class": "BWM01",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR02",
+    "class": "BWM02",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR03",
+    "class": "BWM03",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR04",
+    "class": "BWM04",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR05",
+    "class": "BWM05",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR06",
+    "class": "BWM06",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR07",
+    "class": "BWM07",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR08",
+    "class": "BWM08",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR09",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR10",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR11",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR12",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR13",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR14",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR15",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR16",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR17",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR18",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR19",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR20",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR21",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR22",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR23",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-DR24",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL01",
+    "class": "BWM01",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL02",
+    "class": "BWM02",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL03",
+    "class": "BWM03",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL04",
+    "class": "BWM04",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL05",
+    "class": "BWM05",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL06",
+    "class": "BWM06",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL07",
+    "class": "BWM07",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL08",
+    "class": "BWM08",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL09",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL10",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL11",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL12",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL13",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL14",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL15",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL16",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL17",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL18",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL19",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL20",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL21",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL22",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VL23",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR01",
+    "class": "BWM01",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR02",
+    "class": "BWM02",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR03",
+    "class": "BWM03",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR04",
+    "class": "BWM04",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR05",
+    "class": "BWM05",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR06",
+    "class": "BWM06",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR07",
+    "class": "BWM07",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR08",
+    "class": "BWM08",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR09",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR10",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR11",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR12",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR13",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR14",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR15",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR16",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR17",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR18",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR19",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR20",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR21",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR22",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR23",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "BWM-VR24",
+    "class": "BWM09-24",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "CANL",
+    "class": "CAN",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CANR",
+    "class": "CAN",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPDL",
+    "class": "CEP",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPDR",
+    "class": "CEP",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPshDL",
+    "class": "CEPsh",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPshDR",
+    "class": "CEPsh",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPshVL",
+    "class": "CEPsh",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPshVR",
+    "class": "CEPsh",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPVL",
+    "class": "CEP",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "CEPVR",
+    "class": "CEP",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "DA1",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA2",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA3",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA4",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA5",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA6",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA7",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DA8",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "DA9",
+    "class": "DAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "DB1",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB2",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB3",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB4",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB5",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB6",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DB7",
+    "class": "DBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD1",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD2",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD3",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD4",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD5",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DD6",
+    "class": "DDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "DVA",
+    "class": "DVA",
+    "type": "sin",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "DVB",
+    "class": "DVB",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "DVC",
+    "class": "DVC",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "excgl",
+    "class": "exc",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "FLPL",
+    "class": "FLP",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "FLPR",
+    "class": "FLP",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "g1AL",
+    "class": "g1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "g1AR",
+    "class": "g1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "g1P",
+    "class": "g1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "g2L",
+    "class": "g2",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "g2R",
+    "class": "g2",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "GLRDL",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "GLRDR",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "GLRL",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "GLRR",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "GLRVL",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "GLRVR",
+    "class": "GLR",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "HMC",
+    "class": "HMC",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "HSNL",
+    "class": "HSN",
+    "type": "imn",
+    "neurotransmitter": "ls",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "HSNR",
+    "class": "HSN",
+    "type": "imn",
+    "neurotransmitter": "ls",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "hyp",
+    "class": "hyp",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "I1L",
+    "class": "I1",
+    "type": "sim",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I1R",
+    "class": "I1",
+    "type": "sim",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I2L",
+    "class": "I2",
+    "type": "sim",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I2R",
+    "class": "I2",
+    "type": "sim",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I3",
+    "class": "I3",
+    "type": "si",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I4",
+    "class": "I4",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I5",
+    "class": "I5",
+    "type": "sim",
+    "neurotransmitter": "ls",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "I6",
+    "class": "I6",
+    "type": "si",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "IL1DL",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL1DR",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL1L",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL1R",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL1VL",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL1VR",
+    "class": "IL1",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2DL",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2DR",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2L",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2R",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2VL",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "IL2VR",
+    "class": "IL2",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "intmuL",
+    "class": "DefecationMuscles",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "intmuR",
+    "class": "DefecationMuscles",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "LegacyBodyWallMuscles",
+    "class": "BodyWallMuscles",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "LUAL",
+    "class": "LUA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "LUAR",
+    "class": "LUA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "M1",
+    "class": "M1",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M2L",
+    "class": "M2",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M2R",
+    "class": "M2",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M3L",
+    "class": "M3",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M3R",
+    "class": "M3",
+    "type": "sm",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M4",
+    "class": "M4",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "M5",
+    "class": "M5",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc1DL",
+    "class": "mc1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc1DR",
+    "class": "mc1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc1V",
+    "class": "mc1",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc2DL",
+    "class": "mc2",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc2DR",
+    "class": "mc2",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc2V",
+    "class": "mc2",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc3DL",
+    "class": "mc3",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc3DR",
+    "class": "mc3",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "mc3V",
+    "class": "mc3",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "MCL",
+    "class": "MC",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "MCR",
+    "class": "MC",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "MI",
+    "class": "MI",
+    "type": "im",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "NSML",
+    "class": "NSM",
+    "type": "smn",
+    "neurotransmitter": "s",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "NSMR",
+    "class": "NSM",
+    "type": "smn",
+    "neurotransmitter": "s",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "OLLL",
+    "class": "OLL",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "OLLR",
+    "class": "OLL",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "OLQDL",
+    "class": "OLQ",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "OLQDR",
+    "class": "OLQ",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "OLQVL",
+    "class": "OLQ",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "OLQVR",
+    "class": "OLQ",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "PDA",
+    "class": "PDA",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PDB",
+    "class": "PDB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PDEL",
+    "class": "PDE",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PDER",
+    "class": "PDE",
+    "type": "sn",
+    "neurotransmitter": "d",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PHAL",
+    "class": "PHA",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PHAR",
+    "class": "PHA",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PHBL",
+    "class": "PHB",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PHBR",
+    "class": "PHB",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PHCL",
+    "class": "PHC",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PHCR",
+    "class": "PHC",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PLML",
+    "class": "PLM",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PLMR",
+    "class": "PLM",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PLNL",
+    "class": "PLN",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "PLNR",
+    "class": "PLN",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "pm1",
+    "class": "pm1",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm2D",
+    "class": "pm2",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm2VL",
+    "class": "pm2",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm2VR",
+    "class": "pm2",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm3D",
+    "class": "pm3",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm3VL",
+    "class": "pm3",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm3VR",
+    "class": "pm3",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm4",
+    "class": "pm4",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm5D",
+    "class": "pm5",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm5VL",
+    "class": "pm5",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm5VR",
+    "class": "pm5",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm6D",
+    "class": "pm6",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm6VL",
+    "class": "pm6",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm6VR",
+    "class": "pm6",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm7D",
+    "class": "pm7",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm7VL",
+    "class": "pm7",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm7VR",
+    "class": "pm7",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "pm8",
+    "class": "pm8",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PQR",
+    "class": "PQR",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PVCL",
+    "class": "PVC",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVCR",
+    "class": "PVC",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVDL",
+    "class": "PVD",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PVDR",
+    "class": "PVD",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PVM",
+    "class": "PVM",
+    "type": "s",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "PVNL",
+    "class": "PVN",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVNR",
+    "class": "PVN",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVPL",
+    "class": "PVP",
+    "type": "in",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVPR",
+    "class": "PVP",
+    "type": "in",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVQL",
+    "class": "PVQ",
+    "type": "in",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVQR",
+    "class": "PVQ",
+    "type": "in",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVR",
+    "class": "PVR",
+    "type": "si",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVT",
+    "class": "PVT",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": true
+  },
+  {
+    "name": "PVWL",
+    "class": "PVW",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "PVWR",
+    "class": "PVW",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "RIAL",
+    "class": "RIA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIAR",
+    "class": "RIA",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIBL",
+    "class": "RIB",
+    "type": "i",
+    "neurotransmitter": "ag",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIBR",
+    "class": "RIB",
+    "type": "i",
+    "neurotransmitter": "ag",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RICL",
+    "class": "RIC",
+    "type": "in",
+    "neurotransmitter": "o",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RICR",
+    "class": "RIC",
+    "type": "in",
+    "neurotransmitter": "o",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RID",
+    "class": "RID",
+    "type": "n",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIFL",
+    "class": "RIF",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIFR",
+    "class": "RIF",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIGL",
+    "class": "RIG",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIGR",
+    "class": "RIG",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIH",
+    "class": "RIH",
+    "type": "in",
+    "neurotransmitter": "as",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIML",
+    "class": "RIM",
+    "type": "imn",
+    "neurotransmitter": "lt",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIMR",
+    "class": "RIM",
+    "type": "imn",
+    "neurotransmitter": "lt",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIPL",
+    "class": "RIP",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIPR",
+    "class": "RIP",
+    "type": "in",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIR",
+    "class": "RIR",
+    "type": "i",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIS",
+    "class": "RIS",
+    "type": "in",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIVL",
+    "class": "RIV",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RIVR",
+    "class": "RIV",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDDL",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDDR",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDL",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDR",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDVL",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMDVR",
+    "class": "RMD",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMED",
+    "class": "RME",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMEL",
+    "class": "RME",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMER",
+    "class": "RME",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMEV",
+    "class": "RME",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMFL",
+    "class": "RMF",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMFR",
+    "class": "RMF",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMGL",
+    "class": "RMG",
+    "type": "mn",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMGR",
+    "class": "RMG",
+    "type": "mn",
+    "neurotransmitter": "u",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMHL",
+    "class": "RMH",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "RMHR",
+    "class": "RMH",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SAADL",
+    "class": "SAA",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SAADR",
+    "class": "SAA",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SAAVL",
+    "class": "SAA",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SAAVR",
+    "class": "SAA",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SABD",
+    "class": "SAB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "SABVL",
+    "class": "SAB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "SABVR",
+    "class": "SAB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "SDQL",
+    "class": "SDQ",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SDQR",
+    "class": "SDQ",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIADL",
+    "class": "SIA",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIADR",
+    "class": "SIA",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIAVL",
+    "class": "SIA",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIAVR",
+    "class": "SIA",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIBDL",
+    "class": "SIB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIBDR",
+    "class": "SIB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIBVL",
+    "class": "SIB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SIBVR",
+    "class": "SIB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMBDL",
+    "class": "SMB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMBDR",
+    "class": "SMB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMBVL",
+    "class": "SMB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMBVR",
+    "class": "SMB",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMDDL",
+    "class": "SMD",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMDDR",
+    "class": "SMD",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMDVL",
+    "class": "SMD",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "SMDVR",
+    "class": "SMD",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "sphmu",
+    "class": "DefecationMuscles",
+    "type": "b",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "URADL",
+    "class": "URA",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URADR",
+    "class": "URA",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URAVL",
+    "class": "URA",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URAVR",
+    "class": "URA",
+    "type": "sm",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URBL",
+    "class": "URB",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URBR",
+    "class": "URB",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URXL",
+    "class": "URX",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URXR",
+    "class": "URX",
+    "type": "s",
+    "neurotransmitter": "a",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URYDL",
+    "class": "URY",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URYDR",
+    "class": "URY",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URYVL",
+    "class": "URY",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "URYVR",
+    "class": "URY",
+    "type": "s",
+    "neurotransmitter": "l",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
+    "name": "VA1",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA10",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA11",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "VA12",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "VA2",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA3",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA4",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA5",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA6",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA7",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA8",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VA9",
+    "class": "VAn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB1",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB10",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB11",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB2",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB3",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB4",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB5",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB6",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB7",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB8",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VB9",
+    "class": "VBn",
+    "type": "m",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC1",
+    "class": "VCn",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC2",
+    "class": "VCn",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC3",
+    "class": "VCn",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC4",
+    "class": "VCn",
+    "type": "imn",
+    "neurotransmitter": "as",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC5",
+    "class": "VCn",
+    "type": "imn",
+    "neurotransmitter": "as",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VC6",
+    "class": "VCn",
+    "type": "im",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD1",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD10",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD11",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD12",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "VD13",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": true
+  },
+  {
+    "name": "VD2",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD3",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD4",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD5",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD6",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD7",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD8",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "VD9",
+    "class": "VDn",
+    "type": "m",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  }
+]

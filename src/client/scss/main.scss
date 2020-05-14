@@ -1,0 +1,94 @@
+@import 'vars.scss';
+@import 'reset.scss';
+@import 'jquery-contextMenu-2.7.1.min.scss';
+@import 'jquery-ui-1.12.1.min.scss';
+@import 'vue-select.scss';
+@import 'fonts.scss';
+@import 'colors.scss';
+@import 'icons.scss';
+
+@import 'neuron-trajectory.scss';
+@import 'searchbar.scss';
+@import 'sidebars.scss';
+@import 'legend.scss';
+@import 'notifications.scss';
+@import 'cyhidden.scss';
+@import 'help.scss';
+@import 'contextmenu.scss';
+
+@import 'mobile.scss';
+
+
+html, body, div, input, a, span {
+  font-family: 'Open Sans', sans-serif !important;
+  outline: 0;
+  border-style: solid;
+}
+html, body {
+  height: 100%; width: 100%;
+  background-color: $background-cy;
+  overflow: hidden;
+}
+a, .a, .notification span, .smallhelp {
+  cursor: pointer;
+  color: $link-color;
+  border-color: $link-color;
+}
+a, .a, .notification span {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+a:hover, .a:hover, a:focus {
+  color: $link-hover-color;
+}
+i {
+  font-style: italic;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  small {
+    font-size: 16px;
+  }
+}
+p {
+  line-height: 125%;
+}
+b {
+  font-weight: 600;
+}
+small {
+  font-size: 12px;
+}
+span {
+  font-size: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: $blue;
+  color: $text-inverse;
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+  transition: box-shadow 100ms cubic-bezier(0.52, 0, 0.48, 1) 0s;
+  &:active {
+    box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+#cy {
+  width: 100%; height: 100%;
+  overflow-y: hidden; overflow-x: hidden; /* on zoom */
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

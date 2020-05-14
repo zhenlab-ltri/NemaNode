@@ -1,0 +1,279 @@
+
+#help {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  z-index: 40;
+  background: $background;
+  width: $help-width;
+  right: 50px;
+  top: $searchbar-height * 2;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  
+  .header {
+    cursor: move;
+    height: 54px;
+    line-height: 54px;
+    background-color: $header-background;
+    color: $text-inverse;
+    font-size: 1.25em;
+    padding-left: 15px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    
+    i {
+      text-align: center;
+      cursor: pointer;
+      height: 100%;
+    }
+    .back {
+      display: none;
+      float: left;
+      padding-right: 30px;
+    }
+    .close {
+      float: right;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  .body {
+    overflow: auto;
+    transition: height 0.5s ease;
+  }
+  
+  .menu {
+  
+    h3 {
+      padding: 20px 0 5px 15px;
+      color: $link-color;
+      font-weight: 600;
+    }
+    li {
+      padding-left: 60px;
+      line-height: 50px;
+      cursor: pointer;
+      &:hover {
+        background-color: $background-highlighed;
+      }
+      /* icon */
+      &:not(:last-child):after {
+        display: block;
+        content: '';
+        height: 1px;
+        background-color: $spacer-color;
+      }
+      /* separator */
+      &:before {
+        display: block;
+        position: absolute;
+        left: 0;
+        font-size: 1.25em;
+        width: 60px;
+        text-align: center;
+      }
+      
+    }
+  }
+  
+  .content {
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      padding: 20px 10px 15px 15px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 350;
+      padding: 10px 10px 6px 20px;
+    }
+
+    .download-dataset-item {
+      padding: 5px;
+    }
+
+    .download-dataset-item:hover {
+      color: $link-hover-color;
+      cursor: pointer;
+    }
+    .p {
+      color: $text-color;
+      font-size: 16px;
+      line-height: 16px;
+      padding: 5px 15px 15px 15px;
+      &.right {
+        text-align: right;
+      }
+      p:not(:last-child) {
+        padding-bottom: 10px;
+      }
+    }
+    input, textarea {
+      display: block;
+      margin-top: 10px;
+      width: calc(100% - 18px);
+      border: 1px solid #ccc;
+      padding: 8px;
+      -webkit-transition: border-color 500ms ease-in-out; 
+      -moz-transition: border-color 500ms ease-in-out;
+      -o-transition: border-color 500ms ease-in-out;
+      transition: border-color 500ms ease-in-out;
+      &.error {
+        border-color: $error;
+      }
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      @extend .button;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 2px;
+    }
+    .result {
+      float: left;
+      display: none;
+      &.error {
+        color: $error;
+      }
+    }
+  }
+}
+
+
+
+#tour {
+  display: none;
+  background-color: $background;
+  position: absolute;
+  width: 280px;
+  color: $text-color;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  &:before {
+    border-width: 15px;
+  }
+  &:after {
+    border-width: 14px;
+  }
+  &[data-direction^='top']:before {
+    top: -30px;
+    border-bottom-color: $spacer-color;
+  }
+  &[data-direction^='top']:after {
+    top: -28px;
+    border-bottom-color: $background;
+  }
+  &[data-direction='top']:before, &[data-direction='bottom']:before  {
+    left: 50%;
+    margin-left: -15px;
+  }
+  &[data-direction='top']:after, &[data-direction='bottom']:after {
+    left: 50%;
+    margin-left: -14px;
+  }
+  &[data-direction='topleft']:before {
+    left: 20px;
+  }
+  &[data-direction='topleft']:after {
+    left: 21px;
+  }
+  &[data-direction='topright']:before {
+    right: 20px;
+  }
+  &[data-direction='topright']:after {
+    right: 21px;
+  }
+  &[data-direction^='bottom']:before {
+    bottom: -30px;
+    border-top-color: $spacer-color;
+  }
+  &[data-direction^='bottom']:after {
+    bottom: -28px;
+    border-top-color: $background;
+  }
+  &[data-direction='bottomleft']:before {
+    left: 20px;
+  }
+  &[data-direction='bottomleft']:after {
+    left: 21px;
+  }
+  &[data-direction^='left']:before {
+    left: -30px;
+    border-right-color: $spacer-color;
+  }
+  &[data-direction^='left']:after {
+    left: -28px;
+    border-right-color: $background;
+  }
+  &[data-direction='lefttop']:before {
+    top: 20px;
+  }
+  &[data-direction='lefttop']:after {
+    top: 21px;
+  }
+  &[data-direction='leftbottom']:before {
+    bottom: 20px;
+  }
+  &[data-direction='leftbottom']:after {
+    bottom: 21px;
+  }
+  
+  .close {
+    float: right;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  h1 {
+    padding: 15px 15px 15px 15px;
+    font-size: 18px;
+  }
+  p {
+    padding: 3px 15px 3px 15px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  button {
+    @extend .button;
+    padding: 5px 15px;
+    border-radius: 2px;
+    margin: 15px 0px 30px 15px;
+  }
+  .progress {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    div {
+      float: left;
+      margin-left: 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $text-inactive;
+      
+      &.active {
+        background-color: $text-color;
+      }
+    }
+  }
+ 
+}
+
+
+

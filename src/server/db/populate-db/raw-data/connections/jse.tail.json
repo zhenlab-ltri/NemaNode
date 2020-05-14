@@ -1,0 +1,991 @@
+[
+  {
+    "post": "LUAR", 
+    "pre": "PVCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "DVB", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "VA12", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "VA12", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "VA12", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAR", 
+    "pre": "AVAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVAR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "AVAR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "AVAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVQL", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVHR", 
+    "pre": "PHAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBR", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DVA", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAL", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBL", 
+    "pre": "PHAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVG", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVAL", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "AVAL", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "AVAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVQL", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVFL", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDR", 
+    "pre": "PHAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBR", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DVA", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAR", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVHL", 
+    "pre": "PHAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVHR", 
+    "pre": "PHAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBL", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVG", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "PHAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DVA", 
+    "pre": "PHCL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCL", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "PHCL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "VA12", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAR", 
+    "pre": "PHCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCR", 
+    "pre": "PHCR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHCL", 
+    "pre": "PHCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DVA", 
+    "pre": "PHCR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVHR", 
+    "pre": "PHCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "PHCR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "VA12", 
+    "pre": "PHCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "PDA", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVR", 
+    "pre": "LUAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCR", 
+    "pre": "LUAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVWL", 
+    "pre": "LUAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVJR", 
+    "pre": "LUAR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDR", 
+    "pre": "LUAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAR", 
+    "pre": "LUAR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "LUAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PQR", 
+    "pre": "LUAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDL", 
+    "pre": "LUAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVDR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "AVDR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "AVDR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCR", 
+    "pre": "PHBR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDR", 
+    "pre": "PHBR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAR", 
+    "pre": "PHBR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "PHBR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBL", 
+    "pre": "PHBR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDL", 
+    "pre": "PHBR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCL", 
+    "pre": "PHBR", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "VA12", 
+    "pre": "PHBR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAR", 
+    "pre": "PQR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBR", 
+    "pre": "PHBL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAR", 
+    "pre": "PHBL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "PHBL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVCL", 
+    "pre": "PHBL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "PHBL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "VA12", 
+    "pre": "PHBL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVDL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "AVDL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAL", 
+    "pre": "AVG", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVG", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDR", 
+    "pre": "LUAL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVWL", 
+    "pre": "LUAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAR", 
+    "pre": "LUAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "LUAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVJL", 
+    "pre": "LUAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVDL", 
+    "pre": "LUAL", 
+    "syn": [
+      1, 
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVNL", 
+    "pre": "LUAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PLMR", 
+    "pre": "LUAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAR", 
+    "pre": "PLMR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "PLML", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVHL", 
+    "pre": "PHBR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBL", 
+    "pre": "PHBR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA9", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "VA12", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHCR", 
+    "pre": "PHCL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "DA8", 
+    "pre": "AVAR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAL", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PVPL", 
+    "pre": "PHAR", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAR", 
+    "pre": "PVPL", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBR", 
+    "pre": "AVHL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "LUAL", 
+    "pre": "AVAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHAR", 
+    "pre": "PHAL", 
+    "syn": [
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "LUAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PLML", 
+    "pre": "LUAL", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHBR", 
+    "pre": "PHBL", 
+    "syn": [
+      1, 
+      1, 
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHCL", 
+    "pre": "PHCR", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "AVAL", 
+    "pre": "DA8", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHCL", 
+    "pre": "DA9", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }, 
+  {
+    "post": "PHCL", 
+    "pre": "VA12", 
+    "syn": [
+      1
+    ], 
+    "typ": 0
+  }
+]

@@ -1,0 +1,4025 @@
+[
+  {
+    "inhead": 1,
+    "name": "ADAL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ADA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "ADAR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ADA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIAL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIAR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIBL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AIB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIBR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AIB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIML",
+    "emb": 1,
+    "nt": "ls",
+    "intail": 0,
+    "classes": "AIM",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "AIMR",
+    "emb": 1,
+    "nt": "ls",
+    "intail": 0,
+    "classes": "AIM",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "AINL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIN",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AINR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIN",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIYL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIY",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIYR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AIY",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIZL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AIZ",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AIZR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AIZ",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "ALA",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "ALA",
+    "typ": "sin"
+  },
+  {
+    "inhead": 1,
+    "name": "AUAL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AUA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AUAR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AUA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AVFL",
+    "emb": 0,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVF",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "AVFR",
+    "emb": 0,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVF",
+    "typ": "in"
+  },
+  {
+    "inhead": 0,
+    "name": "AVG",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "AVG",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVHL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVH",
+    "typ": "n"
+  },
+  {
+    "inhead": 1,
+    "name": "AVHR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVH",
+    "typ": "n"
+  },
+  {
+    "inhead": 1,
+    "name": "AVJL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVJ",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "AVJR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 1,
+    "classes": "AVJ",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "AVKL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "AVK",
+    "typ": "n"
+  },
+  {
+    "inhead": 1,
+    "name": "AVKR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "AVK",
+    "typ": "n"
+  },
+  {
+    "inhead": 1,
+    "name": "BDUL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "BDU",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "BDUR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "BDU",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "DVA",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "DVA",
+    "typ": "sin"
+  },
+  {
+    "inhead": 1,
+    "name": "DVC",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "DVC",
+    "typ": "i"
+  },
+  {
+    "inhead": 0,
+    "name": "LUAL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "LUA",
+    "typ": "i"
+  },
+  {
+    "inhead": 0,
+    "name": "LUAR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "LUA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "PVPL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVP",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "PVPR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVP",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "PVQL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PVQ",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "PVQR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PVQ",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "PVR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PVR",
+    "typ": "si"
+  },
+  {
+    "inhead": 1,
+    "name": "PVT",
+    "emb": 1,
+    "nt": "u",
+    "intail": 1,
+    "classes": "PVT",
+    "typ": "in"
+  },
+  {
+    "inhead": 0,
+    "name": "PVWL",
+    "emb": 0,
+    "nt": "u",
+    "intail": 1,
+    "classes": "PVW",
+    "typ": "i"
+  },
+  {
+    "inhead": 0,
+    "name": "PVWR",
+    "emb": 0,
+    "nt": "u",
+    "intail": 1,
+    "classes": "PVW",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIAL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "RIA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIAR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "RIA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIBL",
+    "emb": 1,
+    "nt": "ag",
+    "intail": 0,
+    "classes": "RIB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIBR",
+    "emb": 1,
+    "nt": "ag",
+    "intail": 0,
+    "classes": "RIB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RICL",
+    "emb": 1,
+    "nt": "o",
+    "intail": 0,
+    "classes": "RIC",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "RICR",
+    "emb": 1,
+    "nt": "o",
+    "intail": 0,
+    "classes": "RIC",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "RIFL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RIF",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIFR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RIF",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIGL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "RIG",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIGR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "RIG",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIH",
+    "emb": 1,
+    "nt": "as",
+    "intail": 0,
+    "classes": "RIH",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "RIR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RIR",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "RIS",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "RIS",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "SAADL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "SAADR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "SAAVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "SAAVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AVAL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "AVA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVAR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "AVA",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "AVD",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "AVD",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVEL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AVE",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVER",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AVE",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVBL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AVB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "AVBR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AVB",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "PVCL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVC",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "PVCR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVC",
+    "typ": "i"
+  },
+  {
+    "inhead": 1,
+    "name": "ADEL",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "ADE",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ADER",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "ADE",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ADFL",
+    "emb": 1,
+    "nt": "as",
+    "intail": 0,
+    "classes": "ADF",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ADFR",
+    "emb": 1,
+    "nt": "as",
+    "intail": 0,
+    "classes": "ADF",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ADLL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ADL",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ADLR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ADL",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AFDL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AFD",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AFDR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AFD",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ALML",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ALM",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ALMR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ALM",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ALNL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ALN",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ALNR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ALN",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AQR",
+    "emb": 0,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AQR",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASEL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASE",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASER",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASE",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASGL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASG",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASGR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASG",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASHL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASH",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASHR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASH",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASIL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "ASI",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ASIR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "ASI",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "ASJL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASJ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASJR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASJ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASKL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASK",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "ASKR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "ASK",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AVM",
+    "emb": 0,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AVM",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWAL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "AWA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWAR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "AWA",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWBL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AWB",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWBR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "AWB",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWCL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AWC",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "AWCR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "AWC",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "BAGL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "BAG",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "BAGR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "BAG",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPDL",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "CEP",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPDR",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "CEP",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPVL",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "CEP",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPVR",
+    "emb": 1,
+    "nt": "d",
+    "intail": 0,
+    "classes": "CEP",
+    "typ": "sn"
+  },
+  {
+    "inhead": 1,
+    "name": "FLPL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "FLP",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "FLPR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "FLP",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2DL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2DR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2L",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2R",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2VL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL2VR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "IL2",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLLL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLL",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLLR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLL",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLQDL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLQDR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLQVL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "OLQVR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "OLQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PDEL",
+    "emb": 0,
+    "nt": "d",
+    "intail": 0,
+    "classes": "PDE",
+    "typ": "sn"
+  },
+  {
+    "inhead": 0,
+    "name": "PDER",
+    "emb": 0,
+    "nt": "d",
+    "intail": 0,
+    "classes": "PDE",
+    "typ": "sn"
+  },
+  {
+    "inhead": 0,
+    "name": "PHAL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHA",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PHAR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHA",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PHBL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHB",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PHBR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHB",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PHCL",
+    "emb": 0,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHC",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PHCR",
+    "emb": 0,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PHC",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PLML",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PLM",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PLMR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PLM",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "PLNL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "PLN",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "PLNR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "PLN",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PQR",
+    "emb": 0,
+    "nt": "l",
+    "intail": 1,
+    "classes": "PQR",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PVDL",
+    "emb": 0,
+    "nt": "l",
+    "intail": 0,
+    "classes": "PVD",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PVDR",
+    "emb": 0,
+    "nt": "l",
+    "intail": 0,
+    "classes": "PVD",
+    "typ": "s"
+  },
+  {
+    "inhead": 0,
+    "name": "PVM",
+    "emb": 0,
+    "nt": "u",
+    "intail": 0,
+    "classes": "PVM",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "SDQL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SDQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "SDQR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SDQ",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URBL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URB",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URBR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URB",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URXL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URX",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URXR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URX",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URYDL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "URY",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URYDR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "URY",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URYVL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "URY",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "URYVR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "URY",
+    "typ": "s"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1DL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1DR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1L",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1R",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1VL",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "IL1VR",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "IL1",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "RIML",
+    "emb": 1,
+    "nt": "lt",
+    "intail": 0,
+    "classes": "RIM",
+    "typ": "imn"
+  },
+  {
+    "inhead": 1,
+    "name": "RIMR",
+    "emb": 1,
+    "nt": "lt",
+    "intail": 0,
+    "classes": "RIM",
+    "typ": "imn"
+  },
+  {
+    "inhead": 1,
+    "name": "RIVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RIV",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RIVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RIV",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMDVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMD",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMED",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "RME",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMEL",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "RME",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMER",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "RME",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMEV",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "RME",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMFL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMF",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMFR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMF",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMGL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "RMG",
+    "typ": "mn"
+  },
+  {
+    "inhead": 1,
+    "name": "RMGR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "RMG",
+    "typ": "mn"
+  },
+  {
+    "inhead": 1,
+    "name": "RMHL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMH",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "RMHR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "RMH",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SMBDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SMBDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SMBVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SMBVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SMDDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMD",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "SMDDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMD",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "SMDVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMD",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "SMDVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SMD",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "URADL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URA",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "URADR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URA",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "URAVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URA",
+    "typ": "sm"
+  },
+  {
+    "inhead": 1,
+    "name": "URAVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "URA",
+    "typ": "sm"
+  },
+  {
+    "inhead": 0,
+    "name": "SABD",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAB",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "SABVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAB",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "SABVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SAB",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA1",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA2",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA3",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA4",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA5",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA6",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA7",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA8",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DA9",
+    "emb": 1,
+    "nt": "a",
+    "intail": 1,
+    "classes": "DAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB1",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB2",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB3",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB4",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB5",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB6",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DB7",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "DBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD1",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD2",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD3",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD4",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD5",
+    "emb": 1,
+    "nt": "g",
+    "intail": 0,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "DD6",
+    "emb": 1,
+    "nt": "g",
+    "intail": 1,
+    "classes": "DDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIBDL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIBDR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIBVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIBVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIB",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA1",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA2",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA3",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA4",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA5",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA6",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA7",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA8",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA9",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA10",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA11",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VA12",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "VAn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB1",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB2",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB3",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB4",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB5",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB6",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB7",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB8",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB9",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB10",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VB11",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VBn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD1",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD2",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD3",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD4",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD5",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD6",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD7",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD8",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD9",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD10",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD11",
+    "emb": 0,
+    "nt": "g",
+    "intail": 0,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD12",
+    "emb": 0,
+    "nt": "g",
+    "intail": 1,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VD13",
+    "emb": 0,
+    "nt": "g",
+    "intail": 1,
+    "classes": "VDn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS1",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS2",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS3",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS4",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS5",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS6",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS7",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS8",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS9",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS10",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "AS11",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "ASn",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "PDA",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PDA",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "PDB",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PDB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "AVL",
+    "emb": 1,
+    "nt": "g",
+    "intail": 1,
+    "classes": "AVL",
+    "typ": "imn"
+  },
+  {
+    "inhead": 0,
+    "name": "DVB",
+    "emb": 0,
+    "nt": "g",
+    "intail": 1,
+    "classes": "DVB",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "HSNL",
+    "emb": 0,
+    "nt": "ls",
+    "intail": 0,
+    "classes": "HSN",
+    "typ": "imn"
+  },
+  {
+    "inhead": 1,
+    "name": "HSNR",
+    "emb": 0,
+    "nt": "ls",
+    "intail": 0,
+    "classes": "HSN",
+    "typ": "imn"
+  },
+  {
+    "inhead": 1,
+    "name": "PVNL",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVN",
+    "typ": "im"
+  },
+  {
+    "inhead": 1,
+    "name": "PVNR",
+    "emb": 0,
+    "nt": "a",
+    "intail": 1,
+    "classes": "PVN",
+    "typ": "im"
+  },
+  {
+    "inhead": 1,
+    "name": "RID",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "RID",
+    "typ": "n"
+  },
+  {
+    "inhead": 1,
+    "name": "SIADL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIA",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIADR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIA",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIAVL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIA",
+    "typ": "m"
+  },
+  {
+    "inhead": 1,
+    "name": "SIAVR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "SIA",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "VC1",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "im"
+  },
+  {
+    "inhead": 0,
+    "name": "VC2",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "im"
+  },
+  {
+    "inhead": 0,
+    "name": "VC3",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "im"
+  },
+  {
+    "inhead": 0,
+    "name": "VC4",
+    "emb": 0,
+    "nt": "as",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "imn"
+  },
+  {
+    "inhead": 0,
+    "name": "VC5",
+    "emb": 0,
+    "nt": "as",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "imn"
+  },
+  {
+    "inhead": 0,
+    "name": "VC6",
+    "emb": 0,
+    "nt": "a",
+    "intail": 0,
+    "classes": "VCn",
+    "typ": "im"
+  },
+  {
+    "inhead": 1,
+    "name": "RIPL",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "RIP",
+    "typ": "in"
+  },
+  {
+    "inhead": 1,
+    "name": "RIPR",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "RIP",
+    "typ": "in"
+  },
+  {
+    "inhead": 0,
+    "name": "I1L",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "I1",
+    "typ": "sim"
+  },
+  {
+    "inhead": 0,
+    "name": "I1R",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "I1",
+    "typ": "sim"
+  },
+  {
+    "inhead": 0,
+    "name": "I2L",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "I2",
+    "typ": "sim"
+  },
+  {
+    "inhead": 0,
+    "name": "I2R",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "I2",
+    "typ": "sim"
+  },
+  {
+    "inhead": 0,
+    "name": "I3",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "I3",
+    "typ": "si"
+  },
+  {
+    "inhead": 0,
+    "name": "I4",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "I4",
+    "typ": "i"
+  },
+  {
+    "inhead": 0,
+    "name": "I5",
+    "emb": 1,
+    "nt": "ls",
+    "intail": 0,
+    "classes": "I5",
+    "typ": "sim"
+  },
+  {
+    "inhead": 0,
+    "name": "I6",
+    "emb": 1,
+    "nt": "u",
+    "intail": 0,
+    "classes": "I6",
+    "typ": "si"
+  },
+  {
+    "inhead": 0,
+    "name": "M1",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "M1",
+    "typ": "im"
+  },
+  {
+    "inhead": 0,
+    "name": "M2L",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "M2",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "M2R",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "M2",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "M3L",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "M3",
+    "typ": "sm"
+  },
+  {
+    "inhead": 0,
+    "name": "M3R",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "M3",
+    "typ": "sm"
+  },
+  {
+    "inhead": 0,
+    "name": "M4",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "M4",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "M5",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "M5",
+    "typ": "m"
+  },
+  {
+    "inhead": 0,
+    "name": "MCL",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "MC",
+    "typ": "sm"
+  },
+  {
+    "inhead": 0,
+    "name": "MCR",
+    "emb": 1,
+    "nt": "a",
+    "intail": 0,
+    "classes": "MC",
+    "typ": "sm"
+  },
+  {
+    "inhead": 0,
+    "name": "MI",
+    "emb": 1,
+    "nt": "l",
+    "intail": 0,
+    "classes": "MI",
+    "typ": "im"
+  },
+  {
+    "inhead": 0,
+    "name": "NSML",
+    "emb": 1,
+    "nt": "s",
+    "intail": 0,
+    "classes": "NSM",
+    "typ": "smn"
+  },
+  {
+    "inhead": 0,
+    "name": "NSMR",
+    "emb": 1,
+    "nt": "s",
+    "intail": 0,
+    "classes": "NSM",
+    "typ": "smn"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL01",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM01",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL02",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM02",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL03",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM03",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL04",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM04",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL05",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM05",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL06",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM06",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL07",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM07",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DL08",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM08",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL09",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL10",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL11",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL12",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL13",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL14",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL15",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL16",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL17",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL18",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL19",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL20",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL21",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL22",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL23",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DL24",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR01",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM01",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR02",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM02",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR03",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM03",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR04",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM04",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR05",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM05",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR06",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM06",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR07",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM07",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-DR08",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM08",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR09",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR10",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR11",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR12",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR13",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR14",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR15",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR16",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR17",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR18",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR19",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR20",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR21",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR22",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR23",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-DR24",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL01",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM01",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL02",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM02",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL03",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM03",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL04",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM04",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL05",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM05",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL06",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM06",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL07",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM07",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VL08",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM08",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL09",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL10",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL11",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL12",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL13",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL14",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL15",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL16",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL17",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL18",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL19",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL20",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL21",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL22",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VL23",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR01",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM01",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR02",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM02",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR03",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM03",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR04",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM04",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR05",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM05",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR06",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM06",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR07",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM07",
+    "typ": "b"
+  },
+  {
+    "inhead": 1,
+    "name": "BWM-VR08",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM08",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR09",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR10",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR11",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR12",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR13",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR14",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR15",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR16",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR17",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR18",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR19",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR20",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR21",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR22",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR23",
+    "emb": 0,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "BWM-VR24",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BWM09-24",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "HMC",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "HMC",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "intmuL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "DefecationMuscles",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "intmuR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "DefecationMuscles",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "sphmu",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "DefecationMuscles",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "analdep",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "DefecationMuscles",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm1",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm1",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm2D",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm2",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm2VL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm2",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm2VR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm2",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm3D",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm3",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm3VL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm3",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm3VR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm3",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm4",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm4",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm5D",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm5",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm5VL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm5",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm5VR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm5",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm6D",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm6",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm6VL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm6",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm6VR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm6",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm7D",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm7",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm7VL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm7",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm7VR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm7",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "pm8",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "pm8",
+    "typ": "b"
+  },
+  {
+    "inhead": 0,
+    "name": "mc1DL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc1DR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc1V",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc2DL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc2",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc2DR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc2",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc2V",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc2",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc3DL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc3",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc3DR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc3",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "mc3V",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "mc3",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "g1AL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "g1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "g1AR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "g1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "g1P",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "g1",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "g2L",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "g2",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "g2R",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "g2",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CANL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CAN",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CANR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CAN",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRVR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRVL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRDR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "GLRDL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "GLR",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPshVR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CEPsh",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPshVL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CEPsh",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPshDR",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CEPsh",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "CEPshDL",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "CEPsh",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "excgl",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "exc",
+    "typ": "u"
+  },
+  {
+    "inhead": 1,
+    "name": "hyp",
+    "emb": 1,
+    "nt": "n",
+    "intail": 1,
+    "classes": "hyp",
+    "typ": "u"
+  },
+  {
+    "inhead": 0,
+    "name": "LegacyBodyWallMuscles",
+    "emb": 1,
+    "nt": "n",
+    "intail": 0,
+    "classes": "BodyWallMuscles",
+    "typ": "b"
+  }
+]

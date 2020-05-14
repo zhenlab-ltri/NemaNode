@@ -1,0 +1,316 @@
+#ntv {
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  position: absolute;
+  top: 10px;
+  left: 500px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#ntv-move {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  background-color: $header-background;
+  color:  $text-inverse;
+  padding: 5px 0;
+  cursor: move;
+  z-index: 21;
+}
+
+#ntv-close {
+  width: 10px;
+  height: 10px;
+  z-index: 22;
+  cursor: pointer;
+  float: right;
+  margin-right: 18px;
+  margin-top: 2px;
+}
+
+.ntv-view-close {
+  padding: 5px;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+
+.ntv-open {
+  z-index: 21 !important;
+  opacity: 1 !important;
+}
+
+.ntv-closed {
+  z-index: -100 !important;
+  opacity: 0 !important;
+}
+
+#ntv-canvas {
+  width: 500px;
+  height: 500px;
+  z-index: 21;
+}
+
+#ntv-toggle-settings {
+  color: $header-background;
+  font-size: 22px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  z-index: 22;
+}
+
+.ntv-toggle-settings-icon {
+  cursor: pointer;
+}
+
+#ntv-toggle-settings:hover {
+  color: $blue;
+}
+
+.ntv-toggle-settings-open {
+  color: $blue !important;
+}
+
+#ntv-controls {
+  @extend %non-selectable;
+  color: $text-color;
+  border-radius: 5px;
+  position: relative;
+  font-size: 16px;
+  top: -32px;
+  left: 22px;
+  z-index: 22;
+  border: 1px solid $spacer-color;
+  display: none;
+  width: 200px;
+  padding: 5px 0 0 0;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.ntv-controls-open {
+  display: block !important;
+}
+
+.ntv-controls-section {
+  padding: 5px 14px 10px 14px;
+  border-bottom: 1px solid $spacer-color;
+}
+
+.ntv-control-header {
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+
+.ntv-increment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+
+  border: 2px solid $spacer-color;
+  border-radius: 4px;
+}
+
+.ntv-increment-minus {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-right: 2px solid $spacer-color;
+}
+
+.ntv-increment-plus {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-left: 2px solid $spacer-color;
+}
+
+.ntv-toggle {
+  cursor: pointer;
+  margin: 0 4px 0 16px;
+}
+
+.ntv-select {
+  margin-left: 16px;
+}
+
+#ntv-legend {
+  @extend %non-selectable;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 155px;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+  background-color: $background;
+  opacity: 0.8;
+  border: 1px solid $spacer-color;
+}
+
+.ntv-neuron-legend {
+  max-height: 125px;
+  overflow-y: scroll;
+}
+
+.ntv-neuron-legend-item {
+  cursor: pointer;
+}
+
+.ntv-neuron-legend-item:hover {
+  color: $link-hover-color;
+}
+
+.ntv-legend-section {
+  margin: 8px 0;
+}
+
+.ntv-legend-item {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.ntv-connection-legend-item {
+  margin-bottom: 20px;
+}
+
+.ntv-legend-item-faded {
+  opacity: 0.2;
+}
+
+.ntv-legend-item > * {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.ntv-legend-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+}
+
+.ntv-legend-icon-label {
+  position: relative;
+  top: 12px;
+}
+
+.ntv-legend-label {
+  margin-left: 5px;
+}
+
+.ntv-handle {
+  position: absolute;
+  background-color: $spacer-color;
+  border: 1px solid black;
+  height: 15px;
+  width: 15px;
+  z-index: 23;
+}
+
+.ntv-handle-tl {
+  left: -15px;
+  cursor: nw-resize;
+}
+
+.ntv-handle-tr {
+  right: -15px;
+  cursor: ne-resize;
+}
+
+.ntv-handle-bl {
+  bottom: 0px;
+  left: -15px;
+  cursor: sw-resize;
+}
+
+.ntv-handle-br {
+  bottom: 0px;
+  right: -15px;
+  cursor: se-resize;
+}
+
+#ntv-data-tooltip {
+  background-color: black;
+  visibility: hidden;
+  z-index: 9999 !important;
+}
+
+.ntv-tooltip-data {
+  position: relative;
+  top: 10px;
+  left: -108px;
+  min-width: 200px;
+  min-height: 100px;
+  visibility: visible;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: $background;
+  z-index: initial;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.ntv-tooltip-data .arrow {
+  content: '';
+  position: relative;
+  top: -8px;
+  left: 50%;
+  height: 15px;
+  width: 15px;
+  transform: translate(-50%, 0) rotate(135deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: $background;
+  z-index: -1;
+}
+
+.ntv-connections-entry-header {
+  margin-bottom: 10px;
+}
+.ntv-connections-section {
+  margin-bottom: 10px;
+}
+
+.ntv-neuron-add-trajectory {
+  cursor: pointer;
+}
+
+.ntv-neuron-add-trajectory:hover {
+  color: $link-hover-color;
+}
+
+.ntv-trajectory-hover {
+  cursor: pointer;
+}
+
+.ntv-data-tooltip-hide {
+  display: none;
+}
+
+.ntv-scale-bar {
+  @extend %non-selectable;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px;
+}

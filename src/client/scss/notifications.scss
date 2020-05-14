@@ -1,0 +1,41 @@
+#notification-container {
+  position: absolute;
+  top: $site-padding;
+  right: 228px;
+  width: 320px;
+  z-index: 100;
+}
+#notification-template {
+  display: none;
+}
+  
+.notification {
+  opacity: 0.7;
+  padding: 12px;
+  width: calc(100% - 24px);
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  color: $background;
+  background-color: $text-color;
+  &.warning {
+    background-color: $warning-color;
+  }
+
+  .close {
+    float: right;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  p {
+    padding-top: 4px;
+    padding-right: 8px;
+  }
+  input {
+    width: 100%;
+    color: inherit;
+    background-color: inherit;
+    text-overflow: ellipsis; /* adds '..' at the end */
+  }
+}
+

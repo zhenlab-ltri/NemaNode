@@ -1,0 +1,7 @@
+html, body {
+  background-color: white;
+}
+#searchbar, #cy-removed-container, #cy-legend, .context-menu-list, 
+#settings, #cover, #cell-info-container, #notification-container {
+  display: none;
+}

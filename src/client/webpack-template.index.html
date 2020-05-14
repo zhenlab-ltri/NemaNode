@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--{license}-->
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <title>NemaNode | The Nematode Neural Network Viewer</title>
+    <meta name="description" content="Interactive map of neural connections in C. elegans across development. View conserved, variable, and developmentally regulated connections." />
+    <meta name="keywords" content="Caenorhabditis elegans, connectome, circuits, connectivity, neurons">
+
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" href="image/favicon.ico" />
+
+    <!-- bundle js is injected to this template via webpack -->
+    <link rel="stylesheet" media="all" href="style/bundle.css" />
+    <link rel="stylesheet" media="print" href="style/print.css" />
+  </head>
+  <body>
+
+    <!-- Search bar -->
+    <div id="searchbar" class="ui-widget" >
+      <div id="open-settings"><i class="icon-cog"></i></div>
+      <input type="text" />
+      <div id="show-help"><i class="icon-question"></i></div>
+      <div id="loading-wheel"></div>
+    </div>
+
+    <!-- Notifications -->
+    <div id="notification-container">
+      <div id="notification-template" class="notification">
+        <div class="close"><i class="icon-close"></i></div>
+        <h1></h1><p></p>
+      </div>
+    </div>
+
+    <!-- Settings sidebar -->
+    <div id="cover"></div>
+    <div id="settings">
+      <div>
+        <div class="header">
+          <div id="logo"></div>
+          <div id="close-settings"><i class="icon-angle-left"></i><i class="icon-angle-left"></i></div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div>
+          <!-- Templates used in the settings -->
+          <div id="dataset-bookmark-template" class="bookmark">
+            <div class="dataset-tooltip">
+              <h1> <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+              <p></p>
+            </div>
+            <div class="mark">
+              <div class="rectangle"><div></div></div>
+              <div class="triangle"><div></div></div>
+            </div>
+          </div>
+
+          <!-- Databases and datasets -->
+          <div class="group">
+            <h1>Dataset <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+            <div id="set-database" class="selectbox">
+              <div class="sel-placeholder"></div>
+              <div class="option-container">
+                <div id="complete">Complete animal</div>
+                <div id="head">Head ganglia</div>
+                <div id="tail">Tail ganglia</div>
+              </div>
+            </div>
+            <div id="set-datasets">
+              <div id="timeline">
+                <div id="timeline-line"></div>
+                <!-- tick marks -->
+                <div data-value="0" class="timeline-tick"></div>
+                <div data-value="16" class="timeline-tick"></div>
+                <div data-value="25" class="timeline-tick"></div>
+                <div data-value="34" class="timeline-tick"></div>
+                <div data-value="45" class="timeline-tick"></div>
+                <div id="timeline-pointer-55"></div>
+                <!-- labels -->
+                <div data-value="l1" class="timeline-label">L1</div>
+                <div data-value="l2" class="timeline-label">L2</div>
+                <div data-value="l3" class="timeline-label">L3</div>
+                <div data-value="l4" class="timeline-label">L4</div>
+                <div data-value="adult" class="timeline-label">Adult</div>
+              </div>
+              <div class="checkbox check-all">
+                <input type="checkbox" id="check-all">
+                <label for="check-all">Check all</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Node colour -->
+          <div class="group">
+            <h1>Color nodes by</h1>
+            <div id="set-node-color" class="selectbox">
+              <div class="sel-placeholder"></div>
+              <div class="option-container">
+                <div id="type">Cell type</div>
+                <div id="nt">Neurotransmitter</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Edge threshold -->
+          <div id="hide-edges" class="group">
+            <h1>Connections have at least</h1>
+            <div class="float-wrapper">
+              <div class="number-input-label">Chemical synapses:</div>
+              <div class="number-input" id="threshold-chm">
+                <div class="button" data-type="minus">-</div>
+                <input value="" />
+                <div class="button" data-type="plus">+</div>
+              </div>
+            </div>
+            <div class="float-wrapper">
+              <div class="number-input-label">Gap junctions:</div>
+              <div class="number-input" id="threshold-gj">
+                <div class="button" data-type="minus">-</div>
+                <input value="" />
+                <div class="button" data-type="plus">+</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Layout -->
+          <div class="group">
+            <h1>Network layout <small id="layout-refresh"><i class="icon-refresh"></i></small></h1>
+            <div id="set-layout" class="selectbox">
+              <div class="sel-placeholder"></div>
+              <div class="option-container">
+                <div id="concentric">Circle</div>
+                <div id="cose-bilkent">Force-directed</div>
+                <div id="dagre">Hierarchical</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Other options: individual cells/classes, show linked, show syn num, show post emb -->
+          <div class="group">
+            <h1>Show</h1>
+            <div class="float-wrapper float-children">
+              <div class="checkbox">
+                <input type="checkbox" id="show-linked" />
+                <label for="show-linked">Connected cells</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="show-indiv-cells"/>
+                <label for="show-indiv-cells">as individual cells</label>
+              </div>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="show-edge-num" />
+              <label for="show-edge-num">Number of connections</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="show-postemb" />
+              <label for="show-postemb">Post-embryonic cells</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="show-connection-color" />
+              <label for="show-connection-color">Connection Color</label>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Save the network -->
+          <div class="group">
+            <div id="get-url" class="big-button">Get a link to this network</div>
+            <div id="url" style="display: none;" data-clipboard-text=""></div>
+            <div id="save-png" class="big-button">Export image</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend-toggle"><i class="icon-list-ul"></i></div>
+    <div id="legend">
+      <ol id="legend-type">
+        <li id="type-sensory">Sensory neuron</li>
+        <li id="type-inter">Interneuron</li>
+        <li id="type-motor">Motor neuron</li>
+        <li id="type-neurosecretory">Modulatory</li>
+        <li id="type-muscle">Muscle</li>
+        <li id="type-others">Other</li>
+      </ol>
+      <ol id="legend-nt">
+        <li id="nt-a">Acetylcholine</li>
+        <li id="nt-d">Dopamine</li>
+        <li id="nt-g">GABA</li>
+        <li id="nt-l">Glutamate</li>
+        <li id="nt-o">Octopamine</li>
+        <li id="nt-s">Serotonin</li>
+        <li id="nt-t">Tyramine</li>
+        <li id="nt-u">Unknown</li>
+        <li id="nt-n">Non-neuronal</li>
+      </ol>
+      <ol id="legend-edges">
+        <li id="edge-typ0" class="basic">Chemical synapse</li>
+        <li id="edge-typ2" class="basic" style="margin-bottom: 10px;">Gap junction</li>
+        <li id="edge-stable">Stable<small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></li>
+        <li id="edge-variable">Variable</li>
+        <li id="edge-mature">Developmentally strengthened</li>
+        <li id="edge-juvenile">Developmentally weakened</li>
+        <li id="edge-post-embryonic">Post-embryonic</li>
+        <li id="edge-not-imaged">Not imaged <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></li>
+      </ol>
+    </div>
+
+    <!-- Main cytoscape container -->
+    <div id="cy"></div>
+    <div id="cy-input-container"><div id="cy-input" contenteditable="true" spellcheck="false"></div></div>
+
+    <!-- Popup menu -->
+    <div id="context-menu-container">
+      <div id="context-menu">
+        <div id="context-menu-toggle"></div>
+      </div>
+    </div>
+
+    <!-- Hidden node box -->
+    <div id="cy-hidden-container">
+      <div id="cy-hidden">
+        <div id="cy2"></div>
+        <div id="greeting" style="display: none;">Right-click on nodes to hide them here!</div>
+      </div>
+    </div>
+
+    <!-- Infobar -->
+    <div id="infobar-container"><div>
+      <div id="infobar-toggle"></div>
+      <div id="infobar">
+        <div id="cell-info">
+          <div style="margin: 20px; line-height: 18px;">
+            This info sidebar is yet to be completed. Please <span class="a open-help" data-topic="contact-us">contact us</span>, if you have any suggestions
+            on what should be added here. <br /><br />
+            Until then, have a look <a href="#" target="_blank" class="wormatlas">WormAtlas</a> and <a href="#" target="_blank" class="wormbase">WormBase</a>.
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- Help -->
+    <div id="help">
+      <div class="header"><i class="back icon-arrow_back"></i>Help<i class="close icon-close"></i></div>
+      <div class="body">
+        <div class="menu">
+          <h3>Learn how to use NemaNode</h3>
+          <ol>
+            <li id="take-a-tour" class="icon-walkthrough">Take a tour</li>
+          </ol>
+          <h3>Data info</h3>
+          <ol>
+            <li id="dataset-info" class="icon-connectivity">Dataset info</li>
+            <li id="neuron-info" class="icon-neuron">Neuron info</li>
+            <li id="download-data" class="icon-download">Download data</li>
+            <li id="cite-us" class="icon-reference">Cite us</li>
+          </ol>
+          <h3>Development</h3>
+          <ol>
+            <li id="contribute" class="icon-github">Contribute</li>
+            <li id="contact-us" class="icon-question_answer">Contact us</li>
+          </ol>
+        </div>
+        <div class="content"></div>
+      </div>
+    </div>
+    <div id="tour">
+      <i class="close icon-close"></i>
+      <h1></h1>
+      <div class="body"></div>
+      <button class="done">Done</button>
+      <button class="next">Next tip</button>
+      <div class="progress"></div>
+    </div>
+
+    <!-- neuron trajectory viewer -->
+
+    <vue-draggable-resizable
+      id="ntv"
+      drag-handle="#ntv-move"
+      class-name-handle="ntv-handle"
+      v-cloak
+      v-bind:class="{
+        'ntv-open': isOpen,
+        'ntv-closed': !isOpen,
+        'ntv-trajectory-hover': trajectoryNodeHovered
+      }"
+      :handles="['tl', 'tr', 'bl', 'br']"
+      :x="x"
+      :y="y"
+      :w="width"
+      :h="height"
+      :min-height="300"
+      :min-width="300"
+      :parent="true"
+      :active.sync="showHandles"
+      @dragging="onDrag"
+      @resizing="onResize"
+    >
+      <div id="ntv-move">
+        <div id="ntv-close" v-on:click="close()">
+            <i class="icon-close ntv-view-close"></i>
+        </div>
+      </div>
+      <div id="ntv-toggle-settings" v-bind:class="{'ntv-toggle-settings-open': settingsOpen}">
+          <i class="icon-cog ntv-toggle-settings-icon" v-on:click="toggleOpenSettings()"></i>
+          <div id="ntv-controls" v-bind:class="{'ntv-controls-open': settingsOpen}">
+            <div class="ntv-controls-section">
+              <p class="ntv-control-header">Dataset</p>
+              <vue-select
+                v-model="selectedDataset"
+                :options="datasetOptions"
+                :clearable="false"
+                :searchable="false"
+              ></vue-select>
+            </div>
+
+            <div class="ntv-controls-section">
+                <p class="ntv-control-header">Background color</p>
+                <vue-select
+                v-model="bgColor"
+                :options="bgColorOptions"
+                :reduce="color => color.value"
+                :clearable="false"
+                :searchable="false"
+                ></vue-select>
+            </div>
+
+            <div class="ntv-controls-section">
+                <p class="ntv-control-header">Show worm body</p>
+                <vue-select
+                v-model="showWormBody"
+                :options="showWormBodyOptions"
+                :reduce="option => option.value"
+                :clearable="false"
+                :searchable="false"
+                ></vue-select>
+            </div>
+
+
+            <div class="ntv-controls-section">
+              <p class="ntv-control-header">Synapse visibility</p>
+              <vue-select
+              v-on:input="handleSynapseVisibilityChange()"
+              v-model="synapseVisibility"
+              :options="synapseVisibilityOptions"
+              :clearable="false"
+              :searchable="false"
+              ></vue-select>
+            </div>
+
+            <div class="ntv-controls-section">
+              <p class="ntv-control-header">Trajectory cable width</p>
+              <div class="ntv-increment">
+                  <div class="ntv-increment-minus" @click="decreaseTrajectoryWidth(1)">-</div>
+                  <span class="ntv-control-label">{{Math.round(trajectoryWidth)}}</span>
+                  <div class="ntv-increment-plus" @click="increaseTrajectoryWidth(1)">+</div>
+              </div>
+            </div>
+
+            <div class="ntv-controls-section">
+                <p class="ntv-control-header">Neuron color scheme</p>
+                <vue-select
+                v-model="neuronColorScheme"
+                :options="neuronColorSchemeOptions"
+                :reduce="colorScheme => colorScheme.value"
+                :clearable="false"
+                :searchable="false"
+                ></vue-select>
+            </div>
+            <div class="ntv-controls-section">
+                <p class="ntv-control-header">Connection color scheme</p>
+                <vue-select
+                v-model="connectionColorScheme"
+                :options="connectionColorSchemeOptions"
+                :reduce="colors => colors.value"
+                :clearable="false"
+                :searchable="false"
+                ></vue-select>
+            </div>
+          </div>
+      </div>
+      <div id="ntv-legend">
+          <div class="ntv-neuron-legend ntv-legend-section">
+            <div
+              v-bind:class="{
+                'ntv-neuron-legend-item': true,
+                'ntv-legend-item': true,
+                'ntv-legend-item-faded': hidden.includes(neuronName)
+              }"
+              v-for="(neuronColor, neuronName) in neuronColors"
+              @click="toggleTrajectoryVisibility(neuronName)"
+            >
+              <div :style="getLegendItemStyle({color: neuronColor })"></div>
+              <p>{{neuronName}}</p>
+            </div>
+          </div>
+          <div class="ntv-legend-section">
+            <div v-bind:class="{
+              'ntv-neuron-legend-item': true,
+              'ntv-legend-item': true,
+              'ntv-legend-item-faded': !showOpenEnds
+              }"
+              @click="showOpenEnds = !showOpenEnds"
+            >
+              <div :style="getLegendItemStyle({color: openEndColor, isCircle: true, border: true, opacity: '0.5'})"></div>
+              <p>Open end node</p>
+            </div>
+          </div>
+
+          <div class="ntv-legend-section">
+            <div v-bind:class="{
+              'ntv-neuron-legend-item': true,
+              'ntv-connection-legend-item': true,
+              'ntv-legend-item': true,
+              'ntv-legend-item-faded': !showSynapses
+              }"
+              @click="showSynapses = !showSynapses"
+            >
+              <div class="ntv-legend-icon">
+                  <div :style="getLegendItemStyle({color: connectionColorScheme.preColor, isCircle: true})">
+                    <div class="ntv-legend-icon-label">
+                      pre
+                    </div>
+                  </div>
+                  <div :style="getLegendItemConnectorStyle({color: connectionColorScheme.preColor})"></div>
+                  <div :style="getLegendItemConnectorStyle({color: connectionColorScheme.postColor})"></div>
+                  <div :style="getLegendItemStyle({color: connectionColorScheme.postColor, isCircle: true})">
+                      <div class="ntv-legend-icon-label">
+                        post
+                      </div>
+                  </div>
+                  <p class="ntv-legend-label">Chemical synapse</p>
+                </div>
+            </div>
+            <div v-bind:class="{
+              'ntv-neuron-legend-item': true,
+              'ntv-connection-legend-item': true,
+              'ntv-legend-item': true,
+              'ntv-legend-item-faded': !showGapJunctions
+
+              }"
+              @click="showGapJunctions = !showGapJunctions"
+            >
+                <div class="ntv-legend-icon">
+                  <div :style="getLegendItemStyle({color: connectionColorScheme.gapJunctionColor, isCircle: true})"></div>
+                  <div :style="getLegendItemConnectorStyle({color: connectionColorScheme.gapJunctionColor})"></div>
+                  <div :style="getLegendItemConnectorStyle({color: connectionColorScheme.gapJunctionColor})"></div>
+                  <div :style="getLegendItemStyle({color: connectionColorScheme.gapJunctionColor, isCircle: true})"></div>
+                  <p class="ntv-legend-label">Gap junction</p>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="ntv-scale-bar" :style="getScaleBarStyle({})">
+          {{ scalebarContent.scalebarDisplayVal }}
+      </div>
+      <canvas id="ntv-canvas"></canvas>
+      <vue-draggable-resizable
+        id="ntv-data-tooltip"
+        v-cloak
+        :x="tooltipX"
+        :y="tooltipY"
+        :w="1"
+        :h="1"
+        :draggable="false"
+        :resizable="false"
+      >
+        <div v-bind:class="{
+          'ntv-tooltip-data': true,
+          'ntv-data-tooltip-hide': !showTooltip
+        }">
+        <div class="arrow"></div>
+        <div class="ntv-connections-section" v-for="td in tooltipData.nodeInfo">
+          <div class="ntv-control-header">{{td.type}}</div>
+          <div class="ntv-connections-entry">
+            <div>{{td.displayLabel}}</div>
+          </div>
+        </div>
+        <div v-for="m in missingTrajectoryNeighbours">
+          <span class="ntv-neuron-add-trajectory" v-if="!input.includes(m)" @click="input.push(m)">Add {{m}} to visualization</span>
+        </div>
+        </div>
+      </vue-draggable-resizable>
+    <!-- No script -->
+    <noscript><div id="noscript">Please enable JavaScript or upgrade to <a href="https://browsehappy.com/‎">a browser that supports it</a>.</div></noscript>
+
+  </body>
+</html>

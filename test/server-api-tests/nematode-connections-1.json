@@ -1,0 +1,747 @@
+[
+  {
+    "pre": "AWAR",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 9,
+      "SEM_L1_2": 2,
+      "SEM_L1_3": 2,
+      "SEM_L1_4": 2,
+      "SEM_L2_2": 6,
+      "TEM_adult": 5,
+      "TEM_L1_5": 2,
+      "TEM_L3": 2,
+      "white_ad": 3,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "AWA",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 12,
+      "SEM_L1_2": 4,
+      "SEM_L1_3": 2,
+      "SEM_L1_4": 4,
+      "SEM_L2_2": 7,
+      "TEM_adult": 10,
+      "TEM_L1_5": 4,
+      "TEM_L3": 4,
+      "white_ad": 7,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIBL",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 19,
+      "SEM_L1_2": 12,
+      "SEM_L1_3": 5,
+      "SEM_L1_4": 10,
+      "SEM_L2_2": 14,
+      "TEM_adult": 23,
+      "TEM_L1_5": 8,
+      "TEM_L3": 12,
+      "white_ad": 9,
+      "white_l4": 14
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIB",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 37,
+      "SEM_L1_2": 18,
+      "SEM_L1_3": 14,
+      "SEM_L1_4": 18,
+      "SEM_L2_2": 24,
+      "TEM_adult": 40,
+      "TEM_L1_5": 14,
+      "TEM_L3": 22,
+      "white_ad": 23,
+      "white_l4": 22
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIYL",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 22,
+      "SEM_L1_2": 10,
+      "SEM_L1_3": 7,
+      "SEM_L1_4": 9,
+      "SEM_L2_2": 19,
+      "TEM_adult": 26,
+      "TEM_L1_5": 8,
+      "TEM_L3": 14,
+      "white_ad": 17,
+      "white_l4": 13
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIY",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 49,
+      "SEM_L1_2": 20,
+      "SEM_L1_3": 18,
+      "SEM_L1_4": 18,
+      "SEM_L2_2": 37,
+      "TEM_adult": 47,
+      "TEM_L1_5": 15,
+      "TEM_L3": 32,
+      "white_ad": 37,
+      "white_l4": 32
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AWCR",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 10,
+      "SEM_L1_2": 6,
+      "SEM_L1_3": 2,
+      "SEM_L1_4": 1,
+      "SEM_L2_2": 9,
+      "TEM_adult": 1,
+      "TEM_L1_5": 3,
+      "TEM_L3": 3,
+      "white_ad": 2,
+      "white_l4": 14
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AWC",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 15,
+      "SEM_L1_2": 7,
+      "SEM_L1_3": 3,
+      "SEM_L1_4": 4,
+      "SEM_L2_2": 13,
+      "TEM_adult": 11,
+      "TEM_L1_5": 4,
+      "TEM_L3": 4,
+      "white_ad": 7,
+      "white_l4": 14
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIYR",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 27,
+      "SEM_L1_2": 10,
+      "SEM_L1_3": 11,
+      "SEM_L1_4": 9,
+      "SEM_L2_2": 18,
+      "TEM_adult": 21,
+      "TEM_L1_5": 7,
+      "TEM_L3": 18,
+      "white_ad": 20,
+      "white_l4": 19
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AFDL",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 4,
+      "SEM_L1_2": 1,
+      "SEM_L2_2": 2,
+      "TEM_adult": 5,
+      "TEM_L1_5": 1,
+      "TEM_L3": 2,
+      "white_ad": 2
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AFD",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 8,
+      "SEM_L1_2": 3,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 1,
+      "SEM_L2_2": 6,
+      "TEM_adult": 8,
+      "TEM_L1_5": 1,
+      "TEM_L3": 5,
+      "white_ad": 4,
+      "white_l4": 4
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AWCL",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 5,
+      "SEM_L1_2": 1,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 3,
+      "SEM_L2_2": 4,
+      "TEM_adult": 10,
+      "TEM_L1_5": 1,
+      "TEM_L3": 1,
+      "white_ad": 5
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIBR",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 18,
+      "SEM_L1_2": 6,
+      "SEM_L1_3": 9,
+      "SEM_L1_4": 8,
+      "SEM_L2_2": 10,
+      "TEM_adult": 17,
+      "TEM_L1_5": 6,
+      "TEM_L3": 10,
+      "white_ad": 14,
+      "white_l4": 8
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AFDR",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 4,
+      "SEM_L1_2": 2,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 1,
+      "SEM_L2_2": 4,
+      "TEM_adult": 3,
+      "TEM_L3": 3,
+      "white_ad": 2,
+      "white_l4": 4
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIZ",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_2": 1,
+      "SEM_L1_3": 1,
+      "SEM_L2_2": 4,
+      "TEM_adult": 1,
+      "TEM_L1_5": 1,
+      "TEM_L3": 1,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "AWCL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_L1_2": 3,
+      "SEM_L1_4": 3,
+      "TEM_adult": 1,
+      "TEM_L1_5": 3,
+      "TEM_L3": 1,
+      "white_ad": 1,
+      "white_l4": 2
+    }
+  },
+  {
+    "pre": "AWC",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 6,
+      "SEM_L1_2": 8,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 3,
+      "SEM_L2_2": 7,
+      "TEM_adult": 7,
+      "TEM_L1_5": 4,
+      "TEM_L3": 3,
+      "white_ad": 2,
+      "white_l4": 7
+    }
+  },
+  {
+    "pre": "AWCR",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 6,
+      "SEM_L1_2": 5,
+      "SEM_L1_3": 1,
+      "SEM_L2_2": 7,
+      "TEM_adult": 6,
+      "TEM_L1_5": 1,
+      "TEM_L3": 2,
+      "white_ad": 1,
+      "white_l4": 5
+    }
+  },
+  {
+    "pre": "AWAL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 3,
+      "SEM_L1_2": 2,
+      "SEM_L1_4": 2,
+      "SEM_L2_2": 1,
+      "TEM_adult": 5,
+      "TEM_L1_5": 2,
+      "TEM_L3": 2,
+      "white_ad": 4
+    }
+  },
+  {
+    "pre": "AINL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 2,
+      "SEM_L1_2": 1,
+      "SEM_L1_4": 1,
+      "TEM_adult": 1,
+      "white_ad": 3,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "AIN",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 3,
+      "SEM_L1_2": 1,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 4,
+      "TEM_adult": 3,
+      "TEM_L1_5": 1,
+      "TEM_L3": 1,
+      "white_ad": 6,
+      "white_l4": 2
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIZL",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 4,
+      "SEM_L1_2": 1,
+      "SEM_L2_2": 2,
+      "TEM_adult": 2,
+      "TEM_L3": 3
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIZ",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 12,
+      "SEM_L1_2": 1,
+      "SEM_L2_2": 5,
+      "TEM_adult": 2,
+      "TEM_L3": 4
+    }
+  },
+  {
+    "pre": "AIZL",
+    "post": "ASE",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 4,
+      "SEM_L1_2": 1,
+      "SEM_L2_2": 2,
+      "TEM_adult": 2,
+      "TEM_L3": 3
+    }
+  },
+  {
+    "pre": "AIZ",
+    "post": "ASE",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 12,
+      "SEM_L1_2": 1,
+      "SEM_L2_2": 5,
+      "TEM_adult": 2,
+      "TEM_L3": 4
+    }
+  },
+  {
+    "pre": "ADLR",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 2,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 1,
+      "SEM_L2_2": 4,
+      "TEM_adult": 5,
+      "TEM_L3": 1,
+      "white_ad": 1,
+      "white_l4": 3
+    }
+  },
+  {
+    "pre": "ADL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 3,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 4,
+      "SEM_L2_2": 5,
+      "TEM_adult": 10,
+      "TEM_L3": 3,
+      "white_ad": 4,
+      "white_l4": 5
+    }
+  },
+  {
+    "pre": "AIAL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_3": 1,
+      "TEM_adult": 2,
+      "white_ad": 3,
+      "white_l4": 2
+    }
+  },
+  {
+    "pre": "AIA",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_3": 1,
+      "SEM_L2_2": 1,
+      "TEM_adult": 2,
+      "white_ad": 4,
+      "white_l4": 3
+    }
+  },
+  {
+    "pre": "AINR",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "stable"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 3,
+      "TEM_adult": 2,
+      "TEM_L1_5": 1,
+      "TEM_L3": 1,
+      "white_ad": 3,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "AIZ",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 3,
+      "SEM_L1_3": 1,
+      "SEM_L2_2": 2,
+      "TEM_adult": 3,
+      "TEM_L1_5": 1,
+      "TEM_L3": 3,
+      "white_ad": 1,
+      "white_l4": 2
+    }
+  },
+  {
+    "pre": "ASI",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_3": 1,
+      "SEM_L1_4": 1,
+      "SEM_L2_2": 1,
+      "white_ad": 3
+    }
+  },
+  {
+    "pre": "ADLL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_4": 3,
+      "SEM_L2_2": 1,
+      "TEM_adult": 5,
+      "TEM_L3": 2,
+      "white_ad": 3,
+      "white_l4": 2
+    }
+  },
+  {
+    "pre": "AIYL",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L1_4": 1,
+      "white_l4": 3
+    }
+  },
+  {
+    "pre": "AIY",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 3,
+      "SEM_L1_4": 1,
+      "TEM_adult": 4,
+      "white_l4": 4
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIAL",
+    "type": "chemical",
+    "annotations": [
+      "increase"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L2_2": 3,
+      "TEM_adult": 2,
+      "TEM_L1_5": 1,
+      "TEM_L3": 1,
+      "white_ad": 5,
+      "white_l4": 3
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIA",
+    "type": "chemical",
+    "annotations": [
+      "increase"
+    ],
+    "synapses": {
+      "SEM_adult": 2,
+      "SEM_L2_2": 4,
+      "TEM_adult": 5,
+      "TEM_L1_5": 1,
+      "TEM_L3": 6,
+      "white_ad": 8,
+      "white_l4": 8
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIAR",
+    "type": "chemical",
+    "annotations": [
+      "increase"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "SEM_L2_2": 1,
+      "TEM_adult": 3,
+      "TEM_L3": 5,
+      "white_ad": 3,
+      "white_l4": 5
+    }
+  },
+  {
+    "pre": "AIZR",
+    "post": "ASE",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 8,
+      "SEM_L2_2": 3,
+      "TEM_L3": 1
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIZR",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 8,
+      "SEM_L2_2": 3,
+      "TEM_L3": 1
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "RIA",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 1,
+      "TEM_adult": 5,
+      "white_ad": 1,
+      "white_l4": 3
+    }
+  },
+  {
+    "pre": "AIYR",
+    "post": "ASE",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "SEM_adult": 2,
+      "TEM_adult": 4,
+      "white_l4": 1
+    }
+  },
+  {
+    "pre": "AIY",
+    "post": "ASE",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 2
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "AIY",
+    "type": "electrical",
+    "annotations": [],
+    "synapses": {
+      "SEM_adult": 2
+    }
+  },
+  {
+    "pre": "ASE",
+    "post": "RIAL",
+    "type": "chemical",
+    "annotations": [
+      "remainder"
+    ],
+    "synapses": {
+      "TEM_adult": 3,
+      "white_l4": 2
+    }
+  }
+]

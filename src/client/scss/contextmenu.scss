@@ -1,0 +1,43 @@
+.context-menu-list {
+  line-height: 20px;
+  transform: translateY(-5px); /* to avoid clicking 'Close' when opening */
+}
+.context-menu-icon::before {
+  color: $text-color;
+}
+
+.context-menu-disabled {
+  &.context-menu-item,
+  &.context-menu-icon::before {
+    color: $text-inactive;
+  }
+  &.context-menu-submenu::after {
+    border-color: transparent transparent transparent $text-inactive;
+  }
+}
+.context-menu-item.context-menu-hover, .context-menu-item.highlighted {
+  background-color: $blue;
+  color: $text-inverse;
+}
+
+/* Content editable is required for the element to grow with input */
+#cy-input-container { 
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 500px;
+  top: 0;         /*set by js*/
+  left: 0;        /*set by js*/
+  height: 0;      /*set by js*/
+  line-height: 0; /*set by js*/
+  font-size: 0;   /*set by js*/
+  text-align: center;
+  
+  #cy-input {
+    display: inline-block;
+    font-size: inherit;
+    padding: 0;                    /*set by js*/
+    border-radius: 0;              /*set by js*/
+    background-color: transparent; /*set by js*/
+  }
+}

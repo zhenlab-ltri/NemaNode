@@ -1,0 +1,27 @@
+$site-padding: 16px;
+
+$searchbar-height: 48px;
+$searchbar-width: 360px;
+$help-width: 360px;
+
+@mixin non-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none; 
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+%non-selectable {
+  @include non-selectable;
+}
+
+%no-collapse-on-children-float {
+  &::after {
+    content: ' ';
+    display: block; 
+    height: 0; 
+    clear: both;
+  }
+}

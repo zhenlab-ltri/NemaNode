@@ -1,0 +1,116 @@
+#searchbar {
+
+	position: absolute; 
+	left: $site-padding;
+	top: $site-padding;
+	width: $searchbar-width;
+	height: $searchbar-height;
+	line-height: $searchbar-height;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 20;
+  
+  > * {
+	  float: left;
+  }
+  
+  #open-settings {
+    @extend button;
+	  width: $searchbar-height;
+	  height: $searchbar-height;
+	  border-top-left-radius: 2px;
+	  border-bottom-left-radius: 2px;
+	  font-size: 28px;
+	  text-align: center;
+  }
+  
+  input {
+	  width: calc(100% - 48px - 64px);
+	  height: 100%;
+	  padding-left: 16px;
+	  padding-right: $searchbar-height;
+	  position: relative;
+	  background-color: $background;
+  }
+  
+  #show-help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $searchbar-height;
+    height: $searchbar-height;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 20;
+    color: lighten($text-subtle, 20%);
+    &:hover {
+      color: $link-color;
+    }
+  }
+  
+  #loading-wheel {
+    display: none;
+    position: absolute;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    margin: auto; top: 0; bottom: 0; /* vertical center */
+    
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 4px;
+    
+    z-index: 20;
+    
+    background-color: $background;
+    border-top-color: darken(map-get($type-colors, 1), 10%);
+    border-right-color: darken(map-get($type-colors, 2), 10%);
+    border-bottom-color: darken(map-get($type-colors, 3), 10%);
+    border-left-color: darken(map-get($type-colors, 4), 10%);
+    animation: spin 1s linear infinite; 
+    -webkit-animation: spin 1s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg); 
+    }
+    100% {
+      -webkit-transform: rotate(360deg); 
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg); 
+    } 
+  }
+  
+}
+
+
+/* Autocomplete */
+.ui-autocomplete {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 15;
+  line-height: 20px;
+}
+.ui-widget-content .ui-menu-item div {
+  border-width: 1px 0px 1px 0px;
+  border-color: white;
+  margin: 0;
+}
+.ui-widget-content .ui-menu-item div.ui-state-active {
+  border-color: #999;
+}
+.ui-widget-content .ui-menu-item:last-child div.ui-state-active {
+  border-bottom: 0;
+}
+
