@@ -10,7 +10,7 @@
 1. Install app dependencies by running `npm install`
 2. Setup MySQL: `sudo mysql_secure_installation`
 3. Setup MySQL user and database: `scripts/setup_database.sh nemanode nemanode_user password | sudo mysql`
-4. Setup MySQL test database: `scripts/setup_database.sh test nemanode_user password | sudo mysql`
+4. Setup MySQL test database: `scripts/setup_test_database.sh test nemanode_user password | sudo mysql`
 5. Populate dev database: `npm run populate-database`
 6. Populate test database: `npm run populate-test-database`
 
