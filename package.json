@@ -6,6 +6,10 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/witvliet/nemanode.git"
   },
+  "engines": {
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
+  },
   "scripts": {
     "watch:sync-bundle": "livereload dist -w 3000",
     "watch:sync-server": "nodemon src/server/index.js",
