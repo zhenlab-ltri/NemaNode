@@ -2,7 +2,6 @@ const groupBy = require('lodash.groupby');
 const get = require('lodash.get');
 const fromPairs = require('lodash.frompairs');
 const hash = require('object-hash');
-require('@babel/polyfill');
 
 const getConnectionPrimaryKey = (pre, post, type) => hash({ pre, post, type });
 
