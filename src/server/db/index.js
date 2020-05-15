@@ -1,6 +1,5 @@
 const mysql = require('promise-mysql');
 const fs = require('fs');
-const Promise = require('bluebird');
 const path = require('path');
 const ini = require('ini');
 
