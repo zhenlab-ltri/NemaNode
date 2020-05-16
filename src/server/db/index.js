@@ -16,13 +16,16 @@ const {
   getDatasetsThatContainNeuronTrajectories
 } = require('./nematode-neuron-trajectories');
 
-const { populateDb, depopulateDb } = require('./populate-db');
-
 const DB_INI_FILE = '../../../database_config.ini';
+const TEST_DB_INI_FILE = '../../../test_database_config.ini';
 const dbIni = ini.parse(
   fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8')
 );
+const testDbIni = ini.parse(
+  fs.readFileSync(path.join(__dirname, TEST_DB_INI_FILE), 'utf-8')
+);
 const DEFAULT_DB_OPTS = dbIni.mysql;
+const TEST_DB_OPTS = testDbIni.mysql;
 
 let connect = opts => {
   let { database, user, password } = Object.assign(DEFAULT_DB_OPTS, opts);
@@ -35,6 +38,8 @@ let connect = opts => {
       database
     });
 };
+
+let connectTest = () => connect(TEST_DB_OPTS);
 
 let queryNematodeCells = async () => {
   let connection = await connect();
@@ -103,15 +108,9 @@ let queryNematodeConnections = async opts => {
   return connections;
 };
 
-let populateDbScript = async () => {
-  let connection = await connect();
-  await depopulateDb(connection);
-  await populateDb(connection);
-  await connection.destroy();
-};
-
 module.exports = {
   connect,
+  connectTest,
   queryNematodeCells,
   queryNematodeDatasets,
   queryNematodeDatasetJson,
@@ -119,6 +118,5 @@ module.exports = {
   queryNematodeTrajectoryNodeData,
   queryNematodeNeuronTrajectories,
   queryDatasetsWithATrajectory,
-  queryDatasetTrajectories,
-  populateDbScript
+  queryDatasetTrajectories
 };

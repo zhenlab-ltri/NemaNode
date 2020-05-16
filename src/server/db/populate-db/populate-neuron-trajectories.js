@@ -24,16 +24,16 @@ let populateTrajectorySynapses = async (connection, trajectorySynapsesJSON) => {
 
   let sql = `INSERT INTO ${TABLE} ( ${TABLE_FIELDS.join(', ')} ) VALUES ?`;
 
-  let rows = [];
+  let values = [];
   Object.entries(trajectorySynapsesJSON).forEach(
     ([datasetId, datasetSynapses]) => {
       Object.values(datasetSynapses).forEach(synapse => {
         let { synapseId, postNodeId, preNodeId, type } = synapse;
-        rows.push([synapseId, datasetId, postNodeId, preNodeId, type]);
+        values.push([synapseId, datasetId, postNodeId, preNodeId, type]);
       });
     }
   );
-  await connection.query(sql, [rows]);
+  await connection.query(sql, [values]);
 };
 
 module.exports = {

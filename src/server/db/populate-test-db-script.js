@@ -1,7 +1,10 @@
-const { populateTestDbScript } = require('./index');
+const { connectTest } = require('./index');
+const { populateDb, depopulateDb } = require('./populate-db');
 
-let main = async () => {
-  await populateTestDbScript();
-};
 
-main();
+(async () => {
+  let connection = await connectTest();
+  await depopulateDb(connection);
+  await populateDb(connection);
+  await connection.destroy();
+})();

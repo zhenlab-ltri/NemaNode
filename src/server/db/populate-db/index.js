@@ -278,6 +278,7 @@ let populateDb = async (conn, opts = {}) => {
 
     console.log('populating trajectory synapses');
     await populateTrajectorySynapses(conn, trajectorySynapsesJSON);
+
   } catch (e) {
     console.log(e);
   }
