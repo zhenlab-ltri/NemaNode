@@ -38,15 +38,15 @@ var cystyle = (function() {
       others: '#D9D9D9'
     },
     colorsNt: {
-      a: '#FF887A', // ach
-      d: '#A8F5A2', // dop
-      g: '#99CCFF', // gaba
-      l: '#FFF860', // glu
-      o: '#CFACFF', // oct
-      s: '#90FFCF', // ser
-      t: '#F9D77B', // tyramine
-      u: '#D9D9D9', // unknown
-      n: '#FFFFFF' // no nt
+      acetylcholine: '#FF887A',
+      dopamine: '#A8F5A2',
+      gaba: '#99CCFF',
+      glutamate: '#FFF860',
+      octopamine: '#CFACFF',
+      serotonin: '#90FFCF',
+      tyramine: '#F9D77B',
+      unknown: '#D9D9D9',
+      none: '#FFFFFF'
     },
     coloursEdge: {
       typ0: 'black',
@@ -208,6 +208,7 @@ var cystyle = (function() {
             css['pie-' + i + '-background-size'] =
               'mapData(' + type + ', 0, 1, 0, 100)';
             css['pie-' + i + '-background-opacity'] = '0.9';
+            console.log(css);
           }
           return css;
         })()

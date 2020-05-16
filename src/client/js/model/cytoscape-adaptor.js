@@ -22,7 +22,7 @@ let ModelPrototype = {};
 ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
   let { nodeColor, input, groups, showLinked, hidden, selected } = modelState;
 
-  const typeKeys = {
+  const types = {
     b: 'muscle',
     u: 'others',
     s: 'sensory',
@@ -30,10 +30,21 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
     m: 'motor',
     n: 'neurosecretory'
   };
+  const nts = {
+    a: 'acetylcholine',
+    d: 'dopamine',
+    g: 'gaba',
+    l: 'glutamate',
+    o: 'octopamine',
+    s: 'serotonin',
+    t: 'tyramine',
+    u: 'unknown',
+    n: 'none'
+  };
 
   let name;
-  let nts;
-  let types;
+  let nodeNts;
+  let nodeTypes;
   let classes = [];
 
   if (input.includes(nodeId)) {
@@ -43,17 +54,17 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
   if (groups.hasOwnProperty(nodeId)) {
     let group = groups[nodeId];
     name = group.name;
-    nts = flatten(
+    nodeNts = flatten(
       group.members.map(member => DataService.nt(member).split(''))
     );
-    types = flatten(
+    nodeTypes = flatten(
       group.members.map(member => DataService.typ(member).split(''))
     );
     classes.push('parentNode');
   } else {
     name = nodeId;
-    nts = DataService.nt(nodeId).split('');
-    types = DataService.typ(nodeId).split('');
+    nodeNts = DataService.nt(nodeId).split('');
+    nodeTypes = DataService.typ(nodeId).split('');
   }
 
   if (!showLinked) {
@@ -75,22 +86,18 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
     selected: selected.includes(nodeId)
   };
 
-  nts.forEach(nt => {
-    if (!cytoscapeNode.data.hasOwnProperty(nt)) {
-      cytoscapeNode.data[nt] = 0;
-    }
-
-    cytoscapeNode.data[nt] += 1 / nts.length;
+  Object.values(types).forEach((type) => {
+    cytoscapeNode.data[type] = 0;
+  });
+  Object.values(nts).forEach((nt) => {
+    cytoscapeNode.data[nt] = 0;
   });
 
-  types.forEach(type => {
-    let longtype = typeKeys[type];
-
-    if (!cytoscapeNode.data.hasOwnProperty(longtype)) {
-      cytoscapeNode.data[longtype] = 0;
-    }
-
-    cytoscapeNode.data[longtype] += 1 / types.length;
+  nodeNts.forEach((nt) => {
+    cytoscapeNode.data[nts[nt]] += 1 / nodeNts.length;
+  });
+  nodeTypes.forEach((type) => {
+    cytoscapeNode.data[types[type]] += 1 / nodeTypes.length;
   });
 
   for (let id in groups) {
