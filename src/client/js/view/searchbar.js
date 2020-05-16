@@ -73,12 +73,16 @@ class SearchbarView extends BaseView {
 
     let validNodes = DataService.cellInfo.validNodes[this.model.database];
 
+    // Suggest nothing if term has a match.
     if (validNodes.includes(term)) {
       response([]);
       return;
     }
 
     // Restrict suggestions to valid inputs that start with the term.
+    if (['DAN', 'DBN', 'DDN', 'VAN', 'VBN', 'VCN', 'VDN', 'ASN'].includes(term)) {
+      term = term.substring(0,2);
+    }
     let suggestions = unique(validNodes.filter(node => node.startsWith(term)).sort());
 
     // Suggest muscles as well, if term starts with 'BW' or 'MU'.
