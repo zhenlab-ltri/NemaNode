@@ -1,6 +1,8 @@
 const pallete = require('google-palette');
 
 const Vue = require('vue').default;
+Vue.config.devtools = false; //disable warning
+Vue.config.productionTip = false; //disable warning
 const VueDraggableResizable = require('vue-draggable-resizable');
 const { VueSelect } = require('vue-select');
 // const { VTooltip, VPopover, VClosePopover } = require('v-tooltip');

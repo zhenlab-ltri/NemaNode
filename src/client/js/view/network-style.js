@@ -208,7 +208,6 @@ var cystyle = (function() {
             css['pie-' + i + '-background-size'] =
               'mapData(' + type + ', 0, 1, 0, 100)';
             css['pie-' + i + '-background-opacity'] = '0.9';
-            console.log(css);
           }
           return css;
         })()
