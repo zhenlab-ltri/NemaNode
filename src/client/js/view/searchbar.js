@@ -67,14 +67,19 @@ class SearchbarView extends BaseView {
     let term = inputs.slice(-1)[0];
 
     if (term == null || term.length === 0) {
+      response([]);
       return;
     }
 
     let validNodes = DataService.cellInfo.validNodes[this.model.database];
 
+    if (validNodes.includes(term)) {
+      response([]);
+      return;
+    }
+
     // Restrict suggestions to valid inputs that start with the term.
     let suggestions = unique(validNodes.filter(node => node.startsWith(term)).sort());
-
 
     // Suggest muscles as well, if term starts with 'BW' or 'MU'.
     if (
@@ -84,17 +89,17 @@ class SearchbarView extends BaseView {
       term.startsWith('MU')
     ) {
       let muscles = this.validNodes
-        .filter(n => DataService.typ(n) == 'b')
+        .filter((n) => DataService.typ(n) == 'b')
         .sort();
 
       suggestions = unique(suggestions.concat(muscles));
     }
 
     // Remove suggestions already in the search bar.
-    suggestions = suggestions.filter(s => !inputs.includes(s));
+    suggestions = suggestions.filter((s) => !inputs.includes(s));
 
     // Return the suggestions.
-    response(suggestions.map(s => DataService.getDisplayName(s)));
+    response(suggestions.map((s) => DataService.getDisplayName(s)));
   }
 
   autocompleteSelect(e, ui) {
