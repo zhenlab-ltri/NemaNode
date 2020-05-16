@@ -1,4 +1,5 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
 
 const CellInfo = require('../../src/client/js/cell-info');
 let ci;

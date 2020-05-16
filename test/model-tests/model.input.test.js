@@ -2,6 +2,7 @@
 const ini = require('ini');
 const fs = require('fs');
 const path = require('path');
+require('regenerator-runtime');
 
 const db = require('../../src/server/db');
 

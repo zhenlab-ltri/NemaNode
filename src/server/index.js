@@ -1,15 +1,12 @@
 const http = require('http');
 const path = require('path');
-const stream = require('stream');
 const fs = require('fs');
 const process = require('process');
 
 const compression = require('compression');
 const express = require('express');
-const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const debug = require('debug')('nemanode:server');
 const basicAuth = require('express-basic-auth');
 
 const logger = require('./logger');
@@ -40,18 +37,6 @@ app.engine('html', function(filePath, options, callback) {
   });
 });
 app.set('view engine', 'html');
-
-app.use(
-  morgan('dev', {
-    stream: new stream.Writable({
-      write(chunk, encoding, next) {
-        logger.info(chunk.toString('utf8').trim());
-
-        next();
-      }
-    })
-  })
-);
 
 app.use(cookieParser());
 app.use(
@@ -126,12 +111,6 @@ server.on('error', error => {
     default:
       throw error;
   }
-});
-
-server.on('listening', () => {
-  let addr = server.address();
-  let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  debug('Listening on ' + bind);
 });
 
 db.connect().then(() => {

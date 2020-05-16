@@ -1,5 +1,5 @@
 // babel and fetch polyfill to ensure browsers have all functionality to support babel
-require('@babel/polyfill');
+require('core-js');
 require('whatwg-fetch');
 require('./register-cytoscape-extensions')();
 require('./google-analytics')();

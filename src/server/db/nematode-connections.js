@@ -1,6 +1,7 @@
-const _ = require('lodash');
+const groupBy = require('lodash.groupby');
+const get = require('lodash.get');
+const fromPairs = require('lodash.frompairs');
 const hash = require('object-hash');
-require('@babel/polyfill');
 
 const getConnectionPrimaryKey = (pre, post, type) => hash({ pre, post, type });
 
@@ -157,14 +158,14 @@ let queryNematodeConnections = async (connection, opts) => {
 
   // for each connection, append the number of synapses that each dataset has for that connection
   let connections = Object.entries(
-    _.groupBy(rawConnections, c =>
+    groupBy(rawConnections, c =>
       getConnectionPrimaryKey(c.pre, c.post, c.type)
     )
   ).map(entry => {
     let [key, grouped] = entry;
-    let { pre, post, type } = _.get(grouped, '0');
+    let { pre, post, type } = get(grouped, '0');
     let annotations = annotationsMap.has(key) ? annotationsMap.get(key) : [];
-    let synapses = _.fromPairs(
+    let synapses = fromPairs(
       grouped.map(groupMember => [groupMember.dataset_id, groupMember.synapses])
     );
 
