@@ -24,7 +24,7 @@ let getCellClass2MembersMap = async dbConn => {
 };
 
 
-let populateConnections = async (dbConn, connections) => {
+let populateConnections = async (dbConn, connectionsJSON) => {
   let cellClassesMap = await getCell2ClassMap(dbConn);
 
   let getClass = (cell, connection) => {
@@ -36,10 +36,10 @@ let populateConnections = async (dbConn, connections) => {
     return cellClassesMap[cell];
   };
 
-  let connectionsMap = {};
+  let connections = {};
   let synapses = {};
 
-  connections.forEach(connection => {
+  connectionsJSON.forEach(connection => {
     let { pre, post, typ, syn, datasetId } = connection;
     let type = typ === 0 ? 'chemical' : 'electrical';
     let weight = syn.length;
@@ -69,22 +69,25 @@ let populateConnections = async (dbConn, connections) => {
       if (edge[0] == null || edge[1] == null) {
         return;
       }
-      connectionsMap[[edge[0], edge[1], type].toString()] = [
+      const connectionKey = [datasetId, edge[0], edge[1], type].toString()
+      connections[connectionKey] = [
+        datasetId,
         edge[0],
         edge[1],
-        type
+        type,
+        edge[2]
       ];
-      let key = [edge[0], edge[1], type, datasetId].toString();
+      /*let key = [edge[0], edge[1], type, datasetId].toString();
       if (!synapses.hasOwnProperty(key)) {
         synapses[key] = [edge[0], edge[1], type, datasetId, 0];
       }
-      synapses[key][4] += edge[2];
+      synapses[key][4] += edge[2];*/
     });
   });
 
   await dbConn.query(
-    'INSERT IGNORE INTO connections (pre, post, type) VALUES ?',
-    [Object.values(connectionsMap)]
+    'INSERT INTO connections (dataset_id, pre, post, type, synapses) VALUES ?',
+    [Object.values(connections)]
   );
   await dbConn.query(`
   CREATE TEMPORARY TABLE temp_synapses (
@@ -94,6 +97,7 @@ let populateConnections = async (dbConn, connections) => {
     dataset_id VARCHAR(20) NOT NULL,
     synapses SMALLINT UNSIGNED NOT NULL
   )`);
+  /*
   await dbConn.query(
     'INSERT INTO temp_synapses (pre, post, type, dataset_id, synapses) VALUES ?',
     [Object.values(synapses)]
@@ -105,7 +109,7 @@ let populateConnections = async (dbConn, connections) => {
   LEFT JOIN connections c ON t.pre = c.pre AND t.post = c.post AND t.type = c.type
   `);
 
-  return dbConn.query('DROP TABLE temp_synapses');
+  return dbConn.query('DROP TABLE temp_synapses');*/
 };
 
 // head annotations are in the form of (pre, post)
@@ -291,33 +295,15 @@ let populateAnnotations = async (dbConn, annotations) => {
   let legacyAnnotationsMap = await getLegacyAnnotations(dbConn, legacyAnnotations);
   let headAnnotationsList = await getHeadAnnotations(dbConn, headAnnotations);
 
-    await dbConn.query(`
-    CREATE TEMPORARY TABLE temp_annotations (
-      pre VARCHAR(30) NOT NULL,
-      post VARCHAR(30) NOT NULL,
-      type VARCHAR(20) NOT NULL,
-      collection VARCHAR(20) NOT NULL,
-      annotation VARCHAR(30) NOT NULL
-    )`);
+  await dbConn.query(
+    'INSERT INTO annotations (pre, post, type, collection, annotation) VALUES ?',
+    [Object.values(legacyAnnotationsMap)]
+  );
 
-    await dbConn.query(
-      'INSERT INTO temp_annotations (pre, post, type, collection, annotation) VALUES ?',
-      [Object.values(legacyAnnotationsMap)]
-    );
-
-    await dbConn.query(
-      'INSERT INTO temp_annotations (pre, post, type, collection, annotation) VALUES ?',
-      [headAnnotationsList]
-    );
-
-    await dbConn.query(`
-      INSERT INTO annotations (annotation, connection_id, collection)
-      SELECT t.annotation, c.id, t.collection
-      FROM temp_annotations t
-      INNER JOIN connections c ON t.pre = c.pre AND t.post = c.post AND t.type = c.type
-    `);
-  
-    await dbConn.query('DROP TABLE temp_annotations');
+  await dbConn.query(
+    'INSERT INTO annotations (pre, post, type, collection, annotation) VALUES ?',
+    [headAnnotationsList]
+  );
 };
 
 let populateTrajectoryNodeData = async (dbConn, connectionsJSON) => {

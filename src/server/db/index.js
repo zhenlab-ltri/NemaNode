@@ -74,7 +74,6 @@ let queryNematodeNeuronTrajectories = async opts => {
 };
 
 let queryDatasetTrajectories = async opts => {
-
   let connection = await connect();
   let datasetsWithNeuronTrajectories = await getDatasetsThatContainNeuronTrajectories(connection, opts);
   await connection.destroy();
@@ -83,8 +82,6 @@ let queryDatasetTrajectories = async opts => {
 };
 
 let queryNematodeTrajectoryNodeData = async opts => {
-
-
   let connection = await connect();
   let trajectoryNodeData = await queryTrajectoryNodeData(connection, opts);
   await connection.destroy();

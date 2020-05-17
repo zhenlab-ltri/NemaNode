@@ -51,7 +51,7 @@ let depopulateDb = connection => {
 // take the files in ./raw-data/connections and combine them into one list
 // appending dataset data to each connection
 let processConnectionsDataFiles = () => {
-  let connections = [];
+  let connectionsJSON = [];
 
   // for some reason, connections contain the data that determines which
   // trajectory nodes are synapses.  When processing the connections data files
@@ -85,40 +85,50 @@ let processConnectionsDataFiles = () => {
       let type = c['typ'] === 0 ? 'chemical' : 'electrical';
 
       if (
-        postSynapticNodes != null &&
-        preSynapticNodes != null &&
-        synapseIds != null
+        // legacy datasets
+        postSynapticNodes == null ||
+        preSynapticNodes == null ||
+        synapseIds == null
       ) {
-        preSynapticNodes.forEach(psnId => preSynapticNodesSet.add(psnId));
-        postSynapticNodes.forEach(psnId => postSynapticNodesSet.add(psnId));
-
-        synapseIds.forEach((synapseId, index) => {
-          let preNodeId = preSynapticNodes[index];
-          let postNodeId = postSynapticNodes[index];
-
-          // ensure synapse data is not duplicated (sometimes there are multiple entires of
-          // the same synapseId, preNodeId, postNodeId pair)
-          let key = `${synapseId}-${preNodeId}-${postNodeId}`;
-
-          allSynapsesInDataset[key] = {
-            synapseId,
-            preNodeId,
-            postNodeId,
-            type
-          };
-        });
+        return;
       }
+
+      preSynapticNodes.forEach(psnId => preSynapticNodesSet.add(psnId));
+      postSynapticNodes.forEach(psnId => postSynapticNodesSet.add(psnId));
+
+      synapseIds.forEach((synapseId, index) => {
+        let preNodeId = preSynapticNodes[index];
+        let postNodeId = postSynapticNodes[index];
+
+        // Ensure each synapse is only counted once, as they are labeled by 
+        // both pre- and postsynaptic cells.
+        let key = `${synapseId}-${preNodeId}-${postNodeId}`;
+        allSynapsesInDataset[key] = {
+          synapseId,
+          preNodeId,
+          postNodeId,
+          type
+        };
+      });
+
     });
 
     if (Object.entries(allSynapsesInDataset).length > 0) {
       trajectorySynapsesJSON[datasetId] = allSynapsesInDataset;
     }
 
-    connections = connections.concat(parsedConnectionsJson);
+    connectionsJSON = connectionsJSON.concat(parsedConnectionsJson);
   });
 
+  let adsf = 0;
+  for (let d in trajectorySynapsesJSON) {
+    adsf += Object.entries(trajectorySynapsesJSON[d]).length;
+  }
+  console.log(adsf);
+  console.log(connectionsJSON.length);
+
   return {
-    connections,
+    connectionsJSON,
     postSynapticNodesSet,
     preSynapticNodesSet,
     trajectorySynapsesJSON,
@@ -238,7 +248,7 @@ let populateDb = async (conn, opts = {}) => {
   }
 
   let {
-    connections: connectionsJSON,
+    connectionsJSON,
     postSynapticNodesSet,
     preSynapticNodesSet,
     trajectorySynapsesJSON,

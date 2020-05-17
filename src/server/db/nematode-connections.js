@@ -9,13 +9,12 @@ let queryAnnotations = (connection, opts) => {
   let { cells, includeNeighboringCells, datasetType } = opts;
 
   let annotationsSql = `
-    SELECT c.pre, c.post, c.type, a.annotation
-    FROM annotations a
-    INNER JOIN connections c ON a.connection_id = c.id
-    WHERE (c.pre in (${cells}) ${
+    SELECT pre, post, type, annotation
+    FROM annotations
+    WHERE (pre in (${cells}) ${
     includeNeighboringCells ? 'OR' : 'AND'
-  } c.post in (${cells}))
-      AND a.collection in (${datasetType})
+  } post in (${cells}))
+      AND collection in (${datasetType})
   `;
 
   return connection.query(annotationsSql);
@@ -34,17 +33,16 @@ let queryNonImagedConnections = (connection, opts) => {
   } = opts;
 
   let nonImagedSynapseSql = `
-    SELECT c.pre, c.post, c.type, 'adult' as dataset_id, s.synapses
+    SELECT c.pre, c.post, c.type, 'adult' as dataset_id, c.synapses
     FROM annotations a
     INNER JOIN connections c ON a.connection_id = c.id
-    INNER JOIN synapses s ON s.connection_id = c.id
     WHERE (c.pre in (${cells}) ${
     includeNeighboringCells ? 'OR' : 'AND'
   } c.post in (${cells}))
-      AND s.dataset_id = 'l1'
+      AND c.dataset_id = 'l1'
       AND (
-        (c.type = 'chemical' && s.synapses >= ${thresholdChemical})
-        OR (c.type = 'electrical' && s.synapses >= ${thresholdElectrical})
+        (c.type = 'chemical' && c.synapses >= ${thresholdChemical})
+        OR (c.type = 'electrical' && c.synapses >= ${thresholdElectrical})
       )
       AND a.annotation = 'not-imaged';
   `;
@@ -62,24 +60,16 @@ let queryConnections = (connection, opts) => {
   } = opts;
 
   let connectionsSql = `
-    SELECT c.pre, c.post, c.type, s.dataset_id, s.synapses
-    FROM (
-      SELECT c.pre, c.post, c.type, c.id
-      FROM synapses s
-      INNER JOIN connections c ON s.connection_id = c.id
-      WHERE (c.pre in (${cells}) ${
-    includeNeighboringCells ? 'OR' : 'AND'
-  } c.post in (${cells}))
-        AND s.dataset_id in (${datasetIds})
-        AND (
-          (c.type = 'chemical' && s.synapses >= ${thresholdChemical})
-          OR (c.type = 'electrical' && s.synapses >= ${thresholdElectrical})
-        )
-      GROUP BY c.pre, c.post, c.type
-    ) AS c
-    INNER JOIN synapses s ON s.connection_id = c.id
-    WHERE s.dataset_id IN (${datasetIds})
-    ORDER BY c.id;
+    SELECT pre, post, type, dataset_id, synapses
+    FROM connections
+    WHERE (pre in (${cells}) ${
+      includeNeighboringCells ? 'OR' : 'AND'
+    } post in (${cells}))
+      AND dataset_id in (${datasetIds})
+      AND (
+        (type = 'chemical' && synapses >= ${thresholdChemical})
+        OR (type = 'electrical' && synapses >= ${thresholdElectrical})
+      )
   `;
 
   return connection.query(connectionsSql);

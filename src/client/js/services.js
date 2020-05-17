@@ -58,6 +58,7 @@ let getTrajectoryNodeData = ({ nodeIds }) => {
       let gapJunctions = res.filter(e => e.connection_type === 'gap junction');
       let chemSynapses = res.filter(e => e.connection_type === 'chemical synapse');
 
+      console.log(chemSynapses)
 
       chemSynapses.forEach( c => {
         if( uniqueNodeIdSet.has(c.pre_tid) ){
