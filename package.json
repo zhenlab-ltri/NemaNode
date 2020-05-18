@@ -20,8 +20,7 @@
     "test": "jest --coverage test",
     "lint": "eslint src test",
     "format-code": "prettier --print-width 80 --single-quote es5 --write 'src/**/*.js'",
-    "populate-database": "node ./src/server/db/populate-db-script.js",
-    "populate-test-database": "node ./src/server/db/populate-test-db-script.js"
+    "populate-database": "node ./src/server/populate-db/index.js"
   },
   "scriptsComments": {
     "watch:sync-bundle": "refresh browser when project files are changed",
@@ -34,8 +33,7 @@
     "test": "run the tests once",
     "lint": "lint the code once",
     "format-code": "format the code once",
-    "populate-database": "populate database",
-    "populate-test-database": "populate test database"
+    "populate-database": "populate database"
   },
   "dependenciesComments": {
     "body-parser": "parse incoming request bodies, available under the req.body property",

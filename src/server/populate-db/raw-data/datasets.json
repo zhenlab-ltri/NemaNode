@@ -5,8 +5,7 @@
       "type":"complete",
       "time":60,
       "visualTime":50,
-      "description":"Near-complete adult.<br /><i>White et al.</i>, compiled by Varshney et al., 2011",
-      "published":true
+      "description":"Near-complete adult.<br /><i>White et al.</i>, compiled by Varshney et al., 2011"
    },
    {
       "id":"SEM_L1_3",
@@ -15,7 +14,6 @@
       "time":0,
       "visualTime":0.5,
       "description":"0 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "right",
@@ -41,7 +39,6 @@
       "time":5,
       "visualTime":4.5,
       "description":"5 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "right",
@@ -67,7 +64,6 @@
       "time":8,
       "visualTime":8.5,
       "description":"8 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "left",
@@ -93,7 +89,6 @@
       "time":15,
       "visualTime":15,
       "description":"15 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "anterior",
@@ -120,7 +115,6 @@
       "time":23,
       "visualTime":23,
       "description":"23 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "right",
@@ -146,7 +140,6 @@
       "time":27,
       "visualTime":27,
       "description":"27 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "right",
@@ -172,7 +165,6 @@
       "time":50,
       "visualTime":45.5,
       "description":"50 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "right",
@@ -198,7 +190,6 @@
       "time":50,
       "visualTime":49.5,
       "description":"50 hours after birth<br /><i>Zhen Lab, 2018</i>",
-      "published":false,
       "axes": [
          {
             "face": "anterior",
@@ -223,8 +214,7 @@
       "type":"head",
       "time":40,
       "visualTime":40,
-      "description":"L4 larva legacy<br /><i>White et al., 1986</i><br />Muscles: <i>Zhen lab, 2019</i>",
-      "published":true
+      "description":"L4 larva legacy<br /><i>White et al., 1986</i><br />Muscles: <i>Zhen lab, 2019</i>"
    },
    {
       "id":"white_ad",
@@ -232,8 +222,7 @@
       "type":"head",
       "time":53.5,
       "visualTime":53.5,
-      "description":"Adult legacy<br /><i>White et al., 1986</i><br />Muscles: <i>Zhen lab, 2019</i>",
-      "published":true
+      "description":"Adult legacy<br /><i>White et al., 1986</i><br />Muscles: <i>Zhen lab, 2019</i>"
    },
    {
       "id":"jse",
@@ -241,7 +230,6 @@
       "type":"tail",
       "time":60,
       "visualTime":50,
-      "description":"Adult legacy tail with pre-anal ganglion<br /><i>White et al., 1986</i>",
-      "published":true
+      "description":"Adult legacy tail with pre-anal ganglion<br /><i>White et al., 1986</i>"
    }
  ]

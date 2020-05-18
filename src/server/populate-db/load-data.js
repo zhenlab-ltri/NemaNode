@@ -1,18 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const populateCells = require('./populate-cells');
-const {
-  populateDatasets
-} = require('./populate-datasets');
-const {
-  populateAnnotations,
-  populateConnections
-} = require('./populate-connections');
-const {
-  populateNeuronTrajectories
-} = require('./populate-neuron-trajectories');
-
 const CONNECTIONS_DATA_PATH = path.resolve(
   __dirname,
   './raw-data/connections/'
@@ -26,25 +14,12 @@ const TRAJECTORIES_DATA_PATH = path.resolve(
   './raw-data/trajectories/'
 );
 
-const cellsJSON = require('./raw-data/neurons.json');
-let datasetsJSON = require('./raw-data/datasets.json');
-
-let depopulateDb = connection => {
-  return Promise.all([
-    connection.query('SET FOREIGN_KEY_CHECKS = 0'),
-    connection.query('TRUNCATE TABLE annotations'),
-    connection.query('TRUNCATE TABLE synapses'),
-    connection.query('TRUNCATE TABLE connections'),
-    connection.query('TRUNCATE TABLE neurons'),
-    connection.query('TRUNCATE TABLE datasets'),
-    connection.query('TRUNCATE TABLE trajectories'),
-    connection.query('SET FOREIGN_KEY_CHECKS = 1')
-  ]);
-};
+const cellList = require('./raw-data/neurons.json');
+const datasetList = require('./raw-data/datasets.json');
 
 // take the files in ./raw-data/connections and combine them into one list
 // appending dataset data to each connection
-let processConnectionsDataFiles = () => {
+let loadConnectionData = () => {
   let connectionsJSON = [];
 
   fs.readdirSync(CONNECTIONS_DATA_PATH).forEach(filename => {
@@ -61,14 +36,12 @@ let processConnectionsDataFiles = () => {
     connectionsJSON = connectionsJSON.concat(connectionsJSON_raw);
   });
 
-  return {
-    connectionsJSON
-  };
+  return connectionsJSON;
 };
 
 // take the files in ./raw-data/annotations and combine them into one list
 // appending annotation type and dataset type to each annotation
-let processAnnotationsDataFiles = () => {
+let loadAnnotationData = () => {
   let annotations = [];
 
   fs.readdirSync(ANNOTATIONS_DATA_PATH).forEach(filename => {
@@ -99,12 +72,12 @@ let processAnnotationsDataFiles = () => {
   return annotations;
 };
 
-let processTrajectoriesDataFiles = () => {
+let loadTrajectoryData = () => {
   let trajectories = [];
 
   let trajectoryAxes = {};
 
-  datasetsJSON.filter( d => d.axes != null ).forEach( d => {
+  datasetList.filter( d => d.axes != null ).forEach( d => {
     trajectoryAxes[d.id] = d.axes;
   });
 
@@ -159,48 +132,11 @@ let processTrajectoriesDataFiles = () => {
   return trajectories;
 };
 
-let populateDb = async (conn, opts = {}) => {
-  let { publishedDataOnly = false } = opts;
-  if (publishedDataOnly) {
-    datasetsJSON = datasetsJSON.filter(dataset => dataset.published);
-  }
-
-  let {
-    connectionsJSON
-  } = processConnectionsDataFiles();
-
-  let annotationsJSON = processAnnotationsDataFiles();
-  let trajectoriesJSON = processTrajectoriesDataFiles();
-
-  try {
-    console.log('Clearing tables');
-    await depopulateDb(conn);
-
-    console.log('populating datasets');
-    await populateDatasets(conn, datasetsJSON);
-
-    console.log('populating cells');
-    await populateCells(conn, cellsJSON);
-
-    console.log('populating trajectories');
-    await populateNeuronTrajectories(conn, trajectoriesJSON);
-
-    console.log('populating connections');
-    await populateConnections(conn, connectionsJSON);
-
-    console.log('populating annotations');
-    await populateAnnotations(conn, annotationsJSON);
-
-  } catch (e) {
-    console.log(e);
-  }
-};
 
 module.exports = {
-  populateDb,
-  depopulateDb,
-  populateDatasets,
-  populateCells,
-  populateConnections,
-  populateAnnotations
+  cellList,
+  datasetList,
+  loadConnectionData,
+  loadAnnotationData,
+  loadTrajectoryData
 };
