@@ -37,79 +37,90 @@ let populateConnections = async (dbConn, connectionsJSON) => {
   };
 
   let connections = {};
-  let synapses = {};
+  let synapses = [];
 
+  let connectionCounter = 0;
   connectionsJSON.forEach(connection => {
-    let { pre, post, typ, syn, datasetId } = connection;
+    let { datasetId, pre, post, typ, syn, ids, pre_tid, post_tid } = connection;
     let type = typ === 0 ? 'chemical' : 'electrical';
-    let weight = syn.length;
+    let synapseCount = syn.length;
 
-    let preClass = getClass(pre, connection);
-    let postClass = getClass(post, connection);
+    // Skip gap junctions already counted in the reverse direction.
+    if (
+      type == 'electrical' && 
+      connections.hasOwnProperty([datasetId, post, pre, type].toString())
+    ) {
+      return;
+    }
 
-    let edges = [[pre, post, weight]];
+    // Add connections and class connections.
+    const preClass = getClass(pre, connection);
+    const postClass = getClass(post, connection);
 
+    let edges = [[pre, post, synapseCount]];
+    
     if (preClass != postClass) {
       if (pre != preClass) {
-        edges.push([preClass, post, weight]);
+        edges.push([preClass, post, synapseCount]);
       }
       if (post != postClass) {
-        edges.push([pre, postClass, weight]);
+        edges.push([pre, postClass, synapseCount]);
       }
     }
     if (pre != preClass && post != postClass) {
-      if (type == 'electrical' && preClass == postClass) {
-        edges.push([preClass, postClass, weight / 2]);
-      } else {
-        edges.push([preClass, postClass, weight]);
-      }
+      edges.push([preClass, postClass, synapseCount]);
     }
 
-    edges.forEach(edge => {
+    edges.forEach((edge) => {
       if (edge[0] == null || edge[1] == null) {
+        //legacy datasets with classes directly listed.
         return;
       }
-      const connectionKey = [datasetId, edge[0], edge[1], type].toString()
-      connections[connectionKey] = [
-        datasetId,
-        edge[0],
-        edge[1],
-        type,
-        edge[2]
-      ];
-      /*let key = [edge[0], edge[1], type, datasetId].toString();
-      if (!synapses.hasOwnProperty(key)) {
-        synapses[key] = [edge[0], edge[1], type, datasetId, 0];
+      connectionCounter += 1;
+      const edgeKey = [datasetId, edge[0], edge[1], type].toString();
+      if (!connections.hasOwnProperty(edgeKey)) {
+        connections[edgeKey] = {
+          id: connectionCounter,
+          datasetId,
+          pre: edge[0],
+          post: edge[1],
+          type,
+          synapseCount: 0
+        };
       }
-      synapses[key][4] += edge[2];*/
+      connections[edgeKey].synapseCount += edge[2];
     });
+
+    // Add individual synapses.
+    if (typeof ids !== 'undefined') {
+      ids.forEach((connectorId, i) => {
+        synapses.push([
+          connections[[datasetId, pre, post, type].toString()].id,
+          connectorId,
+          syn[i],
+          pre_tid[i],
+          post_tid[i]
+        ])
+      });
+    }
+
+  });
+
+  let connectionValues = Object.values(connections).map((connection) => {
+    let { id, datasetId, pre, post, type, synapseCount } = connection;
+    return [id, datasetId, pre, post, type, synapseCount];
   });
 
   await dbConn.query(
-    'INSERT INTO connections (dataset_id, pre, post, type, synapses) VALUES ?',
-    [Object.values(connections)]
+    'INSERT INTO connections (id, dataset_id, pre, post, type, synapses) VALUES ?',
+    [connectionValues]
   );
-  await dbConn.query(`
-  CREATE TEMPORARY TABLE temp_synapses (
-    pre VARCHAR(30) NOT NULL,
-    post VARCHAR(30) NOT NULL,
-    type VARCHAR(20) NOT NULL,
-    dataset_id VARCHAR(20) NOT NULL,
-    synapses SMALLINT UNSIGNED NOT NULL
-  )`);
-  /*
+  
   await dbConn.query(
-    'INSERT INTO temp_synapses (pre, post, type, dataset_id, synapses) VALUES ?',
-    [Object.values(synapses)]
+    'INSERT INTO synapses (connection_id, connector_id, weight, pre_tid, post_tid) VALUES ?',
+    [synapses]
   );
-  await dbConn.query(`
-  INSERT INTO synapses (dataset_id, connection_id, synapses)
-  SELECT t.dataset_id, c.id, t.synapses
-  FROM temp_synapses t
-  LEFT JOIN connections c ON t.pre = c.pre AND t.post = c.post AND t.type = c.type
-  `);
 
-  return dbConn.query('DROP TABLE temp_synapses');*/
 };
 
 // head annotations are in the form of (pre, post)
@@ -153,101 +164,30 @@ let getLegacyAnnotations = async (dbConn, annotations) => {
   let getCellClassMembers = cellClass => {
     if (cellClass == 'BodyWallMuscles') {
       return [
-        'BWM-DL01',
-        'BWM-DL02',
-        'BWM-DL03',
-        'BWM-DL04',
-        'BWM-DL05',
-        'BWM-DL06',
-        'BWM-DL07',
-        'BWM-DL08',
-        'BWM-DL09',
-        'BWM-DL10',
-        'BWM-DL11',
-        'BWM-DL12',
-        'BWM-DL13',
-        'BWM-DL14',
-        'BWM-DL15',
-        'BWM-DL16',
-        'BWM-DL17',
-        'BWM-DL18',
-        'BWM-DL19',
-        'BWM-DL20',
-        'BWM-DL21',
-        'BWM-DL22',
-        'BWM-DL23',
-        'BWM-DL24',
-        'BWM-DR01',
-        'BWM-DR02',
-        'BWM-DR03',
-        'BWM-DR04',
-        'BWM-DR05',
-        'BWM-DR06',
-        'BWM-DR07',
-        'BWM-DR08',
-        'BWM-DR09',
-        'BWM-DR10',
-        'BWM-DR11',
-        'BWM-DR12',
-        'BWM-DR13',
-        'BWM-DR14',
-        'BWM-DR15',
-        'BWM-DR16',
-        'BWM-DR17',
-        'BWM-DR18',
-        'BWM-DR19',
-        'BWM-DR20',
-        'BWM-DR21',
-        'BWM-DR22',
-        'BWM-DR23',
-        'BWM-DR24',
-        'BWM-VL01',
-        'BWM-VL02',
-        'BWM-VL03',
-        'BWM-VL04',
-        'BWM-VL05',
-        'BWM-VL06',
-        'BWM-VL07',
-        'BWM-VL08',
-        'BWM-VL09',
-        'BWM-VL10',
-        'BWM-VL11',
-        'BWM-VL12',
-        'BWM-VL13',
-        'BWM-VL14',
-        'BWM-VL15',
-        'BWM-VL16',
-        'BWM-VL17',
-        'BWM-VL18',
-        'BWM-VL19',
-        'BWM-VL20',
-        'BWM-VL21',
-        'BWM-VL22',
-        'BWM-VL23',
-        'BWM-VR01',
-        'BWM-VR02',
-        'BWM-VR03',
-        'BWM-VR04',
-        'BWM-VR05',
-        'BWM-VR06',
-        'BWM-VR07',
-        'BWM-VR08',
-        'BWM-VR09',
-        'BWM-VR10',
-        'BWM-VR11',
-        'BWM-VR12',
-        'BWM-VR13',
-        'BWM-VR14',
-        'BWM-VR15',
-        'BWM-VR16',
-        'BWM-VR17',
-        'BWM-VR18',
-        'BWM-VR19',
-        'BWM-VR20',
-        'BWM-VR21',
-        'BWM-VR22',
-        'BWM-VR23',
-        'BWM-VR24'
+        'BWM-DL01', 'BWM-DL02', 'BWM-DL03', 'BWM-DL04',
+        'BWM-DL05', 'BWM-DL06', 'BWM-DL07', 'BWM-DL08',
+        'BWM-DL09', 'BWM-DL10', 'BWM-DL11', 'BWM-DL12',
+        'BWM-DL13', 'BWM-DL14', 'BWM-DL15', 'BWM-DL16',
+        'BWM-DL17', 'BWM-DL18', 'BWM-DL19', 'BWM-DL20',
+        'BWM-DL21', 'BWM-DL22', 'BWM-DL23', 'BWM-DL24',
+        'BWM-DR01', 'BWM-DR02', 'BWM-DR03', 'BWM-DR04',
+        'BWM-DR05', 'BWM-DR06', 'BWM-DR07', 'BWM-DR08', 
+        'BWM-DR09', 'BWM-DR10', 'BWM-DR11', 'BWM-DR12', 
+        'BWM-DR13', 'BWM-DR14', 'BWM-DR15', 'BWM-DR16', 
+        'BWM-DR17', 'BWM-DR18', 'BWM-DR19', 'BWM-DR20', 
+        'BWM-DR21', 'BWM-DR22', 'BWM-DR23', 'BWM-DR24', 
+        'BWM-VL01', 'BWM-VL02', 'BWM-VL03', 'BWM-VL04', 
+        'BWM-VL05', 'BWM-VL06', 'BWM-VL07', 'BWM-VL08', 
+        'BWM-VL09', 'BWM-VL10', 'BWM-VL11', 'BWM-VL12', 
+        'BWM-VL13', 'BWM-VL14', 'BWM-VL15', 'BWM-VL16', 
+        'BWM-VL17', 'BWM-VL18', 'BWM-VL19', 'BWM-VL20', 
+        'BWM-VL21', 'BWM-VL22', 'BWM-VL23', 
+        'BWM-VR01', 'BWM-VR02', 'BWM-VR03', 'BWM-VR04', 
+        'BWM-VR05', 'BWM-VR06', 'BWM-VR07', 'BWM-VR08', 
+        'BWM-VR09', 'BWM-VR10', 'BWM-VR11', 'BWM-VR12', 
+        'BWM-VR13', 'BWM-VR14', 'BWM-VR15', 'BWM-VR16', 
+        'BWM-VR17', 'BWM-VR18', 'BWM-VR19', 'BWM-VR20', 
+        'BWM-VR21', 'BWM-VR22', 'BWM-VR23', 'BWM-VR24'
       ];
     }
     return cellClassMembersMap[cellClass];
@@ -346,6 +286,5 @@ let populateTrajectoryNodeData = async (dbConn, connectionsJSON) => {
 
 module.exports = {
   populateAnnotations,
-  populateConnections,
-  populateTrajectoryNodeData
+  populateConnections
 };

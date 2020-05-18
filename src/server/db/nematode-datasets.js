@@ -10,7 +10,7 @@ let queryDatasets = connection => {
 
 let queryDatasetJson = (connection, { datasetId }) => {
   datasetId = connection.escape(datasetId);
-  
+  //TODO: this is broken
   let datasetsSql = `
     SELECT dataset_json  
     FROM datasets_json 

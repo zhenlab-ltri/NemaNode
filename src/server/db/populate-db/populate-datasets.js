@@ -20,25 +20,6 @@ let populateDatasets = async (connection, datasets) => {
   );
 };
 
-// map dataset id to dataset connections (chem synapses, gap junctions) json
-let populateDatasetJson = async (connection, datasetsJSON) => {
-  const TABLE = 'datasets_json';
-  const TABLE_FIELDS = [
-    'dataset_id',
-    'dataset_json'
-  ];
-
-  let values = Object.entries(datasetsJSON).map( ([id, json]) => {
-    return [id, JSON.stringify(json)];
-  });
-
-  await connection.query(
-    `INSERT INTO ${TABLE} ( ${TABLE_FIELDS.join(', ')} ) VALUES ?`,
-    [values]
-  );
-};
-
 module.exports = {
-  populateDatasets,
-  populateDatasetJson
+  populateDatasets
 };

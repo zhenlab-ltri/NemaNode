@@ -3,17 +3,14 @@ const path = require('path');
 
 const populateCells = require('./populate-cells');
 const {
-  populateDatasetJson,
   populateDatasets
 } = require('./populate-datasets');
 const {
   populateAnnotations,
-  populateConnections,
-  populateTrajectoryNodeData
+  populateConnections
 } = require('./populate-connections');
 const {
-  populateNeuronTrajectories,
-  populateTrajectorySynapses
+  populateNeuronTrajectories
 } = require('./populate-neuron-trajectories');
 
 const CONNECTIONS_DATA_PATH = path.resolve(
@@ -40,10 +37,7 @@ let depopulateDb = connection => {
     connection.query('TRUNCATE TABLE connections'),
     connection.query('TRUNCATE TABLE neurons'),
     connection.query('TRUNCATE TABLE datasets'),
-    connection.query('TRUNCATE TABLE datasets_json'),
     connection.query('TRUNCATE TABLE trajectories'),
-    connection.query('TRUNCATE TABLE trajectory_synapses'),
-    connection.query('TRUNCATE TABLE trajectory_node_data'),
     connection.query('SET FOREIGN_KEY_CHECKS = 1')
   ]);
 };
@@ -53,86 +47,22 @@ let depopulateDb = connection => {
 let processConnectionsDataFiles = () => {
   let connectionsJSON = [];
 
-  // for some reason, connections contain the data that determines which
-  // trajectory nodes are synapses.  When processing the connections data files
-  // we need to keep track of which pre synaptic trajectory node ids
-  // so we can inject that data into the trajectories themselves
-  let preSynapticNodesSet = new Set();
-  let postSynapticNodesSet = new Set();
-
-  let trajectorySynapsesJSON = {};
-
-  let datasetIdToConnectionsMap = {};
-
-
   fs.readdirSync(CONNECTIONS_DATA_PATH).forEach(filename => {
-    let filepath = path.resolve(CONNECTIONS_DATA_PATH, filename);
-    let name = path.parse(filename).name;
-    let [datasetId, datasetType] = name.split('.');
+    const filepath = path.resolve(CONNECTIONS_DATA_PATH, filename);
+    const name = path.parse(filename).name;
+    const datasetId = name.split('.')[0];
 
-    let parsedConnectionsJson = JSON.parse(fs.readFileSync(filepath));
-    let allSynapsesInDataset = {};
+    let connectionsJSON_raw = JSON.parse(fs.readFileSync(filepath));
 
-    datasetIdToConnectionsMap[datasetId] = parsedConnectionsJson;
-  
-    parsedConnectionsJson.forEach(c => {
-      c.datasetType = datasetType;
+    connectionsJSON_raw.forEach(c => {
       c.datasetId = datasetId;
-
-      let postSynapticNodes = c['post_tid'];
-      let preSynapticNodes = c['pre_tid'];
-      let synapseIds = c['ids'];
-      let type = c['typ'] === 0 ? 'chemical' : 'electrical';
-
-      if (
-        // legacy datasets
-        postSynapticNodes == null ||
-        preSynapticNodes == null ||
-        synapseIds == null
-      ) {
-        return;
-      }
-
-      preSynapticNodes.forEach(psnId => preSynapticNodesSet.add(psnId));
-      postSynapticNodes.forEach(psnId => postSynapticNodesSet.add(psnId));
-
-      synapseIds.forEach((synapseId, index) => {
-        let preNodeId = preSynapticNodes[index];
-        let postNodeId = postSynapticNodes[index];
-
-        // Ensure each synapse is only counted once, as they are labeled by 
-        // both pre- and postsynaptic cells.
-        let key = `${synapseId}-${preNodeId}-${postNodeId}`;
-        allSynapsesInDataset[key] = {
-          synapseId,
-          preNodeId,
-          postNodeId,
-          type
-        };
-      });
-
     });
 
-    if (Object.entries(allSynapsesInDataset).length > 0) {
-      trajectorySynapsesJSON[datasetId] = allSynapsesInDataset;
-    }
-
-    connectionsJSON = connectionsJSON.concat(parsedConnectionsJson);
+    connectionsJSON = connectionsJSON.concat(connectionsJSON_raw);
   });
 
-  let adsf = 0;
-  for (let d in trajectorySynapsesJSON) {
-    adsf += Object.entries(trajectorySynapsesJSON[d]).length;
-  }
-  console.log(adsf);
-  console.log(connectionsJSON.length);
-
   return {
-    connectionsJSON,
-    postSynapticNodesSet,
-    preSynapticNodesSet,
-    trajectorySynapsesJSON,
-    datasetIdToConnectionsMap
+    connectionsJSON
   };
 };
 
@@ -142,8 +72,8 @@ let processAnnotationsDataFiles = () => {
   let annotations = [];
 
   fs.readdirSync(ANNOTATIONS_DATA_PATH).forEach(filename => {
-    let filepath = path.resolve(ANNOTATIONS_DATA_PATH, filename);
-    let name = path.parse(filename).name;
+    const filepath = path.resolve(ANNOTATIONS_DATA_PATH, filename);
+    const name = path.parse(filename).name;
     let [datasetType] = name.split('.');
 
     let parsedAnnotations = JSON.parse(fs.readFileSync(filepath));
@@ -169,10 +99,7 @@ let processAnnotationsDataFiles = () => {
   return annotations;
 };
 
-let processTrajectoriesDataFiles = (
-  preSynapticNodesSet,
-  postSynapticNodesSet
-) => {
+let processTrajectoriesDataFiles = () => {
   let trajectories = [];
 
   let trajectoryAxes = {};
@@ -190,15 +117,6 @@ let processTrajectoriesDataFiles = (
     trajectories = trajectories.concat(
       trajectoriesJson.map(s => {
         let nodeIds = Object.keys(s.coords).map(k => parseInt(k));
-        let postSynapticNodes = nodeIds.filter(nodeId =>
-          postSynapticNodesSet.has(nodeId)
-        );
-        let preSynapticNodes = nodeIds.filter(nodeId =>
-          preSynapticNodesSet.has(nodeId)
-        );
-
-        s.preSynapticNodes = preSynapticNodes;
-        s.postSynapticNodes = postSynapticNodes;
 
         let axesInfo = trajectoryAxes[datasetId];
 
@@ -248,18 +166,11 @@ let populateDb = async (conn, opts = {}) => {
   }
 
   let {
-    connectionsJSON,
-    postSynapticNodesSet,
-    preSynapticNodesSet,
-    trajectorySynapsesJSON,
-    datasetIdToConnectionsMap
+    connectionsJSON
   } = processConnectionsDataFiles();
 
   let annotationsJSON = processAnnotationsDataFiles();
-  let trajectoriesJSON = processTrajectoriesDataFiles(
-    preSynapticNodesSet,
-    postSynapticNodesSet
-  );
+  let trajectoriesJSON = processTrajectoriesDataFiles();
 
   try {
     console.log('Clearing tables');
@@ -267,9 +178,6 @@ let populateDb = async (conn, opts = {}) => {
 
     console.log('populating datasets');
     await populateDatasets(conn, datasetsJSON);
-
-    console.log('populating datasets json');
-    await populateDatasetJson(conn, datasetIdToConnectionsMap);
 
     console.log('populating cells');
     await populateCells(conn, cellsJSON);
@@ -280,14 +188,8 @@ let populateDb = async (conn, opts = {}) => {
     console.log('populating connections');
     await populateConnections(conn, connectionsJSON);
 
-    console.log('populating trajectory node data');
-    await populateTrajectoryNodeData(conn, connectionsJSON);
-
     console.log('populating annotations');
     await populateAnnotations(conn, annotationsJSON);
-
-    console.log('populating trajectory synapses');
-    await populateTrajectorySynapses(conn, trajectorySynapsesJSON);
 
   } catch (e) {
     console.log(e);

@@ -12,31 +12,6 @@ let populateNeuronTrajectories = async (connection, trajectoriesJSON) => {
   });
 };
 
-let populateTrajectorySynapses = async (connection, trajectorySynapsesJSON) => {
-  const TABLE = 'trajectory_synapses';
-  const TABLE_FIELDS = [
-    'id',
-    'dataset_id',
-    'post_node_id',
-    'pre_node_id',
-    'type'
-  ];
-
-  let sql = `INSERT INTO ${TABLE} ( ${TABLE_FIELDS.join(', ')} ) VALUES ?`;
-
-  let values = [];
-  Object.entries(trajectorySynapsesJSON).forEach(
-    ([datasetId, datasetSynapses]) => {
-      Object.values(datasetSynapses).forEach(synapse => {
-        let { synapseId, postNodeId, preNodeId, type } = synapse;
-        values.push([synapseId, datasetId, postNodeId, preNodeId, type]);
-      });
-    }
-  );
-  await connection.query(sql, [values]);
-};
-
 module.exports = {
-  populateNeuronTrajectories,
-  populateTrajectorySynapses
+  populateNeuronTrajectories
 };

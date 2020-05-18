@@ -41,13 +41,6 @@ CREATE TABLE datasets (
   INDEX idx_datasets_collection (collection)
 );
 
-DROP TABLE IF EXISTS datasets_json;
-CREATE TABLE datasets_json (
-  dataset_id VARCHAR(20) NOT NULL,
-  dataset_json MEDIUMTEXT NOT NULL,
-  FOREIGN KEY (dataset_id) REFERENCES datasets(id)
-);
-
 DROP TABLE IF EXISTS neurons;
 CREATE TABLE neurons (
   name VARCHAR(30) NOT NULL,
@@ -71,29 +64,9 @@ CREATE TABLE trajectories (
   FOREIGN KEY (neuron_name) REFERENCES neurons(name)
 );
 
-DROP TABLE IF EXISTS trajectory_synapses;
-CREATE TABLE trajectory_synapses (
-  id INT NOT NULL,
-  dataset_id VARCHAR(20) NOT NULL,
-  post_node_id INT NOT NULL,
-  pre_node_id INT NOT NULL,
-  type VARCHAR(20) NOT NULL,
-  PRIMARY KEY (id, dataset_id, pre_node_id, post_node_id),
-  FOREIGN KEY (dataset_id) REFERENCES datasets(id)
-);
-
-DROP TABLE IF EXISTS trajectory_node_data;
-CREATE TABLE trajectory_node_data (
-  pre_tid INT NOT NULL,
-  post_tid INT NOT NULL,
-  connection_type VARCHAR(20) NOT NULL,
-  pre VARCHAR(30) NOT NULL,
-  post VARCHAR(30) NOT NULL
-);
-
 DROP TABLE IF EXISTS connections;
 CREATE TABLE connections (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT UNSIGNED NOT NULL,
   dataset_id VARCHAR(20) NOT NULL,
   pre VARCHAR(30) NOT NULL,
   post VARCHAR(30) NOT NULL,
@@ -110,13 +83,17 @@ CREATE TABLE connections (
 
 DROP TABLE IF EXISTS synapses;
 CREATE TABLE synapses (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   connection_id INT UNSIGNED NOT NULL,
-  id INT NOT NULL,
-  pre_tid INT NOT NULL,
-  post_tid INT NOT NULL,
-  CONSTRAINT pk_synapses PRIMARY KEY (id, pre_tid, post_tid),
+  connector_id INT UNSIGNED NOT NULL,
+  weight INT UNSIGNED NOT NULL,
+  pre_tid INT UNSIGNED NOT NULL,
+  post_tid INT UNSIGNED NOT NULL,
+  CONSTRAINT pk_synapses PRIMARY KEY (id),
   CONSTRAINT idx_synapses_connection_id FOREIGN KEY (connection_id) REFERENCES connections(id),
-  INDEX idx_synapses_id (id),
+  INDEX idx_synapses_connection_id (connection_id),
+  INDEX idx_synapses_connector_id (connector_id),
+  INDEX idx_synapses_weight (weight),
   INDEX idx_synapses_pre_tid (pre_tid),
   INDEX idx_synapses_post_tid (post_tid)
 );
