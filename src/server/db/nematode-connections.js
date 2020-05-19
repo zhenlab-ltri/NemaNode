@@ -20,35 +20,6 @@ let queryAnnotations = (connection, opts) => {
   return connection.query(annotationsSql);
 };
 
-// a set of connections were not annotated in the adult complete dataset by John White
-// to make the adult complete dataset and the l1 complete dataset more compatible for comparison
-// a few 'pseudo edges' have been added under the annotation 'not-imaged' whenever the adult and l1
-// complete datasets are compared
-let queryNonImagedConnections = (connection, opts) => {
-  let {
-    cells,
-    includeNeighboringCells,
-    thresholdChemical,
-    thresholdElectrical
-  } = opts;
-
-  let nonImagedSynapseSql = `
-    SELECT c.pre, c.post, c.type, 'adult' as dataset_id, c.synapses
-    FROM annotations a
-    INNER JOIN connections c ON a.connection_id = c.id
-    WHERE (c.pre in (${cells}) ${
-    includeNeighboringCells ? 'OR' : 'AND'
-  } c.post in (${cells}))
-      AND c.dataset_id = 'l1'
-      AND (
-        (c.type = 'chemical' && c.synapses >= ${thresholdChemical})
-        OR (c.type = 'electrical' && c.synapses >= ${thresholdElectrical})
-      )
-      AND a.annotation = 'not-imaged';
-  `;
-
-  return connection.query(nonImagedSynapseSql);
-};
 
 let queryConnections = (connection, opts) => {
   let {
@@ -101,40 +72,30 @@ let queryNematodeConnections = async (connection, opts) => {
       ? opts.includeAnnotations === 'true'
       : !!opts.includeAnnotations;
 
-  let annotationsMap = new Map();
-  let nonImagedConnections = [];
   let rawConnections = [];
 
   if (cells.length === 0) {
     return [];
   }
 
-  let annotations = await queryAnnotations(connection, {
-    cells,
-    includeNeighboringCells,
-    datasetType
-  });
-  annotations.forEach(annotation => {
-    let { pre, post, type: connectionType, annotation: annotationType } = annotation;
-    let key = getConnectionPrimaryKey(pre, post, connectionType);
-
-    if( annotationsMap.has(key) ){
-      annotationsMap.set(key, annotationsMap.get(key).concat(annotationType));
-    } else {
-      annotationsMap.set(key, [annotationType]);
-    }
-  });
-
-  // add missing connections to the adult complete dataset
-  // with the annotation 'not-imaged'
-  if (opts.datasetType === 'complete' && opts.datasetIds.includes('adult')) {
-    nonImagedConnections = await queryNonImagedConnections(connection, {
+  let annotationsMap = new Map();
+  if (includeAnnotations) {
+    const annotations = await queryAnnotations(connection, {
       cells,
       includeNeighboringCells,
-      thresholdChemical,
-      thresholdElectrical
+      datasetType
     });
-  }
+    annotations.forEach(annotation => {
+      let { pre, post, type: connectionType, annotation: annotationType } = annotation;
+      let key = getConnectionPrimaryKey(pre, post, connectionType);
+
+      if( annotationsMap.has(key) ){
+        annotationsMap.set(key, annotationsMap.get(key).concat(annotationType));
+      } else {
+        annotationsMap.set(key, [annotationType]);
+      }
+    });
+  } 
 
   rawConnections = await queryConnections(connection, {
     cells,
@@ -143,8 +104,6 @@ let queryNematodeConnections = async (connection, opts) => {
     thresholdChemical,
     thresholdElectrical
   });
-
-  nonImagedConnections.forEach(c => rawConnections.push(c));
 
   // for each connection, append the number of synapses that each dataset has for that connection
   let connections = Object.entries(

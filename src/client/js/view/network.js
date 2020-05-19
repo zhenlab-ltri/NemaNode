@@ -753,9 +753,9 @@ class GraphView extends View2 {
               return;
             }
           }
-          if (id == 'edge-not-imaged') {
-            edge.classes = ' not-imaged';
-            if (cy.edges('[?isNotImaged]').length === 0) {
+          if (id == 'edge-not-classified') {
+            edge.classes = ' not-classified';
+            if (noEdgesWithAnnotations) {
               return;
             }
           } else if (id == 'edge-mature') {

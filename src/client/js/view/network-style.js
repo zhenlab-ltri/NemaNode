@@ -53,7 +53,7 @@ var cystyle = (function() {
       typ2: '#666666',
       juvenile: '#2A9EFE',
       mature: '#FF0000',
-      'not-imaged': '#228B22',
+      'not-classified': '#228B22',
       variable: '#d1cfcf',
       stable: 'black',
       'post-embryonic': '#990000'
@@ -397,10 +397,10 @@ var cystyle = (function() {
         }
       },
       {
-        selector: 'edge.not-imaged',
+        selector: 'edge.not-classified',
         css: {
-          'line-color': cytoscapeColors.coloursEdge['not-imaged'],
-          'target-arrow-color': cytoscapeColors.coloursEdge['not-imaged'],
+          'line-color': cytoscapeColors.coloursEdge['not-classified'],
+          'target-arrow-color': cytoscapeColors.coloursEdge['not-classified'],
           color: 'black'
         }
       },

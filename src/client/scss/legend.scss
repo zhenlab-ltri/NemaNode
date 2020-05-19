@@ -1,4 +1,4 @@
-#edge-juvenile, #edge-mature, #edge-not-imaged, #edge-stable, #edge-variable, #edge-post-embryonic {
+#edge-juvenile, #edge-mature, #edge-not-classified, #edge-stable, #edge-variable, #edge-post-embryonic {
   display: none;
 }
 #legend-nt {
@@ -110,8 +110,8 @@
   #edge-post-embryonic:before {
     color: map-get($edge-colors, pe);
   }
-  #edge-not-imaged:before {
-    color: map-get($edge-colors, notImaged);
+  #edge-not-classified:before {
+    color: map-get($edge-colors, notClassified);
   }
 }
 

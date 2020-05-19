@@ -131,20 +131,16 @@ ModelPrototype.makeCytoscapeEdge = function(
     width = Math.min(8, meanSyn * 1.5);
   }
 
-  let notImaged = annotations.includes('not-imaged');
   let label = datasets
     .map(dataset => {
-      return notImaged && dataset === 'adult' ? '?' : synapses[dataset] || 0;
+      return synapses[dataset] || 0;
     })
     .join(',');
 
   let longLabel = datasets
     .map(dataset => {
       let datasetName = DataService.getDatasetInfo(database, dataset).name;
-      let datasetLabel =
-        notImaged && dataset == 'adult'
-          ? 'Region not imaged'
-          : synapses[dataset] || 0;
+      let datasetLabel = synapses[dataset] || 0;
       return `${datasetName}: ${datasetLabel}`;
     })
     .join('\n');
@@ -157,7 +153,6 @@ ModelPrototype.makeCytoscapeEdge = function(
   // if an edge has multiple annotations, only the most important
   // annotation type will be shown color wise
   const ANNOTATION_ORDER = [
-    'not-imaged',
     'increase',
     'decrease',
     'stable',
@@ -166,7 +161,6 @@ ModelPrototype.makeCytoscapeEdge = function(
   ];
 
   const ANNOTATION_DISPLAY_LABEL_MAP = {
-    'not-imaged': 'not-imaged',
     'increase': 'mature',
     'decrease': 'juvenile',
     'stable': 'stable',

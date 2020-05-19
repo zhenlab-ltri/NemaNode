@@ -1227,9 +1227,6 @@
     "pre": "SIA",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 13,
       "adult": 13
@@ -1257,9 +1254,6 @@
     "pre": "SIADR",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 7,
       "adult": 7
@@ -1296,9 +1290,6 @@
     "pre": "SIBVL",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 30,
       "adult": 30
@@ -1308,9 +1299,6 @@
     "pre": "SIB",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 109,
       "adult": 109
@@ -1320,9 +1308,6 @@
     "pre": "SIBVR",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 37,
       "adult": 37
@@ -1332,9 +1317,6 @@
     "pre": "SIBDR",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 18,
       "adult": 18
@@ -1344,9 +1326,6 @@
     "pre": "SIBDL",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 24,
       "adult": 24
@@ -1392,9 +1371,6 @@
     "pre": "SIAVL",
     "post": "BodyWallMuscles",
     "type": "chemical",
-    "annotations": [
-      "not-imaged"
-    ],
     "synapses": {
       "l1": 3,
       "adult": 3
