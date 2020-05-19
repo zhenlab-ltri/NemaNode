@@ -75,6 +75,7 @@ CREATE TABLE connections (
   CONSTRAINT pk_connections PRIMARY KEY (dataset_id, pre, post, type),
   CONSTRAINT idx_connections_dataset_id FOREIGN KEY (dataset_id) REFERENCES datasets(id),
   INDEX idx_connections_id (id),
+  INDEX idx_connections_dataset_id (dataset_id),
   INDEX idx_connections_pre (pre),
   INDEX idx_connections_post (post),
   INDEX idx_connections_type (type),
