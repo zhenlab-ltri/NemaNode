@@ -32,7 +32,7 @@ let getTourSteps = view => {
         state: {
           input: ['AIY', 'ASEL'],
           database: 'head',
-          datasets: ['white_l4', 'white_ad'],
+          datasets: ['witvliet_2020_7', 'witvliet_2020_8'],
           nodeColor: 'type',
           layout: 'concentric',
           thresholdChemical: 3,

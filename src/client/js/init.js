@@ -116,7 +116,7 @@ $(document).ready(() => {
     })
     .catch(e => {
       let errorMsg =
-        'Cannot load data file!\nPlease contact us if the problem persists!';
+        'Cannot load data!\nPlease contact us if the problem persists!';
       alert(errorMsg);
       throw e;
     });

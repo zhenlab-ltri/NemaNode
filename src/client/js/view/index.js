@@ -11,14 +11,13 @@ const InfoView = require('./info');
 const LegendView = require('./legend');
 const NotificationView = require('./notification');
 const PopupView = require('./popup');
-const NeuronTrajectoryView = require('./neuron-trajectory/');
+//const NeuronTrajectoryView = require('./neuron-trajectory/');
 
 const BaseView = require('./base-view');
 
 class View extends BaseView {
   constructor(model) {
     super();
-
     this.model = model;
     this.cookies = new CookiesView(model);
     this.notification = new NotificationView(model);
@@ -30,8 +29,7 @@ class View extends BaseView {
     this.popup = new PopupView(model);
     this.info = new InfoView(model);
     this.help = new HelpView(model);
-
-    this.ntv = new NeuronTrajectoryView(model);
+    //this.ntv = new NeuronTrajectoryView(model);
   }
 }
 

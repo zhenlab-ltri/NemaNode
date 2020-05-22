@@ -81,10 +81,11 @@ let loadTrajectoryData = () => {
     trajectoryAxes[d.id] = d.axes;
   });
 
+
   fs.readdirSync(TRAJECTORIES_DATA_PATH).forEach(filename => {
     let filepath = path.resolve(TRAJECTORIES_DATA_PATH, filename);
     let name = path.parse(filename).name;
-    let [datasetId] = name.split('.');
+    let datasetId = name.split('.')[0];
     let trajectoriesJson = JSON.parse(fs.readFileSync(filepath));
 
     trajectories = trajectories.concat(
@@ -102,10 +103,10 @@ let loadTrajectoryData = () => {
             transformedCoord[axisInfo.axisIndex] = axisVal * axisInfo.axisTransform;
           });
 
-          // SEM L1 2 in particular has a unique rotation
+          // Dataset 4 in particular has a unique rotation
           // manually fix it for this one by rotating it about the y axis
           // so that its position is consistent with the other datasets
-          if( datasetId === 'SEM_L1_2' ){
+          if (datasetId == 'witvliet_2020_4'){
             let radRotation = axesInfo[1].rotation * ( Math.PI / 180 );
             let [x0, y0, z0] = transformedCoord;
 

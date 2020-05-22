@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS datasets;
 CREATE TABLE datasets (
   id VARCHAR(20) NOT NULL,
   collection VARCHAR(20) NOT NULL,
-  name VARCHAR(20) NOT NULL,
+  name VARCHAR(50) NOT NULL,
   description TEXT NOT NULL,
   time SMALLINT NOT NULL,
   visual_time SMALLINT NOT NULL,

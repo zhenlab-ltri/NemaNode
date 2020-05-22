@@ -9,10 +9,6 @@ let getNematodeDatasets = () => {
   return fetch('/api/datasets').then(res => res.json());
 };
 
-let getNematodeDatasetJson = ({ datasetId }) => {
-  return fetch(`/api/dataset-json?${qs.stringify({datasetId})}`).then( res => res.json());
-};
-
 let getNematodeConnections = opts => {
   return fetch(`/api/connections?${qs.stringify(opts)}`)
     .then(res => res.json())
@@ -121,11 +117,16 @@ let getTrajectoryNodeData = ({ nodeIds }) => {
         connectedNeuronNames: Array.from(connectedNeuronNames)
       };
     });
+  
+};
+
+let dataExport = () => {
+
 };
 
 module.exports = {
   getNematodeCells,
-  getNematodeDatasetJson,
+  dataExport,
   getNematodeConnections,
   getNematodeDatasets,
   getNematodeNeuronTrajectories,

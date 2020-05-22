@@ -86,16 +86,16 @@
     }
 
     h2 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 350;
-      padding: 10px 10px 6px 20px;
+      padding: 10px 10px 6px 15px;
     }
 
-    .download-dataset-item {
-      padding: 5px;
+    .download-dataset div {
+      padding: 3px 0px;
     }
 
-    .download-dataset-item:hover {
+    .download-dataset div:hover {
       color: $link-hover-color;
       cursor: pointer;
     }
