@@ -429,7 +429,9 @@ class Controller extends EventEmitter {
     let database = state['database'] || 'head';
     let allDatasets = DataService.getDatasetList(database);
     let datasets = intersection(allDatasets, state['datasets'] || []);
-    datasets = datasets.length > 0 ? datasets : allDatasets;
+    if (datasets.length == 0) {
+        datasets = database == 'head' ? ['witvliet_2020_7', 'witvliet_2020_8'] : allDatasets;
+    }
     let nodeColor = state['nodeColor'] || 'type';
     let layout = state['layout'] || 'concentric';
     let thresholdChemical = state['thresholdChemical'] || 3;
