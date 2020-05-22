@@ -1,7 +1,7 @@
 [
    {
       "id": "white_1986_whole",
-      "name": "White et al., 1986 compilation",
+      "name": "White et al., 1986 compilation (adult)",
       "type": "complete",
       "time": 60,
       "visualTime": 50,
@@ -9,7 +9,7 @@
    },
    {
       "id":"white_1986_jsh",
-      "name":"White et al., 1986, JSH",
+      "name":"White et al., 1986, JSH (L4)",
       "type":"head",
       "time":40,
       "visualTime":40,
@@ -17,7 +17,7 @@
    },
    {
       "id":"white_1986_n2u",
-      "name":"White et al., 1986, N2U",
+      "name":"White et al., 1986, N2U (adult)",
       "type":"head",
       "time":53.5,
       "visualTime":53.5,
@@ -25,7 +25,7 @@
    },
    {
       "id":"white_1986_jse",
-      "name":"White et al., 1986, JSE",
+      "name":"White et al., 1986, JSE (adult)",
       "type":"tail",
       "time":60,
       "visualTime":50,
@@ -33,7 +33,7 @@
    },
    {
       "id":"witvliet_2020_1",
-      "name":"Witvliet et al., 2020, Dataset 1",
+      "name":"Witvliet et al., 2020, Dataset 1 (L1)",
       "type":"head",
       "time":0,
       "visualTime":0.5,
@@ -58,7 +58,7 @@
    },
    {
       "id":"witvliet_2020_2",
-      "name":"Witvliet et al., 2020, Dataset 2",
+      "name":"Witvliet et al., 2020, Dataset 2 (L1)",
       "type":"head",
       "time":5,
       "visualTime":4.5,
@@ -83,7 +83,7 @@
    },
    {
       "id":"witvliet_2020_3",
-      "name":"Witvliet et al., 2020, Dataset 3",
+      "name":"Witvliet et al., 2020, Dataset 3 (L1)",
       "type":"head",
       "time":8,
       "visualTime":8.5,
@@ -108,7 +108,7 @@
    },
    {
       "id":"witvliet_2020_4",
-      "name":"Witvliet et al., 2020, Dataset 4",
+      "name":"Witvliet et al., 2020, Dataset 4 (L1)",
       "type":"head",
       "time":16,
       "visualTime":15,
@@ -134,7 +134,7 @@
    },
    {
       "id":"witvliet_2020_5",
-      "name":"Witvliet et al., 2020, Dataset 5",
+      "name":"Witvliet et al., 2020, Dataset 5 (L2)",
       "type":"head",
       "time":23,
       "visualTime":23,
@@ -159,7 +159,7 @@
    },
    {
       "id":"witvliet_2020_6",
-      "name":"Witvliet et al., 2020, Dataset 6",
+      "name":"Witvliet et al., 2020, Dataset 6 (L3)",
       "type":"head",
       "time":27,
       "visualTime":27,
@@ -184,7 +184,7 @@
    },
    {
       "id":"witvliet_2020_7",
-      "name":"Witvliet et al., 2020, Dataset 7",
+      "name":"Witvliet et al., 2020, Dataset 7 (adult)",
       "type":"head",
       "time":50,
       "visualTime":45.5,
@@ -209,7 +209,7 @@
    },
    {
       "id":"witvliet_2020_8",
-      "name":"Witvliet et al., 2020, Dataset 8",
+      "name":"Witvliet et al., 2020, Dataset 8 (adult)",
       "type":"head",
       "time":50,
       "visualTime":49.5,
