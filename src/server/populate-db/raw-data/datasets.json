@@ -1,11 +1,11 @@
 [
    {
       "id": "white_1986_whole",
-      "name": "White et al., 1986, Compilation",
+      "name": "White et al., 1986 compilation",
       "type": "complete",
       "time": 60,
       "visualTime": 50,
-      "description": "Near-complete adult compiled by Varshney et al., 2011"
+      "description": "Whole adult compiled by Varshney et al., 2011"
    },
    {
       "id":"white_1986_jsh",
