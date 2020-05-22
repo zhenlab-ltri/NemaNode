@@ -1,4 +1,4 @@
-let queryCells = async connection => {
+let queryCells = connection => {
   let cellsSql = `
     SELECT name, class, type, neurotransmitter, embryonic, inhead, intail
     FROM neurons

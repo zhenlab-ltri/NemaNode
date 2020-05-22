@@ -76,6 +76,8 @@
 
 
 #legend-edges {
+  padding-left: 32px; /* size of :before to ensure */
+  text-indent: -32px; /* second line is indented */
   margin-top: 16px;
   li {
     @extend %legend-item;
