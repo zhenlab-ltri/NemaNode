@@ -33,10 +33,10 @@ let queryConnections = (connection, opts) => {
   let connectionsSql = `
     SELECT pre, post, type, dataset_id, synapses
     FROM connections
-    WHERE (pre in (${cells}) ${
+    WHERE (pre IN (${cells}) ${
       includeNeighboringCells ? 'OR' : 'AND'
-    } post in (${cells}))
-      AND dataset_id in (${datasetIds})
+    } post IN (${cells}))
+      AND dataset_id IN (${datasetIds})
       AND (
         (type = 'chemical' && synapses >= ${thresholdChemical})
         OR (type = 'electrical' && synapses >= ${thresholdElectrical})

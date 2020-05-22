@@ -1,15 +1,15 @@
 const qs = require('query-string');
 const { unique } = require('./util');
 
-let getNematodeCells = () => {
-  return fetch('/api/cells').then(res => res.json());
+const getNematodeCells = () => {
+  return fetch('/api/cells').then((res) => res.json());
 };
 
-let getNematodeDatasets = () => {
-  return fetch('/api/datasets').then(res => res.json());
+const getNematodeDatasets = () => {
+  return fetch('/api/datasets').then((res) => res.json());
 };
 
-let getNematodeConnections = opts => {
+const getNematodeConnections = (opts) => {
   return fetch(`/api/connections?${qs.stringify(opts)}`)
     .then(res => res.json())
     .then(res => {
@@ -18,7 +18,7 @@ let getNematodeConnections = opts => {
     });
 };
 
-let getNematodeNeuronTrajectories = ({ neuronNames, datasetId }) => {
+const getNematodeNeuronTrajectories = ({ neuronNames, datasetId }) => {
   return fetch(
     `/api/neuron-trajectories?${qs.stringify({
       neuronName: neuronNames,
@@ -36,7 +36,11 @@ let getNematodeNeuronTrajectories = ({ neuronNames, datasetId }) => {
     });
 };
 
-let getTrajectoryNodeData = ({ nodeIds }) => {
+const downloadConnectivity = (opts) => {
+  return fetch(`/api/download-connectivity?${qs.stringify(opts)}`).then((res) => res.json());
+};
+
+/*let getTrajectoryNodeData = ({ nodeIds }) => {
   let uniqueNodeIds = unique(nodeIds);
   return fetch(`/api/trajectory-node-data?${qs.stringify({ nodeIds: uniqueNodeIds })}`)
     .then(res => res.json())
@@ -118,17 +122,13 @@ let getTrajectoryNodeData = ({ nodeIds }) => {
       };
     });
   
-};
-
-let dataExport = () => {
-
-};
+};*/
 
 module.exports = {
   getNematodeCells,
-  dataExport,
   getNematodeConnections,
   getNematodeDatasets,
   getNematodeNeuronTrajectories,
-  getTrajectoryNodeData
+  //getTrajectoryNodeData,
+  downloadConnectivity,
 };

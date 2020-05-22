@@ -8,8 +8,6 @@ const $ = require('jquery');
 const cytoscape = require('cytoscape');
 cytoscape.warnings(false);
 
-const liveReloadSync = require('./live-reload-sync');
-
 const Model = require('./model');
 const Controller = require('./controller');
 const View = require('./view');
@@ -36,9 +34,13 @@ $(document).ready(() => {
         window.v = view;
         window.c = controller;
         window.ds = DataService;
-        liveReloadSync();
         cytoscape.warnings(true);
         console.log('Running in debug mode');
+
+        // Live reload.
+        let script = document.createElement('script');
+        script.src = 'http://' + window.location.hostname + ':35729/livereload.js';
+        document.head.insertBefore(script, document.head.firstChild);
       }
 
       // Mobile-specific initialization.

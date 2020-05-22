@@ -5,19 +5,19 @@ let queryCells = async connection => {
     ORDER BY name
   `;
 
-  let cellsTrajectorySql = `
+  /*let cellsTrajectorySql = `
     SELECT DISTINCT neuron_name from trajectories
-  `;
+  `;*/
 
-  let cellsWithTrajectories = await connection.query(cellsTrajectorySql).map( c => `${c.neuron_name}` );
-  let uniqueCellsWithTrajectories = new Set(cellsWithTrajectories);
+  //let cellsWithTrajectories = await connection.query(cellsTrajectorySql).map( c => `${c.neuron_name}` );
+  //let uniqueCellsWithTrajectories = new Set(cellsWithTrajectories);
 
   return connection.query(cellsSql).map(cell => {
     cell.intail = !!cell.intail; // transform 1, 0 into booleans
     cell.inhead = !!cell.inhead;
     cell.embryonic = !!cell.embryonic;
     cell.name = `${cell.name}`;
-    cell.hasTrajectory = uniqueCellsWithTrajectories.has(cell.name);
+    //cell.hasTrajectory = uniqueCellsWithTrajectories.has(cell.name);
 
     return cell;
   });

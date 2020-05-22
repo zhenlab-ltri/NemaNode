@@ -6,23 +6,19 @@ const ini = require('ini');
 const queryCells = require('./nematode-cells');
 const queryDatasets = require('./nematode-datasets');
 const queryConnections = require('./nematode-connections');
-const {
+const downloadConnectivity = require('./download-data');
+/*const {
   queryTrajectoryNodeData,
   queryNeuronTrajectories,
   datasetsWithATrajectory,
   getDatasetsThatContainNeuronTrajectories
-} = require('./nematode-neuron-trajectories');
+} = require('./nematode-neuron-trajectories');*/
 
 const DB_INI_FILE = '../../../database_config.ini';
-const TEST_DB_INI_FILE = '../../../test_database_config.ini';
 const dbIni = ini.parse(
   fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8')
 );
-const testDbIni = ini.parse(
-  fs.readFileSync(path.join(__dirname, TEST_DB_INI_FILE), 'utf-8')
-);
 const DEFAULT_DB_OPTS = dbIni.mysql;
-const TEST_DB_OPTS = testDbIni.mysql;
 
 let connect = opts => {
   let { database, user, password } = Object.assign(DEFAULT_DB_OPTS, opts);
@@ -36,32 +32,43 @@ let connect = opts => {
     });
 };
 
-let connectTest = () => connect(TEST_DB_OPTS);
-
-let queryNematodeCells = async () => {
-  let connection = await connect();
-  let cells = await queryCells(connection);
+const queryNematodeCells = async () => {
+  const connection = await connect();
+  const cells = await queryCells(connection);
   await connection.destroy();
-
   return cells;
 };
 
-let queryNematodeDatasets = async () => {
-  let connection = await connect();
-  let datasets = await queryDatasets(connection);
+const queryNematodeDatasets = async () => {
+  const connection = await connect();
+  const datasets = await queryDatasets(connection);
   await connection.destroy();
-
   return datasets;
 };
 
-let queryNematodeDatasetJson = async opts => {
-  let connection = await connect();
-  let datasetJSON = await queryDatasetJson(connection, opts);
+const queryNematodeConnections = async (opts) => {
+  const connection = await connect();
+  const connections = await queryConnections(connection, opts);
   await connection.destroy();
-
-  return datasetJSON;
+  return connections;
 };
 
+const downloadNematodeConnectivity = async (opts) => {
+  const connection = await connect();
+  const downloadFile = await downloadConnectivity(connection, opts);
+  await connection.destroy();
+  return downloadFile;
+};
+
+/*
+
+
+let queryDatasetsWithATrajectory = async opts => {
+  let connection = await connect();
+  let datasets = await datasetsWithATrajectory(connection, opts);
+  await connection.destroy();
+  return datasets;
+};
 let queryNematodeNeuronTrajectories = async opts => {
   let connection = await connect();
   let trajectories = await queryNeuronTrajectories(connection, opts);
@@ -84,33 +91,17 @@ let queryNematodeTrajectoryNodeData = async opts => {
   await connection.destroy();
 
   return trajectoryNodeData;
-};
-
-let queryDatasetsWithATrajectory = async opts => {
-  let connection = await connect();
-  let datasets = await datasetsWithATrajectory(connection, opts);
-  await connection.destroy();
-
-  return datasets;
-};
-
-let queryNematodeConnections = async opts => {
-  let connection = await connect();
-  let connections = await queryConnections(connection, opts);
-  await connection.destroy();
-
-  return connections;
-};
+};*/
 
 module.exports = {
   connect,
-  connectTest,
   queryNematodeCells,
   queryNematodeDatasets,
-  queryNematodeDatasetJson,
   queryNematodeConnections,
-  queryNematodeTrajectoryNodeData,
-  queryNematodeNeuronTrajectories,
-  queryDatasetsWithATrajectory,
-  queryDatasetTrajectories
+  downloadNematodeConnectivity
+  //queryDatasetsWithATrajectory,
+  //queryNematodeDatasetJson,
+  //queryNematodeTrajectoryNodeData,
+  //queryNematodeNeuronTrajectories,
+  //queryDatasetTrajectories
 };

@@ -2,7 +2,7 @@ const $ = require('jquery');
 const { saveAs } = require('file-saver');
 const BaseView = require('./base-view');
 
-//const { getNematodeDatasetJson } = require('../services');
+const { downloadConnectivity } = require('../services');
 
 class HelpView extends BaseView {
   constructor(model) {
@@ -72,6 +72,12 @@ class HelpView extends BaseView {
       scroll: false,
       drag: this.onDrag
     });
+
+    // Downloads.
+    $('.download-dataset div').on('click', e => {
+      const datasetId = $(e.currentTarget).data('dataset');
+      this.downloadDataset(datasetId);
+    });
   }
 
   onDrag(e, ui) {
@@ -104,49 +110,36 @@ class HelpView extends BaseView {
     this.$body.css('height', this.$menu.height());
   }
   showTopic(topic) {
-    let { $content, $menu, $arrowBack, $body } = this;
+    const { $content, $menu, $arrowBack, $body } = this;
 
     $content.children().hide();
     $('#' + topic + '-content').show()
 
 
-/*
-    $content.load('help/' + topic + '.html', (response, status) => {
-      if (status == 'error') {
-        $content.html(
-          '<p>Could not load the content. Please ensure that you are online.</p>'
-        );
-      }
+    let distanceFromBottom =
+    $(window).height() - $body.offset().top - $body.outerHeight();
+    let maxHeight = Math.min($body.height() + distanceFromBottom - 10, 800);
+    let contentHeight = $content.height();
 
-      let distanceFromBottom =
-        $(window).height() - $body.offset().top - $body.outerHeight();
-      let maxHeight = Math.min($body.height() + distanceFromBottom - 10, 800);
-      let contentHeight = $content.height();
-
-      $body
-        .css('overflow', maxHeight < contentHeight ? 'auto' : 'hidden')
-        .css('height', Math.min(maxHeight, $content.height()));
-
-
-      if( topic === 'download-data' ){
-        $('.download-dataset-item').on('click', e => {
-          let datasetId = e.currentTarget.id;
-
-          this.downloadDataset(datasetId);
-        });
-      }
-    });*/
+    $body
+      .css('overflow', maxHeight < contentHeight ? 'auto' : 'hidden')
+      .css('height', Math.min(maxHeight, $content.height()));
 
     $menu.hide();
     $content.show();
     $arrowBack.show();
   }
 
-  downloadDataset(datasetId){
-    /*getNematodeDatasetJson({datasetId}).then( json => {
-      let blob = new Blob([JSON.stringify(json, null, 2)], {type: "text/plain;charset=utf-8"});
-      saveAs(blob, `${datasetId}.json`);
-    });*/
+  downloadDataset(datasetId) {
+    downloadConnectivity({datasetId}).then((json) => {
+
+      const keys = Object.keys(json[0]);
+      const rows = json.map((connection) => keys.map((key) => connection[key]).join('\t'));
+      const csv = keys.join('\t') + '\n' + rows.join('\n')
+
+      let blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, `${datasetId}.csv`);
+    });
   }
 
   hide() {
