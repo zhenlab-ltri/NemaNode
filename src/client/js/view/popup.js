@@ -131,13 +131,13 @@ class PopupView extends BaseView {
         hide: onHide
       },
       items: {
-        viewTrajectory: {
+        /*viewTrajectory: {
           name: '<u>V</u>iew in 3D',
           isHtmlName: true,
           title: 'View 3D neuron trajectory',
           icon: 'neuron',
           className: 'priority'
-        },
+        },*/
         openGroup: {
           name: '<u>O</u>pen group',
           isHtmlName: true,
