@@ -50,7 +50,7 @@
           <!-- Templates used in the settings -->
           <div id="dataset-bookmark-template" class="bookmark">
             <div class="dataset-tooltip">
-              <h1> <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+              <h1> <small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></h1>
               <p></p>
             </div>
             <div class="mark">
@@ -61,7 +61,7 @@
 
           <!-- Databases and datasets -->
           <div class="group">
-            <h1>Dataset <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+            <h1>Dataset <small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></h1>
             <div id="set-database" class="selectbox">
               <div class="sel-placeholder"></div>
               <div class="option-container">
@@ -213,7 +213,7 @@
       <ol id="legend-edges">
         <li id="edge-typ0" class="basic">Chemical synapse</li>
         <li id="edge-typ2" class="basic" style="margin-bottom: 10px;">Gap junction</li>
-        <li id="edge-stable">Stable<small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></li>
+        <li id="edge-stable">Stable<small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></li>
         <li id="edge-variable">Variable</li>
         <li id="edge-mature">Developmentally dynamic (added)</li>
         <li id="edge-juvenile">Developmentally dynamic (weakened)</li>
@@ -266,8 +266,7 @@
           </ol>
           <h3>Data info</h3>
           <ol>
-            <li id="dataset-info" class="icon-connectivity">Dataset info</li>
-            <li id="neuron-info" class="icon-neuron">Neuron info</li>
+            <li id="data-sources" class="icon-connectivity">Data sources</li>
             <li id="download-data" class="icon-download">Download data</li>
             <li id="cite-us" class="icon-reference">Cite us</li>
           </ol>
@@ -277,7 +276,75 @@
             <li id="contact-us" class="icon-question_answer">Contact us</li>
           </ol>
         </div>
-        <div class="content"></div>
+        <div class="content">
+          <div id="data-sources-content">
+            <h1>Data sources</h1>
+            <div class="p">
+            <p>
+              Head and tail datasets: 
+              <a href="https://www.ncbi.nlm.nih.gov/pubmed/22462104" target="_blank">White et al., 1986</a>.
+            </p>
+            <p>
+              Complete dataset: 
+              <a href="https://www.ncbi.nlm.nih.gov/pubmed/22462104" target="_blank">White et al., 1986</a>
+              and
+              <a href="https://www.ncbi.nlm.nih.gov/pubmed/21304930" target="_blank">Varshney et al., 2011</a>.
+            </p>
+            </div> 
+          </div>
+          <div id="download-data-content">
+            <h1>Download data</h1>
+            <h2>Witvliet et al., 2020</h2>
+            <div class="p download-dataset">
+              <div data-dataset="witvliet_2020_1">Dataset 1 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_2">Dataset 2 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_3">Dataset 3 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_4">Dataset 4 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_5">Dataset 5 (L2 brain)</div>
+              <div data-dataset="witvliet_2020_6">Dataset 6 (L3 brain)</div>
+              <div data-dataset="witvliet_2020_7">Dataset 7 (Adult brain)</div>
+              <div data-dataset="witvliet_2020_8">Dataset 8 (Adult brain)</div>
+            </div>
+            <h2>White et al., 1986</h2>
+            <div class="p download-dataset">
+              <div data-dataset="white_1986_jsh">JSH (L4 brain)</div>
+              <div data-dataset="white_1986_n2u">N2U (adult brain)</div>
+              <div data-dataset="white_1986_jse">JSE (adult tail)</div>
+              <div data-dataset="white_1986_whole">Whole-animal compilation (data added by Varshey et al., 2011)</div>
+            </div>    
+          </div>
+          <div id="cite-us-content">
+            <h1>Cite us</h1>
+            <div class="p">
+              <p>
+                If you use NemaNode, please cite <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet et al., 2020</a>.
+              </p>
+              <p>
+                In addition, please cite the original <span class="a open-help" data-topic="data-sources">data sources</span> for the datasets you are examining.
+              </p>
+            </div>            
+          </div>
+          <div id="contribute-content">
+            <h1>Contribute</h1>
+            <div class="p">
+              <p>
+                Unfortunately, NemaNode is not open source yet. 
+                However, if you would like to contribute, please <span class="a open-help" data-topic="contact-us">contact us</span>, and we may be able to change that.
+              </p>
+            </div>            
+          </div>
+          <div id="contact-us-content">
+            <h1>Contact us</h1>
+            <div class="p">
+              <p>
+                NemaNode is developed by the <a href="https://www.zhenlab.com/" target="_blank">Zhen</a> and <a href="https://scholar.harvard.edu/aravisamuel" target="_blank">Samuel</a> labs.
+              </p>
+              <p>
+                Please send all bug reports and feedback to <a href="mailto:dwitvliet@fas.harvard.edu">dwitvliet@fas.harvard.edu</a>.
+              </p>
+            </div>            
+          </div>
+        </div>
       </div>
     </div>
     <div id="tour">
