@@ -13,10 +13,10 @@ class LegendView extends BaseView {
 
     this.$nodeListType = $('#legend-type');
     this.$nodeListNt = $('#legend-nt');
-    this.$nodeItems = $('#legend-nt li, #legend-type li');
+    this.$nodeItems = $('#legend .nodes li');
 
-    this.$edgeItems = $('#legend-edges li');
-    this.$edgeItemStageSpecific = $('#edge-juvenile, #edge-mature, #edge-variable, #edge-stable, #edge-post-embryonic');
+    this.$edgeItems = $('#legend .edges li');
+    this.$annotationLegend = $('#legend-annotations');
 
     model.on('nodeColorChanged', nodeColor =>
       this.handleNodeColorChange(nodeColor)
@@ -81,11 +81,11 @@ class LegendView extends BaseView {
     });
 
     if (anyAnnotations) {
-      this.$edgeItemStageSpecific.show();
+      this.$annotationLegend.show();
     } else {
-      this.$edgeItemStageSpecific.hide();
+      this.$annotationLegend.hide();
 
-      if (this.$edgeItemStageSpecific.hasClass('active')) {
+      if (this.$annotationLegend.hasClass('active')) {
         this.$edgeItems.removeClass('active').removeClass('faded');
         this.emit('highlightChanged', this.getHighlighted());
       }

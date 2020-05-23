@@ -1,20 +1,8 @@
-#edge-juvenile, #edge-mature, #edge-not-classified, #edge-stable, #edge-variable, #edge-post-embryonic {
-  display: none;
-}
 #legend-nt {
   display: none;
 }
-
-#legend {
-  @extend %non-selectable;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: $site-padding;
-  width: 180px;
-  font-size: 16px; 
-  z-index: 10;
-  line-height: 20px;
+#legend-annotations {
+  display: none;
 }
 
 %legend-item {
@@ -41,28 +29,56 @@
   z-index: 10;
 }
 
+#legend {
+  @extend %non-selectable;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: $site-padding;
+  width: 180px;
+  font-size: 16px; 
+  z-index: 10;
+  line-height: 20px;
 
-#legend-type, #legend-nt {
-  li {
-    @extend %legend-item;
+  .nodes {
+    li {
+      @extend %legend-item;
+    }
+    li::before {
+      @extend %legend-item-before;
+      content: '';
+      border-radius: 50%;
+    }
+    #type-muscle::before, #type-others::before, #nt-n::before {
+      height: 12px;
+      width: 20px;
+      border-radius: 3px;
+      margin: 5px 6px 0 6px;
+    }
+    #nt-n::before {
+      height: calc(12px - 2px);
+      width: calc(20px - 2px);
+      border: 1px solid #C8C8C8;
+    }
   }
-  li::before {
-    @extend %legend-item-before;
-    content: '';
-    border-radius: 50%;
-  }
-  #type-muscle::before, #type-others::before, #nt-n::before {
-    height: 12px;
-    width: 20px;
-    border-radius: 3px;
-    margin: 5px 6px 0 6px;
-  }
-  #nt-n::before {
-    height: calc(12px - 2px);
-    width: calc(20px - 2px);
-    border: 1px solid #C8C8C8;
+
+  .edges {
+    padding-left: 32px; /* size of :before to ensure */
+    text-indent: -32px; /* second line is indented */
+    margin-top: 16px;
+    li {
+      @extend %legend-item;
+      @extend .icon-long-arrow-right;
+      &::before {
+        @extend %legend-item-before;
+        line-height: 16px;
+        font-family: icomoon;
+      }
+    }
   }
 }
+
+
 @for $i from 1 through 6 {
   #legend-type li:nth-child(#{$i}):before {
     background-color: map-get($type-colors, $i);
@@ -73,47 +89,31 @@
     background-color: map-get($nt-colors, $i);
   }
 }
-
-
-#legend-edges {
-  padding-left: 32px; /* size of :before to ensure */
-  text-indent: -32px; /* second line is indented */
-  margin-top: 16px;
-  li {
-    @extend %legend-item;
-    @extend .icon-long-arrow-right;
-    &::before {
-      @extend %legend-item-before;
-      line-height: 16px;
-      font-family: icomoon;
-    }
-  }
-  #edge-typ2 {
-    @extend .icon-gapjunction;
-  }
-  #edge-typ0:before {
-    color: map-get($edge-colors, typ0);
-  }
-  #edge-typ2:before {
-    color: map-get($edge-colors, typ2);
-  }
-  #edge-juvenile:before {
-    color: map-get($edge-colors, l1);
-  }
-  #edge-mature:before {
-    color: map-get($edge-colors, ad);
-  }
-  #edge-stable:before {
-    color: map-get($edge-colors, st);
-  }
-  #edge-variable:before {
-    color: map-get($edge-colors, vr);
-  }
-  #edge-post-embryonic:before {
-    color: map-get($edge-colors, pe);
-  }
-  #edge-not-classified:before {
-    color: map-get($edge-colors, notClassified);
-  }
+#edge-typ2 {
+  @extend .icon-gapjunction;
+}
+#edge-typ0:before {
+  color: map-get($edge-colors, typ0);
+}
+#edge-typ2:before {
+  color: map-get($edge-colors, typ2);
+}
+#edge-juvenile:before {
+  color: map-get($edge-colors, l1);
+}
+#edge-mature:before {
+  color: map-get($edge-colors, ad);
+}
+#edge-stable:before {
+  color: map-get($edge-colors, st);
+}
+#edge-variable:before {
+  color: map-get($edge-colors, vr);
+}
+#edge-post-embryonic:before {
+  color: map-get($edge-colors, pe);
+}
+#edge-not-classified:before {
+  color: map-get($edge-colors, notClassified);
 }
 

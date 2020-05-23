@@ -256,11 +256,18 @@ $sidenav-padding: 16px;
     }
     label {
       @extend %gray-border;
-      float: left; /* prevent 100% width */
       height: 20px;
       line-height: 20px;
+    }
+    small {
+      height: 24px;
+      line-height: 24px;
+    }
+    label, small {
+      float: left; /* prevent 100% width */
       padding: 0 5px;
     }
+    
   }
 
   /* Big buttons */

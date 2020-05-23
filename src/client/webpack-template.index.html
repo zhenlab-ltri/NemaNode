@@ -171,7 +171,7 @@
             </div>
             <div class="checkbox">
               <input type="checkbox" id="show-connection-color" />
-              <label for="show-connection-color">Connection Color</label>
+              <label for="show-connection-color">Types of connections</label> <small><i class="icon-question-circle-o smallhelp" data-topic="annotations"></i></small>
             </div>
           </div>
 
@@ -191,7 +191,7 @@
     <!-- Legend -->
     <div id="legend-toggle"><i class="icon-list-ul"></i></div>
     <div id="legend">
-      <ol id="legend-type">
+      <ol id="legend-type" class="nodes">
         <li id="type-sensory">Sensory neuron</li>
         <li id="type-inter">Interneuron</li>
         <li id="type-motor">Motor neuron</li>
@@ -199,7 +199,7 @@
         <li id="type-muscle">Muscle</li>
         <li id="type-others">Other</li>
       </ol>
-      <ol id="legend-nt">
+      <ol id="legend-nt" class="edges">
         <li id="nt-a">Acetylcholine</li>
         <li id="nt-d">Dopamine</li>
         <li id="nt-g">GABA</li>
@@ -210,9 +210,11 @@
         <li id="nt-u">Unknown</li>
         <li id="nt-n">Non-neuronal</li>
       </ol>
-      <ol id="legend-edges">
+      <ol id="legend-edges" class="edges">
         <li id="edge-typ0" class="basic">Chemical synapse</li>
         <li id="edge-typ2" class="basic" style="margin-bottom: 10px;">Gap junction</li>
+      </ol>
+      <ol id="legend-annotations" class="edges">
         <li id="edge-stable">Stable <small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></li>
         <li id="edge-variable">Variable</li>
         <li id="edge-mature">Developmentally dynamic (added)</li>
@@ -266,7 +268,8 @@
           </ol>
           <h3>Data info</h3>
           <ol>
-            <li id="data-sources" class="icon-connectivity">Data sources</li>
+            <li id="data-sources" class="icon-neuron">Data sources</li>
+            <li id="annotations" class="icon-connectivity">Types of connections</li>
             <li id="download-data" class="icon-download">Download data</li>
             <li id="cite-us" class="icon-reference">Cite us</li>
           </ol>
@@ -291,6 +294,39 @@
               <a href="https://www.ncbi.nlm.nih.gov/pubmed/21304930" target="_blank">Varshney et al., 2011</a>.
             </p>
             </div> 
+          </div>
+          <div id="annotations-content">
+            <h1>Types of connections</h1>
+            <div class="p">
+              Connections were classified by their change in synapse number across developmental 
+              stages by <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet 
+              et al., 2020</a>.
+            </div>
+            <h2>Stable connections</h2>
+            <div class="p">
+              Present from birth to adulthood.
+            </div>
+            <h2>Developmentally dynamic connections</h2>
+            <div class="p">
+              Significantly increase or decrease their relative strength in a stereotyped manner, 
+              sometimes even forming new connections or eliminating existing connections at specific
+              life stages.
+            </div>
+            <h2>Variable connections</h2>
+            <div class="p">
+              Exhibit no consistent trend in their changing synapse numbers, and are not present in
+              every animal.
+            </div>
+            <h2>Post-embryonic connections</h2>
+            <div class="p">
+              Are formed between neurons that are born or differentiate after birth.
+            </div>
+            <h2>Not classified connections</h2>
+            <div class="p">
+              Were not found in any of the datasets reconstructed by 
+              <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet et al., 
+              2020</a>, likely a variable connection or a connection outside the brain.
+            </div>
           </div>
           <div id="download-data-content">
             <h1>Download data</h1>
@@ -357,7 +393,7 @@
     </div>
 
     <!-- neuron trajectory viewer -->
-
+    <!--
     <vue-draggable-resizable
       id="ntv"
       drag-handle="#ntv-move"
@@ -565,6 +601,7 @@
         </div>
         </div>
       </vue-draggable-resizable>
+    -->
     <!-- No script -->
     <noscript><div id="noscript">Please enable JavaScript or upgrade to <a href="https://browsehappy.com/‎">a browser that supports it</a>.</div></noscript>
 
