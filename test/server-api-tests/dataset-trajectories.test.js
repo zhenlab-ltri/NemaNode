@@ -1,9 +1,9 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
 
 const ini = require('ini');
 const fs = require('fs');
 const path = require('path');
-
 const db = require('../../src/server/db');
 
 const { getDatasetsThatContainNeuronTrajectories } = require('../../src/server/db/nematode-neuron-trajectories');

@@ -31,7 +31,7 @@ class Model extends EventEmitter {
     //this.showPostemb;
     //this.thresholdChemical;
     //this.thresholdElectrical;
-    //this.showConnectionColor;
+    //this.showAnnotations;
 
     this.legendItems = [];
 
@@ -89,7 +89,7 @@ class Model extends EventEmitter {
       groups: this.groups,
       nodeColor: this.nodeColor,
       showEdgeLabel: this.showEdgeLabel,
-      showConnectionColor: this.showConnectionColor,
+      showAnnotations: this.showAnnotations,
       positions: this.positions,
       lockedPositions: this.lockedPositions,
       layout: this.layout
@@ -149,7 +149,7 @@ class Model extends EventEmitter {
       showIndividual: this.showIndividual,
       showEdgeLabel: this.showEdgeLabel,
       showPostemb: this.showPostemb,
-      showConnectioncolor: this.showConnectionColor,
+      showAnnotations: this.showAnnotations,
       input: this.input.slice(),
       hidden: this.hidden.slice(),
       split: this.split.slice(),

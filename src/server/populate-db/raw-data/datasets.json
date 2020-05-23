@@ -1,0 +1,235 @@
+[
+   {
+      "id": "white_1986_whole",
+      "name": "White et al., 1986 compilation (adult)",
+      "type": "complete",
+      "time": 60,
+      "visualTime": 50,
+      "description": "Whole adult compiled by Varshney et al., 2011"
+   },
+   {
+      "id":"white_1986_jsh",
+      "name":"White et al., 1986, JSH (L4)",
+      "type":"head",
+      "time":40,
+      "visualTime":40,
+      "description":"L4 legacy dataset<br />Muscles: <i>Zhen lab, 2020</i>"
+   },
+   {
+      "id":"white_1986_n2u",
+      "name":"White et al., 1986, N2U (adult)",
+      "type":"head",
+      "time":53.5,
+      "visualTime":53.5,
+      "description":"Adult legacy dataset<br />Muscles: <i>Zhen lab, 2020</i>"
+   },
+   {
+      "id":"white_1986_jse",
+      "name":"White et al., 1986, JSE (adult)",
+      "type":"tail",
+      "time":60,
+      "visualTime":50,
+      "description":"Adult legacy tail with pre-anal ganglion"
+   },
+   {
+      "id":"witvliet_2020_1",
+      "name":"Witvliet et al., 2020, Dataset 1 (L1)",
+      "type":"head",
+      "time":0,
+      "visualTime":0.5,
+      "description":"~0 hours after birth",
+      "axes": [
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_2",
+      "name":"Witvliet et al., 2020, Dataset 2 (L1)",
+      "type":"head",
+      "time":5,
+      "visualTime":4.5,
+      "description":"~5 hours after birth",
+      "axes": [
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_3",
+      "name":"Witvliet et al., 2020, Dataset 3 (L1)",
+      "type":"head",
+      "time":8,
+      "visualTime":8.5,
+      "description":"~8 hours after birth",
+      "axes": [
+         {
+            "face": "left",
+            "axisIndex": 2,
+            "axisTransform": -1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_4",
+      "name":"Witvliet et al., 2020, Dataset 4 (L1)",
+      "type":"head",
+      "time":16,
+      "visualTime":15,
+      "description":"~16 hours after birth",
+      "axes": [
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1,
+            "rotation": -45
+         },
+         {
+            "face": "left",
+            "axisIndex": 2,
+            "axisTransform": -1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_5",
+      "name":"Witvliet et al., 2020, Dataset 5 (L2)",
+      "type":"head",
+      "time":23,
+      "visualTime":23,
+      "description":"~23 hours after birth",
+      "axes": [
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "posterior",
+            "axisIndex": 0,
+            "axisTransform": -1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_6",
+      "name":"Witvliet et al., 2020, Dataset 6 (L3)",
+      "type":"head",
+      "time":27,
+      "visualTime":27,
+      "description":"~27 hours after birth",
+      "axes": [
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_7",
+      "name":"Witvliet et al., 2020, Dataset 7 (adult)",
+      "type":"head",
+      "time":50,
+      "visualTime":45.5,
+      "description":"~50 hours after birth",
+      "axes": [
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         }
+      ]
+   },
+   {
+      "id":"witvliet_2020_8",
+      "name":"Witvliet et al., 2020, Dataset 8 (adult)",
+      "type":"head",
+      "time":50,
+      "visualTime":49.5,
+      "description":"~50 hours after birth",
+      "axes": [
+         {
+            "face": "anterior",
+            "axisIndex": 0,
+            "axisTransform": 1
+         },
+         {
+            "face": "dorsal",
+            "axisIndex": 1,
+            "axisTransform": -1
+         },
+         {
+            "face": "right",
+            "axisIndex": 2,
+            "axisTransform": 1
+         }
+      ]
+   }
+ ]

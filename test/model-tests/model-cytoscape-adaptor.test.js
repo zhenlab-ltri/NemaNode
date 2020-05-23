@@ -1,4 +1,6 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
+
 const ini = require('ini');
 const fs = require('fs');
 const path = require('path');
@@ -127,14 +129,9 @@ test('model cytoscape edge creation', function(){
     "lockedPositions": []
   };
 
-  attrs.annotations = ['decrease', 'increase', 'not-imaged'];
+  attrs.annotations = ['decrease', 'increase'];
 
-  expect( m.makeCytoscapeEdge( u, v, type, attrs, modelState ).classes.includes('juvenile mature not-imaged') ).toEqual( true );
-
-  modelState.datasets = ['adult'];
-  modelState.database = 'complete';
-
-  expect( m.makeCytoscapeEdge( u, v, type, attrs, modelState ).data.label_long.includes('Region not imaged') ).toEqual( true );
+  expect( m.makeCytoscapeEdge( u, v, type, attrs, modelState ).classes.includes('juvenile mature') ).toEqual( true );
 
 });
 
@@ -1011,8 +1008,7 @@ test('closed groups with members inherit the edges of their members and the edge
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];
@@ -1050,7 +1046,7 @@ test('closed groups with members inherit the edges of their members and the edge
   let res = m.convertModelToCytoscape( connections, updateType, modelState);
 
   expect( Object.keys(res.edges) ).toEqual( ['0-0-AIYR'] );
-  expect( res.edges['0-0-AIYR'].classes ).toEqual( 'mature juvenile not-imaged' );
+  expect( res.edges['0-0-AIYR'].classes ).toEqual( 'mature juvenile' );
 });
 
 
@@ -1093,8 +1089,7 @@ test('hidden nodes are removed', function(){
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];
@@ -1167,8 +1162,7 @@ test('hidden group nodes are removed', function(){
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];
@@ -1249,8 +1243,7 @@ test('nodes that have locked positions have the same position', function(){
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];
@@ -1326,8 +1319,7 @@ test('open groups are not positioned', function(){
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];
@@ -1410,8 +1402,7 @@ test('minor update type keeps locked positions', function(){
         "sem4": 1
       },
       "annotations": [
-        "decrease",
-        "not-imaged"
+        "decrease"
       ]
     }
   ];

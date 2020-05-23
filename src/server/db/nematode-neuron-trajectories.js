@@ -13,23 +13,33 @@ let queryTrajectoryNodeData = async (connection, opts) => {
 };
 
 let queryNeuronTrajectories = async (connection, opts) => {
-  let datasetId = connection.escape(opts.datasetId);
-  let neuronNames = connection.escape(opts.neuronNames);
+  const datasetId = connection.escape(opts.datasetId);
+  const neuronNames = connection.escape(opts.neuronNames);
 
-  let trajectoriesSql = `
+  const trajectoriesSql = `
     SELECT *
     FROM trajectories
     WHERE dataset_id=${datasetId} AND neuron_name in (${neuronNames})
   `;
-
+/*
   let trajectorySynapsesSql = `
-    SELECT id, post_node_id, pre_node_id, type
-    FROM trajectory_synapses
+    SELECT connector_id, post_node_id, pre_node_id, type
+    FROM synapses s
+    LEFT JOIN connections ON
     WHERE dataset_id=${datasetId}
-  `;
+  `; */
+  const synapseSql = `
+    SELECT s.connector_id, c.pre, c.post, c.type, s.pre_tid, s.post_tid 
+    FROM synapses s 
+    INNER JOIN connections c ON s.connection_id = c.id 
+    WHERE c.dataset_id=${datasetId}
+    AND (
+      c.pre IN (${neuronNames}) OR c.post IN (${neuronNames})
+    );
+  `
 
   let trajectories = await connection.query(trajectoriesSql);
-  let trajectorySynapses = await connection.query(trajectorySynapsesSql);
+  let trajectorySynapses = await connection.query(synapseSql);
 
   return {
     trajectories,

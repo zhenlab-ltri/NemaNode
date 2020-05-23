@@ -1,5 +1,5 @@
 // babel and fetch polyfill to ensure browsers have all functionality to support babel
-require('@babel/polyfill');
+require('core-js');
 require('whatwg-fetch');
 require('./register-cytoscape-extensions')();
 require('./google-analytics')();
@@ -7,8 +7,6 @@ require('./google-analytics')();
 const $ = require('jquery');
 const cytoscape = require('cytoscape');
 cytoscape.warnings(false);
-
-const liveReloadSync = require('./live-reload-sync');
 
 const Model = require('./model');
 const Controller = require('./controller');
@@ -36,9 +34,13 @@ $(document).ready(() => {
         window.v = view;
         window.c = controller;
         window.ds = DataService;
-        liveReloadSync();
         cytoscape.warnings(true);
         console.log('Running in debug mode');
+
+        // Live reload.
+        let script = document.createElement('script');
+        script.src = 'http://' + window.location.hostname + ':35729/livereload.js';
+        document.head.insertBefore(script, document.head.firstChild);
       }
 
       // Mobile-specific initialization.
@@ -116,7 +118,7 @@ $(document).ready(() => {
     })
     .catch(e => {
       let errorMsg =
-        'Cannot load data file!\nPlease contact us if the problem persists!';
+        'Cannot load data!\nPlease contact us if the problem persists!';
       alert(errorMsg);
       throw e;
     });

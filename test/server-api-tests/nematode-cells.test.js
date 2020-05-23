@@ -1,4 +1,5 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
 
 const ini = require('ini');
 const fs = require('fs');

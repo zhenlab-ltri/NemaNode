@@ -1,20 +1,18 @@
 # Nemanode
 
 ## Required software
-- [Node.js](https://nodejs.org/en/) >=8.11.2
-- [MySQL](https://www.mysql.com/downloads/) 5.6
+- [Node.js](https://nodejs.org/en/) >= 12.16.1
+- [MySQL](https://www.mysql.com/downloads/) >= 5.6
 - [GCC/g++ compiler](https://packages.ubuntu.com/focal/build-essential)
 
 ## Setup
 
-1. Install Node.js >=8.11.2
-2. Install Mysql 5.6
-3. Install app dependencies by running `npm install`
-4. Setup MySQL: `sudo mysql_secure_installation`
-5. Setup MySQL user and database: `scripts/setup_database.sh nemanode nemanode_user password | sudo mysql`
-6. Setup MySQL test database: `scripts/setup_database.sh test nemanode_user password | sudo mysql`
-7. Populate dev database: `npm run populate-database`
-8. Populate test database: `npm run populate-test-database`
+1. Install app dependencies by running `npm install`
+2. Setup MySQL: `sudo mysql_secure_installation`
+3. Setup MySQL user and database: `scripts/setup_database.sh nemanode nemanode_user password | sudo mysql`
+4. Setup MySQL test database: `scripts/setup_test_database.sh test nemanode_user password | sudo mysql`
+5. Populate dev database: `npm run populate-database`
+6. Populate test database: `npm run populate-test-database`
 
 ## Commands
 Once setup is completed, you will be able to run the following commands in this project directory:

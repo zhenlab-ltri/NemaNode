@@ -10,7 +10,7 @@
   top: $searchbar-height * 2;
   border-radius: 2px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  
+
   .header {
     cursor: move;
     height: 54px;
@@ -21,7 +21,7 @@
     padding-left: 15px;
     position: relative;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    
+
     i {
       text-align: center;
       cursor: pointer;
@@ -38,14 +38,14 @@
       padding-right: 10px;
     }
   }
-  
+
   .body {
     overflow: auto;
     transition: height 0.5s ease;
   }
-  
+
   .menu {
-  
+
     h3 {
       padding: 20px 0 5px 15px;
       color: $link-color;
@@ -74,10 +74,10 @@
         width: 60px;
         text-align: center;
       }
-      
+
     }
   }
-  
+
   .content {
     h1 {
       font-size: 28px;
@@ -86,23 +86,23 @@
     }
 
     h2 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 350;
-      padding: 10px 10px 6px 20px;
+      padding: 10px 10px 6px 15px;
     }
 
-    .download-dataset-item {
-      padding: 5px;
+    .download-dataset div {
+      padding: 3px 0px;
     }
 
-    .download-dataset-item:hover {
+    .download-dataset div:hover {
       color: $link-hover-color;
       cursor: pointer;
     }
     .p {
       color: $text-color;
       font-size: 16px;
-      line-height: 16px;
+      line-height: 20px;
       padding: 5px 15px 15px 15px;
       &.right {
         text-align: right;
@@ -117,7 +117,7 @@
       width: calc(100% - 18px);
       border: 1px solid #ccc;
       padding: 8px;
-      -webkit-transition: border-color 500ms ease-in-out; 
+      -webkit-transition: border-color 500ms ease-in-out;
       -moz-transition: border-color 500ms ease-in-out;
       -o-transition: border-color 500ms ease-in-out;
       transition: border-color 500ms ease-in-out;
@@ -155,7 +155,7 @@
   z-index: 999;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
-  
+
   &:before, &:after {
     content: '';
     display: block;
@@ -233,7 +233,7 @@
   &[data-direction='leftbottom']:after {
     bottom: 21px;
   }
-  
+
   .close {
     float: right;
     cursor: pointer;
@@ -257,22 +257,22 @@
   }
   .progress {
     position: absolute;
-    right: 15px;
+    right: 90px;
     bottom: 15px;
     div {
       float: left;
-      margin-left: 7px;
+      margin-left: 14px;
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background-color: $text-inactive;
-      
+
       &.active {
         background-color: $text-color;
       }
     }
   }
- 
+
 }
 
 

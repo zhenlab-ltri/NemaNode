@@ -1,4 +1,5 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
 
 const { createGrid, createCircle } = require('../../src/client/js/model/layout');
 

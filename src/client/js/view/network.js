@@ -179,6 +179,8 @@ class GraphView extends View2 {
       cy.add(Object.values(newNodes));
       cy.add(Object.values(newEdges));
 
+      console.log(newEdges)
+
       cy.startBatch();
       // Label edges parallel to gap junctions to prevent overlaps.
       cy.edges().removeClass('besideGj');
@@ -289,6 +291,13 @@ class GraphView extends View2 {
       y: y + yPan
     });
   }
+  
+  toggleSmallEdgeLabel(id, check) {
+    this.cy
+    .getElementById(id)
+    .toggleClass('showEdgeLabel', check)
+    .toggleClass('focus', false);
+  };
 
   toggleEdgeLabel(id, check) {
     if (id == 'all') {
@@ -743,19 +752,13 @@ class GraphView extends View2 {
             if (syn == 50) {
               edge.labelxshift = '2.5px';
             }
-            if (cy.edges('[type=0]').length === 0) {
-              return;
-            }
           }
           if (id == 'edge-typ2') {
             edge.type = 2;
-            if (cy.edges('[type=2]').length === 0) {
-              return;
-            }
           }
-          if (id == 'edge-not-imaged') {
-            edge.classes = ' not-imaged';
-            if (cy.edges('[?isNotImaged]').length === 0) {
+          if (id == 'edge-not-classified') {
+            edge.classes = ' not-classified';
+            if (noEdgesWithAnnotations) {
               return;
             }
           } else if (id == 'edge-mature') {

@@ -2,7 +2,7 @@ const $ = require('jquery');
 const { saveAs } = require('file-saver');
 const BaseView = require('./base-view');
 
-const { getNematodeDatasetJson } = require('../services');
+const { downloadConnectivity } = require('../services');
 
 class HelpView extends BaseView {
   constructor(model) {
@@ -42,8 +42,6 @@ class HelpView extends BaseView {
       this.show(topic);
     });
 
-    this.$content.on('click', 'button.send', () => this.sendEmail());
-
     $('#help .close').click(() => this.hide());
 
     $('#help .menu li:not(#take-a-tour)').click(e => {
@@ -74,6 +72,12 @@ class HelpView extends BaseView {
       scroll: false,
       drag: this.onDrag
     });
+
+    // Downloads.
+    $('.download-dataset div').on('click', e => {
+      const datasetId = $(e.currentTarget).data('dataset');
+      this.downloadDataset(datasetId);
+    });
   }
 
   onDrag(e, ui) {
@@ -99,44 +103,42 @@ class HelpView extends BaseView {
     }
   }
 
+  showMenu() {
+    this.$menu.show();
+    this.$content.hide();
+    this.$arrowBack.hide();
+    this.$body.css('height', this.$menu.height());
+  }
   showTopic(topic) {
-    let { $content, $menu, $arrowBack, $body } = this;
+    const { $content, $menu, $arrowBack, $body } = this;
 
-    $content.load('help/' + topic + '.html', (response, status) => {
-      if (status == 'error') {
-        $content.html(
-          '<p>Could not load the content. Please ensure that you are online.</p>'
-        );
-      }
-
-      let distanceFromBottom =
-        $(window).height() - $body.offset().top - $body.outerHeight();
-      let maxHeight = Math.min($body.height() + distanceFromBottom - 10, 800);
-      let contentHeight = $content.height();
-
-      $body
-        .css('overflow', maxHeight < contentHeight ? 'auto' : 'hidden')
-        .css('height', Math.min(maxHeight, $content.height()));
+    $content.children().hide();
+    $('#' + topic + '-content').show()
 
 
-      if( topic === 'download-data' ){
-        $('.download-dataset-item').on('click', e => {
-          let datasetId = e.currentTarget.id;
+    let distanceFromBottom =
+    $(window).height() - $body.offset().top - $body.outerHeight();
+    let maxHeight = Math.min($body.height() + distanceFromBottom - 10, 800);
+    let contentHeight = $content.height();
 
-          this.downloadDataset(datasetId);
-        });
-      }
-    });
+    $body
+      .css('overflow', maxHeight < contentHeight ? 'auto' : 'hidden')
+      .css('height', Math.min(maxHeight, $content.height()));
 
     $menu.hide();
     $content.show();
     $arrowBack.show();
   }
 
-  downloadDataset(datasetId){
-    getNematodeDatasetJson({datasetId}).then( json => {
-      let blob = new Blob([JSON.stringify(json, null, 2)], {type: "text/plain;charset=utf-8"});
-      saveAs(blob, `${datasetId}.json`);
+  downloadDataset(datasetId) {
+    downloadConnectivity({datasetId}).then((json) => {
+
+      const keys = Object.keys(json[0]);
+      const rows = json.map((connection) => keys.map((key) => connection[key]).join('\t'));
+      const csv = keys.join('\t') + '\n' + rows.join('\n')
+
+      let blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, `${datasetId}.csv`);
     });
   }
 
@@ -154,117 +156,6 @@ class HelpView extends BaseView {
       y1: top,
       y2: top + $element.height()
     };
-  }
-
-  sendEmail() {
-    let { $content } = this;
-
-    let $name = $content.find('input.name');
-    let $email = $content.find('input.email');
-    let $message = $content.find('textarea.message');
-
-    let name = $name.val().trim();
-    let email = $email.val().trim();
-    let message = $message.val().trim();
-
-    let $result = $content.find('.result');
-
-    if (!name || !email || !message) {
-      let $emptyFields = $();
-
-      if (!name) {
-        $emptyFields = $emptyFields.add($name);
-      }
-
-      if (!email) {
-        $emptyFields = $emptyFields.add($email);
-      }
-
-      if (!message) {
-        $emptyFields = $emptyFields.add($message);
-      }
-
-      $result
-        .addClass('error')
-        .text('Please fill in all fields.')
-        .fadeIn(500);
-      $emptyFields.addClass('error');
-
-      setTimeout(() => {
-        $emptyFields.removeClass('error');
-        $result.fadeOut(500);
-      }, 1000);
-    } else if (
-      !/^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+[a-zA-Z0-9]+$/.test(email)
-    ) {
-      $result
-        .addClass('error')
-        .text('Please check your email.')
-        .fadeIn(500);
-      $email.addClass('error');
-
-      setTimeout(() => {
-        $email.removeClass('error');
-        $result.fadeOut(500);
-      }, 1000);
-    } else {
-      let onSuccess = function() {
-        $name.val('');
-        $email.val('');
-        $message.val('');
-        $result
-          .removeClass('error')
-          .text('Your message has been sent!')
-          .fadeIn(500);
-
-        setTimeout(function() {
-          $result.fadeOut(500);
-        }, 5000);
-      };
-
-      let onError = function() {
-        $result
-          .addClass('error')
-          .html(
-            'Could not send the message. <br />If this persists, contact us <br />at ' +
-              'contact@nemanode.org'
-          )
-          .fadeIn(500);
-
-        setTimeout(function() {
-          $result.fadeOut(500);
-        }, 5000);
-      };
-
-      $.ajax({
-        type: 'POST',
-        data: {
-          name: name,
-          email: email,
-          message: message
-        },
-        url: 'help/email.php',
-        dataType: 'json',
-        mimeType: 'application/json',
-        error: function() {
-          onError();
-        },
-        success: function(data) {
-          if (data['success']) {
-            onSuccess();
-          } else {
-            onError();
-          }
-        }
-      });
-    }
-  }
-
-  showMenu() {
-    this.$menu.show();
-    this.$content.hide();
-    this.$arrowBack.hide();
-    this.$body.css('height', this.$menu.height());
   }
 
   setTourContent(title, body, step, totalSteps, moreStepsAvailable) {

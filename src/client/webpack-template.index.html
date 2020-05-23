@@ -1,5 +1,19 @@
 <!DOCTYPE html>
-<!--{license}-->
+<!--    
+  
+    NemaNode v{version}
+
+    Created by Daniel Witvliet, Soomin Maeng, and Dylan Fong from the Zhen and Samuel Labs.
+
+    Except where otherwise noted, this software is licensed under the
+    Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+    license.
+    In short, this permits redistribution of the software with appropriate
+    credit to the authors as long as no modifications are made.
+
+    Please read the license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+-->
 <html lang="en">
   <head>
 
@@ -50,7 +64,7 @@
           <!-- Templates used in the settings -->
           <div id="dataset-bookmark-template" class="bookmark">
             <div class="dataset-tooltip">
-              <h1> <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+              <h1> <small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></h1>
               <p></p>
             </div>
             <div class="mark">
@@ -61,7 +75,7 @@
 
           <!-- Databases and datasets -->
           <div class="group">
-            <h1>Dataset <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></h1>
+            <h1>Dataset <small><i class="icon-question-circle-o smallhelp" data-topic="data-sources"></i></small></h1>
             <div id="set-database" class="selectbox">
               <div class="sel-placeholder"></div>
               <div class="option-container">
@@ -170,8 +184,8 @@
               <label for="show-postemb">Post-embryonic cells</label>
             </div>
             <div class="checkbox">
-              <input type="checkbox" id="show-connection-color" />
-              <label for="show-connection-color">Connection Color</label>
+              <input type="checkbox" id="show-annotations" />
+              <label for="show-annotations">Types of connections</label> <small><i class="icon-question-circle-o smallhelp" data-topic="annotations"></i></small>
             </div>
           </div>
 
@@ -191,7 +205,7 @@
     <!-- Legend -->
     <div id="legend-toggle"><i class="icon-list-ul"></i></div>
     <div id="legend">
-      <ol id="legend-type">
+      <ol id="legend-type" class="nodes">
         <li id="type-sensory">Sensory neuron</li>
         <li id="type-inter">Interneuron</li>
         <li id="type-motor">Motor neuron</li>
@@ -199,7 +213,7 @@
         <li id="type-muscle">Muscle</li>
         <li id="type-others">Other</li>
       </ol>
-      <ol id="legend-nt">
+      <ol id="legend-nt" class="nodes">
         <li id="nt-a">Acetylcholine</li>
         <li id="nt-d">Dopamine</li>
         <li id="nt-g">GABA</li>
@@ -210,15 +224,17 @@
         <li id="nt-u">Unknown</li>
         <li id="nt-n">Non-neuronal</li>
       </ol>
-      <ol id="legend-edges">
+      <ol id="legend-edges" class="edges">
         <li id="edge-typ0" class="basic">Chemical synapse</li>
-        <li id="edge-typ2" class="basic" style="margin-bottom: 10px;">Gap junction</li>
-        <li id="edge-stable">Stable<small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></li>
+        <li id="edge-typ2" class="basic">Gap junction</li>
+      </ol>
+      <ol id="legend-annotations" class="edges">
+        <li id="edge-stable">Stable <small><i class="icon-question-circle-o smallhelp" data-topic="annotations"></i></small></li>
         <li id="edge-variable">Variable</li>
-        <li id="edge-mature">Developmentally strengthened</li>
-        <li id="edge-juvenile">Developmentally weakened</li>
+        <li id="edge-mature">Developmentally dynamic (added)</li>
+        <li id="edge-juvenile">Developmentally dynamic (pruned)</li>
         <li id="edge-post-embryonic">Post-embryonic</li>
-        <li id="edge-not-imaged">Not imaged <small><i class="icon-question-circle-o smallhelp" data-topic="dataset-info"></i></small></li>
+        <li id="edge-not-classified">Not classified</li>
       </ol>
     </div>
 
@@ -247,9 +263,12 @@
       <div id="infobar">
         <div id="cell-info">
           <div style="margin: 20px; line-height: 18px;">
-            This info sidebar is yet to be completed. Please <span class="a open-help" data-topic="contact-us">contact us</span>, if you have any suggestions
-            on what should be added here. <br /><br />
-            Until then, have a look <a href="#" target="_blank" class="wormatlas">WormAtlas</a> and <a href="#" target="_blank" class="wormbase">WormBase</a>.
+            We are not yet sure what to put in this sidebar. Please 
+            <span class="a open-help" data-topic="contact-us">contact us</span>, if you have any 
+            suggestions. <br /><br />
+            Until then, have a look at this cell on 
+            <a href="#" target="_blank" class="wormatlas">WormAtlas</a> and 
+            <a href="#" target="_blank" class="wormbase">WormBase</a>.
           </div>
         </div>
       </div>
@@ -266,8 +285,8 @@
           </ol>
           <h3>Data info</h3>
           <ol>
-            <li id="dataset-info" class="icon-connectivity">Dataset info</li>
-            <li id="neuron-info" class="icon-neuron">Neuron info</li>
+            <li id="data-sources" class="icon-neuron">Data sources</li>
+            <li id="annotations" class="icon-connectivity">Types of connections</li>
             <li id="download-data" class="icon-download">Download data</li>
             <li id="cite-us" class="icon-reference">Cite us</li>
           </ol>
@@ -277,7 +296,138 @@
             <li id="contact-us" class="icon-question_answer">Contact us</li>
           </ol>
         </div>
-        <div class="content"></div>
+        <div class="content">
+          <div id="data-sources-content">
+            <h1>Data sources</h1>
+            <h2>White et al., 1986, compilation</h2>
+            <div class="p">
+              This dataset is a compilation of multiple partially overlapping animals. The cells 
+              making up the somatic nervous system were reconstructed by
+              <a href="https://doi.org/10.1098/rstb.1986.0056" target="_blank">White et al., 
+              1986</a> and compiled by 
+              <a href="https://doi.org/10.1371/journal.pcbi.1001066" target="_blank">Varshney et 
+              al., 2011</a>. The cells making up the pharyngeal nervous systems were reconstructed
+              by <a href="https://doi.org/10.1098/rstb.1976.0085" target="_blank">Albertson and 
+              Thomson, 1976</a> and cleaned up by Nikhil Bhatla, developer of 
+              <a href="http://wormweb.org/" target="_blank">WormWeb.org</a>. Non-neuronal cells were
+              not annotated individually but are grouped by cell type (e.g. Body wall muscles).
+            </div>
+            <h2>Witvliet et al., 2020, datasets 1-8</h2>
+            <div class="p">
+              Chemical synapses for all eight datasets were acquired from 
+              <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet et al., 
+              2020</a>. Chemical synapes were annotated independently by three annotators and only
+              chemical synapses that at least two annotators agreed to were included in the final
+              dataset. Gap junctions were not thoroughly annotated but have been provided by the
+              authors for anyone interested. The gap junction annotation is by no means exhaustive,
+              and should not be treated as such.
+            </div>
+            <h2>White et al., 1986, JSH and N2U</h2>
+            <div class="p">
+              The two datasets were reconstructed by 
+              <a href="https://doi.org/10.1098/rstb.1986.0056" target="_blank">White et al., 
+              1986</a> and compiled by Durbin, 1987. Individual muscle cells were not annotated
+              by White et al., 1986. To allow comparison to other datasets, individual muscle
+              cells (and synapses onto them) were annotated in scans of the original EM 
+              micrographs by the <a href="https://www.zhenlab.com/" target="_blank">Zhen Lab</a>.
+              These synapses have been added to the datasets instead of the originally listed
+              anonymous neuromuscular junctions. 
+            </div>
+            <h2>White et al., 1986, JSE</h2>
+            <div class="p">
+              The dataset was reconstructed by 
+              <a href="https://doi.org/10.1098/rstb.1986.0056" target="_blank">White et al.,
+              1986</a> and compiled by 
+              <a href="https://doi.org/10.1523/jneurosci.11-01-00001.1991" target="_blank">Hall and
+              Russell, 1991</a>.
+            </div> 
+          </div>
+          <div id="annotations-content">
+            <h1>Types of connections</h1>
+            <div class="p">
+              Connections were classified by their change in synapse number across developmental 
+              stages by <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet 
+              et al., 2020</a>.
+            </div>
+            <h2>Stable connections</h2>
+            <div class="p">
+              Present from birth to adulthood.
+            </div>
+            <h2>Developmentally dynamic connections</h2>
+            <div class="p">
+              Significantly increase or decrease their relative strength in a stereotyped manner, 
+              sometimes even forming new connections or eliminating existing connections at specific
+              life stages.
+            </div>
+            <h2>Variable connections</h2>
+            <div class="p">
+              Exhibit no consistent trend in their changing synapse numbers, and are not present in
+              every animal.
+            </div>
+            <h2>Post-embryonic connections</h2>
+            <div class="p">
+              Are formed between neurons that are born or differentiate after birth.
+            </div>
+            <h2>Not classified connections</h2>
+            <div class="p">
+              Were not found in any of the datasets reconstructed by 
+              <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet et al., 
+              2020</a>. Likely a gap junction or variable connection.
+            </div>
+          </div>
+          <div id="download-data-content">
+            <h1>Download data</h1>
+            <h2>Witvliet et al., 2020</h2>
+            <div class="p download-dataset">
+              <div data-dataset="witvliet_2020_1">Dataset 1 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_2">Dataset 2 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_3">Dataset 3 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_4">Dataset 4 (L1 brain)</div>
+              <div data-dataset="witvliet_2020_5">Dataset 5 (L2 brain)</div>
+              <div data-dataset="witvliet_2020_6">Dataset 6 (L3 brain)</div>
+              <div data-dataset="witvliet_2020_7">Dataset 7 (adult brain)</div>
+              <div data-dataset="witvliet_2020_8">Dataset 8 (adult brain)</div>
+            </div>
+            <h2>White et al., 1986</h2>
+            <div class="p download-dataset">
+              <div data-dataset="white_1986_jsh">JSH (L4 brain)</div>
+              <div data-dataset="white_1986_n2u">N2U (adult brain)</div>
+              <div data-dataset="white_1986_jse">JSE (adult tail)</div>
+              <div data-dataset="white_1986_whole">Whole-animal compilation (data added by Varshey et al., 2011)</div>
+            </div>    
+          </div>
+          <div id="cite-us-content">
+            <h1>Cite us</h1>
+            <div class="p">
+              <p>
+                If you use NemaNode, please cite <a href="https://doi.org/10.1101/2020.04.30.066209" target="_blank">Witvliet et al., 2020</a>.
+              </p>
+              <p>
+                In addition, please cite the original <span class="a open-help" data-topic="data-sources">data sources</span> for the datasets you are examining.
+              </p>
+            </div>            
+          </div>
+          <div id="contribute-content">
+            <h1>Contribute</h1>
+            <div class="p">
+              <p>
+                Unfortunately, NemaNode is not open source yet. 
+                However, if you would like to contribute, please <span class="a open-help" data-topic="contact-us">contact us</span>, and we may be able to change that.
+              </p>
+            </div>            
+          </div>
+          <div id="contact-us-content">
+            <h1>Contact us</h1>
+            <div class="p">
+              <p>
+                NemaNode is developed by the <a href="https://www.zhenlab.com/" target="_blank">Zhen</a> and <a href="https://scholar.harvard.edu/aravisamuel" target="_blank">Samuel</a> labs.
+              </p>
+              <p>
+                Please send all bug reports and feedback to <a href="mailto:dwitvliet@fas.harvard.edu">dwitvliet@fas.harvard.edu</a>.
+              </p>
+            </div>            
+          </div>
+        </div>
       </div>
     </div>
     <div id="tour">
@@ -290,7 +440,7 @@
     </div>
 
     <!-- neuron trajectory viewer -->
-
+    <!--
     <vue-draggable-resizable
       id="ntv"
       drag-handle="#ntv-move"
@@ -498,6 +648,7 @@
         </div>
         </div>
       </vue-draggable-resizable>
+    -->
     <!-- No script -->
     <noscript><div id="noscript">Please enable JavaScript or upgrade to <a href="https://browsehappy.com/‎">a browser that supports it</a>.</div></noscript>
 

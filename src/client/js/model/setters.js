@@ -71,9 +71,9 @@ ModelPrototype.setShowEdgeLabel = function(checked) {
   this.emit('showEdgeLabelChanged', checked);
 };
 
-ModelPrototype.setShowConnectionColor = function(checked){
-  this.showConnectionColor = checked;
-  this.emit('showConnectionColorChanged', checked);
+ModelPrototype.setShowAnnotations = function(checked){
+  this.showAnnotations = checked;
+  this.emit('showAnnotationsChanged', checked);
 };
 
 ModelPrototype.setShowPostemb = function(checked) {

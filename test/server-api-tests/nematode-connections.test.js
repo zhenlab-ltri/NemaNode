@@ -1,4 +1,5 @@
 /* global beforeAll, afterAll, test, expect */
+require('regenerator-runtime');
 
 const ini = require('ini');
 const fs = require('fs');
@@ -45,24 +46,6 @@ test('get no connections when cells option is empty', function(){
   };
 
   return expect(queryNematodeConnections( connection, opts )).resolves.toEqual(expected);
-});
-
-test('gets non-imaged connections when legacy datasets are included in options', function(){
-  let expected = fixture3;
-
-  let opts = {
-    cells: ['BODYWALLMUSCLES'],
-    datasetType: 'complete',
-    datasetIds: ['l1', 'adult'],
-    includeAnnotations: true,
-    includeNeighboringCells: true,
-    thresholdChemical: 3,
-    thresholdElectrical: 2
-  };
-
-  return queryNematodeConnections( connection, opts ).then( res => {
-    expect( res ).toEqual( expected );
-  });
 });
 
 test('returns no annotations when includeAnnotations is set to false', function(){

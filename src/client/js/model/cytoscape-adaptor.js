@@ -22,7 +22,7 @@ let ModelPrototype = {};
 ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
   let { nodeColor, input, groups, showLinked, hidden, selected } = modelState;
 
-  const typeKeys = {
+  const types = {
     b: 'muscle',
     u: 'others',
     s: 'sensory',
@@ -30,10 +30,21 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
     m: 'motor',
     n: 'neurosecretory'
   };
+  const nts = {
+    a: 'acetylcholine',
+    d: 'dopamine',
+    g: 'gaba',
+    l: 'glutamate',
+    o: 'octopamine',
+    s: 'serotonin',
+    t: 'tyramine',
+    u: 'unknown',
+    n: 'none'
+  };
 
   let name;
-  let nts;
-  let types;
+  let nodeNts;
+  let nodeTypes;
   let classes = [];
 
   if (input.includes(nodeId)) {
@@ -43,17 +54,17 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
   if (groups.hasOwnProperty(nodeId)) {
     let group = groups[nodeId];
     name = group.name;
-    nts = flatten(
+    nodeNts = flatten(
       group.members.map(member => DataService.nt(member).split(''))
     );
-    types = flatten(
+    nodeTypes = flatten(
       group.members.map(member => DataService.typ(member).split(''))
     );
     classes.push('parentNode');
   } else {
     name = nodeId;
-    nts = DataService.nt(nodeId).split('');
-    types = DataService.typ(nodeId).split('');
+    nodeNts = DataService.nt(nodeId).split('');
+    nodeTypes = DataService.typ(nodeId).split('');
   }
 
   if (!showLinked) {
@@ -75,22 +86,18 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
     selected: selected.includes(nodeId)
   };
 
-  nts.forEach(nt => {
-    if (!cytoscapeNode.data.hasOwnProperty(nt)) {
-      cytoscapeNode.data[nt] = 0;
-    }
-
-    cytoscapeNode.data[nt] += 1 / nts.length;
+  Object.values(types).forEach((type) => {
+    cytoscapeNode.data[type] = 0;
+  });
+  Object.values(nts).forEach((nt) => {
+    cytoscapeNode.data[nt] = 0;
   });
 
-  types.forEach(type => {
-    let longtype = typeKeys[type];
-
-    if (!cytoscapeNode.data.hasOwnProperty(longtype)) {
-      cytoscapeNode.data[longtype] = 0;
-    }
-
-    cytoscapeNode.data[longtype] += 1 / types.length;
+  nodeNts.forEach((nt) => {
+    cytoscapeNode.data[nts[nt]] += 1 / nodeNts.length;
+  });
+  nodeTypes.forEach((type) => {
+    cytoscapeNode.data[types[type]] += 1 / nodeTypes.length;
   });
 
   for (let id in groups) {
@@ -110,7 +117,7 @@ ModelPrototype.makeCytoscapeEdge = function(
   attr,
   modelState
 ) {
-  let { showEdgeLabel, showConnectionColor, datasets, database } = modelState;
+  let { showEdgeLabel, showAnnotations, datasets, database } = modelState;
   let { synapses, annotations } = attr;
   let classes = [];
 
@@ -124,20 +131,16 @@ ModelPrototype.makeCytoscapeEdge = function(
     width = Math.min(8, meanSyn * 1.5);
   }
 
-  let notImaged = annotations.includes('not-imaged');
   let label = datasets
     .map(dataset => {
-      return notImaged && dataset === 'adult' ? '?' : synapses[dataset] || 0;
+      return synapses[dataset] || 0;
     })
     .join(',');
 
   let longLabel = datasets
     .map(dataset => {
       let datasetName = DataService.getDatasetInfo(database, dataset).name;
-      let datasetLabel =
-        notImaged && dataset == 'adult'
-          ? 'Region not imaged'
-          : synapses[dataset] || 0;
+      let datasetLabel = synapses[dataset] || 0;
       return `${datasetName}: ${datasetLabel}`;
     })
     .join('\n');
@@ -150,7 +153,6 @@ ModelPrototype.makeCytoscapeEdge = function(
   // if an edge has multiple annotations, only the most important
   // annotation type will be shown color wise
   const ANNOTATION_ORDER = [
-    'not-imaged',
     'increase',
     'decrease',
     'stable',
@@ -159,7 +161,6 @@ ModelPrototype.makeCytoscapeEdge = function(
   ];
 
   const ANNOTATION_DISPLAY_LABEL_MAP = {
-    'not-imaged': 'not-imaged',
     'increase': 'mature',
     'decrease': 'juvenile',
     'stable': 'stable',
@@ -169,12 +170,17 @@ ModelPrototype.makeCytoscapeEdge = function(
 
   // only add the first annotation type w.r.t annnotation order
   //that is found in this connections annotations
-  if (showConnectionColor){
-    for ( let annotationType of ANNOTATION_ORDER ){
-      if (annotations.includes(annotationType)) {
-        classes.push(ANNOTATION_DISPLAY_LABEL_MAP[annotationType]);
+  if (showAnnotations && this.database == 'head'){
+    let edgeIsAnnotated = false;
+    for ( let annotation of ANNOTATION_ORDER ){
+      if (annotations.includes(annotation)) {
+        classes.push(ANNOTATION_DISPLAY_LABEL_MAP[annotation]);
+        edgeIsAnnotated = true;
         break;
       }
+    }
+    if (!edgeIsAnnotated) {
+      classes.push('not-classified');
     }
   }
 

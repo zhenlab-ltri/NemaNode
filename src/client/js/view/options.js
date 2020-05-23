@@ -14,7 +14,7 @@ const CHECKBOX_ELE_ID_TO_EVENT_MAP = {
   'show-indiv-cells': 'setShowIndividual',
   'show-edge-num': 'setShowEdgeLabel',
   'show-postemb': 'setShowPostemb',
-  'show-connection-color': 'setShowConnectionColor'
+  'show-annotations': 'setShowAnnotations'
 };
 
 let createDatasetBookmarks = () => {
@@ -189,6 +189,7 @@ class OptionsView extends BaseView {
             next();
           });
         $input.val(1);
+        $input.trigger('input');
 
         return;
       }

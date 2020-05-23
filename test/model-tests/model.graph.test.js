@@ -1,4 +1,5 @@
 /* global  test, expect */
+require('regenerator-runtime');
 
 let Graph = require('../../src/client/js/model/graph');
 

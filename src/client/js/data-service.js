@@ -80,7 +80,7 @@ class DataService {
   getAdultCompleteDataset() {
     this.checkLoaded();
     return this.datasets.find(
-      d => d.id === 'adult' && d.collection === 'complete'
+      d => d.id === 'white_1986_whole' && d.collection === 'complete'
     );
   }
 

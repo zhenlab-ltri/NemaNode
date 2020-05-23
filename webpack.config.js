@@ -45,7 +45,7 @@ module.exports = {
         'src/client/3d-models/'
       ]
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(), // clears unused files after build.
     new webpack.ProvidePlugin({
       'THREE': 'three'
     }),
@@ -81,5 +81,9 @@ module.exports = {
         }
       }
     ]
+  },
+  watchOptions: {
+    poll: true,
+    ignored: /node_modules/
   }
 };
