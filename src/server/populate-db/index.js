@@ -55,10 +55,21 @@ const populateDb = async (conn) => {
   }
 };
 
-
-(async () => {
-  const connection = await connect();
+const cleanPopulateDb = async (connection) => {
   await depopulateDb(connection);
   await populateDb(connection);
   await connection.destroy();
-})();
+};
+
+
+if (require.main === module) {
+  (async () => {
+    const connection = await connect();
+    await cleanPopulateDb(connection);
+  })();
+}
+
+module.exports = {
+  cleanPopulateDb,
+  depopulateDb
+};
