@@ -179,8 +179,6 @@ class GraphView extends View2 {
       cy.add(Object.values(newNodes));
       cy.add(Object.values(newEdges));
 
-      console.log(newEdges)
-
       cy.startBatch();
       // Label edges parallel to gap junctions to prevent overlaps.
       cy.edges().removeClass('besideGj');
@@ -291,7 +289,7 @@ class GraphView extends View2 {
       y: y + yPan
     });
   }
-  
+
   toggleSmallEdgeLabel(id, check) {
     this.cy
     .getElementById(id)
