@@ -290,6 +290,13 @@ class GraphView extends View2 {
     });
   }
 
+  toggleSmallEdgeLabel(id, check) {
+    this.cy
+    .getElementById(id)
+    .toggleClass('showEdgeLabel', check)
+    .toggleClass('focus', false);
+  };
+
   toggleEdgeLabel(id, check) {
     if (id == 'all') {
       this.cy
@@ -743,15 +750,9 @@ class GraphView extends View2 {
             if (syn == 50) {
               edge.labelxshift = '2.5px';
             }
-            if (cy.edges('[type=0]').length === 0) {
-              return;
-            }
           }
           if (id == 'edge-typ2') {
             edge.type = 2;
-            if (cy.edges('[type=2]').length === 0) {
-              return;
-            }
           }
           if (id == 'edge-not-classified') {
             edge.classes = ' not-classified';

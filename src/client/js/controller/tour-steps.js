@@ -32,7 +32,7 @@ let getTourSteps = view => {
         state: {
           input: ['AIY', 'ASEL'],
           database: 'head',
-          datasets: ['witvliet_2020_7', 'witvliet_2020_8'],
+          datasets: ['white_1986_jsh', 'white_1986_n2u'],
           nodeColor: 'type',
           layout: 'concentric',
           thresholdChemical: 3,
@@ -115,7 +115,7 @@ let getTourSteps = view => {
         },
         initiate: () => {
           clearInterval(animationInterval);
-          view.graph.toggleEdgeLabel('ASELtyp0AWC', true);
+          view.graph.toggleSmallEdgeLabel('ASEL-0-AWC', true);
         }
       },
       {
@@ -134,7 +134,7 @@ let getTourSteps = view => {
           selected: ['AIY', 'ASEL']
         },
         initiate: () => {
-          view.graph.toggleEdgeLabel('ASELtyp0AWC', false);
+          view.graph.toggleSmallEdgeLabel('ASEL-0-AWC', false);
           view.popup.hide();
         }
       },

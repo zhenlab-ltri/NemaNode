@@ -108,7 +108,7 @@ var cystyle = (function() {
       },
       {
         selector:
-          'node[?n]:selected, node[?muscle]:selected, node[?others]:selected',
+          'node[?none]:selected, node[?muscle]:selected, node[?others]:selected',
         css: {
           height: '25px',
           padding: '7px' //18+8*2=35px
@@ -147,7 +147,7 @@ var cystyle = (function() {
         }
       },
       {
-        selector: 'node[?n], node[?muscle], node[?others]',
+        selector: 'node[?none], node[?muscle], node[?others]',
         css: {
           'font-size': '16px',
           shape: 'roundrectangle',
@@ -159,7 +159,7 @@ var cystyle = (function() {
       },
       {
         selector:
-          'node[?n].searchedfor, node[?muscle].searchedfor, node[?others].searchedfor',
+          'node[?none].searchedfor, node[?muscle].searchedfor, node[?others].searchedfor',
         css: {
           height: '10px',
           padding: '14px',
@@ -213,15 +213,15 @@ var cystyle = (function() {
         })()
       },
       {
-        selector: 'node[color="nt"][?n]',
+        selector: 'node[color="nt"][?none]',
         css: {
-          'background-color': cytoscapeColors.colorsNt['n'],
+          'background-color': cytoscapeColors.colorsNt['none'],
           'border-width': '1px',
           'border-color': '#C8C8C8'
         }
       },
       {
-        selector: 'node[color="nt"][!n], node.parentNode[color="nt"]',
+        selector: 'node[color="nt"][!none], node.parentNode[color="nt"]',
         css: (function() {
           var css = {};
           var i = 0;

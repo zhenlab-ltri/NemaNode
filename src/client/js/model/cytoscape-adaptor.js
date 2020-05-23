@@ -117,7 +117,7 @@ ModelPrototype.makeCytoscapeEdge = function(
   attr,
   modelState
 ) {
-  let { showEdgeLabel, showConnectionColor, datasets, database } = modelState;
+  let { showEdgeLabel, showAnnotations, datasets, database } = modelState;
   let { synapses, annotations } = attr;
   let classes = [];
 
@@ -170,7 +170,7 @@ ModelPrototype.makeCytoscapeEdge = function(
 
   // only add the first annotation type w.r.t annnotation order
   //that is found in this connections annotations
-  if (showConnectionColor && this.database == 'head'){
+  if (showAnnotations && this.database == 'head'){
     let edgeIsAnnotated = false;
     for ( let annotation of ANNOTATION_ORDER ){
       if (annotations.includes(annotation)) {

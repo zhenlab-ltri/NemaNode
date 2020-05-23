@@ -10,11 +10,11 @@ const KEY_TO_COOKIE_MAP = {
   layout: 'la',
   thresholdChemical: 'tc',
   thresholdElectrical: 'te',
-  showLinked: 'li',
-  showIndividual: 'i',
-  showEdgeLabel: 'e',
-  showConnectionColor: 'cc',
-  showPostemb: 'p',
+  showLinked: 'sl',
+  showIndividual: 'si',
+  showEdgeLabel: 'se',
+  showAnnotations: 'sa',
+  showPostemb: 'sp',
   input: 'in',
   selected: 's',
   groups: 'g',
@@ -99,7 +99,7 @@ const decodeParameters = rawParameters => {
       value = parseInt(value, 10);
     }
     if (
-      ['showLinked', 'showIndividual', 'showEdgeLabel', 'showPostemb', 'showConnectionColor'].includes(
+      ['showLinked', 'showIndividual', 'showEdgeLabel', 'showPostemb', 'showAnnotations'].includes(
         key
       )
     ) {
@@ -213,8 +213,8 @@ class CookiesView extends BaseView {
     this.model.on('showPostembChanged', checked => {
       this.setCookie('showPostemb', checked + 0);
     });
-    this.model.on('showConnectionColorChanged', checked => {
-      this.setCookie('showConnectionColor', checked + 0);
+    this.model.on('showAnnotationsChanged', checked => {
+      this.setCookie('showAnnotations', checked + 0);
     });
   }
 
