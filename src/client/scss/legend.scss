@@ -74,6 +74,9 @@
         line-height: 16px;
         font-family: icomoon;
       }
+      &#edge-typ2 {
+        @extend .icon-gapjunction;
+      }
     }
   }
 }
@@ -88,9 +91,6 @@
   #legend-nt li:nth-child(#{$i}):before {
     background-color: map-get($nt-colors, $i);
   }
-}
-#edge-typ2 {
-  @extend .icon-gapjunction;
 }
 #edge-typ0:before {
   color: map-get($edge-colors, typ0);
