@@ -743,15 +743,9 @@ class GraphView extends View2 {
             if (syn == 50) {
               edge.labelxshift = '2.5px';
             }
-            if (cy.edges('[type=0]').length === 0) {
-              return;
-            }
           }
           if (id == 'edge-typ2') {
             edge.type = 2;
-            if (cy.edges('[type=2]').length === 0) {
-              return;
-            }
           }
           if (id == 'edge-not-classified') {
             edge.classes = ' not-classified';
