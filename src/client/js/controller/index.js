@@ -122,8 +122,8 @@ let bindOptionsEvents = ({ view, model, controller }) => {
       model.setShowPostemb(checked);
       model.updateNetwork();
     })
-    .on('setShowConnectionColor', checked => {
-      model.setShowConnectionColor(checked);
+    .on('setShowAnnotations', checked => {
+      model.setShowAnnotations(checked);
       model.updateNetwork('minor');
     })
     .on('refreshLayout', () => {
@@ -446,8 +446,8 @@ class Controller extends EventEmitter {
       state['showPostemb'] !== undefined ? state['showPostemb'] : true;
     let input = state['input'] || [];
     let legendItems = state['legendItems'] || [];
-    let showConnectionColor = 
-      state['showConnectionColor'] !== undefined ? state['showConnectionColor'] : true;
+    let showAnnotations = 
+      state['showAnnotations'] !== undefined ? state['showAnnotations'] : false;
 
     // Set view first, so events emitted from the model are triggered correctly.
     view.searchbar.setInput(input);
@@ -461,7 +461,7 @@ class Controller extends EventEmitter {
     view.options.checkOption('show-indiv-cells', showIndividual);
     view.options.checkOption('show-edge-num', showEdgeLabel);
     view.options.checkOption('show-postemb', showPostemb);
-    view.options.checkOption('show-connection-color', showConnectionColor);
+    view.options.checkOption('show-annotations', showAnnotations);
 
     // Update model.
     model.setDatabase(database);
@@ -474,7 +474,7 @@ class Controller extends EventEmitter {
     model.setShowIndividual(showIndividual);
     model.setShowEdgeLabel(showEdgeLabel);
     model.setShowPostemb(showPostemb);
-    model.setShowConnectionColor(showConnectionColor);
+    model.setShowAnnotations(showAnnotations);
     model.setPositionsFromArray(state['coordinates'] || []);
     model.setSplit(state['split'] || []);
     model.setJoined(state['join'] || []);
