@@ -189,6 +189,7 @@ class OptionsView extends BaseView {
             next();
           });
         $input.val(1);
+        $input.trigger('input');
 
         return;
       }
