@@ -40,7 +40,6 @@ module.exports = {
       dirs: [
         'src/client/scss/',
         'src/client/image/',
-        'src/client/help/',
         'src/client/3d-models/'
       ]
     }),
