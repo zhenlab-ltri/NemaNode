@@ -401,6 +401,7 @@ var cystyle = (function() {
         css: {
           'line-color': cytoscapeColors.coloursEdge['not-classified'],
           'target-arrow-color': cytoscapeColors.coloursEdge['not-classified'],
+          'source-arrow-color': cytoscapeColors.coloursEdge['not-classified'],
           color: 'black'
         }
       },
