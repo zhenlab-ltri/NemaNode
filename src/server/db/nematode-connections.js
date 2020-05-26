@@ -22,7 +22,7 @@ let queryAnnotations = (connection, opts) => {
 
 
 let queryConnections = (connection, opts) => {
-  let {
+  const {
     cells,
     datasetIds,
     includeNeighboringCells,
@@ -30,17 +30,24 @@ let queryConnections = (connection, opts) => {
     thresholdElectrical
   } = opts;
 
-  let connectionsSql = `
-    SELECT pre, post, type, dataset_id, synapses
-    FROM connections
-    WHERE (pre IN (${cells}) ${
-      includeNeighboringCells ? 'OR' : 'AND'
-    } post IN (${cells}))
-      AND dataset_id IN (${datasetIds})
-      AND (
-        (type = 'chemical' && synapses >= ${thresholdChemical})
-        OR (type = 'electrical' && synapses >= ${thresholdElectrical})
-      )
+  // First, get all connections matching the threshold, then fetch the synapse number for these
+  // connections in all appropriate datasets (even if they are below the threshold).
+  const connectionsSql = `
+    SELECT c.pre, c.post, c.type, c.dataset_id, c.synapses from (
+      SELECT pre, post, type
+      FROM connections
+      WHERE (pre IN (${cells}) ${
+        includeNeighboringCells ? 'OR' : 'AND'
+      } post IN (${cells}))
+        AND dataset_id IN (${datasetIds})
+        AND (
+          (type = 'chemical' && synapses >= ${thresholdChemical})
+          OR (type = 'electrical' && synapses >= ${thresholdElectrical})
+        )
+      GROUP BY pre, post, type
+    ) f
+    LEFT JOIN connections c ON f.pre = c.pre AND f.post = c.post AND f.type = c.type
+    WHERE c.dataset_id IN (${datasetIds})
   `;
 
   return connection.query(connectionsSql);
