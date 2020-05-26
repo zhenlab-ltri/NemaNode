@@ -1,7 +1,7 @@
 # Nemanode
 
 ## Required software
-- [Node.js](https://nodejs.org/en/) >= 12.16.1
+- [Node.js](https://nodejs.org/en/) >= 11.15.0
 - [MySQL](https://www.mysql.com/downloads/) >= 5.6
 - [GCC/g++ compiler](https://packages.ubuntu.com/focal/build-essential)
 
@@ -12,7 +12,6 @@
 3. Setup MySQL user and database: `scripts/setup_database.sh nemanode nemanode_user password | sudo mysql`
 4. Setup MySQL test database: `scripts/setup_test_database.sh test nemanode_user password | sudo mysql`
 5. Populate dev database: `npm run populate-database`
-6. Populate test database: `npm run populate-test-database`
 
 ## Commands
 Once setup is completed, you will be able to run the following commands in this project directory:
@@ -25,7 +24,6 @@ Once setup is completed, you will be able to run the following commands in this 
 - `npm run lint`: check for code convention violations
 - `npm run format-code`: format all code in the source folder to conform to code style standards
 - `populate-database`: take the raw data in src/server/db/raw-data and populate the mysql db with it
-- `populate-test-database`: take the raw data in src/server/db/raw-data and populate the test version of the db with it
 
 ## Documentation
 For more information on how to do various things read the documentation
