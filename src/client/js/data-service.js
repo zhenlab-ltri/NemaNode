@@ -2,7 +2,7 @@ const CellInfo = require('./cell-info');
 
 const ADULT_COMPLETE_MUSCLE_CLASS = 'BODYWALLMUSCLES';
 
-const { union, capitalizeFirstLetter } = require('./util');
+const { union, capitalizeFirstLetter, unique } = require('./util');
 
 class DataService {
   constructor() {
@@ -202,7 +202,7 @@ class DataService {
       nodes = nodes.filter(n => n !== 'BODYWALLMUSCLES');
     }
 
-    return nodes;
+    return unique(nodes);
   }
 
   isMotorPseudonym(name) {
