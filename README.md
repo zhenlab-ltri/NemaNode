@@ -5,6 +5,9 @@
 - [MySQL](https://www.mysql.com/downloads/) >= 5.6
 - [GCC/g++ compiler](https://packages.ubuntu.com/focal/build-essential)
 
+## Optional software
+- [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
 ## Setup
 
 1. Install app dependencies by running `npm install`

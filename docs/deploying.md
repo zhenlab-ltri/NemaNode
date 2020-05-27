@@ -3,6 +3,7 @@
 
 What you need:
 1. ssh access to the <LINUX_SERVER>
+2. install (PM2)[https://pm2.keymetrics.io/docs/usage/quick-start/] on the server `npm i pm2 -g`
 
 ## Updating the client/server
 
