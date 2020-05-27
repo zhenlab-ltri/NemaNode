@@ -3,30 +3,26 @@
 npm-debug.log
 /dist/
 /dist/**
-/dist/bundle.js
+
 # Config files
-database_config.ini
-test_database_config.ini
+config.ini
 
 # Extensions
 Thumbs.db
 *.pyc
 *~
+.DS_Store
+ mysql
 
 # Temporary files
 .~*
 *.swp
+db.sql
 
 # Compiled code
 /src/client/style/bundle.css
-/src_compiled
 /src/bundle.js
 
-.DS_Store
-mysql
-
+# Test files
 *.log
-
 /coverage
-
-db.sql

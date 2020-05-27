@@ -7,13 +7,15 @@ then
 fi
 
 NEMANODE_DATABASE="$1"
+NEMANODE_TEST_DATABASE="$1_tests"
 NEMANODE_USER="$2"
 NEMANODE_PASSWORD="$(echo $3 | sed -e "s/\\\\/\\\\\\\/g" -e "s/'/\\\'/g")"
 
 # Create config file.
-cat >database_config.ini <<EOL
+cat >config.ini <<EOL
 [mysql]
 database = $NEMANODE_DATABASE
+test_database = $NEMANODE_TEST_DATABASE
 user = $NEMANODE_USER
 password = $NEMANODE_PASSWORD
 EOL
@@ -113,6 +115,19 @@ CREATE TABLE annotations (
   INDEX idx_annotations_collection (collection),
   INDEX idx_annotations_annotation (annotation)
 );
+
+
+DROP DATABASE IF EXISTS $NEMANODE_TEST_DATABASE;
+CREATE DATABASE $NEMANODE_TEST_DATABASE;
+USE $NEMANODE_TEST_DATABASE;
+GRANT ALL PRIVILEGES ON *.* TO '$NEMANODE_USER'@'localhost' IDENTIFIED BY '$NEMANODE_PASSWORD';
+
+CREATE TABLE datasets LIKE $NEMANODE_DATABASE.datasets;
+CREATE TABLE neurons LIKE $NEMANODE_DATABASE.neurons;
+CREATE TABLE trajectories LIKE $NEMANODE_DATABASE.trajectories;
+CREATE TABLE connections LIKE $NEMANODE_DATABASE.connections;
+CREATE TABLE synapses LIKE $NEMANODE_DATABASE.synapses;
+CREATE TABLE annotations LIKE $NEMANODE_DATABASE.annotations;
 
 SET FOREIGN_KEY_CHECKS = 1;
 EOSQL
