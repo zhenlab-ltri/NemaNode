@@ -11,7 +11,6 @@ const SRC_DIR = 'src/client';
 const ASSET_PATHS = [
   'style/',
   'image/',
-  'help/',
   '3d-models/'
 ];
 const DIST_DIR = 'dist';
@@ -41,7 +40,6 @@ module.exports = {
       dirs: [
         'src/client/scss/',
         'src/client/image/',
-        'src/client/help/',
         'src/client/3d-models/'
       ]
     }),
