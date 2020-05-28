@@ -19,14 +19,13 @@ const SASS_OUTPUT_FILE = 'dist/style/bundle.css';
 
 const license = fs.readFileSync('LICENSE', 'utf-8');
 
-
+const { google_analytics_id } = ini.parse(
+  fs.readFileSync(path.join(__dirname, 'config.ini'), 'utf-8')
+).google_analytics;
 
 module.exports = (env, argv) => {
   let googleAnalyticsCode = '';
-  if (argv.mode == 'production') {
-    const { google_analytics_id } = ini.parse(
-      fs.readFileSync(path.join(__dirname, 'config.ini'), 'utf-8')
-    ).google_analytics;
+  if (argv.mode == 'production' && google_analytics_id !== '') {
     googleAnalyticsCode = `
     <script async src="https://www.googletagmanager.com/gtag/js?id=${google_analytics_id}"></script>
     <script>
