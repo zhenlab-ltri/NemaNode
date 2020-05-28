@@ -146,7 +146,7 @@ describe('populate database', function(){
 
     ]);
 
-    let result = await connection.query(`
+    let [result, ] = await connection.query(`
     SELECT c.type, s.dataset_id, c.pre, c.post, s.synapses
     FROM connections c LEFT JOIN synapses s ON c.id = s.connection_id`);
 
@@ -219,7 +219,7 @@ describe('populate database', function(){
     return connection.query(`
       SELECT c.type, s.dataset_id, c.pre, c.post, s.synapses
       FROM connections c LEFT JOIN synapses s ON c.id = s.connection_id`)
-      .then( result => {
+      .then( ([result, ]) => {
         expect(result.length).to.equal(expected.length);
 
         expected.forEach( expectedEdge => {
@@ -282,7 +282,7 @@ describe('populate database', function(){
       }
     ]);
 
-    let result = await connection.query(`
+    let [result, ] = await connection.query(`
       SELECT a.annotation, a.collection, c.pre, c.post, c.type
       FROM annotations a LEFT JOIN connections c ON c.id = a.connection_id
     `);

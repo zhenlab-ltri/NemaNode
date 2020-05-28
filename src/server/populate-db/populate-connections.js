@@ -1,5 +1,5 @@
 let getCell2ClassMap = async dbConn => {
-  let cells = await dbConn.query(`SELECT name, class FROM neurons`);
+  let [cells, ] = await dbConn.query(`SELECT name, class FROM neurons`);
 
   let cellClassesMap = {};
   cells.forEach(cell => {
@@ -10,7 +10,7 @@ let getCell2ClassMap = async dbConn => {
 };
 
 let getCellClass2MembersMap = async dbConn => {
-  let cells = await dbConn.query(`SELECT name, class FROM neurons`);
+  let [cells, ] = await dbConn.query(`SELECT name, class FROM neurons`);
 
   let cellClassesMembersMap = {};
   cells.forEach(cell => {
@@ -47,7 +47,7 @@ let populateConnections = async (dbConn, connectionsJSON) => {
 
     // Skip gap junctions already counted in the reverse direction.
     if (
-      type == 'electrical' && 
+      type == 'electrical' &&
       connections.hasOwnProperty([datasetId, post, pre, type].toString())
     ) {
       return;
@@ -58,7 +58,7 @@ let populateConnections = async (dbConn, connectionsJSON) => {
     const postClass = getClass(post, connection);
 
     let edges = [[pre, post, synapseCount]];
-    
+
     if (preClass != postClass) {
       if (pre != preClass) {
         edges.push([preClass, post, synapseCount]);
@@ -100,7 +100,7 @@ let populateConnections = async (dbConn, connectionsJSON) => {
           syn[i],
           pre_tid[i],
           post_tid[i]
-        ])
+        ]);
       });
     }
 
@@ -115,7 +115,7 @@ let populateConnections = async (dbConn, connectionsJSON) => {
     'INSERT INTO connections (id, dataset_id, pre, post, type, synapses) VALUES ?',
     [connectionValues]
   );
-  
+
   await dbConn.query(
     'INSERT INTO synapses (connection_id, connector_id, weight, pre_tid, post_tid) VALUES ?',
     [synapses]

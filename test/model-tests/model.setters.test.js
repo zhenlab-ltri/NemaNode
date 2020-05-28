@@ -41,10 +41,12 @@ test('set database', function(){
 test('set datasets', function(){
   let m = new Model();
 
-  m.setDatabase('complete');
-  m.setDatasets(['adult', 'l1']);
+  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasets = DataService.getDatasetList(datasetType);
+  m.setDatabase(datasetType);
+  m.setDatasets(datasets);
 
-  expect( m.datasets ).toEqual( ['l1', 'adult'] );
+  expect( m.datasets ).toEqual( datasets );
 });
 
 test('set node color', function(){
@@ -90,8 +92,10 @@ test('set show linked', function(){
 test('set show individual', function(){
   let m = new Model();
 
-  m.setDatabase( 'complete' );
-  m.setDatasets( ['adult', 'l1'] );
+  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasets = DataService.getDatasetList(datasetType);
+  m.setDatabase( datasetType );
+  m.setDatasets( datasets );
   m.setShowIndividual( false );
 
   expect( m.showIndividual ).toEqual( false );
@@ -250,27 +254,15 @@ test('set joined', function(){
 
 test('classes specific to the adult complete dataset are automatically joined if the adult complete dataset is set', function(){
   let m = new Model();
-  m.datasets = ['adult'];
+  const datasets = DataService.getDatasetList('complete');
+  m.datasets = datasets;
   m.joined = ['ASER', 'ASEL'];
 
   let newJoined = [];
 
   m.setJoined( newJoined );
 
-  expect( m.joined ).toEqual( [
-    "PM2",
-    "PM3",
-    "PM5",
-    "PM6",
-    "PM7",
-    "MC1",
-    "MC2",
-    "MC3",
-    "G1",
-    "G2",
-    "DEFECATIONMUSCLES",
-    "BODYWALLMUSCLES"
-  ] );
+  expect( m.joined ).toEqual( DataService.adultCompleteDatasetSpecificClasses );
 });
 
 test('setting positions from array resets positions and locks them', function(){
