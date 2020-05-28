@@ -23,4 +23,4 @@ Note: ensure that the server are using has the correct version of node by typing
 ## Restarting the server
 
 8. delete the old instance of the server using pm2: `pm2 delete <APP_ID>`
-9. restart the server with the new changes: `pm2 start src/server/index.js --cron "*/15 * * * *`
+9. restart the server with the new changes: `pm2 start src/server/index.js --cron "*/15 * * * *"`
