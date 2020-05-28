@@ -1,4 +1,4 @@
-let queryCells = connection => {
+let queryCells = async connection => {
   let cellsSql = `
     SELECT name, class, type, neurotransmitter, embryonic, inhead, intail
     FROM neurons
@@ -12,7 +12,9 @@ let queryCells = connection => {
   //let cellsWithTrajectories = await connection.query(cellsTrajectorySql).map( c => `${c.neuron_name}` );
   //let uniqueCellsWithTrajectories = new Set(cellsWithTrajectories);
 
-  return connection.query(cellsSql).map(cell => {
+  const [rows, ] = await connection.query(cellsSql);
+
+  return rows.map(cell => {
     cell.intail = !!cell.intail; // transform 1, 0 into booleans
     cell.inhead = !!cell.inhead;
     cell.embryonic = !!cell.embryonic;
