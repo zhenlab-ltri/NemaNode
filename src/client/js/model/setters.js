@@ -25,10 +25,6 @@ ModelPrototype.setDatasets = function(datasetsNew) {
   if (this.datasets.includes(DataService.getAdultCompleteDataset().id)) {
     this.emit('joinLegacyCells', DataService.legacyCellToClass);
   }
-  this.emit(
-    'validNodesChanged',
-    DataService.getValidNodes(this.showIndividual, this.database, this.datasets)
-  );
   this.emit('datasetsChanged', this.datasets);
 };
 
@@ -60,10 +56,6 @@ ModelPrototype.setShowLinked = function(checked) {
 ModelPrototype.setShowIndividual = function(checked) {
   this.showIndividual = checked;
   this.emit('showIndividualChanged', checked);
-  this.emit(
-    'validNodesChanged',
-    DataService.getValidNodes(checked, this.database, this.datasets)
-  );
 };
 
 ModelPrototype.setShowEdgeLabel = function(checked) {
