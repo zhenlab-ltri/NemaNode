@@ -2,7 +2,6 @@
 require('core-js');
 require('whatwg-fetch');
 require('./register-cytoscape-extensions')();
-require('./google-analytics')();
 
 const $ = require('jquery');
 const cytoscape = require('cytoscape');

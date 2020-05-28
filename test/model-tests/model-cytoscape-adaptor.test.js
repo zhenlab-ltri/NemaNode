@@ -1,19 +1,10 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
-const ini = require('ini');
-const fs = require('fs');
-const path = require('path');
-
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
 const queryNematodeDatasets = require('../../src/server/db/nematode-datasets');
-
-
-const DB_INI_FILE = '../../test_database_config.ini';
-const dbIni = ini.parse(fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8'));
-const TEST_DB_OPTS = dbIni.mysql;
 
 let connection;
 let DataService = require('../../src/client/js/data-service');
@@ -21,7 +12,7 @@ let Model = require('../../src/client/js/model');
 
 beforeAll(() => {
 
-  return db.connect(TEST_DB_OPTS).then( c => {
+  return db.connect({ useTestDatabase: true }).then( c => {
     connection = c;
     return connection;
   }).then( connection => {

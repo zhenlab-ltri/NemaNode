@@ -1,10 +1,6 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
-const ini = require('ini');
-const fs = require('fs');
-const path = require('path');
-
 const db = require('../../src/server/db');
 
 const queryNematodeConnections = require('../../src/server/db/nematode-connections');
@@ -13,14 +9,10 @@ const fixture1 = require('./nematode-connections-1.json');
 const fixture2 = require('./nematode-connections-2.json');
 const fixture3 = require('./nematode-connections-3.json');
 
-const DB_INI_FILE = '../../test_database_config.ini';
-const dbIni = ini.parse(fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8'));
-const TEST_DB_OPTS = dbIni.mysql;
-
 let connection;
 
 beforeAll(() => {
-  return db.connect(TEST_DB_OPTS).then( c => {
+  return db.connect({ useTestDatabase: true }).then( c => {
     connection = c;
     return connection;
   });

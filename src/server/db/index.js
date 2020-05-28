@@ -14,14 +14,17 @@ const downloadConnectivity = require('./download-data');
   getDatasetsThatContainNeuronTrajectories
 } = require('./nematode-neuron-trajectories');*/
 
-const DB_INI_FILE = '../../../database_config.ini';
+const DB_INI_FILE = '../../../config.ini';
 const dbIni = ini.parse(
   fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8')
 );
-const DEFAULT_DB_OPTS = dbIni.mysql;
 
-let connect = opts => {
-  let { database, user, password } = Object.assign(DEFAULT_DB_OPTS, opts);
+
+let connect = ({useTestDatabase = false} = {}) => {
+  let { database, user, password } = dbIni.mysql;
+  if (useTestDatabase) {
+    database = dbIni.mysql.test_database;
+  }
 
   return mysql
     .createConnection({

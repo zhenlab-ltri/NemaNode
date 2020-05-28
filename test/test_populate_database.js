@@ -1,8 +1,5 @@
 const mocha = require('mocha');
 const { expect } = require('chai');
-const ini = require('ini');
-const fs = require('fs');
-const path = require('path');
 
 const db = require('../src/server/db/');
 
@@ -14,15 +11,11 @@ const {
   populateCells
  } = require('../src/server/db/populate-db/');
 
-const DB_INI_FILE = '../test_database_config.ini';
-const dbIni = ini.parse(fs.readFileSync(path.join(__dirname, DB_INI_FILE), 'utf-8'));
-const TEST_DB_OPTS = dbIni.mysql;
-
 describe('populate database', function(){
 
   let connection;
   before(async () => {
-    connection = await db.connect(TEST_DB_OPTS);
+    connection = await db.connect({ useTestDatabase: true });
   });
 
   after(async () => {
