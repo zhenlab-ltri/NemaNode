@@ -180,31 +180,6 @@ class DataService {
     return this.cellInfo.nt[cell];
   }
 
-  // Cell list.
-  getValidNodes(isIndividual, datasetType, datasets) {
-    this.checkLoaded();
-
-    let nodes = this.cellInfo.validNodes[datasetType].filter(n => {
-      return isIndividual ? this.isCell(n) : this.isClass(n);
-    });
-
-    if (
-      datasets.includes(this.getAdultCompleteDataset().id) &&
-      datasetType === 'complete'
-    ) {
-      // include cells and classes that are specific to the adult complete dataset
-
-      nodes = nodes.filter(n => !this.legacyCells.includes(n));
-      nodes = union(nodes, this.legacyClasses);
-    }
-
-    if (datasetType === 'head') {
-      nodes = nodes.filter(n => n !== 'BODYWALLMUSCLES');
-    }
-
-    return unique(nodes);
-  }
-
   isMotorPseudonym(name) {
     return ['VC', 'AS', 'VD', 'VB', 'VA', 'DB', 'DA', 'DD'].includes(name);
   }

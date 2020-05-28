@@ -69,22 +69,6 @@ test('dataservice gets body wall muscle cells class as a function of the dataset
   expect( DataService.getBodyWallMuscleClass('BWM-DL01', completeDatasets)).toEqual('BODYWALLMUSCLES');
 });
 
-test('dataservice valid nodes are different depending on the dataset type', function(){
-  const isIndividual = false;
-  const completeDatasets = DataService.getDatasetList('complete');
-  const headDatasets = DataService.getDatasetList('head');
-  const completeDatasetsValidNodes = DataService.getValidNodes( isIndividual, 'complete', completeDatasets );
-  const headDatasetsValidNodes = DataService.getValidNodes( isIndividual, 'head', headDatasets );
-
-  // there should be head specific nodes, complete specific nodes
-  expect(completeDatasetsValidNodes).not.toEqual(headDatasetsValidNodes);
-
-  // valid nodes should not contain duplicates
-  expect(completeDatasetsValidNodes.length).toEqual(new Set(completeDatasetsValidNodes).size);
-  expect(headDatasetsValidNodes.length).toEqual(new Set(headDatasetsValidNodes).size);
-
-});
-
 test('dataservice can get the ids of all the datasets', function(){
 
   expect( DataService.getDatasetList('complete').length).toBeGreaterThan(0);
