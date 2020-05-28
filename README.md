@@ -12,7 +12,7 @@
 
 1. Install app dependencies by running `npm install`
 2. Setup MySQL if first-time use: `sudo mysql_secure_installation`
-3. Setup MySQL user and database: `scripts/setup_database.sh nemanode nemanode_user password | sudo mysql`
+3. Setup MySQL user and database: `scripts/setup_config.sh nemanode nemanode_user password | sudo mysql`
 4. Populate database: `npm run populate-database`
 
 ## Commands
