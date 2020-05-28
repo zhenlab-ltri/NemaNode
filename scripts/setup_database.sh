@@ -13,11 +13,19 @@ NEMANODE_PASSWORD="$(echo $3 | sed -e "s/\\\\/\\\\\\\/g" -e "s/'/\\\'/g")"
 
 # Create config file.
 cat >config.ini <<EOL
+[http_server]
+port = 3000
+auth_user = 
+auth_password = 
+
 [mysql]
 database = $NEMANODE_DATABASE
 test_database = $NEMANODE_TEST_DATABASE
 user = $NEMANODE_USER
 password = $NEMANODE_PASSWORD
+
+[google_analytics]
+google_analytics_id = 
 EOL
 
 # Create output for MySQL.

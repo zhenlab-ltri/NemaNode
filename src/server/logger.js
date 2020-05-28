@@ -1,5 +1,5 @@
 let winston = require('winston');
-let { NODE_ENV, LOG_LEVEL } = require('../config');
+let { NODE_ENV, LOG_LEVEL } = require('./config');
 
 let transports = [
   new winston.transports.File({

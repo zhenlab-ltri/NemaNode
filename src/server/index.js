@@ -13,7 +13,7 @@ const logger = require('./logger');
 const routes = require('./routes');
 const db = require('./db/');
 
-const { PORT, USER, PASSWORD } = require('../config');
+const { PORT, USER, PASSWORD } = require('./config');
 
 const app = express();
 const server = http.createServer(app);

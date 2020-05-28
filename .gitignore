@@ -1,8 +1,7 @@
 # node.js
 /node_modules
 npm-debug.log
-/dist/
-/dist/**
+/dist
 
 # Config files
 config.ini
@@ -18,10 +17,6 @@ Thumbs.db
 .~*
 *.swp
 db.sql
-
-# Compiled code
-/src/client/style/bundle.css
-/src/bundle.js
 
 # Test files
 *.log
