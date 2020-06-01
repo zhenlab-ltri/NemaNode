@@ -25,3 +25,7 @@ test('get cells from the db', function(){
     expect( res ).toEqual( expectedCells );
   });
 });
+
+test('should fail', function(){
+  expect(1).toEqual(2);
+});
