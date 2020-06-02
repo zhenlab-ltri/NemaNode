@@ -1,7 +1,7 @@
 const { createGrid } = require('./layout');
 const { meanPosition } = require('./position');
 
-const { sum, max, intersection } = require('../util');
+const { sum, intersection } = require('../util');
 
 let ModelPrototype = {};
 

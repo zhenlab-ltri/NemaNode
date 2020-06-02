@@ -2,7 +2,7 @@ const CellInfo = require('./cell-info');
 
 const ADULT_COMPLETE_MUSCLE_CLASS = 'BODYWALLMUSCLES';
 
-const { union, capitalizeFirstLetter, unique } = require('./util');
+const { capitalizeFirstLetter } = require('./util');
 
 class DataService {
   constructor() {

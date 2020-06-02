@@ -90,8 +90,6 @@ let loadTrajectoryData = () => {
 
     trajectories = trajectories.concat(
       trajectoriesJson.map(s => {
-        let nodeIds = Object.keys(s.coords).map(k => parseInt(k));
-
         let axesInfo = trajectoryAxes[datasetId];
 
         Object.keys(s.coords).forEach( k => {

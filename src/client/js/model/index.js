@@ -5,8 +5,6 @@ const EventEmitter = require('../EventEmitter');
 const services = require('../services');
 const DataService = require('../data-service');
 
-const { deepCopy } = require('../util');
-
 const { positionModule } = require('./position');
 const summary = require('./summary');
 const setters = require('./setters');
@@ -75,7 +73,7 @@ class Model extends EventEmitter {
       DataService.exists(input, this.database)
     );
 
-    var params = {
+    let params = {
       database: this.database,
       datasets: this.datasets,
       input: validInput,

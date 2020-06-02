@@ -1,4 +1,4 @@
-const { intersection, unique, prettyPrintArray } = require('../util');
+const { intersection } = require('../util');
 
 const EventEmitter = require('../EventEmitter');
 const Tour = require('./tour');
@@ -66,7 +66,7 @@ let bindOptionsEvents = ({ view, model, controller }) => {
     .on('setDatabase', database => {
       model.clear();
       model.setDatabase(database);
-      var datasets = view.options.getSelectedDatasets();
+      let datasets = view.options.getSelectedDatasets();
       model.setDatasets(datasets);
       model.updateNetwork();
     })

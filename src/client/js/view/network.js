@@ -295,7 +295,7 @@ class GraphView extends View2 {
     .getElementById(id)
     .toggleClass('showEdgeLabel', check)
     .toggleClass('focus', false);
-  };
+  }
 
   toggleEdgeLabel(id, check) {
     if (id == 'all') {
@@ -485,7 +485,7 @@ class GraphView extends View2 {
     let yArr = selected.map(node => node.position('y'));
 
     switch (alignType) {
-      case 'left':
+      case 'left': {
         selected.positions(node => {
           return {
             x: min(xArr),
@@ -493,7 +493,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'right':
+      }
+      case 'right': {
         selected.positions(node => {
           return {
             x: max(xArr),
@@ -501,7 +502,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'top':
+      }
+      case 'top': {
         selected.positions(node => {
           return {
             x: node.position('x'),
@@ -509,7 +511,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'bottom':
+      }
+      case 'bottom': {
         selected.positions(node => {
           return {
             x: node.position('x'),
@@ -517,9 +520,10 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'horizontal':
-        var xMin = min(xArr);
-        var xMax = max(xArr);
+      }
+      case 'horizontal': {
+        let xMin = min(xArr);
+        let xMax = max(xArr);
         selected = selected.sort((a, b) => a.position('x') - b.position('x'));
         selected.positions((node, i) => {
           return {
@@ -528,9 +532,10 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'vertical':
-        var yMin = min(yArr);
-        var yMax = max(yArr);
+      }
+      case 'vertical': {
+        let yMin = min(yArr);
+        let yMax = max(yArr);
 
         selected = selected.sort((a, b) => a.position('y') - b.position('y'));
         selected.positions((node, i) => {
@@ -540,6 +545,7 @@ class GraphView extends View2 {
           };
         });
         break;
+      }
     }
 
     this.emit('aligned', this.getPositions('all'));
@@ -637,7 +643,7 @@ class GraphView extends View2 {
   makeEdge(params) {
     this.idx += 1;
 
-    var source = {
+    let source = {
       id: 'legend-' + this.idx + '-source',
       width: '15px',
       height: '15px',
@@ -645,7 +651,7 @@ class GraphView extends View2 {
       position: { x: params.position['x'] - 35, y: params.position['y'] }
     };
 
-    var target = {
+    let target = {
       id: 'legend-' + this.idx + '-target',
       width: '15px',
       height: '15px',
@@ -653,7 +659,7 @@ class GraphView extends View2 {
       position: { x: params.position['x'] + 35, y: params.position['y'] }
     };
 
-    var edge = {
+    let edge = {
       group: 'edges',
       classes: 'legend' + (params.classes || ''),
       data: {

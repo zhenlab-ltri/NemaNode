@@ -2,8 +2,8 @@ const THREE = require('three');
 const { EventDispatcher, Quaternion, Vector2, Vector3 } = THREE;
 
 let OrthographicTrackballControls = function(object, domElement) {
-  var _this = this;
-  var STATE = {
+  let _this = this;
+  let STATE = {
     NONE: -1,
     ROTATE: 0,
     ZOOM: 1,
@@ -43,11 +43,11 @@ let OrthographicTrackballControls = function(object, domElement) {
 
   this.target = new Vector3();
 
-  var EPS = 0.000001;
+  let EPS = 0.000001;
 
-  var _changed = true;
+  let _changed = true;
 
-  var _state = STATE.NONE,
+  let _state = STATE.NONE,
     _prevState = STATE.NONE,
     _eye = new Vector3(),
     _rotateStart = new Vector3(),
@@ -72,9 +72,9 @@ let OrthographicTrackballControls = function(object, domElement) {
 
   // events
 
-  var changeEvent = { type: 'change' };
-  var startEvent = { type: 'start' };
-  var endEvent = { type: 'end' };
+  let changeEvent = { type: 'change' };
+  let startEvent = { type: 'start' };
+  let endEvent = { type: 'end' };
 
   // methods
 
@@ -85,9 +85,9 @@ let OrthographicTrackballControls = function(object, domElement) {
       this.screen.width = window.innerWidth;
       this.screen.height = window.innerHeight;
     } else {
-      var box = this.domElement.getBoundingClientRect();
+      let box = this.domElement.getBoundingClientRect();
       // adjustments come from similar code in the jquery offset() function
-      var d = this.domElement.ownerDocument.documentElement;
+      let d = this.domElement.ownerDocument.documentElement;
       this.screen.left = box.left + window.pageXOffset - d.clientLeft;
       this.screen.top = box.top + window.pageYOffset - d.clientTop;
       this.screen.width = box.width;
@@ -102,8 +102,8 @@ let OrthographicTrackballControls = function(object, domElement) {
     this.bottom0 = this.object.bottom;
   };
 
-  var getMouseOnScreen = (function() {
-    var vector = new Vector2();
+  let getMouseOnScreen = (function() {
+    let vector = new Vector2();
 
     return function getMouseOnScreen(pageX, pageY) {
       vector.set(
@@ -115,10 +115,10 @@ let OrthographicTrackballControls = function(object, domElement) {
     };
   })();
 
-  var getMouseProjectionOnBall = (function() {
-    var vector = new Vector3();
-    var objectUp = new Vector3();
-    var mouseOnBall = new Vector3();
+  let getMouseProjectionOnBall = (function() {
+    let vector = new Vector3();
+    let objectUp = new Vector3();
+    let mouseOnBall = new Vector3();
 
     return function getMouseProjectionOnBall(pageX, pageY) {
       mouseOnBall.set(
@@ -127,7 +127,7 @@ let OrthographicTrackballControls = function(object, domElement) {
         0.0
       );
 
-      var length = mouseOnBall.length();
+      let length = mouseOnBall.length();
 
       if (_this.noRoll) {
         if (length < Math.SQRT1_2) {
@@ -157,11 +157,11 @@ let OrthographicTrackballControls = function(object, domElement) {
   })();
 
   this.rotateCamera = (function() {
-    var axis = new Vector3(),
+    let axis = new Vector3(),
       quaternion = new Quaternion();
 
     return function rotateCamera() {
-      var angle = Math.acos(
+      let angle = Math.acos(
         _rotateStart.dot(_rotateEnd) /
           _rotateStart.length() /
           _rotateEnd.length()
@@ -196,7 +196,7 @@ let OrthographicTrackballControls = function(object, domElement) {
 
   this.zoomCamera = function() {
     if (_state === STATE.TOUCH_ZOOM_PAN) {
-      var factor = _touchZoomDistanceEnd / _touchZoomDistanceStart;
+      let factor = _touchZoomDistanceEnd / _touchZoomDistanceStart;
       _touchZoomDistanceStart = _touchZoomDistanceEnd;
 
       _this.object.zoom = Math.max(
@@ -206,7 +206,7 @@ let OrthographicTrackballControls = function(object, domElement) {
 
       _changed = true;
     } else {
-      var factor = 1.0 + (_zoomEnd.y - _zoomStart.y) * _this.zoomSpeed;
+      let factor = 1.0 + (_zoomEnd.y - _zoomStart.y) * _this.zoomSpeed;
 
       if (Math.abs(factor - 1.0) > EPS && factor > 0.0) {
         _this.object.zoom = Math.max(
@@ -227,7 +227,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   };
 
   this.panCamera = (function() {
-    var mouseChange = new Vector2(),
+    let mouseChange = new Vector2(),
       objectUp = new Vector3(),
       pan = new Vector3();
 
@@ -236,9 +236,9 @@ let OrthographicTrackballControls = function(object, domElement) {
 
       if (mouseChange.lengthSq() > EPS) {
         // Scale movement to keep clicked/dragged position under cursor
-        var scale_x =
+        let scale_x =
           (_this.object.right - _this.object.left) / _this.object.zoom;
-        var scale_y =
+        let scale_y =
           (_this.object.top - _this.object.bottom) / _this.object.zoom;
         mouseChange.x *= scale_x;
         mouseChange.y *= scale_y;
@@ -409,20 +409,21 @@ let OrthographicTrackballControls = function(object, domElement) {
     event.stopPropagation();
 
     switch (event.deltaMode) {
-      case 2:
+      case 2: {
         // Zoom in pages
         _zoomStart.y -= event.deltaY * 0.025;
         break;
-
-      case 1:
+      }
+      case 1: {
         // Zoom in lines
         _zoomStart.y -= event.deltaY * 0.01;
         break;
-
-      default:
+      }
+      default: {
         // undefined, 0, assume pixels
         _zoomStart.y -= event.deltaY * 0.00025;
         break;
+      }
     }
 
     _this.dispatchEvent(startEvent);
@@ -433,7 +434,7 @@ let OrthographicTrackballControls = function(object, domElement) {
     if (_this.enabled === false) return;
 
     switch (event.touches.length) {
-      case 1:
+      case 1: {
         _state = STATE.TOUCH_ROTATE;
         _rotateStart.copy(
           getMouseProjectionOnBall(
@@ -443,23 +444,24 @@ let OrthographicTrackballControls = function(object, domElement) {
         );
         _rotateEnd.copy(_rotateStart);
         break;
-
-      case 2:
+      }
+      case 2: {
         _state = STATE.TOUCH_ZOOM_PAN;
-        var dx = event.touches[0].pageX - event.touches[1].pageX;
-        var dy = event.touches[0].pageY - event.touches[1].pageY;
+        let dx = event.touches[0].pageX - event.touches[1].pageX;
+        let dy = event.touches[0].pageY - event.touches[1].pageY;
         _touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt(
           dx * dx + dy * dy
         );
 
-        var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-        var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+        let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+        let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
         _panStart.copy(getMouseOnScreen(x, y));
         _panEnd.copy(_panStart);
         break;
-
-      default:
+      }
+      default: {
         _state = STATE.NONE;
+      }
     }
     _this.dispatchEvent(startEvent);
   }
@@ -471,7 +473,7 @@ let OrthographicTrackballControls = function(object, domElement) {
     event.stopPropagation();
 
     switch (event.touches.length) {
-      case 1:
+      case 1: {
         _rotateEnd.copy(
           getMouseProjectionOnBall(
             event.touches[0].pageX,
@@ -479,17 +481,17 @@ let OrthographicTrackballControls = function(object, domElement) {
           )
         );
         break;
-
-      case 2:
-        var dx = event.touches[0].pageX - event.touches[1].pageX;
-        var dy = event.touches[0].pageY - event.touches[1].pageY;
+      }
+      case 2: {
+        let dx = event.touches[0].pageX - event.touches[1].pageX;
+        let dy = event.touches[0].pageY - event.touches[1].pageY;
         _touchZoomDistanceEnd = Math.sqrt(dx * dx + dy * dy);
 
-        var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-        var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+        let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+        let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
         _panEnd.copy(getMouseOnScreen(x, y));
         break;
-
+      }
       default:
         _state = STATE.NONE;
     }
@@ -499,7 +501,7 @@ let OrthographicTrackballControls = function(object, domElement) {
     if (_this.enabled === false) return;
 
     switch (event.touches.length) {
-      case 1:
+      case 1: {
         _rotateEnd.copy(
           getMouseProjectionOnBall(
             event.touches[0].pageX,
@@ -508,15 +510,16 @@ let OrthographicTrackballControls = function(object, domElement) {
         );
         _rotateStart.copy(_rotateEnd);
         break;
-
-      case 2:
+      }
+      case 2: {
         _touchZoomDistanceStart = _touchZoomDistanceEnd = 0;
 
-        var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-        var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+        let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+        let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
         _panEnd.copy(getMouseOnScreen(x, y));
         _panStart.copy(_panEnd);
         break;
+      }
     }
 
     _state = STATE.NONE;

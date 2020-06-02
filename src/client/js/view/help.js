@@ -113,11 +113,10 @@ class HelpView extends BaseView {
     const { $content, $menu, $arrowBack, $body } = this;
 
     $content.children().hide();
-    $('#' + topic + '-content').show()
+    $('#' + topic + '-content').show();
 
 
-    let distanceFromBottom =
-    $(window).height() - $body.offset().top - $body.outerHeight();
+    let distanceFromBottom = $(window).height() - $body.offset().top - $body.outerHeight();
     let maxHeight = Math.min($body.height() + distanceFromBottom - 10, 800);
     let contentHeight = $content.height();
 
@@ -135,7 +134,7 @@ class HelpView extends BaseView {
 
       const keys = Object.keys(json[0]);
       const rows = json.map((connection) => keys.map((key) => connection[key]).join('\t'));
-      const csv = keys.join('\t') + '\n' + rows.join('\n')
+      const csv = keys.join('\t') + '\n' + rows.join('\n');
 
       let blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
       saveAs(blob, `${datasetId}.csv`);
@@ -183,7 +182,6 @@ class HelpView extends BaseView {
     }
 
     this.$tourProgress.html(progressDots.join(''));
-    console.log(progressDots.join(''))
   }
 
   showTour(coordinate, position) {

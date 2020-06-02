@@ -1,5 +1,4 @@
 const qs = require('query-string');
-const { unique } = require('./util');
 
 const getNematodeCells = () => {
   return fetch('/api/cells').then((res) => res.json());

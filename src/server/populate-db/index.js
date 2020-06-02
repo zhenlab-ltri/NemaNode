@@ -1,3 +1,5 @@
+/* eslint no-console: "off" */
+
 const { connect } = require('../db');
 const { cellList, datasetList, loadConnectionData, loadAnnotationData, loadTrajectoryData } = require('./load-data');
 const populateCells = require('./populate-cells');

@@ -114,7 +114,6 @@ class PopupView extends BaseView {
     };
 
     this.isMobile = false;
-    let self = this;
 
     $.contextMenu({
       selector: '#cy',

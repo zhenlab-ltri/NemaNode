@@ -34,6 +34,7 @@ $(document).ready(() => {
         window.c = controller;
         window.ds = DataService;
         cytoscape.warnings(true);
+        // eslint-disable-next-line
         console.log('Running in debug mode');
 
         // Live reload.

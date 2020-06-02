@@ -9,21 +9,6 @@ let getCell2ClassMap = async dbConn => {
   return cellClassesMap;
 };
 
-let getCellClass2MembersMap = async dbConn => {
-  let [cells, ] = await dbConn.query(`SELECT name, class FROM neurons`);
-
-  let cellClassesMembersMap = {};
-  cells.forEach(cell => {
-    if (cellClassesMembersMap[cell.class] == null) {
-      cellClassesMembersMap[cell.class] = [];
-    }
-    cellClassesMembersMap[cell.class].push(cell.name);
-  });
-
-  return cellClassesMembersMap;
-};
-
-
 let populateConnections = async (dbConn, connectionsJSON) => {
   let cellClassesMap = await getCell2ClassMap(dbConn);
 

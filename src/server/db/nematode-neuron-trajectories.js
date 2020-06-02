@@ -36,7 +36,7 @@ let queryNeuronTrajectories = async (connection, opts) => {
     AND (
       c.pre IN (${neuronNames}) OR c.post IN (${neuronNames})
     );
-  `
+  `;
 
   let trajectories = await connection.query(trajectoriesSql);
   let trajectorySynapses = await connection.query(synapseSql);

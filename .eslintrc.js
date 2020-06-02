@@ -11,6 +11,9 @@ module.exports = {
     ecmaVersion: 8
   },
   rules: {
-    semi: 'error'
+    semi: ['error', 'always'], // Always have semi-colons.
+    'no-console': 'error', // Don't allow console.log().
+    'no-var': 'error', // Use let or const.
+    'no-prototype-builtins': 'off', // Allow using hasOwnProperty.
   }
 };

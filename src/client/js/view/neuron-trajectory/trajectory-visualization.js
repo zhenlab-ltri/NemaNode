@@ -14,7 +14,7 @@ const CELL_BODIES_OBJ_KEY = 'cellBodies';
 const DIRECTION_AXES_OBJ_KEY = 'directionAxes';
 
 class NeuronTrajectoryVisualization {
-  constructor({ bgColor = 0xffffff, width, height, controller }) {
+  constructor({ bgColor = 0xffffff, width, height }) {
     let renderer;
     let camera;
     let directionalityCamera;
@@ -80,7 +80,7 @@ class NeuronTrajectoryVisualization {
 
       },
       undefined,
-      ( error ) => {}
+      () => {}
     );
     // initialize mouse controls
     controls = new THREE.OrthographicTrackballControls(
@@ -391,7 +391,7 @@ class NeuronTrajectoryVisualization {
       };
 
       let addSynapse = synapse => {
-        let { id, pre_node_id, post_node_id } = synapse;
+        let { pre_node_id, post_node_id } = synapse;
         let postNode = addNode(post_node_id, postNodeMaterial);
         let preNode = addNode(pre_node_id, preNodeMaterial);
 
@@ -459,7 +459,7 @@ class NeuronTrajectoryVisualization {
       };
 
       let addGapJunction = gapJunction => {
-        let { id, pre_node_id, post_node_id } = gapJunction;
+        let { pre_node_id, post_node_id } = gapJunction;
         let postNode = addNode(post_node_id, gapJunctionNodeMaterial);
         let preNode = addNode(pre_node_id, gapJunctionNodeMaterial);
 

@@ -1,7 +1,5 @@
 const DataService = require('../data-service');
 
-const { difference, union, unique } = require('../util');
-
 let ModelPrototype = {};
 
 ModelPrototype.setDatabase = function(databaseNew) {
