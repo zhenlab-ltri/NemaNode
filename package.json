@@ -17,7 +17,7 @@
     "watch:js": "webpack --watch --mode development",
     "watch": "run-p -c watch:*",
     "build-prod": "cross-env NODE_ENV=production webpack --mode production --devtool none",
-    "test:eslint": "eslint src test",
+    "test:eslint": "eslint src",
     "test:sasslint": "sass-lint --verbose",
     "test:unit-tests": "jest --config ./test/jest.config.js",
     "test": "run-s -c test:*",
