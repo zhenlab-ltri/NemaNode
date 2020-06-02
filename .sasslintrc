@@ -1,0 +1,54 @@
+{
+  "files": {
+    "include": 'src/client/scss/*.scss',
+    "ignore": [
+      "src/client/scss/jquery-contextMenu-2.7.1.min.scss",
+      "src/client/scss/jquery-ui-1.12.1.min.scss",
+      "src/client/scss/vue-select.scss",
+      "src/client/scss/neuron-trajectory.scss"
+    ]
+  },
+  "options": {
+    "merge-default-rules": true
+  },
+  "rules": {
+    "trailing-semicolon": 2,
+    "no-duplicate-properties": 2,
+    "pseudo-element": 2,
+    "variable-name-format": 2,
+    "class-name-format": 2,
+    "one-declaration-per-line": 2,
+    "border-zero": 2,
+    "attribute-quotes": 2,
+    "indentation": 2,
+    "space-before-brace": 2,
+    "space-after-comma": 2,
+    "space-around-operator": 2,
+    "quotes": 2,
+    "no-vendor-prefixes": 2,
+
+    "no-important": 1,
+    "no-color-literals": 1,
+    "no-mergeable-selectors": 1,
+    "hex-notation": 1,
+    
+    "no-trailing-whitespace": 0,
+    "no-qualifying-elements": 0,
+    "declarations-before-nesting": 0,
+    "single-line-per-selector": 0,
+    "no-css-comments": 0,
+    "shorthand-values": 0,
+    "zero-unit": 0,
+    "force-element-nesting": 0,
+    "force-attribute-nesting": 0,
+    "force-pseudo-nesting": 0,
+    "no-color-keywords": 0,
+    "leading-zero": 0,
+    "property-sort-order": 0,
+    "no-ids": 0,
+    "empty-line-between-blocks": 0,
+    "extends-before-declarations": 0,
+    "placeholder-in-extend": 0,
+    "hex-length": 0
+  }
+}

@@ -68,19 +68,19 @@
     border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 
-	  font-size: 24px;
+    font-size: 24px;
     text-align: center;
     cursor: pointer;
-	  background-color: $blue;
-	  color: $text-inverse;
+    background-color: $blue;
+    color: $text-inverse;
     &:hover {
-	    background-color: darken($blue, 10%);
-	  }
-	  transition: box-shadow 100ms cubic-bezier(0.52, 0, 0.48, 1) 0s;
-	  &:active {
-	    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3),
-	          inset 0 0 5px 5px rgba(0, 0, 0, 0.1);
-	  }
+      background-color: darken($blue, 10%);
+    }
+    transition: box-shadow 100ms cubic-bezier(0.52, 0, 0.48, 1) 0s;
+    &:active {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3),
+      inset 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
     z-index: 14;
   }
   #legend {
@@ -185,7 +185,6 @@
     position: absolute;
     top: 0;
     left: calc(50% - 20px);
-    display: block;
     margin: 0 auto;
     width: 40px;
     height: 70px;
@@ -215,7 +214,6 @@
     border: 0;
     border-radius: 0;
     max-width: none;
-    min-width: none;
     box-shadow: none;
     
     > .context-menu-item.context-menu-submenu { /* Alignment submenu */
@@ -337,8 +335,8 @@
       background-color: $background !important; /*overwrites js*/
     }
     
-    #cy-input:before {
-      content: "Group name: ";
+    #cy-input::before {
+      content: 'Group name: ';
       color: $text-subtle;
       display: inline-block;
       margin-right: 5px;

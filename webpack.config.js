@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const ini = require('ini');
 const webpack = require('webpack');
 const sass = require('node-sass');
+const autoprefixer = require('autoprefixer');
 const PostCompilePlugin = require('post-compile-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -80,16 +81,19 @@ module.exports = (env, argv) => {
         },
       }),
       new PostCompilePlugin(() => {
-        let result = sass.renderSync({
+        let css = sass.renderSync({
           file: path.resolve(__dirname, SASS_INPUT_FILE),
           outputStyle: 'compressed'
-        });
+        }).css;
+
+        autoprefixer({remove: false})
+        css = autoprefixer.process(css).css;
 
         ASSET_PATHS.forEach( path => {
           fs.copySync(`${SRC_DIR}/${path}`, `${DIST_DIR}/${path}`);
         } );
 
-        fs.writeFileSync(path.resolve(__dirname, SASS_OUTPUT_FILE), result.css);
+        fs.writeFileSync(path.resolve(__dirname, SASS_OUTPUT_FILE), css);
       })
     ],
     module: {

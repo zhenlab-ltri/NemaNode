@@ -1,153 +1,154 @@
 @font-face {
+  // sass-lint:disable-block no-duplicate-properties
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?8edrel');
-  src:  url('fonts/icomoon.eot?8edrel#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?8edrel') format('truetype'),
-    url('fonts/icomoon.woff?8edrel') format('woff'),
-    url('fonts/icomoon.svg?8edrel#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?8edrel');
+  src: url('fonts/icomoon.eot?8edrel#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?8edrel') format('truetype'),
+  url('fonts/icomoon.woff?8edrel') format('woff'),
+  url('fonts/icomoon.svg?8edrel#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before, [class*="-icon-"]:before {
+[class^='icon-']::before, [class*=' icon-']::before, [class*='-icon-']::before {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
 }
 
 /* Help */
-.icon-walkthrough:before {
-  content: "\e90d";
+.icon-walkthrough::before {
+  content: '\e90d';
 }
-.icon-connectivity:before {
-  content: "\e90e";
+.icon-connectivity::before {
+  content: '\e90e';
 }
-.icon-neuron:before {
-  content: "\e90f";
+.icon-neuron::before {
+  content: '\e90f';
 }
-.icon-download:before {
-  content: "\e911";
+.icon-download::before {
+  content: '\e911';
 }
-.icon-reference:before {
-  content: "\e910";
+.icon-reference::before {
+  content: '\e910';
 }
-.icon-question_answer:before {
-  content: "\e8af";
+.icon-question-answer::before {
+  content: '\e8af';
 }
-.icon-github:before {
-  content: "\f09b";
+.icon-github::before {
+  content: '\f09b';
 }
-.icon-arrow_back:before {
-  content: "\e5c4";
+.icon-arrow-back::before {
+  content: '\e5c4';
 }
 
 /* Searchbar */
-.icon-cog:before {
-  content: "\f013";
+.icon-cog::before {
+  content: '\f013';
 }
-.icon-question:before {
-  content: "\f128";
+.icon-question::before {
+  content: '\f128';
 }
 /* Legend */
-.icon-gapjunction:before {
-  content: "\e909";
+.icon-gapjunction::before {
+  content: '\e909';
 }
-.icon-long-arrow-right:before {
-  content: "\f178";
+.icon-long-arrow-right::before {
+  content: '\f178';
 }
-.icon-list-ul:before {
-  content: "\f0ca";
+.icon-list-ul::before {
+  content: '\f0ca';
 }
 
 /* Popup menu */
 .icon, .context-menu-icon {
-  &-add:before {
-    content: "\e900";
+  &-add::before {
+    content: '\e900';
   }
-  &-alignbottom:before {
-    content: "\e901";
+  &-alignbottom::before {
+    content: '\e901';
   }
-  &-alignleft:before {
-    content: "\e902";
+  &-alignleft::before {
+    content: '\e902';
   }
-  &-alignright:before {
-    content: "\e903";
+  &-alignright::before {
+    content: '\e903';
   }
-  &-aligntop:before {
-    content: "\e904";
+  &-aligntop::before {
+    content: '\e904';
   }
-  &-disthorizontal:before {
-    content: "\e905";
+  &-disthorizontal::before {
+    content: '\e905';
   }
-  &-distvertical:before {
-    content: "\e906";
+  &-distvertical::before {
+    content: '\e906';
   }
-  &-split:before {
-    content: "\e907";
+  &-split::before {
+    content: '\e907';
   }
-  &-join:before {
-    content: "\e908";
+  &-join::before {
+    content: '\e908';
   }
-  &-group:before {
-    content: "\e90a";
+  &-group::before {
+    content: '\e90a';
   }
-  &-ungroup:before {
-    content: "\e90b";
+  &-ungroup::before {
+    content: '\e90b';
   }
-  &-hide:before {
-    content: "\e90c";
+  &-hide::before {
+    content: '\e90c';
   }
-  &-close:before {
-    content: "\e5cd";
+  &-close::before {
+    content: '\e5cd';
   }
-  &-check:before {
-    content: "\f00c";
+  &-check::before {
+    content: '\f00c';
   }
-  &-times:before {
-    content: "\f00d";
+  &-times::before {
+    content: '\f00d';
   }
-  &-refresh:before {
-    content: "\f021";
+  &-refresh::before {
+    content: '\f021';
   }
-  &-edit:before {
-    content: "\f044";
+  &-edit::before {
+    content: '\f044';
   }
-  &-expand:before {
-    content: "\f065";
+  &-expand::before {
+    content: '\f065';
   }
-  &-compress:before {
-    content: "\f066";
+  &-compress::before {
+    content: '\f066';
   }
-  &-neuron:before {
-    content: "\e90f";
+  &-neuron::before {
+    content: '\e90f';
   }
-  &-caret-left:before {
-    content: "\f0d9";
+  &-caret-left::before {
+    content: '\f0d9';
   }
-  &-angle-double-up:before {
-    content: "\f102";
+  &-angle-double-up::before {
+    content: '\f102';
   }
-  &-angle-double-down:before {
-    content: "\f103";
+  &-angle-double-down::before {
+    content: '\f103';
   }
-  &-angle-left:before {
-    content: "\f104";
+  &-angle-left::before {
+    content: '\f104';
   }
-  &-angle-up:before {
-    content: "\f106";
+  &-angle-up::before {
+    content: '\f106';
   }
-  &-angle-down:before {
-    content: "\f107";
+  &-angle-down::before {
+    content: '\f107';
   }
-  &-info:before {
-    content: "\f129";
+  &-info::before {
+    content: '\f129';
   }
-  &-question-circle-o:before {
-    content: "\f29c";
+  &-question-circle-o::before {
+    content: '\f29c';
   }
 }

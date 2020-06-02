@@ -28,8 +28,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-input[type=text]::-ms-clear { /* removes x */
-  display: none;
+input[type='text']::-ms-clear { // sass-lint:disable-line no-vendor-prefixes
+  display: none; // removes 'x'
 }
 textarea {
   resize: none;

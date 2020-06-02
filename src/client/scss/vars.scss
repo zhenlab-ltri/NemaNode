@@ -5,12 +5,7 @@ $searchbar-width: 360px;
 $help-width: 360px;
 
 @mixin non-selectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none; 
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
 
 %non-selectable {
@@ -20,8 +15,8 @@ $help-width: 360px;
 %no-collapse-on-children-float {
   &::after {
     content: ' ';
-    display: block; 
-    height: 0; 
+    display: block;
+    height: 0;
     clear: both;
   }
 }
