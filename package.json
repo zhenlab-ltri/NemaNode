@@ -17,8 +17,9 @@
     "watch": "run-p -c watch:*",
     "build-prod": "cross-env NODE_ENV=production webpack --mode production --devtool none",
     "start": "forever ./src/server/index.js",
-    "test": "jest --config ./test/jest.config.js",
-    "lint": "eslint src test",
+    "test:eslint": "eslint src test",
+    "test:unit-tests": "jest --config ./test/jest.config.js",
+    "test": "run-s -c test:*",
     "format-code": "prettier --print-width 80 --single-quote es5 --write 'src/**/*.js'",
     "populate-database": "node ./src/server/populate-db/index.js"
   },
