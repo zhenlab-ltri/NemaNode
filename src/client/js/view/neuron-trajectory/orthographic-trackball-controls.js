@@ -105,7 +105,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   let getMouseOnScreen = (function() {
     let vector = new Vector2();
 
-    return function getMouseOnScreen(pageX, pageY) {
+    return (pageX, pageY) => {
       vector.set(
         (pageX - _this.screen.left) / _this.screen.width,
         (pageY - _this.screen.top) / _this.screen.height
@@ -120,7 +120,7 @@ let OrthographicTrackballControls = function(object, domElement) {
     let objectUp = new Vector3();
     let mouseOnBall = new Vector3();
 
-    return function getMouseProjectionOnBall(pageX, pageY) {
+    return (pageX, pageY) => {
       mouseOnBall.set(
         (pageX - _this.screen.width * 0.5 - _this.screen.left) / _this.radius,
         (_this.screen.height * 0.5 + _this.screen.top - pageY) / _this.radius,
@@ -160,7 +160,7 @@ let OrthographicTrackballControls = function(object, domElement) {
     let axis = new Vector3(),
       quaternion = new Quaternion();
 
-    return function rotateCamera() {
+    return () => {
       let angle = Math.acos(
         _rotateStart.dot(_rotateEnd) /
           _rotateStart.length() /
@@ -231,7 +231,7 @@ let OrthographicTrackballControls = function(object, domElement) {
       objectUp = new Vector3(),
       pan = new Vector3();
 
-    return function panCamera() {
+    return () => {
       mouseChange.copy(_panEnd).sub(_panStart);
 
       if (mouseChange.lengthSq() > EPS) {
@@ -322,7 +322,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   // listeners
 
   function keydown(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     window.removeEventListener('keydown', keydown);
 
@@ -340,7 +340,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function keyup() {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     _state = _prevState;
 
@@ -348,7 +348,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function mousedown(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     event.preventDefault();
     event.stopPropagation();
@@ -375,7 +375,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function mousemove(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     event.preventDefault();
     event.stopPropagation();
@@ -390,7 +390,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function mouseup(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     event.preventDefault();
     event.stopPropagation();
@@ -403,7 +403,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function mousewheel(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     event.preventDefault();
     event.stopPropagation();
@@ -431,7 +431,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function touchstart(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     switch (event.touches.length) {
       case 1: {
@@ -467,7 +467,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function touchmove(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     event.preventDefault();
     event.stopPropagation();
@@ -498,7 +498,7 @@ let OrthographicTrackballControls = function(object, domElement) {
   }
 
   function touchend(event) {
-    if (_this.enabled === false) return;
+    if (_this.enabled === false) { return; }
 
     switch (event.touches.length) {
       case 1: {

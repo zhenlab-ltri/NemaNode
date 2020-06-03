@@ -1,5 +1,5 @@
 let getCell2ClassMap = async dbConn => {
-  let [cells, ] = await dbConn.query(`SELECT name, class FROM neurons`);
+  let [cells, ] = await dbConn.query('SELECT name, class FROM neurons');
 
   let cellClassesMap = {};
   cells.forEach(cell => {
@@ -57,7 +57,7 @@ let populateConnections = async (dbConn, connectionsJSON) => {
     }
 
     edges.forEach((edge) => {
-      if (edge[0] == null || edge[1] == null) {
+      if (edge[0] === undefined || edge[1] === undefined) {
         //legacy datasets with classes directly listed.
         return;
       }
@@ -131,7 +131,7 @@ let getAnnotations = async (dbConn, annotations) => {
     expandedAnnotationsData.forEach(pair => {
       let annotationKey = `${pair[0]}-${pair[1]}-${datasetType}-${annotationType}`;
 
-      if( !annotationsSeen.has(annotationKey) ){
+      if (!annotationsSeen.has(annotationKey)) {
         processedAnnotations.push([pair[0], pair[1], 'chemical', datasetType, annotationType]);
         annotationsSeen.add(annotationKey);
       }

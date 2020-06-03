@@ -31,7 +31,7 @@ const {
 let createNeuronTrajectoryUi = ({ controller, width, height }) => {
   return new Vue({
     el: '#ntv',
-    mounted: function(){
+    mounted: () => {
       this.controller.initializeVisualization();
       let { scalebarMeasurement, scalebarMinWidth } = this.controller.computeScalebarMeasurement();
       this.scalebarMeasurement = scalebarMeasurement;
@@ -115,31 +115,31 @@ let createNeuronTrajectoryUi = ({ controller, width, height }) => {
       },
       validInput: function() {
         // only class member cells are sent to input
-        let valid = this.input.filter( i => DataService.cellsMap.get( i ).hasTrajectory );
+        let valid = this.input.filter(i => DataService.cellsMap.get(i).hasTrajectory);
 
         let invalid = difference(this.input, valid);
-        if( invalid.length > 0 ){
+        if (invalid.length > 0) {
           this.controller.handleNeuronTrajectoryNotFound(invalid);
         }
 
         return Array.from(new Set(valid));
       },
-      openEndColor: function() {
+      openEndColor: () => {
         return this.bgColor === 0xffffff ? 0x000000 : 0xffffff;
       },
-      missingTrajectoryNeighbours: function(){
+      missingTrajectoryNeighbours: () => {
         let neuronNeighbours = this.tooltipData.connectedNeuronNames;
-        let neuronsNotInVisualization = neuronNeighbours.filter( n => !this.validInput.includes(n));
+        let neuronsNotInVisualization = neuronNeighbours.filter(n => !this.validInput.includes(n));
 
         return neuronsNotInVisualization;
       },
-      scalebarContent: function(){
+      scalebarContent: () => {
         let width = 0;
         let scalebarDisplayVal = '';
         for (let i = 0; i < SCALE_BAR_SIZES.length; ++i) {
           scalebarDisplayVal = SCALE_BAR_SIZES[i];
           width = SCALE_BAR_SIZES[i] * this.scalebarMeasurement;
-          if (width > Math.min(192, this.scalebarMinWidth)){
+          if (width > Math.min(192, this.scalebarMinWidth)) {
             break;
           }
         }
@@ -181,30 +181,30 @@ let createNeuronTrajectoryUi = ({ controller, width, height }) => {
         this.showTooltip = false;
         this.updateTrajectoryVisualization();
       },
-      showWormBody: function(){
+      showWormBody: () => {
         this.updateTrajectoryVisualization();
       },
-      selectedDataset: function() {
+      selectedDataset: () => {
         this.updateTrajectoryVisualization();
       },
-      neuronColorScheme: function() {
+      neuronColorScheme: () => {
         this.updateTrajectoryVisualization();
       },
-      connectionColorScheme: function() {
+      connectionColorScheme: () => {
         this.updateTrajectoryVisualization();
       },
-      showSynapses: function(){
+      showSynapses: () => {
         this.updateTrajectoryVisualization();
       },
-      showGapJunctions: function(){
+      showGapJunctions: () => {
         this.updateTrajectoryVisualization();
       },
-      showOpenEnds: function(){
+      showOpenEnds: () => {
         this.updateTrajectoryVisualization();
       }
     },
     methods: {
-      updateTrajectoryVisualization: function() {
+      updateTrajectoryVisualization: () => {
         let {
           showWormBody,
           validInput: neuronNames,
@@ -285,15 +285,15 @@ let createNeuronTrajectoryUi = ({ controller, width, height }) => {
         if (isCircle) {
           opts.width = '14px';
           opts['border-radius'] = '50%';
-          border != null ? (opts['border'] = '1px solid') : null;
-          opacity != null ? (opts['opacity'] = opacity) : null;
+          border !== null ? (opts['border'] = '1px solid') : null;
+          opacity !== null ? (opts['opacity'] = opacity) : null;
         } else {
           opts.margin = '0 2px';
         }
 
         return opts;
       },
-      getScaleBarStyle: function(){
+      getScaleBarStyle: () => {
         let textColor = '#777';
         return {
           'width': `${this.scalebarContent.width}px`,

@@ -117,9 +117,9 @@ $(document).ready(() => {
       view.searchbar.focus();
     })
     .catch(e => {
-      let errorMsg =
-        'Cannot load data!\nPlease contact us if the problem persists!';
-      alert(errorMsg);
+      if (!DEBUG) {
+        alert('Cannot load data!\nPlease contact us if the problem persists!');
+      }
       throw e;
     });
 });

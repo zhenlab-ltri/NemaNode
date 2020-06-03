@@ -117,9 +117,9 @@ class DataService {
     )[0];
   }
 
-  getDatasetById(datasetId){
+  getDatasetById(datasetId) {
     this.checkLoaded();
-    return this.datasets.find( d => d.id === datasetId );
+    return this.datasets.find(d => d.id === datasetId);
   }
 
   setDatasetType(databaseType) {
@@ -194,7 +194,7 @@ class DataService {
       ANALDEP: 'anal dep'
     };
 
-    if (namesWithSpaces[name] != null) {
+    if (namesWithSpaces[name] !== undefined) {
       return namesWithSpaces[name];
     }
 

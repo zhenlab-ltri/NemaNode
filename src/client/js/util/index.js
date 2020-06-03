@@ -27,17 +27,17 @@ let groupBy = require('lodash.groupby');
 let prettyPrintArray = arr => {
   let label;
 
-  if( arr === [] ){ return ''; }
+  if (arr === []) { return ''; }
 
-  if( arr.length === 1 ){
+  if (arr.length === 1) {
     label = arr[0];
   }
 
-  if( arr.length === 2 ){
+  if (arr.length === 2) {
     label = `${arr[0]} and ${arr[1]}`;
   }
 
-  if( arr.length > 2 ){
+  if (arr.length > 2) {
     label = `${arr.slice(0, arr.length - 2).join(', ')} and ${arr[arr.length - 1]}`;
   }
 

@@ -61,7 +61,7 @@ ModelPrototype.setShowEdgeLabel = function(checked) {
   this.emit('showEdgeLabelChanged', checked);
 };
 
-ModelPrototype.setShowAnnotations = function(checked){
+ModelPrototype.setShowAnnotations = function(checked) {
   this.showAnnotations = checked;
   this.emit('showAnnotationsChanged', checked);
 };

@@ -60,7 +60,7 @@ class NeuronTrajectoryVisualization {
 
     let loader = new THREE.GLTFLoader();
 
-    loader.load( '3d-models/ntv-direction-axis.glb',
+    loader.load('3d-models/ntv-direction-axis.glb',
       gltf => {
         let directionAxes = gltf.scene.children[0].children[0];
         let material = new THREE.MeshBasicMaterial({color: 0x000000 });
@@ -72,7 +72,7 @@ class NeuronTrajectoryVisualization {
         directionAxes.layers.set(1);
 
         directionalityCamera.add(directionAxes);
-        directionalityCamera.children.forEach( child => {
+        directionalityCamera.children.forEach((child) => {
           child.translateZ(-200);
           child.translateX(50);
           child.setRotationFromEuler(this.directionalityCamera.rotation);
@@ -110,7 +110,7 @@ class NeuronTrajectoryVisualization {
 
     this.controls.addEventListener('change', () => {
       this.directionalityCamera.rotation = this.camera.rotation;
-      this.directionalityCamera.children.forEach( child => {
+      this.directionalityCamera.children.forEach(child => {
         child.setRotationFromEuler(this.directionalityCamera.rotation);
       });
     });
@@ -122,7 +122,7 @@ class NeuronTrajectoryVisualization {
     let { scene } = this;
     let obj = scene.getObjectByName(objName);
 
-    if (obj != null) {
+    if (obj !== undefined) {
       for (let i = obj.children.length - 1; i >= 0; i--) {
         let child = obj.children[i];
         child.material.dispose();
@@ -134,7 +134,7 @@ class NeuronTrajectoryVisualization {
     }
   }
 
-  clear(){
+  clear() {
     this.removeGroupObj(TRAJECTORIES_OBJ_KEY);
     this.removeGroupObj(SYNASPES_OBJ_KEY);
     this.removeGroupObj(OPEN_ENDS_OBJ_KEY);
@@ -187,19 +187,19 @@ class NeuronTrajectoryVisualization {
 
           allCoordinates[nodeId] = new THREE.Vector3(x, y, z);
 
-          if( y > maxYVec.y ){
+          if (y > maxYVec.y) {
             maxYVec.set(x, y, z);
           }
 
-          if( z > maxZVec.z ){
+          if (z > maxZVec.z) {
             maxZVec.set(x, y, z);
           }
 
-          if( y < minYVec.y ){
+          if (y < minYVec.y) {
             minYVec.set(x, y, z);
           }
 
-          if( z < minZVec.z ){
+          if (z < minZVec.z) {
             minZVec.set(x, y, z);
           }
 
@@ -239,7 +239,7 @@ class NeuronTrajectoryVisualization {
           let segStartPos = allCoordinates[segStart];
           let segEndPos = allCoordinates[segEnd];
 
-          if( segStartPos != null && segEndPos != null ){
+          if (segStartPos !== undefined && segEndPos !== undefined) {
             segments.push(segStartPos.x, segStartPos.y, segStartPos.z);
             segments.push(segEndPos.x, segEndPos.y, segEndPos.z);  
           }
@@ -272,12 +272,12 @@ class NeuronTrajectoryVisualization {
       openEndMaterial.transparent = true;
       openEndMaterial.opacity = 0.4;
 
-      if( showOpenEnds ){
+      if (showOpenEnds) {
         neuronTrajectories.forEach(nt => {
           nt.trajectory_json.open_ends.forEach(openEndNodeId => {
             let coordinate = allCoordinates[openEndNodeId];
 
-            if( coordinate != null ){
+            if (coordinate !== undefined) {
               let openEnd = new THREE.Mesh(openEndGeometry, openEndMaterial);
               openEnd.position.copy(coordinate);
   
@@ -298,7 +298,7 @@ class NeuronTrajectoryVisualization {
         nt.trajectory_json.nuclei.forEach(([nucleousNodeId, nucleousRadius]) => {
           let coordinate = allCoordinates[nucleousNodeId];
 
-          if( coordinate != null ){
+          if (coordinate !== undefined) {
             let nucleousGeometry = new THREE.SphereGeometry(nucleousRadius, 32, 32);
             let nucleousMaterial = new THREE.MeshBasicMaterial({
               color: nt.color
@@ -358,21 +358,20 @@ class NeuronTrajectoryVisualization {
 
       // a valid synapse is a synapse where both post node and pre node
       // exist in the current neuron trajectories
-      let validConnections = showAllSynapses
-        ? synapses
-        : synapses.filter(synapse => {
-            return (
-              (allPreSynapticNodes.has(synapse.pre_node_id) &&
-                allPostSynapticNodes.has(synapse.post_node_id)) ||
-              (allPreSynapticNodes.has(synapse.post_node_id) &&
-                allPostSynapticNodes.has(synapse.pre_node_id))
-            );
-          });
+      let validConnections = showAllSynapses ? synapses : synapses.filter(synapse => {
+        return (
+          (allPreSynapticNodes.has(synapse.pre_node_id) &&
+            allPostSynapticNodes.has(synapse.post_node_id)) ||
+          (allPreSynapticNodes.has(synapse.post_node_id) &&
+            allPostSynapticNodes.has(synapse.pre_node_id)
+          )
+        );
+      });
 
       let addNode = (nodeId, material) => {
         let nodePos = allCoordinates[nodeId];
 
-        if (nodePos == null) {
+        if (nodePos === undefined) {
           return {
             nodeMesh: null,
             nodePos: null,
@@ -402,8 +401,8 @@ class NeuronTrajectoryVisualization {
             type: 'chemical synapse'
           };
 
-          preNode.nodeMesh.userData = Object.assign( {}, connectionMetadata, { nodeId: pre_node_id } );
-          postNode.nodeMesh.userData = Object.assign( {}, connectionMetadata, { nodeId: post_node_id } );
+          preNode.nodeMesh.userData = Object.assign({}, connectionMetadata, { nodeId: pre_node_id });
+          postNode.nodeMesh.userData = Object.assign({}, connectionMetadata, { nodeId: post_node_id });
 
           let midPoint = new THREE.Vector3();
           midPoint.add(preNode.nodePos);
@@ -448,7 +447,7 @@ class NeuronTrajectoryVisualization {
         }
 
         if (preNode.exists) {
-          preNode.nodeMesh.userData =  { nodeId: pre_node_id };
+          preNode.nodeMesh.userData = { nodeId: pre_node_id };
           synapseVisualization.add(preNode.nodeMesh);
         }
 
@@ -484,7 +483,7 @@ class NeuronTrajectoryVisualization {
         }
 
         if (preNode.exists) {
-          preNode.nodeMesh.userData =  { nodeId: pre_node_id };
+          preNode.nodeMesh.userData = { nodeId: pre_node_id };
           synapseVisualization.add(preNode.nodeMesh);
         }
 
@@ -494,11 +493,11 @@ class NeuronTrajectoryVisualization {
         }
       };
 
-      let gapJunctions = validConnections.filter( c => c.type === 'electrical' );
-      let chemSynapses = validConnections.filter( c => c.type !== 'electrical' );
+      let gapJunctions = validConnections.filter(c => c.type == 'electrical');
+      let chemSynapses = validConnections.filter(c => c.type != 'electrical');
 
-      if( showGapJunctions ){ gapJunctions.forEach( gj => addGapJunction(gj) ); }
-      if( showSynapses ){ chemSynapses.forEach( cs => addSynapse(cs) ); }
+      if (showGapJunctions) { gapJunctions.forEach(gj => addGapJunction(gj)); }
+      if (showSynapses) { chemSynapses.forEach(cs => addSynapse(cs)); }
 
       return synapseVisualization;
     };
@@ -515,18 +514,18 @@ class NeuronTrajectoryVisualization {
         })
         .reduce(
           (acc, cur) => {
-            acc[0] = acc[0] + cur.x;
-            acc[1] = acc[1] + cur.y;
-            acc[2] = acc[2] + cur.z;
+            acc[0] += cur.x;
+            acc[1] += cur.y;
+            acc[2] += cur.z;
 
             return acc;
           },
           [0, 0, 0]
         );
 
-      avgCenterPt[0] = avgCenterPt[0] / numTrajectories;
-      avgCenterPt[1] = avgCenterPt[1] / numTrajectories;
-      avgCenterPt[2] = avgCenterPt[2] / numTrajectories;
+      avgCenterPt[0] /= numTrajectories;
+      avgCenterPt[1] /= numTrajectories;
+      avgCenterPt[2] /= numTrajectories;
 
       return avgCenterPt;
     };
@@ -590,21 +589,21 @@ class NeuronTrajectoryVisualization {
       this.currCenterPt = avgCenterPt;
     }
 
-    if( !cameraIsInitialized ){
+    if (!cameraIsInitialized) {
       // set camera to default c. elegans view if this is the visualization is loading for the first time
       // e.g. https://www.wormatlas.org/SulstonNeuronalCellLineages/art/FIG1L.jpg
       // see https://github.com/TorontoZhen/nemanode/issues/13#issuecomment-521675579
       this.camera.position.set(avgCenterPt[0], avgCenterPt[1], avgCenterPt[2] * 5);
     }
 
-    let createWormBodyVisualization = ({ wormBodyWidthModifier, showWormBody, center, maxYVec, minYVec, minZVec, maxZVec}) => {
-      let radius = (Math.max( maxYVec.distanceTo(minYVec), maxZVec.distanceTo(minZVec)) / 2) * wormBodyWidthModifier;
-      let geometry = new THREE.CylinderGeometry( radius, radius * 1.2, 50000, 32 );
-      let material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+    let createWormBodyVisualization = ({ wormBodyWidthModifier, showWormBody, center, maxYVec, minYVec, minZVec, maxZVec }) => {
+      let radius = (Math.max(maxYVec.distanceTo(minYVec), maxZVec.distanceTo(minZVec)) / 2) * wormBodyWidthModifier;
+      let geometry = new THREE.CylinderGeometry(radius, radius * 1.2, 50000, 32);
+      let material = new THREE.MeshBasicMaterial({color: 0xffff00});
       material.transparent = true;
       material.opacity = 0.2;
 
-      let cylinder = new THREE.Mesh( geometry, material );
+      let cylinder = new THREE.Mesh(geometry, material);
       cylinder.rotation.z = 1.5;
       cylinder.renderOrder = 10;
 
@@ -612,7 +611,7 @@ class NeuronTrajectoryVisualization {
       wormBodyObj.name = WORM_BODY_OBJ_KEY;
       wormBodyObj.position.set(center[0], center[1], center[2]);
 
-      if(showWormBody){
+      if (showWormBody) {
         wormBodyObj.add(cylinder);
       }
 
@@ -629,7 +628,7 @@ class NeuronTrajectoryVisualization {
       minZVec
     });
 
-    this.scene.add( wormBodyObj );
+    this.scene.add(wormBodyObj);
     this.scene.add(trajectoriesVisualization);
     this.scene.add(synapseVisualization);
     this.scene.add(openEndsVisualization);
@@ -644,15 +643,15 @@ class NeuronTrajectoryVisualization {
     this.controls.update();
     let { width, height } = this.renderer.domElement.getBoundingClientRect();
     this.renderer.setViewport(0, 0, width, height);
-    this.renderer.setScissor( 0, 0, width, height );
-    this.renderer.setScissorTest( true );
+    this.renderer.setScissor(0, 0, width, height);
+    this.renderer.setScissorTest(true);
     this.renderer.render(this.scene, this.camera);
 
     const directionalityWidth = 125;
     const directionalityHeight = 125;
     this.renderer.setViewport(width - 10 - directionalityWidth, 10, directionalityWidth, directionalityHeight);
     this.renderer.setScissor(width - 10 - directionalityWidth, 10, directionalityWidth, directionalityHeight);
-    this.renderer.setScissorTest( true );
+    this.renderer.setScissorTest(true);
     this.renderer.render(this.scene, this.directionalityCamera);
 
     requestAnimationFrame(() => this.render());
@@ -661,10 +660,10 @@ class NeuronTrajectoryVisualization {
   updateVisualizationSize(w, h) {
     let aspect = w / h;
 
-    this.camera.left = this.frustumSize * aspect / - 2;
+    this.camera.left = this.frustumSize * aspect / -2;
     this.camera.right = this.frustumSize * aspect / 2;
     this.camera.top = this.frustumSize / 2;
-    this.camera.bottom = - this.frustumSize / 2;
+    this.camera.bottom = -this.frustumSize / 2;
 
     this.renderer.setSize(w, h);
     this.camera.updateProjectionMatrix();
@@ -673,7 +672,7 @@ class NeuronTrajectoryVisualization {
 
     let trajectoryObj = this.scene.getObjectByName(TRAJECTORIES_OBJ_KEY);
 
-    if (trajectoryObj != null) {
+    if (trajectoryObj !== undefined) {
       trajectoryObj.children.forEach(trajectory => {
         trajectory.material.resolution = new THREE.Vector2(w, h);
       });
@@ -687,7 +686,7 @@ class NeuronTrajectoryVisualization {
 
     let trajectoryObj = scene.getObjectByName(TRAJECTORIES_OBJ_KEY);
 
-    if (trajectoryObj != null) {
+    if (trajectoryObj !== undefined) {
       trajectoryObj.children.forEach(trajectory => {
         trajectory.material.linewidth = newWidth;
       });
@@ -695,9 +694,9 @@ class NeuronTrajectoryVisualization {
 
     let synapsesObj = scene.getObjectByName(SYNASPES_OBJ_KEY);
 
-    if (synapsesObj != null) {
+    if (synapsesObj !== undefined) {
       synapsesObj.children.forEach(s => {
-        if (s.material.type === 'LineMaterial') {
+        if (s.material.type == 'LineMaterial') {
           s.material.linewidth = newWidth;
         }
       });
@@ -711,20 +710,19 @@ class NeuronTrajectoryVisualization {
     let openEndsObj = scene.getObjectByName(OPEN_ENDS_OBJ_KEY);
     let directionAxesObj = scene.getObjectByName(DIRECTION_AXES_OBJ_KEY);
 
-    if (openEndsObj != null) {
+    if (openEndsObj !== undefined) {
       openEndsObj.children.forEach(child => {
         child.material.color.set(newOpenEndColor);
       });
     }
 
-    if (directionAxesObj != null ){
+    if (directionAxesObj !== undefined) {
       directionAxesObj.material.color.set(newOpenEndColor);
     }
 
-
   }
 
-  getRaycastIntersection(e, xOffset, yOffset){
+  getRaycastIntersection(e, xOffset, yOffset) {
     e.preventDefault();
     let x = ((e.clientX - xOffset) / (this.renderer.domElement.clientWidth)) * 2 - 1;
     let y = -((e.clientY - yOffset) / (this.renderer.domElement.clientHeight)) * 2 + 1;
@@ -737,12 +735,11 @@ class NeuronTrajectoryVisualization {
 
     let synapseObj = this.scene.getObjectByName(SYNASPES_OBJ_KEY);
 
-    if( synapseObj != null ){
-      let clickableObjects = this.scene.getObjectByName(SYNASPES_OBJ_KEY).children.filter( c => c.type === 'Mesh');
-      intersects = this.raycaster.intersectObjects( clickableObjects, true ).map( i => {
+    if (synapseObj !== null || synapseObj !== undefined) {
+      let clickableObjects = this.scene.getObjectByName(SYNASPES_OBJ_KEY).children.filter((c) => c.type == 'Mesh');
+      intersects = this.raycaster.intersectObjects(clickableObjects, true).map((i) => {
         return i.object.userData.nodeId;
-    });
-
+      });
     }
 
     return intersects;

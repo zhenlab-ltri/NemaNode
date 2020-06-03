@@ -11,9 +11,8 @@ let queryAnnotations = async (connection, opts) => {
   const annotationsSql = `
     SELECT pre, post, type, annotation
     FROM annotations
-    WHERE (pre in (${cells}) ${
-    includeNeighboringCells ? 'OR' : 'AND'
-  } post in (${cells}))
+    WHERE (pre in (${cells}) 
+    ${includeNeighboringCells ? 'OR' : 'AND'} post in (${cells}))
       AND collection in (${datasetType})
   `;
 
@@ -38,9 +37,8 @@ let queryConnections = async (connection, opts) => {
     SELECT c.pre, c.post, c.type, c.dataset_id, c.synapses from (
       SELECT pre, post, type
       FROM connections
-      WHERE (pre IN (${cells}) ${
-        includeNeighboringCells ? 'OR' : 'AND'
-      } post IN (${cells}))
+      WHERE (pre IN (${cells}) 
+      ${includeNeighboringCells ? 'OR' : 'AND'} post IN (${cells}))
         AND dataset_id IN (${datasetIds})
         AND (
           (type = 'chemical' && synapses >= ${thresholdChemical})
@@ -100,7 +98,7 @@ let queryNematodeConnections = async (connection, opts) => {
       let { pre, post, type: connectionType, annotation: annotationType } = annotation;
       let key = getConnectionPrimaryKey(pre, post, connectionType);
 
-      if( annotationsMap.has(key) ){
+      if (annotationsMap.has(key)) {
         annotationsMap.set(key, annotationsMap.get(key).concat(annotationType));
       } else {
         annotationsMap.set(key, [annotationType]);

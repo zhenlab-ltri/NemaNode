@@ -136,7 +136,7 @@ class HelpView extends BaseView {
       const rows = json.map((connection) => keys.map((key) => connection[key]).join('\t'));
       const csv = keys.join('\t') + '\n' + rows.join('\n');
 
-      let blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
+      let blob = new Blob([csv], {type: 'text/plain;charset=utf-8'});
       saveAs(blob, `${datasetId}.csv`);
     });
   }

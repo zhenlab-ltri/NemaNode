@@ -153,7 +153,7 @@ class GraphView extends View2 {
 
       this.one('layoutstop', () => this.correctGjSegments());
 
-      let nodesInNetwork = cy.nodes().filter(n => newNodes[n.id()] != null);
+      let nodesInNetwork = cy.nodes().filter(n => newNodes[n.id()] !== undefined);
       let previousPositions = {};
       nodesInNetwork.forEach(n => (previousPositions[n.id()] = n.position()));
 
@@ -292,9 +292,9 @@ class GraphView extends View2 {
 
   toggleSmallEdgeLabel(id, check) {
     this.cy
-    .getElementById(id)
-    .toggleClass('showEdgeLabel', check)
-    .toggleClass('focus', false);
+      .getElementById(id)
+      .toggleClass('showEdgeLabel', check)
+      .toggleClass('focus', false);
   }
 
   toggleEdgeLabel(id, check) {
@@ -775,7 +775,7 @@ class GraphView extends View2 {
             if (noEdgesWithAnnotations) {
               return;
             }
-          }  else if (id == 'edge-stable') {
+          } else if (id == 'edge-stable') {
             edge.classes = ' stable';
             if (noEdgesWithAnnotations) {
               return;
@@ -841,7 +841,7 @@ class GraphView extends View2 {
 
     let layoutOptions = Object.assign({}, defaultLayoutOpts);
     let moreThanOnePresetPosition = Object.keys(positions).length > 0;
-    let currentLayoutRunning = cy.animated() && layout != null;
+    let currentLayoutRunning = cy.animated() && layout !== undefined;
 
     if (currentLayoutRunning) {
       layout.stop(true);
@@ -857,7 +857,7 @@ class GraphView extends View2 {
         positions: node => {
           let id = node.id();
 
-          if (positions[id] != null) {
+          if (positions[id] !== undefined) {
             return positions[id];
           }
           return {

@@ -50,7 +50,7 @@ class SearchbarView extends BaseView {
           legacyCellToClass[name] || ''
         );
 
-        if (legacyCellToClass[name] == null) {
+        if (legacyCellToClass[name] === undefined) {
           inputAfterJoining.add(displayName);
         } else {
           inputAfterJoining.add(classDisplayName);
@@ -66,7 +66,7 @@ class SearchbarView extends BaseView {
     let inputs = this.getInputs(request.term);
     let term = inputs.slice(-1)[0];
 
-    if (term == null || term.length === 0) {
+    if (term === undefined || term.length === 0) {
       response([]);
       return;
     }
@@ -81,7 +81,7 @@ class SearchbarView extends BaseView {
 
     // Restrict suggestions to valid inputs that start with the term.
     if (['DAN', 'DBN', 'DDN', 'VAN', 'VBN', 'VCN', 'VDN', 'ASN'].includes(term)) {
-      term = term.substring(0,2);
+      term = term.substring(0, 2);
     }
     let suggestions = unique(validNodes.filter(node => node.startsWith(term)).sort());
 

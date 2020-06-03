@@ -27,13 +27,13 @@ let loadConnectionData = () => {
     const name = path.parse(filename).name;
     const datasetId = name.split('.')[0];
 
-    let connectionsJSON_raw = JSON.parse(fs.readFileSync(filepath));
+    let datasetConnectionsJSON = JSON.parse(fs.readFileSync(filepath));
 
-    connectionsJSON_raw.forEach(c => {
+    datasetConnectionsJSON.forEach(c => {
       c.datasetId = datasetId;
     });
 
-    connectionsJSON = connectionsJSON.concat(connectionsJSON_raw);
+    connectionsJSON = connectionsJSON.concat(datasetConnectionsJSON);
   });
 
   return connectionsJSON;
@@ -77,7 +77,7 @@ let loadTrajectoryData = () => {
 
   let trajectoryAxes = {};
 
-  datasetList.filter( d => d.axes != null ).forEach( d => {
+  datasetList.filter(d => d.axes !== undefined).forEach(d => {
     trajectoryAxes[d.id] = d.axes;
   });
 
@@ -92,11 +92,11 @@ let loadTrajectoryData = () => {
       trajectoriesJson.map(s => {
         let axesInfo = trajectoryAxes[datasetId];
 
-        Object.keys(s.coords).forEach( k => {
+        Object.keys(s.coords).forEach(k => {
           let coord = s.coords[k];
           let transformedCoord = [];
 
-          coord.forEach( (axisVal, index) => {
+          coord.forEach((axisVal, index) => {
             let axisInfo = axesInfo[index];
             transformedCoord[axisInfo.axisIndex] = axisVal * axisInfo.axisTransform;
           });
@@ -104,13 +104,13 @@ let loadTrajectoryData = () => {
           // Dataset 4 in particular has a unique rotation
           // manually fix it for this one by rotating it about the y axis
           // so that its position is consistent with the other datasets
-          if (datasetId == 'witvliet_2020_4'){
-            let radRotation = axesInfo[1].rotation * ( Math.PI / 180 );
+          if (datasetId == 'witvliet_2020_4') {
+            let radRotation = axesInfo[1].rotation * (Math.PI / 180);
             let [x0, y0, z0] = transformedCoord;
 
-            let x1 = x0 *  Math.cos(radRotation) + z0 * Math.sin(radRotation);
+            let x1 = x0 * Math.cos(radRotation) + z0 * Math.sin(radRotation);
             let y1 = y0;
-            let z1 =  (x0 * ( -1 ) * Math.sin(radRotation)  ) + ( z0 *  Math.cos(radRotation) );
+            let z1 = (x0 * -1 * Math.sin(radRotation)) + (z0 * Math.cos(radRotation));
 
             transformedCoord = [x1, y1, z1];
           }

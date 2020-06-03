@@ -143,11 +143,10 @@ class CellInfo {
     this.isClass[cell] = cell == cls;
 
     // Set cell classes.
-    cellClass[cls] = null;
     cellClass[cell] = cls;
     classMembers[cell] = [];
 
-    if (classMembers[cls] == null) {
+    if (classMembers[cls] === undefined) {
       classMembers[cls] = [];
     }
 
@@ -155,9 +154,11 @@ class CellInfo {
   }
 
   // when this function is called:
-  //-  all body wall muscle class members annotated at zhen lab will have their class become the generic 'body wall muscles'
-  // class instead of BWM01, BWM02, etc. to make it compatible for comparison with the John White dataset
-  // all other legacy classes will have no class members to make it compatible for comparison
+  //-  all body wall muscle class members annotated at zhen lab will have their 
+  // class become the generic 'body wall muscles' class instead of BWM01, BWM02,
+  // etc. to make it compatible for comparison with the John White dataset
+  // all other legacy classes will have no class members to make it compatible 
+  // for comparison
   setToLegacy() {
     Object.entries(this.cellClassLegacy).forEach(entry => {
       let [cls, legacyCellClass] = entry;
@@ -173,7 +174,8 @@ class CellInfo {
   }
 
   // the inverse function of setToLegacy
-  // - zhen lab specific body wall muscle cells will revert to their correct class
+  // - zhen lab specific body wall muscle cells will revert to their correct 
+  // class
   // - legacy classes will have their class members registered again
   setToNonLegacy() {
     Object.entries(this.cellClassNonLegacy).forEach(entry => {

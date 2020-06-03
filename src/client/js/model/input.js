@@ -65,7 +65,7 @@ ModelPrototype.replaceClassMembersWithClassInInput = function(
   });
 };
 
-ModelPrototype.getValidInput = function(rawInput){
+ModelPrototype.getValidInput = function(rawInput) {
   return unique(rawInput).filter((nodeId, i, arr) => {
     let cellClass = DataService.cellClass(nodeId);
     let containsCellClass = arr.includes(cellClass);
@@ -76,14 +76,14 @@ ModelPrototype.getValidInput = function(rawInput){
 
 };
 
-ModelPrototype.setInputFromUrlState = function(rawInput){
+ModelPrototype.setInputFromUrlState = function(rawInput) {
 
   let validInput = this.getValidInput(rawInput);
   let previousValidInput = this.getValidInput(this.input);
   let newValidInput = difference(validInput, previousValidInput);
 
-  // Emit notification if input contains hidden post-embryonic nodes or nodes only present in
-  // other datasets.
+  // Emit notification if input contains hidden post-embryonic nodes or nodes 
+  // only present in other datasets.
   if (!this.showPostemb) {
     let newPostEmbInput = newValidInput
       .filter(nodeId => !DataService.isEmb(nodeId))
@@ -181,9 +181,9 @@ ModelPrototype.setInput = function(rawInput) {
   let validInput = this.getValidInput(rawInput);
 
   let groupIds = validInput
-  .filter(nodeId => this.isGroupMember(nodeId))
-  .map(nodeId => this.getGroupByMemberId(nodeId))
-  .map(group => group.id);
+    .filter(nodeId => this.isGroupMember(nodeId))
+    .map(nodeId => this.getGroupByMemberId(nodeId))
+    .map(group => group.id);
 
   this.unhide(validInput.concat(groupIds));
 
