@@ -12,7 +12,7 @@
   },
   "scripts": {
     "watch:sync-bundle": "livereload dist -w 3000",
-    "watch:sync-server": "nodemon src/server/index.js",
+    "watch:sync-server": "nodemon --watch src src/server/index.js",
     "watch:js": "webpack --watch --mode development",
     "watch": "run-p -c watch:*",
     "build-prod": "cross-env NODE_ENV=production webpack --mode production --devtool none",
