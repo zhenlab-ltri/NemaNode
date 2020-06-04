@@ -1,42 +1,41 @@
 const { unique } = require('./util');
 
-let EventEmitter = function() {
-  'use strict';
+class EventEmitter {
 
-  let self = this;
+  constructor() {
+    this.events = {};
+  }
 
-  let events = {};
-
-  this.on = function(evts, lsn) {
-    evts.split(' ').forEach(function(evt) {
+  on(evts, lsn) {
+    const { events } = this;
+    evts.split(' ').forEach(evt => {
       (events[evt] || (events[evt] = [])).push(lsn);
       events[evt] = unique(events[evt]);
     });
-    return self;
+    return this;
   };
 
-  this.off = function(evts, lsn) {
-    evts.split(' ').forEach(function(evt) {
-      events[evt] = (events[evt] || []).filter(function(listener) {
+  off(evts, lsn) {
+    const { events } = this;
+    evts.split(' ').forEach(evt => {
+      events[evt] = (events[evt] || []).filter(listener => {
         return listener != lsn;
       });
     });
-    return self;
+    return this;
   };
 
-  this.one = function(evts, lsn) {
-    self.on(evts, function lsnTemp(arg) {
+  one(evts, lsn) {
+    const lsnTemp = (arg) => {
       lsn(arg);
-      self.off(evts, lsnTemp);
-    });
+      this.off(evts, lsnTemp);
+    }
+    this.on(evts, lsnTemp);
   };
 
-  /**
-   * @param {string} evt
-   * @param {*=} arg
-   */
-  this.emit = function(evt, arg) {
-    (events[evt] || []).slice().forEach(function(listener) {
+  emit(evt, arg) {
+    const { events } = this;
+    (events[evt] || []).slice().forEach((listener) => {
       listener(arg, evt);
     });
   };
