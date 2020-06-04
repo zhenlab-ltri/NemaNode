@@ -73,6 +73,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-strict-mode": "^7.10.1",
     "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
@@ -135,6 +136,7 @@
   },
   "devDependenciesComments": {
     "@babel/core": "es6 features",
+    "@babel/plugin-transform-strict-mode": "force strict mode",
     "@babel/preset-env": "es6 features",
     "autoprefixer": "automatically add browser-specific prefixes to new css tags",
     "babel-loader": "webpack plugin to process es6 files and transform it into es5 js",
