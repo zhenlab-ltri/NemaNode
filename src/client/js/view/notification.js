@@ -6,118 +6,117 @@ const BaseView = require('./base-view');
 
 const { capitalizeFirstLetter } = require('../util');
 
-/**
- * BaseView.notification
- * @constructor
- * @extends {BaseView}
- */
-let NotificationView = function(model) {
-  'use strict';
 
-  const self = this;
-  BaseView.call(this);
+// ----- Notification object -----
+// Type can be either 'Warning' or 'Info'.
+const DELAY_BEFORE_FADE_OUT = 4000;
+const FADE_OUT_DURATION = 1000;
+const OPACITY = 0.7;
 
-  let $container = $('#notification-container');
-  let $template = $('#notification-template');
+class Notification {
 
-  let notifications = {};
+  constructor(type, id, $container, $template) {
+    this.$container = $container;
+    this.$notification = $template.clone();
+    this.$notification.attr('id', id).addClass(type);
+    this.$notification.find('h1').append(capitalizeFirstLetter(type));
+    this.$notificationBody = this.$notification.find('p');
 
-  // ----- Events -----
-  $container.on('click', '.close', function() {
-    notifications[
-      $(this)
-        .parent()
-        .attr('id')
-    ].hide();
-  });
-  $container.on('mouseover', '.notification', function() {
-    notifications[this.id].stopCountdown();
-  });
-  $container.on('mouseout', '.notification', function() {
-    notifications[this.id].startCountdown();
-  });
+    this.isVisible = false;
+    this.countdown;
+  }
 
-  // ---- Listeners -----
-  model.on('warning info', function(obj, event) {
-    self.display(
-      event,
-      obj.id,
-      obj.message.replace('{0}', joinPretty(obj.arr || []))
-    );
-  });
-  model.on('suppress', function(id) {
-    self.hide(id);
-  });
+  display(body) {
+    const {$notification, $notificationBody, $container} = this;
+    $notificationBody.html(body);
+    if (this.isVisible) {
+      this.stopCountdown();
+    } else {
+      $container.append($notification);
+      this.isVisible = true;
+    }
+    this.startCountdown();
+  };
+
+  hide() {
+    const {$notification} = this;
+    if (this.isVisible) {
+      $notification.stop().remove();
+      this.isVisible = false;
+    }
+  };
+
+  // Countdown starts when the notification is created or cursor moves away from notification.
+  startCountdown() {
+    this.countdown = setTimeout(() => {
+      this.$notification.fadeOut(DELAY_BEFORE_FADE_OUT, () => {
+        this.hide();
+      });
+    }, FADE_OUT_DURATION);
+  };
+  // Countdown stops when cursor moves over the notification.
+  stopCountdown() {
+    const {$notification} = this;
+    $notification.stop().fadeTo(100, OPACITY);
+    clearTimeout(this.countdown);
+  };
+};
+
+
+class NotificationView extends BaseView {
+
+  constructor(model) {
+    super();
+
+    this.notifications = {};
+    this.$container = $('#notification-container');
+    this.$template = $('#notification-template');
+
+    const {notifications, $container} = this;
+
+    // ----- Events -----
+    $container.on('click', '.close', (e) => {
+      notifications[
+        $(e.currentTarget).parent().attr('id')
+      ].hide();
+    });
+    $container.on('mouseover', '.notification', (e) => {
+      notifications[e.currentTarget.id].stopCountdown();
+    });
+    $container.on('mouseout', '.notification', (e) => {
+      notifications[e.currentTarget.id].startCountdown();
+    });
+
+    // ---- Listeners -----
+    model.on('warning info', (obj, event) => {
+      this.display(
+        event,
+        obj.id,
+        obj.message.replace('{0}', this.joinPretty(obj.arr || []))
+      );
+    });
+    model.on('suppress', (id) => {
+      this.hide(id);
+    });
+  }
 
   // ----- Show/hide notifications -----
-  this.display = function(type, id, body) {
-    (
-      notifications[id] || (notifications[id] = new Notification(type, id))
-    ).display(body);
+  display(type, id, body) {
+    const {notifications, $container, $template} = this;
+    if (!notifications.hasOwnProperty(id)) {
+      notifications[id] = new Notification(type, id, $container, $template);
+    }
+    notifications[id].display(body);
   };
-  this.hide = function(id) {
+  hide(id) {
+    const {notifications} = this;
     if (notifications.hasOwnProperty(id)) {
       notifications[id].hide();
     }
   };
 
-  // ----- Notification object -----
-  // Notification constructor. Type can be either 'Warning' or 'Info'.
-  let delayBeforeFadeOut = 4000,
-    fadeOutDuration = 1000,
-    opacity = 0.7;
-  /**
-   * notification
-   * @constructor
-   */
-  let Notification = function(type, id) {
-    let thisNotification = this;
-
-    let $notification;
-
-    let isVisible = false;
-    let countdown;
-
-    this.display = function(body) {
-      if (isVisible) {
-        $notification.find('p').html(body);
-        thisNotification.stopCountdown();
-        thisNotification.startCountdown();
-      } else {
-        $notification = $template.clone();
-        $notification.attr('id', id).addClass(type);
-        $notification.find('h1').append(capitalizeFirstLetter(type));
-        $notification.find('p').append(body);
-        $container.append($notification);
-        isVisible = true;
-        thisNotification.startCountdown();
-      }
-    };
-
-    this.hide = function() {
-      if (isVisible) {
-        $notification.stop().remove();
-        isVisible = false;
-      }
-    };
-
-    // Countdown starts when the notification is created or cursor moves away from notification.
-    this.startCountdown = function() {
-      countdown = setTimeout(function() {
-        $notification.fadeOut(delayBeforeFadeOut, function() {
-          thisNotification.hide();
-        });
-      }, fadeOutDuration);
-    };
-    // Countdown stops when cursor moves over the notification.
-    this.stopCountdown = function() {
-      $notification.stop().fadeTo(100, opacity);
-      clearTimeout(countdown);
-    };
-  };
-
   // ----- Help functions -----
-  let joinPretty = function(names) {
+  joinPretty(names) {
     let displayNames = names
       .map(name => DataService.getDisplayName(name))
       .map(displayName => {
@@ -141,8 +140,5 @@ let NotificationView = function(model) {
     }
   };
 };
-
-NotificationView.prototype = Object.create(BaseView.prototype);
-NotificationView.prototype.constructor = NotificationView;
 
 module.exports = NotificationView;
