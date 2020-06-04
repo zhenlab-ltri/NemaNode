@@ -13,7 +13,7 @@ class EventEmitter {
       events[evt] = unique(events[evt]);
     });
     return this;
-  };
+  }
 
   off(evts, lsn) {
     const { events } = this;
@@ -23,22 +23,22 @@ class EventEmitter {
       });
     });
     return this;
-  };
+  }
 
   one(evts, lsn) {
     const lsnTemp = (arg) => {
       lsn(arg);
       this.off(evts, lsnTemp);
-    }
+    };
     this.on(evts, lsnTemp);
-  };
+  }
 
   emit(evt, arg) {
     const { events } = this;
     (events[evt] || []).slice().forEach((listener) => {
       listener(arg, evt);
     });
-  };
-};
+  }
+}
 
 module.exports = EventEmitter;

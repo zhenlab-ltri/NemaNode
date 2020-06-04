@@ -16,7 +16,7 @@ if (!!window['opera'] || navigator.userAgent.indexOf(' OPR/') >= 0) {
   // Safari 3.0+
 } else if (/*@cc_on!@*/ false || !!document['documentMode']) {
   // Internet Explorer 6-11
-} else if (!!window['StyleMedia']) {
+} else if (!!window['StyleMedia']) { // eslint-disable-line
   // Edge 20+
 } else if (!!window['chrome'] && !!window['chrome']['webstore']) {
   // Chrome 1+
@@ -320,7 +320,7 @@ let cystyle = {
     {
       selector: 'edge.focus',
       css: {
-        content: 'data(label_long)',
+        content: 'data(longLabel)',
         'text-wrap': 'wrap'
       }
     },

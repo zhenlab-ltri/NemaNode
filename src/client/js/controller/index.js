@@ -177,22 +177,29 @@ let bindPopupMenuEvents = ({ model, view }) => {
       let nextInput = unique(classMemberNodes.concat(mappedClassMemberNodes));
 
       if( model.database !== 'head' ){
-        let datasetNames = model.datasets.map( datasetId => DataService.getDatasetById( datasetId ).name );
+        let datasetNames = model.datasets.map( datasetId => 
+          DataService.getDatasetById( datasetId ).name );
         let datasetWarningLabel = prettyPrintArray( datasetNames );
 
         model.emit('warning', {
           id: `nt-only-head-datasets`,
-          message: `Only zhen lab head datasets contain 3D visualizations of cells and neurons.  The ${datasetWarningLabel} datasets do not have 3D visualizations`,
+          message: `Only zhen lab head datasets contain 3D visualizations of 
+          cells and neurons.  The ${datasetWarningLabel} datasets do not have 
+          3D visualizations`,
           arr: []
         });
       } else {
-        let selectedDatasetsWithoutTrajectory = intersection( DataService.datasets.filter(d => !d.hasTrajectory && d.type === 'head'), model.datasets );
+        let selectedDatasetsWithoutTrajectory = intersection(
+          DataService.datasets.filter(d => !d.hasTrajectory && d.type === 'head'), model.datasets
+        );
         let datasetWarningLabel = prettyPrintArray( selectedDatasetsWithoutTrajectory );
 
         if( selectedDatasetsWithoutTrajectory.length > 0 ){
           model.emit('warning', {
             id: `nt-only-head-datasets`,
-            message: `Only zhen lab head datasets contain 3D visualizations of cells and neurons.  The ${datasetWarningLabel} datasets do not have 3D visualizations`,
+            message: `Only zhen lab head datasets contain 3D visualizations of 
+            cells and neurons.  The ${datasetWarningLabel} datasets do not have 
+            3D visualizations`,
             arr: []
           });
         }

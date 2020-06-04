@@ -194,7 +194,7 @@ ModelPrototype.makeCytoscapeEdge = function(
       type: edgeType,
       width,
       label,
-      label_long: longLabel
+      longLabel
     }
   };
 

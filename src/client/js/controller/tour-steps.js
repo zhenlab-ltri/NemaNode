@@ -141,7 +141,8 @@ let getTourSteps = view => {
       {
         title: 'Manipulate the network',
         body: [
-          'Open the pop-up menu (right-click on computers) to perform manipulations on selected neurons.'
+          'Open the pop-up menu (right-click on computers) to perform '
+            + 'manipulations on selected neurons.'
         ],
         coordinate: () => {
           let { x1, x2, y1 } = view.popup.getBoundingBox();

@@ -7,10 +7,13 @@ let queryCells = async connection => {
 
   /*let cellsTrajectorySql = `
     SELECT DISTINCT neuron_name from trajectories
-  `;*/
+  `;
 
-  //let cellsWithTrajectories = await connection.query(cellsTrajectorySql).map( c => `${c.neuron_name}` );
-  //let uniqueCellsWithTrajectories = new Set(cellsWithTrajectories);
+  let cellsWithTrajectories = await connection.query(cellsTrajectorySql).map( 
+    c => `${c.neuron_name}` 
+  );
+  let uniqueCellsWithTrajectories = new Set(cellsWithTrajectories);
+  */
 
   const [rows, ] = await connection.query(cellsSql);
 

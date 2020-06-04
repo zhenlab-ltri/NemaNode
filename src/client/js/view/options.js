@@ -47,7 +47,8 @@ let createDatasetBookmarks = () => {
       $bookmark.children().css('left', timelineCoordinate + '%');
 
       // Ensure mark hover tooltips don't show outside screen.
-      // The defined values could be fetched rather than defined, but didn't work well cross-platform.
+      // The defined values could be fetched rather than defined, but didn't 
+      // work well cross-platform.
       let parentWidth = 288;
       let minPos = 134 / 2 - 10; //134: tooltip width
       if ((timelineCoordinate / 100) * parentWidth < minPos) {

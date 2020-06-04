@@ -36,7 +36,7 @@ class Notification {
       this.isVisible = true;
     }
     this.startCountdown();
-  };
+  }
 
   hide() {
     const {$notification} = this;
@@ -44,7 +44,7 @@ class Notification {
       $notification.stop().remove();
       this.isVisible = false;
     }
-  };
+  }
 
   // Countdown starts when the notification is created or cursor moves away from notification.
   startCountdown() {
@@ -53,14 +53,15 @@ class Notification {
         this.hide();
       });
     }, FADE_OUT_DURATION);
-  };
+  }
+
   // Countdown stops when cursor moves over the notification.
   stopCountdown() {
     const {$notification} = this;
     $notification.stop().fadeTo(100, OPACITY);
     clearTimeout(this.countdown);
-  };
-};
+  }
+}
 
 
 class NotificationView extends BaseView {
@@ -107,13 +108,13 @@ class NotificationView extends BaseView {
       notifications[id] = new Notification(type, id, $container, $template);
     }
     notifications[id].display(body);
-  };
+  }
   hide(id) {
     const {notifications} = this;
     if (notifications.hasOwnProperty(id)) {
       notifications[id].hide();
     }
-  };
+  }
 
   // ----- Help functions -----
   joinPretty(names) {
@@ -138,7 +139,7 @@ class NotificationView extends BaseView {
           names[names.length - 1]
         }`;
     }
-  };
-};
+  }
+}
 
 module.exports = NotificationView;

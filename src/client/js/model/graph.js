@@ -16,7 +16,7 @@ class Graph {
       inp.set(n, new Map());
       adj.set(n, new Map());
     }
-  };
+  }
 
   removeNode(n) {
     const { node, outp, inp, adj } = this;
@@ -37,7 +37,7 @@ class Graph {
       adj.get(n).delete(u);
     });
     adj.delete(n);
-  };
+  }
 
   isIsolated(n) {
     const { node, outp, inp, adj } = this;
@@ -49,7 +49,7 @@ class Graph {
       inp.get(n).size === 0 &&
       adj.get(n).size === 0
     );
-  };
+  }
 
   addEdge(u, v, type = 'chemical', attr = {}) {
     const { outp, inp, adj } = this;
@@ -62,7 +62,7 @@ class Graph {
       adj.get(u).set(v, deepCopy(attr));
       adj.get(v).set(u, deepCopy(attr));
     }
-  };
+  }
 
   hasEdge(u, v, type) {
     const { outp, adj } = this;
@@ -72,7 +72,7 @@ class Graph {
     if (type == 'electrical') {
       return adj.get(u).has(v);
     }
-  };
+  }
 
   getEdge(u, v, type) {
     const { outp, adj } = this;
@@ -82,7 +82,7 @@ class Graph {
     if (type == 'electrical') {
       return adj.get(u).get(v);
     }
-  };
+  }
 
   removeEdge(u, v, type = 'chemical') {
     const { outp, inp, adj } = this;
@@ -93,11 +93,11 @@ class Graph {
       adj.get(u).delete(v);
       adj.get(v).delete(u);
     }
-  };
+  }
 
   nodes() {
     return Array.from(this.node.keys());
-  };
+  }
 
   edges(type = 'chemical', n) {
     const { node, outp, inp, adj } = this;
@@ -147,7 +147,7 @@ class Graph {
       });
     }
     return edges;
-  };
-};
+  }
+}
 
 module.exports = Graph;

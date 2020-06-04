@@ -164,7 +164,7 @@ class PopupView extends BaseView {
           visible: isVisible,
           className: 'priority'
         },
-        group_separator: {
+        groupSeparator: {
           type: 'cm_separator',
           visible: function() {
             return isVisible('ungroup');
