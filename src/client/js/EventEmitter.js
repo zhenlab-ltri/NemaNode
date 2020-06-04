@@ -1,11 +1,11 @@
 const { unique } = require('./util');
 
-var EventEmitter = function() {
+let EventEmitter = function() {
   'use strict';
 
-  var self = this;
+  let self = this;
 
-  var events = {};
+  let events = {};
 
   this.on = function(evts, lsn) {
     evts.split(' ').forEach(function(evt) {

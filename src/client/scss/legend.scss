@@ -24,7 +24,8 @@
   font-size: 16px;
   display: block;
   float: left;
-  width: 16px; height: 16px;
+  width: 16px;
+  height: 16px;
   margin: 4px 8px 0 8px;
   z-index: 10;
 }
@@ -58,7 +59,7 @@
     #nt-n::before {
       height: calc(12px - 2px);
       width: calc(20px - 2px);
-      border: 1px solid #C8C8C8;
+      border: 1px solid #c8c8c8;
     }
   }
 
@@ -83,37 +84,37 @@
 
 
 @for $i from 1 through 6 {
-  #legend-type li:nth-child(#{$i}):before {
+  #legend-type li:nth-child(#{$i})::before {
     background-color: map-get($type-colors, $i);
   }
 }
 @for $i from 1 through 9 {
-  #legend-nt li:nth-child(#{$i}):before {
+  #legend-nt li:nth-child(#{$i})::before {
     background-color: map-get($nt-colors, $i);
   }
 }
-#edge-typ0:before {
+#edge-typ0::before {
   color: map-get($edge-colors, typ0);
 }
-#edge-typ2:before {
+#edge-typ2::before {
   color: map-get($edge-colors, typ2);
 }
-#edge-juvenile:before {
+#edge-juvenile::before {
   color: map-get($edge-colors, l1);
 }
-#edge-mature:before {
+#edge-mature::before {
   color: map-get($edge-colors, ad);
 }
-#edge-stable:before {
+#edge-stable::before {
   color: map-get($edge-colors, st);
 }
-#edge-variable:before {
+#edge-variable::before {
   color: map-get($edge-colors, vr);
 }
-#edge-post-embryonic:before {
+#edge-post-embryonic::before {
   color: map-get($edge-colors, pe);
 }
-#edge-not-classified:before {
+#edge-not-classified::before {
   color: map-get($edge-colors, notClassified);
 }
 

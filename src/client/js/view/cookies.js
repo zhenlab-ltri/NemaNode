@@ -121,14 +121,14 @@ const decodeParameters = rawParameters => {
       value = value.toUpperCase().split('__');
     }
     if (key == 'groups') {
-      var groups = value.split('__');
+      let groups = value.split('__');
       value = [];
       groups.forEach(function(item) {
         item = decodeURIComponent(item).match(/(\\_|[^_])+/g); //split by non-escape underscores
         if (item.length < 4) {
           return;
         }
-        var id = parseInt(item[0], 10);
+        let id = parseInt(item[0], 10);
         if (isNaN(id)) {
           return;
         }
@@ -141,15 +141,15 @@ const decodeParameters = rawParameters => {
       });
     }
     if (key == 'coordinates') {
-      var coordinates = value.split('__');
+      let coordinates = value.split('__');
       value = [];
       coordinates.forEach(function(item) {
         item = item.split('_');
         if (item.length < 3) {
           return;
         }
-        var x = parseInt(item[1], 10);
-        var y = parseInt(item[2], 10);
+        let x = parseInt(item[1], 10);
+        let y = parseInt(item[2], 10);
         if (isNaN(x) || isNaN(y)) {
           return;
         }

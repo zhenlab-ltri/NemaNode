@@ -1,11 +1,11 @@
 /* eslint no-extra-boolean-cast: "off" */
 
-var cystyle = (function() {
+let cystyle = (function() {
   'use strict';
 
   // Use browser sniffing to correct incorrectly positioned node labels.
   // from: http://stackoverflow.com/a/9851769/2801037
-  var labelShift = '0px';
+  let labelShift = '0px';
   if (!!window['opera'] || navigator.userAgent.indexOf(' OPR/') >= 0) {
     // Opera 8.0+
   } else if (typeof InstallTrigger !== 'undefined') {
@@ -27,7 +27,7 @@ var cystyle = (function() {
     labelShift = '1px';
   }
 
-  var cytoscapeColors = {
+  let cytoscapeColors = {
     backgroundColor: 'rgb(244,244,244)',
     colorsType: {
       neurosecretory: '#F9D77B',
@@ -60,9 +60,9 @@ var cystyle = (function() {
     }
   };
 
-  var searchedforNeuronBackground =
+  let searchedforNeuronBackground =
     'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NSIgaGVpZ2h0PSI2NSIgdmlld0JveD0iMCAwIDY1IDY1Ij48ZWxsaXBzZSByeT0iMTkuODkiIHJ4PSIuOTc1IiBjeT0iLS4wMTkiIGN4PSIyNC45NDgiIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIvPjxlbGxpcHNlIHJ5PSIyOS4wNTUiIHJ4PSIuOTc1IiBjeT0iLjA0NiIgY3g9IjQ2LjAwOCIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PGVsbGlwc2Ugcnk9IjEyLjE1NSIgcng9Ii45NzUiIGN5PSItLjAxOSIgY3g9IjcyLjMzMyIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PGVsbGlwc2Ugcnk9IjEyLjE1NSIgcng9Ii45NzUiIGN5PSItLjAxOSIgY3g9IjE5LjY4MyIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PGVsbGlwc2Ugcnk9IjI0LjIxMiIgcng9Ii45NzUiIGN5PSItLjAxOSIgY3g9IjYxLjgwMyIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PGVsbGlwc2Ugcnk9IjI2LjkxIiByeD0iLjk3NSIgY3k9Ii0uMDE5IiBjeD0iNTYuNTM4IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiLz48ZWxsaXBzZSByeT0iMjguNTY3IiByeD0iLjk3NSIgY3k9Ii0uMDE5IiBjeD0iNTEuMjczIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiLz48ZWxsaXBzZSByeT0iMjQuMjEyIiByeD0iLjk3NSIgY3k9Ii0uMDE5IiBjeD0iMzAuMjEzIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiLz48ZWxsaXBzZSByeT0iMjYuOTEiIHJ4PSIuOTc1IiBjeT0iLS4wMTkiIGN4PSIzNS40NzgiIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIvPjxlbGxpcHNlIHJ5PSIyOC41NjciIHJ4PSIuOTc1IiBjeT0iLS4wMTkiIGN4PSI0MC43NDMiIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIvPjxlbGxpcHNlIHJ5PSIxOS44OSIgcng9Ii45NzUiIGN5PSItLjAxOSIgY3g9IjY3LjA2OCIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+PC9zdmc+'; // original: image/node_background_neuron.svg
-  var searchedforMuscleBackground =
+  let searchedforMuscleBackground =
     'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOSIgaGVpZ2h0PSIyOSIgdmlld0JveD0iMCAwIDI5IDI5Ij48ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSAxMjM1LjMwOCAtNTExLjY4KSI+PHBhdGggZD0iTTcyOC4yNCA3MTkuMDE4YS45NzcgMjAuNDgyIDAgMCAwLS43MjQgOC41bDEuNjM3IDEuNjM2YS45NzcgMjAuNDgyIDAgMCAwLS44NDQtMTAuMTg2Ljk3NyAyMC40ODIgMCAwIDAtLjA3LjA1ek03NDguNTgyIDcwNy41N2EuOTc3IDIwLjQ4MiAwIDAgMC0uMTQ3IDEwLjc3Ni45NzcgMjAuNDgyIDAgMCAwIC45NzcgMjAuNDgyLjk3NyAyMC40ODIgMCAwIDAgLjk3Ny0yMC40OC45NzcgMjAuNDgyIDAgMCAwLS4xMDMtOS4wNzJsLTEuNzA1LTEuNzA2ek03NTkuMTIgNzE4LjExYS45NzcgMjAuNDgyIDAgMCAwIC44NDMgMTAuMTY3Ljk3NyAyMC40ODIgMCAwIDAgLjc5My04LjUzMmwtMS42MzYtMS42MzZ6TTc1My43MTIgNzEyLjdhLjk3NyAyMC40ODIgMCAwIDAgMCAuMzcuOTc3IDIwLjQ4MiAwIDAgMCAuOTc1IDIwLjQ4My45NzcgMjAuNDgyIDAgMCAwIC45NzQtMTguOTAzbC0xLjk0OC0xLjk1ek03MzMuNTE1IDcxMy43NDJhLjk3NyAyMC40ODIgMCAwIDAtLjkwNCAxOC44N2wxLjk1IDEuOTVhLjk3NyAyMC40ODIgMCAwIDAgLjAwMi0uMzg4Ljk3NyAyMC40ODIgMCAwIDAtLjk3Ny0yMC40OC45NzcgMjAuNDgyIDAgMCAwLS4wNy4wNDh6TTczOC43OSA3MDguNDY3YS45NzcgMjAuNDgyIDAgMCAwLS45MDggMjAuNDMuOTc3IDIwLjQ4MiAwIDAgMCAuMTAzIDkuMDlsMS43MDQgMS43MDNhLjk3NyAyMC40ODIgMCAwIDAgLjE0OC0xMC43OTIuOTc3IDIwLjQ4MiAwIDAgMC0uOTc2LTIwLjQ4Mi45NzcgMjAuNDgyIDAgMCAwLS4wNy4wNXoiLz48ZWxsaXBzZSByeT0iMjAuNDgyIiByeD0iLjk3NyIgY3k9IjcyMy42MjIiIGN4PSI3NDQuMTM2Ii8+PC9nPjwvc3ZnPg=='; // original: image/node_background_muscle.svg
 
   return {
@@ -199,9 +199,9 @@ var cystyle = (function() {
         selector:
           'node[color="type"][!muscle][!others], node.parentNode[color="type"]',
         css: (function() {
-          var css = {};
-          var i = 0;
-          for (var type in cytoscapeColors.colorsType) {
+          let css = {};
+          let i = 0;
+          for (let type in cytoscapeColors.colorsType) {
             i++;
             css['pie-' + i + '-background-color'] =
               cytoscapeColors.colorsType[type];
@@ -223,9 +223,9 @@ var cystyle = (function() {
       {
         selector: 'node[color="nt"][!none], node.parentNode[color="nt"]',
         css: (function() {
-          var css = {};
-          var i = 0;
-          for (var nt in cytoscapeColors.colorsNt) {
+          let css = {};
+          let i = 0;
+          for (let nt in cytoscapeColors.colorsNt) {
             i++;
             css['pie-' + i + '-background-color'] =
               cytoscapeColors.colorsNt[nt];

@@ -27,8 +27,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // view engine setup
 app.set('views', path.join(__dirname, '../../dist/'));
 
-app.engine('html', function(filePath, options, callback) {
-  fs.readFile(filePath, function(err, content) {
+app.engine('html', (filePath, options, callback) => {
+  fs.readFile(filePath, (err, content) => {
     if (err) {
       return callback(err);
     }
@@ -58,7 +58,7 @@ if (USER !== '' && PASSWORD !== '') {
 app.use('/', routes);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   let err = new Error('Not Found');
   err.status = 404;
 
@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
 });
 
 // on thrown error in route, send http 500 and send just the error text message
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.send(err.message);
 
@@ -100,16 +100,19 @@ server.on('error', error => {
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
+    case 'EACCES': {
       logger.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
-    case 'EADDRINUSE':
+    }
+    case 'EADDRINUSE': {
       logger.error(bind + ' is already in use');
       process.exit(1);
       break;
-    default:
+    }
+    default: {
       throw error;
+    }
   }
 });
 

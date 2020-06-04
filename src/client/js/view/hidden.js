@@ -91,7 +91,7 @@ class HiddenView extends BaseView {
 
     // Remove elements not present in the new network.
     cy.nodes()
-      .filter(oldNode => hidden[oldNode.id()] == null)
+      .filter(oldNode => hidden[oldNode.id()] === undefined)
       .remove();
 
     // Update coinciding elements.

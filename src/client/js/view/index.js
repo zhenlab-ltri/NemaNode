@@ -1,5 +1,3 @@
-const $ = require('jquery');
-
 const CookiesView = require('./cookies');
 const NetworkView = require('./network');
 const HelpView = require('./help');

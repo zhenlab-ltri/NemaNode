@@ -1,22 +1,22 @@
-@import 'vars.scss';
-@import 'reset.scss';
-@import 'jquery-contextMenu-2.7.1.min.scss';
-@import 'jquery-ui-1.12.1.min.scss';
-@import 'vue-select.scss';
-@import 'fonts.scss';
-@import 'colors.scss';
-@import 'icons.scss';
+@import 'vars';
+@import 'reset';
+@import 'jquery-contextMenu-2.7.1.min';
+@import 'jquery-ui-1.12.1.min';
+/*@import 'vue-select';*/
+@import 'fonts';
+@import 'colors';
+@import 'icons';
 
-@import 'neuron-trajectory.scss';
-@import 'searchbar.scss';
-@import 'sidebars.scss';
-@import 'legend.scss';
-@import 'notifications.scss';
-@import 'cyhidden.scss';
-@import 'help.scss';
-@import 'contextmenu.scss';
+/*@import 'neuron-trajectory';*/
+@import 'searchbar';
+@import 'sidebars';
+@import 'legend';
+@import 'notifications';
+@import 'cyhidden';
+@import 'help';
+@import 'contextmenu';
 
-@import 'mobile.scss';
+@import 'mobile';
 
 
 html, body, div, input, a, span {
@@ -25,7 +25,8 @@ html, body, div, input, a, span {
   border-style: solid;
 }
 html, body {
-  height: 100%; width: 100%;
+  width: 100%;
+  height: 100%; 
   background-color: $background-cy;
   overflow: hidden;
 }
@@ -84,8 +85,10 @@ button {
 }
 
 #cy {
-  width: 100%; height: 100%;
-  overflow-y: hidden; overflow-x: hidden; /* on zoom */
+  width: 100%; 
+  height: 100%;
+  overflow-y: hidden; // on zoom
+  overflow-x: hidden; 
   overflow: hidden;
   position: absolute;
   top: 0;

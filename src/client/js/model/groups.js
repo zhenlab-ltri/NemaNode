@@ -1,7 +1,7 @@
 const { createGrid } = require('./layout');
 const { meanPosition } = require('./position');
 
-const { sum, max, intersection } = require('../util');
+const { sum, intersection } = require('../util');
 
 let ModelPrototype = {};
 
@@ -18,7 +18,7 @@ ModelPrototype.createGroup = function({
     return i + '';
   };
 
-  let groupId = id == null ? findValidGroupId() : id;
+  let groupId = (id === null || id === undefined) ? findValidGroupId() : id;
 
   this.groups[groupId] = {
     id: groupId,
@@ -91,7 +91,7 @@ ModelPrototype.getGroups = function() {
 };
 
 ModelPrototype.getGroupById = function(groupId) {
-  if (this.groups[groupId] == null) {
+  if (!this.groups.hasOwnProperty(groupId)) {
     throw new Error(`${groupId} is not a group`);
   }
 
@@ -99,7 +99,7 @@ ModelPrototype.getGroupById = function(groupId) {
 };
 
 ModelPrototype.getGroupByMemberId = function(groupMemberId) {
-  if (this.parent[groupMemberId] == null) {
+  if (!this.parent.hasOwnProperty(groupMemberId)) {
     throw new Error(`${groupMemberId} does not belong to a group`);
   }
 
@@ -141,11 +141,11 @@ ModelPrototype.positionGroupMembers = function(groupId) {
   let groupMemberXPositions = [];
   let groupMemberYPositions = [];
 
-  let groupMembersWithoutPositions = groupMembers.filter( m => {
+  let groupMembersWithoutPositions = groupMembers.filter(m => {
     let hasPosition = true;
     try {
       this.getPosition(m);
-    } catch (e){
+    } catch (e) {
       hasPosition = false;
     }
     return !hasPosition;
@@ -164,7 +164,7 @@ ModelPrototype.positionGroupMembers = function(groupId) {
 
   this.setPositions(gridPositions);
 
-  groupMembers.forEach( m => {
+  groupMembers.forEach(m => {
     let { x, y } = this.getPosition(m);
     groupMemberXPositions.push(x);
     groupMemberYPositions.push(y);
@@ -184,7 +184,7 @@ ModelPrototype.positionGroupMembers = function(groupId) {
 };
 
 ModelPrototype.group = function(nodes) {
-  let groupId = null;
+  let groupId;
   let toGroup = [];
 
   nodes.forEach(node => {
@@ -202,7 +202,7 @@ ModelPrototype.group = function(nodes) {
   }
 
   // Create group if no group is selected.
-  if (groupId == null) {
+  if (groupId === undefined) {
     groupId = this.createGroup();
     let meanPositionOfToGroup = meanPosition(
       toGroup.map(id => this.getPosition(id))
@@ -223,12 +223,12 @@ ModelPrototype.group = function(nodes) {
 };
 
 ModelPrototype.groupSelected = function() {
-  let groupId = null;
+  let groupId;
   if (this.canBeGrouped(this.getRawSelected())) {
     groupId = this.group(this.getRawSelected());
   }
 
-  if (groupId != null) {
+  if (groupId !== undefined) {
     this.setSelected([groupId]);
   }
 

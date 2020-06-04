@@ -78,12 +78,12 @@ class Tour {
         this.view.help.hideTour();
         this.view.graph.one('layoutstop', () => d.resolve());
 
-        if (step.state != null) {
+        if (step.state !== undefined) {
           for (let key in step.state) {
             this.state[key] = step.state[key];
           }
 
-          if (step.state.coordinates != null) {
+          if (step.state.coordinates !== undefined) {
             this.state.coordinates = this.view.graph.scaleCoordinatesToViewport(
               deepCopy(this.state.coordinates)
             );

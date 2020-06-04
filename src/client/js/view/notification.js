@@ -11,16 +11,16 @@ const { capitalizeFirstLetter } = require('../util');
  * @constructor
  * @extends {BaseView}
  */
-var NotificationView = function(model) {
+let NotificationView = function(model) {
   'use strict';
 
-  var self = this;
+  const self = this;
   BaseView.call(this);
 
-  var $container = $('#notification-container');
-  var $template = $('#notification-template');
+  let $container = $('#notification-container');
+  let $template = $('#notification-template');
 
-  var notifications = {};
+  let notifications = {};
 
   // ----- Events -----
   $container.on('click', '.close', function() {
@@ -63,20 +63,20 @@ var NotificationView = function(model) {
 
   // ----- Notification object -----
   // Notification constructor. Type can be either 'Warning' or 'Info'.
-  var delayBeforeFadeOut = 4000,
+  let delayBeforeFadeOut = 4000,
     fadeOutDuration = 1000,
     opacity = 0.7;
   /**
    * notification
    * @constructor
    */
-  var Notification = function(type, id) {
-    var thisNotification = this;
+  let Notification = function(type, id) {
+    let thisNotification = this;
 
-    var $notification;
+    let $notification;
 
-    var isVisible = false;
-    var countdown;
+    let isVisible = false;
+    let countdown;
 
     this.display = function(body) {
       if (isVisible) {
@@ -117,7 +117,7 @@ var NotificationView = function(model) {
   };
 
   // ----- Help functions -----
-  var joinPretty = function(names) {
+  let joinPretty = function(names) {
     let displayNames = names
       .map(name => DataService.getDisplayName(name))
       .map(displayName => {

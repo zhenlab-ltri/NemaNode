@@ -22,7 +22,7 @@ let envVars = {
 for (let key in envVars) {
   let val = envVars[key];
 
-  if (val === '' || val == null) {
+  if (val === '' || val === undefined) {
     delete envVars[key];
   }
 }
