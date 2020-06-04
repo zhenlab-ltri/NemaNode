@@ -1,4 +1,4 @@
-const { intersection, unique, prettyPrintArray } = require('../util');
+const { intersection } = require('../util');
 
 const EventEmitter = require('../EventEmitter');
 const Tour = require('./tour');
@@ -66,7 +66,7 @@ let bindOptionsEvents = ({ view, model, controller }) => {
     .on('setDatabase', database => {
       model.clear();
       model.setDatabase(database);
-      var datasets = view.options.getSelectedDatasets();
+      let datasets = view.options.getSelectedDatasets();
       model.setDatasets(datasets);
       model.updateNetwork();
     })
@@ -420,7 +420,7 @@ class Controller extends EventEmitter {
     bindLegendEvents({ model, view });
   }
 
-  setState(state, fromUrl=false) {
+  setState(state, fromUrl = false) {
     let { model, view } = this;
 
     model.clear();
@@ -429,8 +429,8 @@ class Controller extends EventEmitter {
     let database = state['database'] || 'head';
     let allDatasets = DataService.getDatasetList(database);
     let datasets = intersection(allDatasets, state['datasets'] || []);
-    if (datasets.length == 0) {
-        datasets = database == 'head' ? ['witvliet_2020_7', 'witvliet_2020_8'] : allDatasets;
+    if (datasets.length === 0) {
+      datasets = (database == 'head') ? ['witvliet_2020_7', 'witvliet_2020_8'] : allDatasets;
     }
     let nodeColor = state['nodeColor'] || 'type';
     let layout = state['layout'] || 'concentric';

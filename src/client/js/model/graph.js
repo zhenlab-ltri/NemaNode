@@ -3,10 +3,10 @@ const { deepCopy } = require('../util');
  * Dict
  * @constructor
  */
-var Dict = function() {
+let Dict = function() {
   'use strict';
-  var self = this;
-  var storage = {};
+  let self = this;
+  let storage = {};
   this.get = function(key) {
     return storage[key];
   };
@@ -24,7 +24,7 @@ var Dict = function() {
     return Object.keys(storage);
   };
   this.forEach = function(callback) {
-    for (var key in storage) {
+    for (let key in storage) {
       callback(key, storage[key]);
     }
   };
@@ -37,15 +37,15 @@ var Dict = function() {
  * Graph
  * @constructor
  */
-var Graph = function() {
+let Graph = function() {
   'use strict';
 
-  var self = this;
+  const self = this;
 
-  var node = new Dict();
-  var outp = new Dict();
-  var inp = new Dict();
-  var adj = new Dict();
+  let node = new Dict();
+  let outp = new Dict();
+  let inp = new Dict();
+  let adj = new Dict();
 
   this.node = node;
   this.outp = outp;
@@ -158,7 +158,7 @@ var Graph = function() {
    */
   this.edges = function(type, n) {
     type = type || 'chemical';
-    var edges = [];
+    let edges = [];
     if (n !== undefined) {
       if (!node.has(n)) {
         return [];
@@ -185,7 +185,7 @@ var Graph = function() {
         });
       });
     } else if (type == 'electrical') {
-      var seen = new Dict();
+      let seen = new Dict();
       adj.forEach(function(u) {
         adj.get(u).forEach(function(v, attr) {
           if (!seen.has(u)) {

@@ -2,7 +2,7 @@ const CellInfo = require('./cell-info');
 
 const ADULT_COMPLETE_MUSCLE_CLASS = 'BODYWALLMUSCLES';
 
-const { union, capitalizeFirstLetter, unique } = require('./util');
+const { capitalizeFirstLetter } = require('./util');
 
 class DataService {
   constructor() {
@@ -117,9 +117,9 @@ class DataService {
     )[0];
   }
 
-  getDatasetById(datasetId){
+  getDatasetById(datasetId) {
     this.checkLoaded();
-    return this.datasets.find( d => d.id === datasetId );
+    return this.datasets.find(d => d.id === datasetId);
   }
 
   setDatasetType(databaseType) {
@@ -194,7 +194,7 @@ class DataService {
       ANALDEP: 'anal dep'
     };
 
-    if (namesWithSpaces[name] != null) {
+    if (namesWithSpaces[name] !== undefined) {
       return namesWithSpaces[name];
     }
 

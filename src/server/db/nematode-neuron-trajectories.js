@@ -21,7 +21,7 @@ let queryNeuronTrajectories = async (connection, opts) => {
     FROM trajectories
     WHERE dataset_id=${datasetId} AND neuron_name in (${neuronNames})
   `;
-/*
+  /*
   let trajectorySynapsesSql = `
     SELECT connector_id, post_node_id, pre_node_id, type
     FROM synapses s
@@ -36,7 +36,7 @@ let queryNeuronTrajectories = async (connection, opts) => {
     AND (
       c.pre IN (${neuronNames}) OR c.post IN (${neuronNames})
     );
-  `
+  `;
 
   let trajectories = await connection.query(trajectoriesSql);
   let trajectorySynapses = await connection.query(synapseSql);
@@ -48,7 +48,7 @@ let queryNeuronTrajectories = async (connection, opts) => {
 };
 
 let datasetsWithATrajectory = connection => {
-  let sql = `SELECT DISTINCT dataset_id FROM trajectories`;
+  let sql = 'SELECT DISTINCT dataset_id FROM trajectories';
 
   return connection.query(sql).map(r => r.dataset_id);
 };
@@ -60,7 +60,7 @@ let datasetsWithATrajectory = connection => {
 let datasetNeuronTrajectoryMap = new Map();
 
 let populateDatasetNeuronTrajectoryMap = connection => {
-  let neuronDatasetIdPairsSql = `SELECT neuron_name, dataset_id FROM trajectories`;
+  let neuronDatasetIdPairsSql = 'SELECT neuron_name, dataset_id FROM trajectories';
 
   return connection.query(neuronDatasetIdPairsSql).then(neuronDatasets => {
     neuronDatasets.forEach(({ neuron_name, dataset_id }) => {
@@ -95,11 +95,10 @@ let getDatasetsThatContainNeuronTrajectories = (
     return populateDatasetNeuronTrajectoryMap(connection).then(() => {
       return getDatasetsContainingNeuronTrajectories();
     });
-  } else {
-    return Promise.resolve().then(() => {
-      return getDatasetsContainingNeuronTrajectories();
-    });
-  }
+  } 
+  return Promise.resolve().then(() => {
+    return getDatasetsContainingNeuronTrajectories();
+  });
 };
 
 module.exports = {

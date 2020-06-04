@@ -153,7 +153,7 @@ class GraphView extends View2 {
 
       this.one('layoutstop', () => this.correctGjSegments());
 
-      let nodesInNetwork = cy.nodes().filter(n => newNodes[n.id()] != null);
+      let nodesInNetwork = cy.nodes().filter(n => newNodes[n.id()] !== undefined);
       let previousPositions = {};
       nodesInNetwork.forEach(n => (previousPositions[n.id()] = n.position()));
 
@@ -292,10 +292,10 @@ class GraphView extends View2 {
 
   toggleSmallEdgeLabel(id, check) {
     this.cy
-    .getElementById(id)
-    .toggleClass('showEdgeLabel', check)
-    .toggleClass('focus', false);
-  };
+      .getElementById(id)
+      .toggleClass('showEdgeLabel', check)
+      .toggleClass('focus', false);
+  }
 
   toggleEdgeLabel(id, check) {
     if (id == 'all') {
@@ -485,7 +485,7 @@ class GraphView extends View2 {
     let yArr = selected.map(node => node.position('y'));
 
     switch (alignType) {
-      case 'left':
+      case 'left': {
         selected.positions(node => {
           return {
             x: min(xArr),
@@ -493,7 +493,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'right':
+      }
+      case 'right': {
         selected.positions(node => {
           return {
             x: max(xArr),
@@ -501,7 +502,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'top':
+      }
+      case 'top': {
         selected.positions(node => {
           return {
             x: node.position('x'),
@@ -509,7 +511,8 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'bottom':
+      }
+      case 'bottom': {
         selected.positions(node => {
           return {
             x: node.position('x'),
@@ -517,9 +520,10 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'horizontal':
-        var xMin = min(xArr);
-        var xMax = max(xArr);
+      }
+      case 'horizontal': {
+        let xMin = min(xArr);
+        let xMax = max(xArr);
         selected = selected.sort((a, b) => a.position('x') - b.position('x'));
         selected.positions((node, i) => {
           return {
@@ -528,9 +532,10 @@ class GraphView extends View2 {
           };
         });
         break;
-      case 'vertical':
-        var yMin = min(yArr);
-        var yMax = max(yArr);
+      }
+      case 'vertical': {
+        let yMin = min(yArr);
+        let yMax = max(yArr);
 
         selected = selected.sort((a, b) => a.position('y') - b.position('y'));
         selected.positions((node, i) => {
@@ -540,6 +545,7 @@ class GraphView extends View2 {
           };
         });
         break;
+      }
     }
 
     this.emit('aligned', this.getPositions('all'));
@@ -637,7 +643,7 @@ class GraphView extends View2 {
   makeEdge(params) {
     this.idx += 1;
 
-    var source = {
+    let source = {
       id: 'legend-' + this.idx + '-source',
       width: '15px',
       height: '15px',
@@ -645,7 +651,7 @@ class GraphView extends View2 {
       position: { x: params.position['x'] - 35, y: params.position['y'] }
     };
 
-    var target = {
+    let target = {
       id: 'legend-' + this.idx + '-target',
       width: '15px',
       height: '15px',
@@ -653,7 +659,7 @@ class GraphView extends View2 {
       position: { x: params.position['x'] + 35, y: params.position['y'] }
     };
 
-    var edge = {
+    let edge = {
       group: 'edges',
       classes: 'legend' + (params.classes || ''),
       data: {
@@ -769,7 +775,7 @@ class GraphView extends View2 {
             if (noEdgesWithAnnotations) {
               return;
             }
-          }  else if (id == 'edge-stable') {
+          } else if (id == 'edge-stable') {
             edge.classes = ' stable';
             if (noEdgesWithAnnotations) {
               return;
@@ -835,7 +841,7 @@ class GraphView extends View2 {
 
     let layoutOptions = Object.assign({}, defaultLayoutOpts);
     let moreThanOnePresetPosition = Object.keys(positions).length > 0;
-    let currentLayoutRunning = cy.animated() && layout != null;
+    let currentLayoutRunning = cy.animated() && layout !== undefined;
 
     if (currentLayoutRunning) {
       layout.stop(true);
@@ -851,7 +857,7 @@ class GraphView extends View2 {
         positions: node => {
           let id = node.id();
 
-          if (positions[id] != null) {
+          if (positions[id] !== undefined) {
             return positions[id];
           }
           return {

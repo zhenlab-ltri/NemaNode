@@ -11,7 +11,7 @@ test('adding a cell registers cell class information', function(){
   ci.addCell('ASER', 'ASE', 'l', 's', true, true, false);
 
   expect(ci.cellClass['ASER']).toEqual( 'ASE' );
-  expect(ci.cellClass['ASE']).toEqual( null );
+  expect(ci.cellClass['ASE']).toEqual( undefined );
   expect(ci.classMembers['ASE']).toEqual( ['ASER'] );
 });
 
@@ -44,18 +44,18 @@ test('set to legacy sets class info to be compatible for comparison with legacy 
   ci.addCell('BWM-DL01', 'BWM01', 'b', 'n', true, true, false);
 
   expect( ci.cellClassLegacy ).toEqual( {
-    "BODYWALLMUSCLES": null,
+    "BODYWALLMUSCLES": undefined,
     "BWM-DL01": "BODYWALLMUSCLES"
   } );
   expect( ci.cellClassNonLegacy ).toEqual( {
     "BWM-DL01": "BWM01",
-    "BWM01": null
+    "BWM01": undefined
   } );
 
   ci.setToLegacy();
 
   expect( ci.cellClass ).toEqual( {
-    "BODYWALLMUSCLES": null,
+    "BODYWALLMUSCLES": undefined,
     "BWM-DL01": "BODYWALLMUSCLES"
   } );
 
@@ -63,8 +63,8 @@ test('set to legacy sets class info to be compatible for comparison with legacy 
   // expect( ci.cellClass ).toEqual( [] );
 
   expect( ci.cellClass ).toEqual( {
-    "BODYWALLMUSCLES": null,
+    "BODYWALLMUSCLES": undefined,
     "BWM-DL01": "BWM01",
-    "BWM01": null,
+    "BWM01": undefined,
   } );
 });

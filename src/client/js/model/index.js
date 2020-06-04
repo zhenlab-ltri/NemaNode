@@ -1,15 +1,11 @@
-const modelToCytoscape = require('./cytoscape-adaptor');
-
 const EventEmitter = require('../EventEmitter');
-
 const services = require('../services');
 const DataService = require('../data-service');
 
-const { deepCopy } = require('../util');
-
-const { positionModule } = require('./position');
+const modelToCytoscape = require('./cytoscape-adaptor');
 const summary = require('./summary');
 const setters = require('./setters');
+const { positionModule } = require('./position');
 const splitJoin = require('./split-join');
 const input = require('./input');
 const hide = require('./hidden');
@@ -21,17 +17,6 @@ class Model extends EventEmitter {
   constructor(cy) {
     super();
     this.cy = cy;
-    //this.database; //eventually this and all following will be local variables.
-    //this.datasets;
-    //this.nodeColor;
-    //this.layout;
-    //this.showLinked;
-    //this.showIndividual;
-    //this.showEdgeLabel;
-    //this.showPostemb;
-    //this.thresholdChemical;
-    //this.thresholdElectrical;
-    //this.showAnnotations;
 
     this.legendItems = [];
 
@@ -43,7 +28,7 @@ class Model extends EventEmitter {
     this.joined = [];
 
     this.groups = {};
-    this.parent = {}; // should only be used by the groups module, every other module should not access this directly
+    this.parent = {}; // should only be used by the groups module, no other module should not access this directly
 
     this.positions = {};
     this.lockedPositions = [];
@@ -68,6 +53,7 @@ class Model extends EventEmitter {
     });
   }
 
+
   updateNetwork(updateType = '', runLayout = true) {
     this.emit('networkUpdate');
 
@@ -75,7 +61,7 @@ class Model extends EventEmitter {
       DataService.exists(input, this.database)
     );
 
-    var params = {
+    let params = {
       database: this.database,
       datasets: this.datasets,
       input: validInput,

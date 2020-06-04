@@ -1,3 +1,5 @@
+/* eslint no-console: "off" */
+
 require('regenerator-runtime');
 
 const db = require('../src/server/db');

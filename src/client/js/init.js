@@ -34,6 +34,7 @@ $(document).ready(() => {
         window.c = controller;
         window.ds = DataService;
         cytoscape.warnings(true);
+        // eslint-disable-next-line
         console.log('Running in debug mode');
 
         // Live reload.
@@ -116,9 +117,9 @@ $(document).ready(() => {
       view.searchbar.focus();
     })
     .catch(e => {
-      let errorMsg =
-        'Cannot load data!\nPlease contact us if the problem persists!';
-      alert(errorMsg);
+      if (!DEBUG) {
+        alert('Cannot load data!\nPlease contact us if the problem persists!');
+      }
       throw e;
     });
 });

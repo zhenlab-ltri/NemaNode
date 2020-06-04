@@ -182,10 +182,10 @@ class OptionsView extends BaseView {
       // Input is invalid. Includes NaN.
       if (!(threshold > 0)) {
         $el
-          .addClass('errorInput')
+          .addClass('error-input')
           .delay(700)
           .queue(next => {
-            $el.removeClass('errorInput');
+            $el.removeClass('error-input');
             next();
           });
         $input.val(1);

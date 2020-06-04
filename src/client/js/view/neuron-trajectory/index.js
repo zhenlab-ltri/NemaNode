@@ -25,10 +25,10 @@ class NeuronTrajectoryView extends BaseView {
       width: this.width,
       height: this.height,
       controller: this
-     });
+    });
   }
 
-  initializeVisualization(){
+  initializeVisualization() {
     this.visualization = new NeuronTrajectoryVisualization({
       width: this.width,
       height: this.height,
@@ -56,10 +56,10 @@ class NeuronTrajectoryView extends BaseView {
 
       let clicked3dObjects = this.visualization.getRaycastIntersection(e, this.view.x, this.view.y);
 
-      if( clicked3dObjects.length > 0 ){
+      if (clicked3dObjects.length > 0) {
         this.view.showTooltip = true;
 
-        getTrajectoryNodeData({ nodeIds: clicked3dObjects }).then( data => {
+        getTrajectoryNodeData({ nodeIds: clicked3dObjects }).then(data => {
           this.view.tooltipData = data;
         });
 
@@ -71,7 +71,7 @@ class NeuronTrajectoryView extends BaseView {
 
       let clicked3dObjects = this.visualization.getRaycastIntersection(e, this.view.x, this.view.y);
 
-      if( clicked3dObjects.length > 0 ){
+      if (clicked3dObjects.length > 0) {
         this.view.trajectoryNodeHovered = true;
       }
     });
@@ -84,7 +84,7 @@ class NeuronTrajectoryView extends BaseView {
     });
   }
 
-  handleNeuronTrajectoryNotFound(neuronsNotFound){
+  handleNeuronTrajectoryNotFound(neuronsNotFound) {
     let neuronMsgLabel = prettyPrintArray(neuronsNotFound);
     this.model.emit('warning', {
       id: `nt-notfound-${neuronsNotFound.sort().join('-')}`,
@@ -93,28 +93,28 @@ class NeuronTrajectoryView extends BaseView {
     });
   }
 
-  clearTrajectoryVisualization(){
+  clearTrajectoryVisualization() {
     this.visualization.clear();
   }
 
-  updateBgColor(newColor, newOpenEndColor){
+  updateBgColor(newColor, newOpenEndColor) {
     this.visualization.updateBgColor(newColor, newOpenEndColor);
   }
 
-  updateTrajectoryWidth(newWidth){
+  updateTrajectoryWidth(newWidth) {
     this.visualization.updateTrajectoryWidth(newWidth);
   }
 
-  loadNeuronTrajectories(opts){
+  loadNeuronTrajectories(opts) {
     this.visualization.loadNeuronTrajectories(opts);
   }
 
-  updateVisualizationSize(w, h){
+  updateVisualizationSize(w, h) {
     this.visualization.updateVisualizationSize(w, h);
   }
-  computeScalebarMeasurement(){
+  computeScalebarMeasurement() {
     return {
-      scalebarMeasurement: (this.visualization.renderer.domElement.getBoundingClientRect().width * this.visualization.camera.zoom ) /
+      scalebarMeasurement: (this.visualization.renderer.domElement.getBoundingClientRect().width * this.visualization.camera.zoom) /
     (this.visualization.camera.right - this.visualization.camera.left),
       scalebarMinWidth: this.visualization.renderer.domElement.getBoundingClientRect().width / 5
     };

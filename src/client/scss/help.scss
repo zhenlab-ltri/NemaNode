@@ -59,14 +59,14 @@
         background-color: $background-highlighed;
       }
       /* icon */
-      &:not(:last-child):after {
+      &:not(:last-child)::after {
         display: block;
         content: '';
         height: 1px;
         background-color: $spacer-color;
       }
       /* separator */
-      &:before {
+      &::before {
         display: block;
         position: absolute;
         left: 0;
@@ -117,9 +117,6 @@
       width: calc(100% - 18px);
       border: 1px solid #ccc;
       padding: 8px;
-      -webkit-transition: border-color 500ms ease-in-out;
-      -moz-transition: border-color 500ms ease-in-out;
-      -o-transition: border-color 500ms ease-in-out;
       transition: border-color 500ms ease-in-out;
       &.error {
         border-color: $error;
@@ -156,7 +153,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
 
-  &:before, &:after {
+  &::before, &::after {
     content: '';
     display: block;
     position: absolute;
@@ -165,72 +162,72 @@
     border-style: solid;
     border-color: transparent;
   }
-  &:before {
+  &::before {
     border-width: 15px;
   }
-  &:after {
+  &::after {
     border-width: 14px;
   }
-  &[data-direction^='top']:before {
+  &[data-direction^='top']::before {
     top: -30px;
     border-bottom-color: $spacer-color;
   }
-  &[data-direction^='top']:after {
+  &[data-direction^='top']::after {
     top: -28px;
     border-bottom-color: $background;
   }
-  &[data-direction='top']:before, &[data-direction='bottom']:before  {
+  &[data-direction='top']::before, &[data-direction='bottom']::before  {
     left: 50%;
     margin-left: -15px;
   }
-  &[data-direction='top']:after, &[data-direction='bottom']:after {
+  &[data-direction='top']::after, &[data-direction='bottom']::after {
     left: 50%;
     margin-left: -14px;
   }
-  &[data-direction='topleft']:before {
+  &[data-direction='topleft']::before {
     left: 20px;
   }
-  &[data-direction='topleft']:after {
+  &[data-direction='topleft']::after {
     left: 21px;
   }
-  &[data-direction='topright']:before {
+  &[data-direction='topright']::before {
     right: 20px;
   }
-  &[data-direction='topright']:after {
+  &[data-direction='topright']::after {
     right: 21px;
   }
-  &[data-direction^='bottom']:before {
+  &[data-direction^='bottom']::before {
     bottom: -30px;
     border-top-color: $spacer-color;
   }
-  &[data-direction^='bottom']:after {
+  &[data-direction^='bottom']::after {
     bottom: -28px;
     border-top-color: $background;
   }
-  &[data-direction='bottomleft']:before {
+  &[data-direction='bottomleft']::before {
     left: 20px;
   }
-  &[data-direction='bottomleft']:after {
+  &[data-direction='bottomleft']::after {
     left: 21px;
   }
-  &[data-direction^='left']:before {
+  &[data-direction^='left']::before {
     left: -30px;
     border-right-color: $spacer-color;
   }
-  &[data-direction^='left']:after {
+  &[data-direction^='left']::after {
     left: -28px;
     border-right-color: $background;
   }
-  &[data-direction='lefttop']:before {
+  &[data-direction='lefttop']::before {
     top: 20px;
   }
-  &[data-direction='lefttop']:after {
+  &[data-direction='lefttop']::after {
     top: 21px;
   }
-  &[data-direction='leftbottom']:before {
+  &[data-direction='leftbottom']::before {
     bottom: 20px;
   }
-  &[data-direction='leftbottom']:after {
+  &[data-direction='leftbottom']::after {
     bottom: 21px;
   }
 

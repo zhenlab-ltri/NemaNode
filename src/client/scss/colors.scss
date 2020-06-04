@@ -1,63 +1,62 @@
-/* Global */
-$background-cy: #F4F4F4;
+$background-cy: #f4f4f4;
 
-$background: #fff;
-$background-highlighed: #eee;
+$background: #ffffff;
+$background-highlighed: #eeeeee;
 $border-disabled: #f0f0f0;
-$header-background: #777;
+$header-background: #777777;
 
-$text-color: #444;
-$text-inverse: #fff;
+$text-color: #444444;
+$text-inverse: #ffffff;
 
-$text-subtle: #999;
-$text-inactive: #bbb;
+$text-subtle: #999999;
+$text-inactive: #bbbbbb;
 
 $link-color: #777;
-$link-hover-color: #4D6DE3;
+$link-hover-color: #4d6de3;
 
-$error: #CC0D37;
+$error: #cc0d37;
 
 
 
-$warning-color: #E00;
+$warning-color: #ee0000;
 
-$spacer-color: #D9D9D9;
+$spacer-color: #d9d9d9;
 
-$blue: #4498EF;
-$light-blue: #99CCFF;
+$blue: #4498ef;
+$light-blue: #99ccff;
 
 
 
 $type-colors: (
-  1: #F9CEF9, /* sensory */
-  2: #FF887A, /* inter */
-  3: #B7DAF5, /* motor */
-  4: #F9D77B, /* modulatory */
-  5: #A8F5A2, /* muscle */
-  6: #D9D9D9  /* other */
+  1: #f9cef9, // sensory
+  2: #ff887a, // inter
+  3: #b7daf5, // motor
+  4: #f9d77b, // modulatory
+  5: #a8f5a2, // muscle
+  6: #d9d9d9  // other
 );
 
 $nt-colors: (
-  1: #FF887A, /* ach */
-  2: #A8F5A2, /* dop */
-  3: #99CCFF, /* gaba */
-  4: #FCFF38, /* glu */
-  5: #CFACFF, /* oct */
-  6: #90FFCF, /* ser */
-  7: #FFCE39, /* tyr */
-  8: #D9D9D9, /* unknown */
-  9: #FFFFFF  /* none */
+  1: #ff887a, // ach
+  2: #a8f5a2, // dop
+  3: #99ccff, // gaba
+  4: #fcff38, // glu
+  5: #cfacff, // oct
+  6: #90ffcf, // ser
+  7: #ffce39, // tyr
+  8: #d9d9d9, // unknown
+  9: #ffffff  // none
 );
 
 $edge-colors: (
-  typ0: #000000, /* default */
-  typ2: #666666, /* gj */
-  l1:   #2A9EFE, // juvenile
-  ad:   #FF0000, // adult
-  notClassified: #228B22, 
-  pe: #990000,        // post embryonic
-  st: black,          // stable
-  vr: #d1cfcf         // variable
+  typ0: #000000, // chemical
+  typ2: #666666, // gap junction
+  l1:   #2a9efe, // juvenile
+  ad:   #ff0000, // adult
+  notClassified: #228b22, 
+  pe: #990000,   // post embryonic
+  st: black,     // stable
+  vr: #d1cfcf    // variable
 )
 
 
