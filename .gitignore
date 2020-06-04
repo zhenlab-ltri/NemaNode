@@ -2,6 +2,7 @@
 /node_modules
 npm-debug.log
 /dist
+webpack-stats.json
 
 # Config files
 config.ini

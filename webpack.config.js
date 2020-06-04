@@ -2,12 +2,12 @@ const path = require('path');
 const fs = require('fs-extra');
 const ini = require('ini');
 const webpack = require('webpack');
-const sass = require('node-sass');
 const autoprefixer = require('autoprefixer');
 const PostCompilePlugin = require('post-compile-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const SRC_DIR = 'src/client';
 const ASSET_PATHS = [
@@ -15,8 +15,6 @@ const ASSET_PATHS = [
   'image/'
 ];
 const DIST_DIR = 'dist';
-const SASS_INPUT_FILE = 'src/client/scss/main.scss';
-const SASS_OUTPUT_FILE = 'dist/style/bundle.css';
 
 const license = fs.readFileSync('LICENSE', 'utf-8');
 
@@ -38,13 +36,29 @@ module.exports = (env, argv) => {
   }
 
   return {
-    entry: './src/client/js/init.js',
+    entry: {
+      'nemanode': './src/client/js/init.js',
+      'nemanode-style': './src/client/scss/main.scss',
+    },
     devtool: 'inline-source-map',
     output: {
       path: path.resolve(__dirname, DIST_DIR),
-      filename: '[name].[contenthash].js'
+      filename: 'js/[name].[contenthash].js'
     },
-    resolve: {
+    optimization: {
+      moduleIds: 'hashed',
+      runtimeChunk: 'single',
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'libs',
+            chunks: 'all',
+          },
+        },
+      },
+    },
+    /*resolve: {
       alias:{
         'three/OrbitControls': path.join(__dirname, 'node_modules/three/examples/js/controls/OrbitControls.js'),
         'three/OrthographicTrackballControls': path.join(__dirname, 'node_modules/three/examples/js/controls/OrthographicTrackballControls.js'),
@@ -54,19 +68,21 @@ module.exports = (env, argv) => {
         'three/GLTFLoader': path.join(__dirname, 'node_modules/three/examples/js/loaders/GLTFLoader.js'),
         vue: 'vue/dist/vue.esm.js'
       }
-    },
+    },*/
     plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'style/[name].[contenthash].css',
+      }),
       new ExtraWatchWebpackPlugin({
         dirs: [
           'src/client/scss/',
-          'src/client/image/',
-          'src/client/3d-models/'
+          'src/client/image/'
         ]
       }),
       new CleanWebpackPlugin(), // clears unused files after build.
-      new webpack.ProvidePlugin({
+      /*new webpack.ProvidePlugin({
         'THREE': 'three'
-      }),
+      }),*/
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery"
@@ -81,20 +97,10 @@ module.exports = (env, argv) => {
         },
       }),
       new PostCompilePlugin(() => {
-        let css = sass.renderSync({
-          file: path.resolve(__dirname, SASS_INPUT_FILE),
-          outputStyle: 'compressed'
-        }).css;
-
-        autoprefixer({remove: false})
-        css = autoprefixer.process(css).css;
-
         ASSET_PATHS.forEach( path => {
           fs.copySync(`${SRC_DIR}/${path}`, `${DIST_DIR}/${path}`);
         } );
-
-        fs.writeFileSync(path.resolve(__dirname, SASS_OUTPUT_FILE), css);
-      })
+      }),
     ],
     module: {
       rules: [
@@ -104,6 +110,29 @@ module.exports = (env, argv) => {
           use: {
             loader: 'babel-loader'
           }
+        },
+        {
+          test: /\.(s[ac]ss)$/,
+          exclude: /node_modules/,
+          use: [
+            MiniCssExtractPlugin.loader, 
+            {
+              loader: 'css-loader',
+              options: {
+                url: false, //don't follow images and fonts.
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  autoprefixer
+                ]
+              }
+            },
+            'sass-loader',
+          ]
         }
       ]
     },
