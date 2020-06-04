@@ -5,10 +5,10 @@ const hash = require('object-hash');
 
 const getConnectionPrimaryKey = (pre, post, type) => hash({ pre, post, type });
 
-let queryAnnotations = (connection, opts) => {
-  let { cells, includeNeighboringCells, datasetType } = opts;
+let queryAnnotations = async (connection, opts) => {
+  const { cells, includeNeighboringCells, datasetType } = opts;
 
-  let annotationsSql = `
+  const annotationsSql = `
     SELECT pre, post, type, annotation
     FROM annotations
     WHERE (pre in (${cells}) ${
@@ -17,11 +17,13 @@ let queryAnnotations = (connection, opts) => {
       AND collection in (${datasetType})
   `;
 
-  return connection.query(annotationsSql);
+  const [rows, ] = await connection.query(annotationsSql);
+
+  return rows;
 };
 
 
-let queryConnections = (connection, opts) => {
+let queryConnections = async (connection, opts) => {
   const {
     cells,
     datasetIds,
@@ -50,7 +52,9 @@ let queryConnections = (connection, opts) => {
     WHERE c.dataset_id IN (${datasetIds})
   `;
 
-  return connection.query(connectionsSql);
+  const [rows, ] = await connection.query(connectionsSql);
+
+  return rows;
 };
 
 // cells -> array of strings,,
@@ -102,7 +106,7 @@ let queryNematodeConnections = async (connection, opts) => {
         annotationsMap.set(key, [annotationType]);
       }
     });
-  } 
+  }
 
   rawConnections = await queryConnections(connection, {
     cells,

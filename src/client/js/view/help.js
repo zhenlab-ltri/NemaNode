@@ -179,10 +179,11 @@ class HelpView extends BaseView {
 
     let progressDots = [];
     for (let i = 1; i <= totalSteps; i++) {
-      progressDots.push(i === step ? '<div class="active" />' : '<div />');
+      progressDots.push(i === step ? '<div class="active"></div>' : '<div></div>');
     }
 
     this.$tourProgress.html(progressDots.join(''));
+    console.log(progressDots.join(''))
   }
 
   showTour(coordinate, position) {

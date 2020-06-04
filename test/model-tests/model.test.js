@@ -42,9 +42,11 @@ test('model.clear', function(){
 test('mode.getState', function(){
   let m = new Model();
 
-  m.setDatabase('head');
+  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasets = DataService.getDatasetList(datasetType)
+  m.setDatabase(datasetType);
 
-  m.setDatasets(["SEM_adult", "SEM_L1_2", "SEM_L1_3", "SEM_L1_4", "SEM_L2_2", "TEM_adult", "TEM_L1_5", "TEM_L3", "white_ad", "white_l4"]);
+  m.setDatasets(datasets);
 
   m.setLayout('concentric');
   m.setNodeColor('type');
@@ -62,19 +64,8 @@ test('mode.getState', function(){
   m.addMembersToGroup( gId, ['AIY'] );
 
   expect( m.getState(['AIY', '0']) ).toEqual( {
-    "database": "head",
-    "datasets": [
-      "SEM_L1_3",
-      "TEM_L1_5",
-      "SEM_L1_4",
-      "SEM_L1_2",
-      "SEM_L2_2",
-      "TEM_L3",
-      "white_l4",
-      "TEM_adult",
-      "SEM_adult",
-      "white_ad",
-    ],
+    "database": datasetType,
+    "datasets": datasets,
     "nodeColor": "type",
     "layout": "concentric",
     "thresholdChemical": 3,

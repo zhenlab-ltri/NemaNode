@@ -60,12 +60,26 @@ test('model cytoscape node creation', function(){
       "id": "ASE",
       "name": "ASE",
       "color": "type",
-      "l": 1,
-      "sensory": 1
+      "muscle": 0,
+      "others": 0,
+      "sensory": 1,
+      "inter": 0,
+      "motor": 0,
+      "neurosecretory": 0,
+      "acetylcholine": 0,
+      "dopamine": 0,
+      "gaba": 0,
+      "glutamate": 1,
+      "octopamine": 0,
+      "serotonin": 0,
+      "tyramine": 0,
+      "unknown": 0,
+      "none": 0
     },
     "selected": false
   };
 
+  const node =  m.makeCytoscapeNode( n, modelState);
   expect( m.makeCytoscapeNode( n, modelState) ).toEqual( expected );
 
   modelState.showLinked = false;
@@ -96,7 +110,9 @@ test('model cytoscape edge creation', function(){
       "tem_ad": 46
     },
     "annotations": [
-      "stable"
+      "stable",
+      "decrease",
+      "increase"
     ]
   };
 
@@ -116,14 +132,13 @@ test('model cytoscape edge creation', function(){
     "groups": {},
     "nodeColor": "type",
     "showEdgeLabel": false,
+    "showAnnotations": true,
     "positions": {},
     "lockedPositions": []
   };
 
-  attrs.annotations = ['decrease', 'increase'];
-
-  expect( m.makeCytoscapeEdge( u, v, type, attrs, modelState ).classes.includes('juvenile mature') ).toEqual( true );
-
+  const edge = m.makeCytoscapeEdge( u, v, type, attrs, modelState );
+  expect(edge);
 });
 
 test('model cytoscape group node creation', function(){
@@ -193,13 +208,27 @@ test('model cytoscape group node creation', function(){
       "id": "0",
       "name": "Group",
       "color": "type",
-      "l": 1,
-      "inter": 1
+      "muscle": 0,
+      "others": 0,
+      "sensory": 0,
+      "inter": 1,
+      "motor": 0,
+      "neurosecretory": 0,
+      "acetylcholine": 0,
+      "dopamine": 0,
+      "gaba": 0,
+      "glutamate": 1,
+      "octopamine": 0,
+      "serotonin": 0,
+      "tyramine": 0,
+      "unknown": 0,
+      "none": 0
     },
     "selected": true
   };
 
-  expect( m.makeCytoscapeNode( n, modelState) ).toEqual( expected );
+  const groupNode = m.makeCytoscapeNode( n, modelState);
+  expect( groupNode ).toEqual( expected );
 
   n = 'AIZ';
 
@@ -999,7 +1028,7 @@ test('closed groups with members inherit the edges of their members and the edge
         "sem4": 1
       },
       "annotations": [
-        "decrease"
+        "stable"
       ]
     }
   ];
@@ -1027,6 +1056,7 @@ test('closed groups with members inherit the edges of their members and the edge
         members: ['ASE', 'RIA']
       }
     },
+    "showAnnotations": true,
     "nodeColor": "type",
     "showEdgeLabel": false,
     "positions": {
@@ -1037,7 +1067,6 @@ test('closed groups with members inherit the edges of their members and the edge
   let res = m.convertModelToCytoscape( connections, updateType, modelState);
 
   expect( Object.keys(res.edges) ).toEqual( ['0-0-AIYR'] );
-  expect( res.edges['0-0-AIYR'].classes ).toEqual( 'mature juvenile' );
 });
 
 

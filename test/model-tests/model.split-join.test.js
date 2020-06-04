@@ -67,20 +67,7 @@ test('split selected cells', function(){
 
 test('you cant split classes of cells specific to the adult complete dataset', function(){
   let m = new Model();
-  let classesSpecificToAdultCompleteDataset = [
-    'BODYWALLMUSCLES',
-    'PM2',
-    'PM3',
-    'PM5',
-    'PM6',
-    'PM7',
-    'MC1',
-    'MC2',
-    'MC3',
-    'G1',
-    'G2',
-    'DEFECATIONMUSCLES'
-  ];
+  let classesSpecificToAdultCompleteDataset = DataService.legacyClasses;
 
   m.setSelected([
     ...classesSpecificToAdultCompleteDataset,
@@ -94,7 +81,7 @@ test('you cant split classes of cells specific to the adult complete dataset', f
   });
 
   m.setDatabase('complete');
-  m.setDatasets(['adult']);
+  m.setDatasets(DataService.getDatasetList('complete'));
 
   m.splitSelected();
 
