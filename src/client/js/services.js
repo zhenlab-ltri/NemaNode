@@ -16,7 +16,7 @@ const getNematodeConnections = (opts) => {
       return res;
     });
 };
-
+/*
 const getNematodeNeuronTrajectories = ({ neuronNames, datasetId }) => {
   return fetch(
     `/api/neuron-trajectories?${qs.stringify({
@@ -33,7 +33,7 @@ const getNematodeNeuronTrajectories = ({ neuronNames, datasetId }) => {
 
       return { trajectorySynapses, trajectories };
     });
-};
+};*/
 
 const downloadConnectivity = (opts) => {
   return fetch(`/api/download-connectivity?${qs.stringify(opts)}`).then((res) => res.json());
@@ -127,7 +127,7 @@ module.exports = {
   getNematodeCells,
   getNematodeConnections,
   getNematodeDatasets,
-  getNematodeNeuronTrajectories,
+  //getNematodeNeuronTrajectories,
   //getTrajectoryNodeData,
   downloadConnectivity,
 };

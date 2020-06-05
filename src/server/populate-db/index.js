@@ -6,7 +6,7 @@ const {
   datasetList, 
   loadConnectionData, 
   loadAnnotationData, 
-  loadTrajectoryData 
+  //loadTrajectoryData 
 } = require('./load-data');
 const populateCells = require('./populate-cells');
 const {
@@ -16,9 +16,9 @@ const {
   populateConnections,
   populateAnnotations
 } = require('./populate-connections');
-const {
+/*const {
   populateNeuronTrajectories
-} = require('./populate-neuron-trajectories');
+} = require('./populate-neuron-trajectories');*/
 
 
 const depopulateDb = (conn) => {
@@ -37,7 +37,7 @@ const depopulateDb = (conn) => {
 const populateDb = async (conn) => {
   const connectionsJSON = loadConnectionData();
   const annotationsJSON = loadAnnotationData();
-  const trajectoriesJSON = loadTrajectoryData();
+  //const trajectoriesJSON = loadTrajectoryData();
 
   try {
     console.log('Clearing tables');
@@ -49,8 +49,8 @@ const populateDb = async (conn) => {
     console.log('populating datasets');
     await populateDatasets(conn, datasetList);
 
-    console.log('populating trajectories');
-    await populateNeuronTrajectories(conn, trajectoriesJSON);
+    /*console.log('populating trajectories');
+    await populateNeuronTrajectories(conn, trajectoriesJSON);*/
 
     console.log('populating connections');
     await populateConnections(conn, connectionsJSON);
