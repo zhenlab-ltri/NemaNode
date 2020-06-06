@@ -111,6 +111,27 @@ $(document).ready(() => {
       // Load saved state. Cookies are overwritten by URL.
       let cookieParameters = view.cookies.getCookieParameters();
       let urlParameters = view.cookies.getURLParameters();
+
+      // Temporary code until something better is done.
+      const inIframe = () => {
+        try {
+          return window.self !== window.top;
+        } catch (e) {
+          return true;
+        }
+      };
+      if (inIframe()) {
+        $('#searchbar input').hide();
+        $('#searchbar').css('width', '48px');
+        $('#show-help').hide();
+        $('#notification-container').hide();
+        $('#cy-hidden-container').hide();
+        $('#infobar-container').remove();
+        $('#context-menu-container').hide();
+        $('#footer').show();
+        cookieParameters = [];
+      }
+
       controller.setState(Object.assign(cookieParameters, urlParameters), true);
 
       // Set cursor in the searchbar.
