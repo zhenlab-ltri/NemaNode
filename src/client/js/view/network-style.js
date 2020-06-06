@@ -87,6 +87,12 @@ let cystyle = {
       }
     },
     {
+      selector: 'node.hover',
+      css: {
+        'z-compound-depth': 'top'
+      }
+    },
+    {
       selector: 'node:selected, node.searchedfor',
       css: {
         width: '65px',

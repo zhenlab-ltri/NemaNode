@@ -63,6 +63,10 @@ class GraphView extends View2 {
       this.emit('selectionChanged', this.getSelected())
     );
 
+    // Node hover.
+    this.cy.on('mouseover', 'node', e => e.target.addClass('hover'));
+    this.cy.on('mouseout', 'node', e => e.target.removeClass('hover'));
+
     // Edge hover.
     this.cy.on('mouseover', 'edge', e => e.target.addClass('hover'));
 
