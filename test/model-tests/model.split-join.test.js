@@ -1,6 +1,7 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -60,7 +61,7 @@ test('split selected cells', function () {
   let m = new Model();
 
   m.setSelected(['ASE']);
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
   m.splitSelected();
   expect(m.getSplit()).toEqual(['ASE']);
@@ -95,7 +96,7 @@ test('if a class is in a group, its class members are added to the group', funct
   m.setPosition('ASE', { x: 0, y: 0 });
 
   m.select(['ASE']);
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.splitSelected();
@@ -111,7 +112,7 @@ test('class members are positioned in a circle around the class to split', funct
 
   m.lockPositions({ ASE: { x: 100, y: 100 } });
   m.select('ASE');
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.splitSelected();
@@ -125,7 +126,7 @@ test('class members are positioned in a circle around the class to split', funct
 test('classes in the input are replaced by their members', function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
   m.select(['ASE']);
   m.addInput(['ASE']);
@@ -140,7 +141,7 @@ test('members joined', function () {
   let m = new Model();
 
   m.select(['ASER', 'ASEL']);
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.joinSelected();
@@ -153,7 +154,7 @@ test('members joined', function () {
   let m = new Model();
 
   m.select(['ASER', 'ASEL']);
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.joinSelected();
@@ -171,7 +172,7 @@ test('joined class will have the mean position of its members', function () {
     ASEL: { x: 100, y: 100 },
   });
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.joinSelected();
@@ -191,7 +192,7 @@ test('joined class will have its position locked if there are more than one lock
     ASEL: { x: 100, y: 100 },
   });
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.joinSelected();
@@ -216,7 +217,7 @@ test(`
   let g1 = m.createGroup();
   m.addMembersToGroup(g1, ['ASEL']);
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.setPositions({
@@ -235,7 +236,7 @@ test(`
 
 test('input is updated after joining', function () {
   let m = new Model();
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
 
   m.addInput(['ASER', 'ASEL']);
@@ -249,7 +250,7 @@ test('input is updated after joining', function () {
 test(`class members that are hidden are unhidden before joining`, function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setDatasets([]);
   m.select(['ASER']);
 

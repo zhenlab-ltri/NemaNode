@@ -1,6 +1,8 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
+
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -43,7 +45,7 @@ test('model.clear', function () {
 test('mode.getState', function () {
   let m = new Model();
 
-  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasetType = getRandomDatasetType(DataService);
   const datasets = DataService.getDatasetList(datasetType);
   m.setDatabase(datasetType);
 

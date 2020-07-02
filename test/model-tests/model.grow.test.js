@@ -1,6 +1,8 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
+
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -35,7 +37,7 @@ afterAll(() => {
 test('grow selected when showLinked set to true', function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setShowLinked(true);
   m.select(['ASE']);
   m.addInput(['AIY']);
@@ -50,7 +52,7 @@ test('grow selected when showLinked set to true', function () {
 test('grow network ( note: not sure how this code is ever hit, cant hit this code path through the ui )', function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   m.setShowLinked(false);
   m.select(['ASE']);
   m.addInput(['AIY']);

@@ -1,6 +1,8 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
+
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -40,7 +42,7 @@ test(`
 `, function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  m.setDatabase(getRandomDatasetType(DataService));
   let gId = m.createGroup();
   m.addMembersToGroup(gId, ['AWA', 'AWC']);
 

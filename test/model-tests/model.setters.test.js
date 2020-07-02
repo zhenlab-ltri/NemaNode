@@ -1,6 +1,7 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -35,15 +36,16 @@ afterAll(() => {
 test('set database', function () {
   let m = new Model();
 
-  m.setDatabase('head');
+  let randomDatasetType = getRandomDatasetType(DataService);
+  m.setDatabase(randomDatasetType);
 
-  expect(m.database).toEqual('head');
+  expect(m.database).toEqual(randomDatasetType);
 });
 
 test('set datasets', function () {
   let m = new Model();
 
-  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasetType = getRandomDatasetType(DataService);
   const datasets = DataService.getDatasetList(datasetType);
   m.setDatabase(datasetType);
   m.setDatasets(datasets);
@@ -94,7 +96,7 @@ test('set show linked', function () {
 test('set show individual', function () {
   let m = new Model();
 
-  const datasetType = Array.from(DataService.datasetTypes)[0];
+  const datasetType = getRandomDatasetType(DataService);
   const datasets = DataService.getDatasetList(datasetType);
   m.setDatabase(datasetType);
   m.setDatasets(datasets);
@@ -253,19 +255,6 @@ test('set joined', function () {
   expect(m.joined).toEqual(['AINL', 'AINR']);
 });
 
-test('classes specific to the adult complete dataset are automatically joined if the adult complete dataset is set', function () {
-  let m = new Model();
-  const datasets = DataService.getDatasetList('complete');
-  m.datasets = datasets;
-  m.joined = ['ASER', 'ASEL'];
-
-  let newJoined = [];
-
-  m.setJoined(newJoined);
-
-  expect(m.joined).toEqual(DataService.adultCompleteDatasetSpecificClasses);
-});
-
 test('setting positions from array resets positions and locks them', function () {
   let m = new Model();
   m.positions = {
@@ -286,8 +275,11 @@ test('setting positions from array resets positions and locks them', function ()
 test('set input', function () {
   let m = new Model();
 
-  m.datasets = ['adult'];
-  m.database = 'complete';
+  const randomDatasetType = getRandomDatasetType(DataService);
+  const datasets = DataService.getDatasetList(randomDatasetType);
+
+  m.datasets = datasets;
+  m.database = randomDatasetType;
   m.setInput(['ASE', 'AINL']);
 
   expect(m.input).toEqual(['ASE', 'AINL']);
@@ -296,8 +288,11 @@ test('set input', function () {
 test('set input branches', function () {
   let m = new Model();
 
-  m.datasets = ['l1'];
-  m.database = 'complete';
+  const randomDatasetType = getRandomDatasetType(DataService);
+  const datasets = DataService.getDatasetList(randomDatasetType);
+
+  m.datasets = datasets;
+  m.database = randomDatasetType;
   m.setInput(['ASE', 'AINL', 'AIN']);
 
   expect(m.input).toEqual(['ASE', 'AIN']);
