@@ -9,19 +9,18 @@ const expectedCells = require('./nematode-cells.json');
 let connection;
 
 beforeAll(() => {
-  return db.connect({ useTestDatabase: true }).then( c => {
+  return db.connect({ useTestDatabase: true }).then((c) => {
     connection = c;
     return connection;
   });
 });
 
 afterAll(() => {
-   return connection.end();
+  return connection.end();
 });
 
-
-test('get cells from the db', function(){
-  return queryNematodeCells( connection ).then( res => {
-    expect( res ).toEqual( expectedCells );
+test('get cells from the db', function () {
+  return queryNematodeCells(connection).then((res) => {
+    expect(res).toEqual(expectedCells);
   });
 });

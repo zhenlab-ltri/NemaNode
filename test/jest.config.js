@@ -5,5 +5,5 @@ module.exports = {
   bail: true,
   globalSetup: './before-tests.js',
   globalTeardown: './after-tests.js',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
 };
