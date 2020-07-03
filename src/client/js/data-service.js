@@ -84,14 +84,6 @@ class DataService {
     );
   }
 
-  getBodyWallMuscleClass(muscleCellName, datasets) {
-    if (datasets.includes(this.getAdultCompleteDataset().id)) {
-      return ADULT_COMPLETE_MUSCLE_CLASS;
-    }
-
-    return this.cells.find(c => c.name.toUpperCase() === muscleCellName).class;
-  }
-
   checkLoaded() {
     if (!this.loaded) {
       throw new Error('Data service not loaded');

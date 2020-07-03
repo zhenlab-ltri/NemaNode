@@ -1,6 +1,8 @@
 /* global beforeAll, afterAll, test, expect */
 require('regenerator-runtime');
 
+const { getRandomDatasetType } = require('../test-util');
+
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
@@ -11,25 +13,28 @@ let Model = require('../../src/client/js/model');
 let DataService = require('../../src/client/js/data-service');
 
 beforeAll(() => {
-  return db.connect({ useTestDatabase: true }).then( c => {
-    connection = c;
-    return connection;
-  }).then( connection => {
-    return Promise.all([
-      queryNematodeCells( connection ),
-      queryNematodeDatasets( connection )
-    ]).then( data => {
-      let [ cells, datasets ] = data;
-      DataService.load( cells, datasets );
+  return db
+    .connect({ useTestDatabase: true })
+    .then((c) => {
+      connection = c;
+      return connection;
+    })
+    .then((connection) => {
+      return Promise.all([
+        queryNematodeCells(connection),
+        queryNematodeDatasets(connection),
+      ]).then((data) => {
+        let [cells, datasets] = data;
+        DataService.load(cells, datasets);
+      });
     });
-  });
 });
 
 afterAll(() => {
-   return connection.end();
+  return connection.end();
 });
 
-test('model.clear', function(){
+test('model.clear', function () {
   let m = new Model();
 
   m.clear();
@@ -37,13 +42,11 @@ test('model.clear', function(){
   expect(m.input).toEqual([]);
 });
 
-
-
-test('mode.getState', function(){
+test('mode.getState', function () {
   let m = new Model();
 
-  const datasetType = Array.from(DataService.datasetTypes)[0];
-  const datasets = DataService.getDatasetList(datasetType)
+  const datasetType = getRandomDatasetType(DataService);
+  const datasets = DataService.getDatasetList(datasetType);
   m.setDatabase(datasetType);
 
   m.setDatasets(datasets);
@@ -57,43 +60,43 @@ test('mode.getState', function(){
   m.setThresholdChemical(3);
   m.setThresholdElectrical(2);
 
-  m.lockPositions( { AIY: { x: 1, y: 1 } } );
+  m.lockPositions({ AIY: { x: 1, y: 1 } });
 
   let gId = m.createGroup({ name: 'G' });
 
-  m.addMembersToGroup( gId, ['AIY'] );
+  m.addMembersToGroup(gId, ['AIY']);
 
-  expect( m.getState(['AIY', '0']) ).toEqual( {
-    "database": datasetType,
-    "datasets": datasets,
-    "nodeColor": "type",
-    "layout": "concentric",
-    "thresholdChemical": 3,
-    "thresholdElectrical": 2,
-    "showLinked": false,
-    "showIndividual": false,
-    "showEdgeLabel": false,
-    "showPostemb": true,
-    "input": [],
-    "hidden": [],
-    "split": [],
-    "join": [],
-    "selected": [],
-    "legendItems": [],
-    "groups": [
+  expect(m.getState(['AIY', '0'])).toEqual({
+    database: datasetType,
+    datasets: datasets,
+    nodeColor: 'type',
+    layout: 'concentric',
+    thresholdChemical: 3,
+    thresholdElectrical: 2,
+    showLinked: false,
+    showIndividual: false,
+    showEdgeLabel: false,
+    showPostemb: true,
+    input: [],
+    hidden: [],
+    split: [],
+    join: [],
+    selected: [],
+    legendItems: [],
+    groups: [
       {
         id: '0',
         name: 'G',
         members: ['AIY'],
-        open: false
-      }
+        open: false,
+      },
     ],
-    "coordinates": [
+    coordinates: [
       {
         id: 'AIY',
         x: 1,
-        y: 1
-      }
-    ]
-  } );
+        y: 1,
+      },
+    ],
+  });
 });
