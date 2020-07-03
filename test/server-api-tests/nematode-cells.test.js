@@ -4,7 +4,6 @@ require('regenerator-runtime');
 const db = require('../../src/server/db');
 
 const queryNematodeCells = require('../../src/server/db/nematode-cells');
-const expectedCells = require('./nematode-cells.json');
 
 let connection;
 
@@ -21,6 +20,14 @@ afterAll(() => {
 
 test('get cells from the db', function () {
   return queryNematodeCells(connection).then((res) => {
-    expect(res).toEqual(expectedCells);
+    res.forEach((cell) => {
+      expect(cell).toHaveProperty('name');
+      expect(cell).toHaveProperty('class');
+      expect(cell).toHaveProperty('type');
+      expect(cell).toHaveProperty('neurotransmitter');
+      expect(cell).toHaveProperty('embryonic');
+      expect(cell).toHaveProperty('inhead');
+      expect(cell).toHaveProperty('intail');
+    });
   });
 });

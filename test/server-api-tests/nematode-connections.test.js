@@ -5,10 +5,6 @@ const db = require('../../src/server/db');
 
 const queryNematodeConnections = require('../../src/server/db/nematode-connections');
 
-const fixture1 = require('./nematode-connections-1.json');
-const fixture2 = require('./nematode-connections-2.json');
-const fixture3 = require('./nematode-connections-3.json');
-
 let connection;
 
 beforeAll(() => {
@@ -27,19 +23,6 @@ test('get no connections when cells option is empty', function () {
 
   let opts = {
     cells: [],
-    datasetType: 'head',
-    datasetIds: [
-      'SEM_adult',
-      'SEM_L1_2',
-      'SEM_L1_3',
-      'SEM_L1_4',
-      'SEM_L2_2',
-      'TEM_adult',
-      'TEM_L1_5',
-      'TEM_L3',
-      'white_ad',
-      'white_l4',
-    ],
     thresholdChemical: 3,
     thresholdElectrical: 2,
     includeNeighboringCells: true,
@@ -54,19 +37,6 @@ test('get no connections when cells option is empty', function () {
 test('returns no annotations when includeAnnotations is set to false', function () {
   let opts = {
     cells: [],
-    datasetType: 'head',
-    datasetIds: [
-      'SEM_adult',
-      'SEM_L1_2',
-      'SEM_L1_3',
-      'SEM_L1_4',
-      'SEM_L2_2',
-      'TEM_adult',
-      'TEM_L1_5',
-      'TEM_L3',
-      'white_ad',
-      'white_l4',
-    ],
     thresholdChemical: 3,
     thresholdElectrical: 2,
     includeNeighboringCells: true,
