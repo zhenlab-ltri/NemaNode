@@ -115,19 +115,3 @@ test('a set of nodes can be joined when there is atleast one class member cell',
 
   expect(m.canBeJoined(['ASE'])).toEqual(false);
 });
-
-// TODO this function should return false when set to complete adult dataset, for
-// body wall muscles
-
-// calling model.split, should return split and unsplit cells
-// controller should check if the split cells contains body wall muscles and
-// if the selected datasets contain adult legacy
-// if these conditions are true, then you emit the notification
-// remove responsibility of model from emitting logic about body wall muscle cells being split
-
-test('even though body wall muscles should not be able to be split, this function still returns true', function () {
-  let m = new Model();
-
-  DataService.setDatasetType('complete');
-  expect(m.canBeSplit(['BODYWALLMUSCLES'])).toEqual(true);
-});
