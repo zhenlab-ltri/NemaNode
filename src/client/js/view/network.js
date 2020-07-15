@@ -2,7 +2,7 @@ const cytoscape = require('cytoscape');
 const $ = require('jquery');
 const debounce = require('lodash.debounce');
 
-const { max, min, isEmpty } = require('../util');
+const { max, min } = require('../util');
 
 const View2 = require('./base-view');
 const cystyle = require('./network-style');
@@ -30,7 +30,7 @@ class GraphView extends View2 {
       selectionType: 'additive',
       style: cystyle.stylesheet,
       minZoom: 0.2,
-      maxZoom: 1
+      maxZoom: 1,
     });
 
     // SVGs won't show in cytoscape on Edge.
@@ -39,7 +39,7 @@ class GraphView extends View2 {
         .style()
         .selector('node.searchedfor')
         .style({
-          'background-image': 'none'
+          'background-image': 'none',
         })
         .update();
     }
@@ -52,7 +52,7 @@ class GraphView extends View2 {
     this.cy.on('tapstart cxttapstart', () => this.emit('tapstart'));
 
     // Emit when clicked on background.
-    this.cy.on('tap', e => {
+    this.cy.on('tap', (e) => {
       if (e.target === this.cy) {
         this.emit('backgroundClick');
       }
@@ -64,23 +64,23 @@ class GraphView extends View2 {
     );
 
     // Edge hover.
-    this.cy.on('mouseover', 'edge', e => e.target.addClass('hover'));
+    this.cy.on('mouseover', 'edge', (e) => e.target.addClass('hover'));
 
-    this.cy.on('mouseout', 'edge', e => {
+    this.cy.on('mouseout', 'edge', (e) => {
       e.target.removeClass('hover');
       e.target.removeClass('focus');
     });
 
-    this.cy.on('click', 'edge', e => e.target.toggleClass('focus'));
+    this.cy.on('click', 'edge', (e) => e.target.toggleClass('focus'));
 
     // Emit selected edge when clicking
-    this.cy.on('click', 'edge', e => {
+    this.cy.on('click', 'edge', (e) => {
       let edge = e.target;
       this.emit('edgeSelected', edge.id());
     });
 
     // Ensure parents and children aren't selected at the same time.
-    this.cy.on('select', e => {
+    this.cy.on('select', (e) => {
       let node = e.target;
 
       if (node.isParent()) {
@@ -102,7 +102,7 @@ class GraphView extends View2 {
     // Update nodes when moved. The 'free' event trigger on every click, so we have to manually
     // check that something was dragged.
     this.cy.on('drag', 'node', () => (this.nodeDragged = true));
-    this.cy.on('free', 'node', e => {
+    this.cy.on('free', 'node', (e) => {
       if (this.nodeDragged) {
         let freed = e.target;
 
@@ -128,7 +128,7 @@ class GraphView extends View2 {
 
     // Select nodes on right-click. cxttapstart is used instead of cxttap to
     // ensure selection before opening the context menu.
-    this.cy.on('cxttapstart', 'node', e => {
+    this.cy.on('cxttapstart', 'node', (e) => {
       let node = e.target;
 
       if (!node.selected()) {
@@ -137,14 +137,14 @@ class GraphView extends View2 {
       }
     });
 
-    model.on('networkChanged', networkElements => {
+    model.on('networkChanged', (networkElements) => {
       let cy = this.cy;
       let { nodes: newNodes, edges: newEdges, runLayout } = networkElements;
 
       if (
-        isEmpty(networkElements.nodes) &&
-        isEmpty(networkElements.edges) &&
-        isEmpty(networkElements.hidden) &&
+        Object.keys(networkElements.nodes).length === 0 &&
+        Object.keys(networkElements.edges).length === 0 &&
+        Object.keys(networkElements.hidden).length === 0 &&
         cy.elements().empty()
       ) {
         this.cy.emit('layoutstop');
@@ -153,22 +153,24 @@ class GraphView extends View2 {
 
       this.one('layoutstop', () => this.correctGjSegments());
 
-      let nodesInNetwork = cy.nodes().filter(n => newNodes[n.id()] !== undefined);
+      let nodesInNetwork = cy
+        .nodes()
+        .filter((n) => newNodes[n.id()] !== undefined);
       let previousPositions = {};
-      nodesInNetwork.forEach(n => (previousPositions[n.id()] = n.position()));
+      nodesInNetwork.forEach((n) => (previousPositions[n.id()] = n.position()));
 
-      Object.keys(newNodes).forEach(nId => {
+      Object.keys(newNodes).forEach((nId) => {
         if (cy.getElementById(nId).empty()) {
           newNodes[nId].position = { x: cy.width() / 2, y: cy.height() / 2 };
         }
       });
 
-      Object.keys(previousPositions).forEach(nodeId => {
+      Object.keys(previousPositions).forEach((nodeId) => {
         newNodes[nodeId].position = previousPositions[nodeId];
       });
 
       // Prettify node names.
-      Object.keys(newNodes).forEach(nodeId => {
+      Object.keys(newNodes).forEach((nodeId) => {
         let nodeDisplayName = DataService.getDisplayName(
           newNodes[nodeId].data.name
         );
@@ -206,7 +208,7 @@ class GraphView extends View2 {
       }
     });
 
-    model.on('groupCreated', groupId => {
+    model.on('groupCreated', (groupId) => {
       this.one('layoutstop', () => this.startNamingGroup(groupId));
     });
   }
@@ -219,7 +221,7 @@ class GraphView extends View2 {
       nodes = this.cy.nodes().not('.unpositioned');
     }
 
-    nodes.forEach(node => (positions[node.id()] = node.position()));
+    nodes.forEach((node) => (positions[node.id()] = node.position()));
 
     return positions;
   }
@@ -233,11 +235,11 @@ class GraphView extends View2 {
   }
 
   getSelected() {
-    return this.cy.nodes(':selected').map(n => n.id());
+    return this.cy.nodes(':selected').map((n) => n.id());
   }
 
   getNodes() {
-    return this.cy.nodes().map(n => n.id());
+    return this.cy.nodes().map((n) => n.id());
   }
 
   getPosition(nodeId) {
@@ -254,7 +256,7 @@ class GraphView extends View2 {
     let h = $container.height();
     let windowSize = Math.min(w, h);
 
-    coordinates.forEach(coordinate => {
+    coordinates.forEach((coordinate) => {
       coordinate['x'] = coordinate['x'] * windowSize * 0.8;
       coordinate['y'] = coordinate['y'] * windowSize * 0.8;
     });
@@ -273,7 +275,7 @@ class GraphView extends View2 {
   setPosition(node, position, duration) {
     this.cy.getElementById(node).animate({
       position,
-      duration
+      duration,
     });
   }
 
@@ -286,7 +288,7 @@ class GraphView extends View2 {
 
     this.cy.pan({
       x: x + xPan,
-      y: y + yPan
+      y: y + yPan,
     });
   }
 
@@ -328,7 +330,7 @@ class GraphView extends View2 {
     let sourceIds = selectedIds.length ? selectedIds : inputIds;
     let sourceNodes = cy.collection();
 
-    sourceIds.forEach(id => {
+    sourceIds.forEach((id) => {
       let node = cy.getElementById(id);
 
       if (node.isParent()) {
@@ -340,7 +342,7 @@ class GraphView extends View2 {
 
     // Filter network by edges, as set by legend.
     let edgeSel = 'edge';
-    legendHighlights.forEach(highlight => {
+    legendHighlights.forEach((highlight) => {
       let list = highlight.split('-')[0];
       let type = highlight.substr(highlight.indexOf('-') + 1);
 
@@ -356,7 +358,7 @@ class GraphView extends View2 {
     let connectedNodes = sourceNodes.neighborhood(edgeSel).connectedNodes();
 
     // Filter network by nodes, as set by legend.
-    legendHighlights.forEach(highlight => {
+    legendHighlights.forEach((highlight) => {
       let list = highlight.split('-')[0];
       let type = highlight.split('-')[1];
 
@@ -389,10 +391,7 @@ class GraphView extends View2 {
     let highlightedEdges = highlightedNodes.edgesWith(highlightedNodes);
     highlightedEdges = highlightedEdges.filter(edgeSel);
 
-    cy.elements()
-      .not(highlightedNodes)
-      .not(highlightedEdges)
-      .addClass('faded');
+    cy.elements().not(highlightedNodes).not(highlightedEdges).addClass('faded');
   }
 
   endNamingGroup(groupId) {
@@ -403,7 +402,7 @@ class GraphView extends View2 {
 
     this.emit('groupNamed', {
       id: groupId,
-      name
+      name,
     });
   }
 
@@ -455,7 +454,7 @@ class GraphView extends View2 {
 
     group.data('name', '');
 
-    let handler = e => {
+    let handler = (e) => {
       if (e.type == 'keydown') {
         if (e.keyCode !== 13 && e.keyCode !== 27) {
           //enter, esc
@@ -481,42 +480,42 @@ class GraphView extends View2 {
     let selected = this.cy.nodes(':selected');
     selected = selected.add(selected.children());
 
-    let xArr = selected.map(node => node.position('x'));
-    let yArr = selected.map(node => node.position('y'));
+    let xArr = selected.map((node) => node.position('x'));
+    let yArr = selected.map((node) => node.position('y'));
 
     switch (alignType) {
       case 'left': {
-        selected.positions(node => {
+        selected.positions((node) => {
           return {
             x: min(xArr),
-            y: node.position('y')
+            y: node.position('y'),
           };
         });
         break;
       }
       case 'right': {
-        selected.positions(node => {
+        selected.positions((node) => {
           return {
             x: max(xArr),
-            y: node.position('y')
+            y: node.position('y'),
           };
         });
         break;
       }
       case 'top': {
-        selected.positions(node => {
+        selected.positions((node) => {
           return {
             x: node.position('x'),
-            y: min(yArr)
+            y: min(yArr),
           };
         });
         break;
       }
       case 'bottom': {
-        selected.positions(node => {
+        selected.positions((node) => {
           return {
             x: node.position('x'),
-            y: max(yArr)
+            y: max(yArr),
           };
         });
         break;
@@ -528,7 +527,7 @@ class GraphView extends View2 {
         selected.positions((node, i) => {
           return {
             x: xMin + ((xMax - xMin) / (xArr.length - 1)) * i,
-            y: node.position('y')
+            y: node.position('y'),
           };
         });
         break;
@@ -541,7 +540,7 @@ class GraphView extends View2 {
         selected.positions((node, i) => {
           return {
             x: node.position('x'),
-            y: yMin + ((yMax - yMin) / (yArr.length - 1)) * i
+            y: yMin + ((yMax - yMin) / (yArr.length - 1)) * i,
           };
         });
         break;
@@ -558,7 +557,7 @@ class GraphView extends View2 {
 
     cy.startBatch();
 
-    edges.forEach(e => {
+    edges.forEach((e) => {
       let sourcePos = e.source().position();
       let targetPos = e.target().position();
 
@@ -570,7 +569,7 @@ class GraphView extends View2 {
       let divider = (length > 60 ? 7 : length > 40 ? 5 : 3) / length;
 
       let segweights = disFactors
-        .map(d => {
+        .map((d) => {
           return 0.5 + d * divider;
         })
         .join(' ');
@@ -587,7 +586,7 @@ class GraphView extends View2 {
   saveAsPNG(filename) {
     let png64 = this.cy.png({
       full: true,
-      scale: 2
+      scale: 2,
     });
 
     if (window.navigator['msSaveOrOpenBlob']) {
@@ -634,9 +633,9 @@ class GraphView extends View2 {
         color: params.color || 'black',
         border: params.border || '0',
         labelshift: params.labelshift || '11px',
-        opacity: params.opacity || '1'
+        opacity: params.opacity || '1',
       },
-      position: params.position
+      position: params.position,
     };
   }
 
@@ -648,7 +647,7 @@ class GraphView extends View2 {
       width: '15px',
       height: '15px',
       opacity: '0',
-      position: { x: params.position['x'] - 35, y: params.position['y'] }
+      position: { x: params.position['x'] - 35, y: params.position['y'] },
     };
 
     let target = {
@@ -656,7 +655,7 @@ class GraphView extends View2 {
       width: '15px',
       height: '15px',
       opacity: '0',
-      position: { x: params.position['x'] + 35, y: params.position['y'] }
+      position: { x: params.position['x'] + 35, y: params.position['y'] },
     };
 
     let edge = {
@@ -670,8 +669,8 @@ class GraphView extends View2 {
         width: params.width || 2.5,
         label: params.label || '',
         labelyshift: params.labelyshift || '0',
-        labelxshift: params.labelxshift || '0'
-      }
+        labelxshift: params.labelxshift || '0',
+      },
     };
     return [this.makeNode(source), this.makeNode(target), edge];
   }
@@ -681,7 +680,7 @@ class GraphView extends View2 {
     this.idx = 0;
   }
 
-  // create node/edge legend in cytoscape so that it is captured in the 
+  // create node/edge legend in cytoscape so that it is captured in the
   // image output when saving the cytoscape canvas
   createCytoscapeLegend(legendItems) {
     let { cy, model } = this;
@@ -700,7 +699,7 @@ class GraphView extends View2 {
     let row = 0;
 
     this.idx = 0;
-    legendItems.forEach(item => {
+    legendItems.forEach((item) => {
       let { id, text } = item;
 
       if (!id.startsWith('edge')) {
@@ -708,7 +707,7 @@ class GraphView extends View2 {
         let node = {
           label: text,
           color: colours[id.split('-')[1]],
-          position: { x: xStart, y: yStart + row * rowHeight }
+          position: { x: xStart, y: yStart + row * rowHeight },
         };
         if (['type-muscle', 'type-others', 'nt-n'].includes(id)) {
           node.width = '30px';
@@ -731,20 +730,19 @@ class GraphView extends View2 {
         }
         let synapses = id == 'edge-typ0' ? [1, 10, 50] : [3];
 
-        let noEdgesWithAnnotations = (
+        let noEdgesWithAnnotations =
           cy.edges('.mature').length === 0 &&
           cy.edges('.juvenile').length === 0 &&
           cy.edges('.stable').length === 0 &&
           cy.edges('.variable').length === 0 &&
-          cy.edges('.post-embryonic').length === 0
-        );
+          cy.edges('.post-embryonic').length === 0;
 
         synapses.forEach((syn, i) => {
           let edge = {
             type: '0',
             labelyshift: '0',
             labelxshift: '0',
-            position: { x: xStart, y: yStart + (row + i) * rowHeight }
+            position: { x: xStart, y: yStart + (row + i) * rowHeight },
           };
           if (id == 'edge-typ0') {
             edge.width = Math.max(
@@ -800,7 +798,7 @@ class GraphView extends View2 {
               label: text,
               labelshift: '8px',
               opacity: '0',
-              position: { x: xStart + 20, y: yStart + row * rowHeight }
+              position: { x: xStart + 20, y: yStart + row * rowHeight },
             })
           );
         }
@@ -815,8 +813,8 @@ class GraphView extends View2 {
               labelshift: '8px',
               position: {
                 x: xStart + 30,
-                y: yStart + ((synapses.length - 1) / 2 + row) * rowHeight
-              }
+                y: yStart + ((synapses.length - 1) / 2 + row) * rowHeight,
+              },
             })
           );
         }
@@ -836,7 +834,7 @@ class GraphView extends View2 {
 
     const defaultLayoutOpts = {
       padding: 30,
-      animationDuration: 300
+      animationDuration: 300,
     };
 
     let layoutOptions = Object.assign({}, defaultLayoutOpts);
@@ -854,7 +852,7 @@ class GraphView extends View2 {
         zoom: false,
         pan: false,
         animate: false,
-        positions: node => {
+        positions: (node) => {
           let id = node.id();
 
           if (positions[id] !== undefined) {
@@ -862,9 +860,9 @@ class GraphView extends View2 {
           }
           return {
             x: 0,
-            y: 0
+            y: 0,
           };
-        }
+        },
       });
     } else {
       // Concentric circle layout.
@@ -874,7 +872,7 @@ class GraphView extends View2 {
         layoutOptions = Object.assign(layoutOptions, {
           name: 'preset',
           animate: animateLayout,
-          positions: node => concentricPositions[node.id()]
+          positions: (node) => concentricPositions[node.id()],
         });
       } else if (layoutName == 'cose-bilkent') {
         // Force-directed layout.
@@ -885,7 +883,7 @@ class GraphView extends View2 {
           idealEdgeLength: 150,
           numIter: 2500,
           nestingFactor: 0.1,
-          gravity: 0.2
+          gravity: 0.2,
         });
       } else if (layoutName == 'dagre') {
         // Hierarchical layout.
@@ -894,7 +892,7 @@ class GraphView extends View2 {
           animate: animateLayout,
           rankDir: 'TB',
           nodeSep: 10,
-          rankSep: 100
+          rankSep: 100,
         });
       }
     }
@@ -908,12 +906,12 @@ class GraphView extends View2 {
     let { cy } = this;
     let center = {
       x: cy.width() / 2,
-      y: cy.height() / 2
+      y: cy.height() / 2,
     };
 
     // Sort input nodes by name.
     let innerNodes = cy.nodes('.searchedfor');
-    let innerNodeIds = innerNodes.map(n => n.id()).sort();
+    let innerNodeIds = innerNodes.map((n) => n.id()).sort();
 
     // Sort connected nodes by connection type, then by name.
     // 0: not connected (should be possible)
@@ -925,7 +923,7 @@ class GraphView extends View2 {
     // 6: source + target
     let outerNodes = cy.nodes().not('.searchedfor');
     let edgeTypes = {};
-    outerNodes.forEach(node => {
+    outerNodes.forEach((node) => {
       let edges = node.edgesWith(innerNodes);
       let edgesElectrical = edges.filter('[type=2]');
       let edgesChemical = edges.filter('[type=0]');
@@ -944,7 +942,7 @@ class GraphView extends View2 {
     });
 
     let outerNodeIds = outerNodes
-      .map(n => n.id())
+      .map((n) => n.id())
       .sort((a, b) => {
         if (edgeTypes[a] === edgeTypes[b]) {
           return a.localeCompare(b);
@@ -982,7 +980,7 @@ class GraphView extends View2 {
     if (smallCircle && count === 1) {
       positions[nodes[0]] = {
         x: center.x,
-        y: center.y
+        y: center.y,
       };
     } else {
       for (let i = 0; i < count; i++) {
@@ -990,7 +988,7 @@ class GraphView extends View2 {
 
         positions[nodes[i]] = {
           x: center.x - r * Math.sin(theta),
-          y: center.y - r * Math.cos(theta)
+          y: center.y - r * Math.cos(theta),
         };
       }
     }
