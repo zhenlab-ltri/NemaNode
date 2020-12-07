@@ -16,6 +16,7 @@
     "watch:sync-server": "nodemon --watch src src/server/index.js",
     "watch:js": "webpack --watch --mode development",
     "watch": "run-p -c watch:*",
+    "start": "npm run watch",
     "build-prod": "cross-env NODE_ENV=production webpack --mode production --devtool none",
     "test:eslint": "eslint src",
     "test:sasslint": "sass-lint --verbose",

@@ -19,9 +19,8 @@ Interactive map of nervous system wiring in the nematode _C. elegans_. Live at [
 ## Commands
 Once setup is completed, you will be able to run the following commands in this project directory:
 
-- `npm run watch` : start a app server to test alongside development
-- `npm run build-prod` : build the production version of the app
-- `npm run start` : start the production server
+- `npm run watch` or `npm start`: start a app server to test alongside development (localhost:3000)
+- `npm run build-prod`: build the production version of the app
 - `npm run test`: run the tests
 - `populate-database`: take the raw data in src/server/db/raw-data and populate the mysql db with it
 
