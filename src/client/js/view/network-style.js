@@ -93,6 +93,12 @@ let cystyle = {
       }
     },
     {
+      selector: 'node.hover:parent',
+      css: {
+        'z-compound-depth': 'auto'
+      }
+    },
+    {
       selector: 'node:selected, node.searchedfor',
       css: {
         width: '65px',
