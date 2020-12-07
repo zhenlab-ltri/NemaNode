@@ -1,6 +1,6 @@
 # NemaNode
 
-Interactive map of nervous system wiring in the nematode _C. elegans_. Live at [NemaNode.org]{https://nemanode.org/}.
+Interactive map of nervous system wiring in the nematode _C. elegans_. Live at [NemaNode.org](https://nemanode.org/).
 
 ## Required software
 - [Node.js](https://nodejs.org/en/) >= 11.15.0
