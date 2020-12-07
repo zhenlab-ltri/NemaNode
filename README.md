@@ -63,3 +63,4 @@ Once setup is completed, you will be able to run the following commands in this 
 For more information on how to do various things read the documentation
 - [Understanding the data used in nemanode](https://bitbucket.org/witvliet/nemanode/src/development/docs/understanding-nemanode-data.md)
 - [Adding new data to nemanode](https://bitbucket.org/witvliet/nemanode/src/development/docs/adding-new-data.md)
+- [Deployment to AWS](https://bitbucket.org/witvliet/nemanode/src/development/docs/deployment-to-aws.md)

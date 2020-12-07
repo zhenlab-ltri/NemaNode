@@ -1,7 +1,5 @@
 # Understanding nemanode data
-Nemanode uses data collected by the members of Zhen Lab.
-
-The data consists of:
+NemaNode data consists of:
 - cell data
 - connection data
 - dataset data
