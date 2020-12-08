@@ -5,7 +5,7 @@ const ini = require('ini');
 
 const queryCells = require('./nematode-cells');
 const queryDatasets = require('./nematode-datasets');
-const {queryNematodeConnections} = require('./nematode-connections');
+const queryConnections = require('./nematode-connections').queryNematodeConnections;
 const downloadConnectivity = require('./download-data');
 /*const {
   queryTrajectoryNodeData,
@@ -51,7 +51,7 @@ const queryNematodeDatasets = async () => {
 
 const queryNematodeConnections = async (opts) => {
   const connection = await connect();
-  const connections = await queryNematodeConnections(connection, opts);
+  const connections = await queryConnections(connection, opts);
   await connection.destroy();
   return connections;
 };
