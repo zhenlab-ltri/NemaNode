@@ -5,6 +5,48 @@ const hash = require('object-hash');
 
 const getConnectionPrimaryKey = (pre, post, type) => hash({ pre, post, type });
 
+
+  // gap junctions are unordered but sometimes we have entries for both pairs
+  // e.g. 'AIA-ASI' has entries and 'ASI-AIA' has entries
+  // merge them before returning them
+// input: list of gap junction objects containing pre, post, type, annotations, and synapses
+const mergeGapJunctions = gapJunctions => {
+  const gapJunctionsKeyMap = {};
+
+  gapJunctions.forEach(gj => {
+    const { pre, post, synapses } = gj;
+    const key = [pre, post].sort().join('$');
+
+    if (gapJunctionsKeyMap[key] === null) {
+      gapJunctionsKeyMap[key] = gj;
+    } else {
+      Object.keys(synapses).forEach(dataset => {
+        if (gapJunctionsKeyMap[key]['synapses'][dataset] !== null) {
+          gapJunctionsKeyMap[key]['synapses'][dataset] += synapses[dataset];
+        } else {
+          gapJunctionsKeyMap[key]['synapses'][dataset] = synapses[dataset];
+        }
+      });
+    }
+  });
+
+  const merged = Object.entries(gapJunctionsKeyMap).map( ([gjKey, gj]) => {
+    const [pre, post] = gjKey.split('$');
+    const { type, synapses, annotations } = gj;
+
+    return {
+      pre,
+      post,
+      type,
+      synapses,
+      annotations
+    };
+  });
+
+  return merged;
+};
+
+
 let queryAnnotations = async (connection, opts) => {
   const { cells, includeNeighboringCells, datasetType } = opts;
 
@@ -136,46 +178,14 @@ let queryNematodeConnections = async (connection, opts) => {
     };
   });
 
-  // gap junctions are unordered but sometimes we have entries for both pairs
-  // e.g. 'AIA-ASI' has entries and 'ASI-AIA' has entries
-  // merge them before returning them
-
   const gapJunctions = connections.filter(c => c.type == 'electrical');
   const chemicalSynapses = connections.filter(c => c.type == 'chemical');
 
-  const gapJunctionsKeyMap = {};
-
-  gapJunctions.forEach(gj => {
-    const { pre, post, synapses } = gj;
-    const prePost = [pre, post];
-    prePost.sort();
-    const key = prePost.join('$');
-
-    if(gapJunctionsKeyMap[key] == null){
-      gapJunctionsKeyMap[key] = gj;
-    } else {
-      Object.keys(synapses).forEach(dataset => {
-        if(gapJunctionsKeyMap[key]['synapses'][dataset] != null){
-          gapJunctionsKeyMap[key]['synapses'][dataset] += synapses[dataset];
-        } else {
-          gapJunctionsKeyMap[key]['synapses'][dataset] = synapses[dataset];
-        }
-      });
-    }
-  });
-
-    const mergedGapJunctions = Object.entries(gapJunctionsKeyMap).map( ([gjKey, gjData]) => {
-    const [pre, post] = gjKey.split('$');
-
-    return {
-      pre,
-      post,
-      type: gjData.type,
-      synapses: gjData.synapses,
-      annotations: gjData.annotations
-    }
-  });
+  const mergedGapJunctions = mergeGapJunctions(gapJunctions);
   return [...mergedGapJunctions, ...chemicalSynapses];
 };
 
-module.exports = queryNematodeConnections;
+module.exports = {
+  queryNematodeConnections,
+  mergeGapJunctions
+}
