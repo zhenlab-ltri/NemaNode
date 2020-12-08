@@ -17,11 +17,11 @@ const mergeGapJunctions = gapJunctions => {
     const { pre, post, synapses } = gj;
     const key = [pre, post].sort().join('$');
 
-    if (gapJunctionsKeyMap[key] === null) {
+    if (gapJunctionsKeyMap[key] === undefined) {
       gapJunctionsKeyMap[key] = gj;
     } else {
       Object.keys(synapses).forEach(dataset => {
-        if (gapJunctionsKeyMap[key]['synapses'][dataset] !== null) {
+        if (gapJunctionsKeyMap[key]['synapses'][dataset] !== undefined) {
           gapJunctionsKeyMap[key]['synapses'][dataset] += synapses[dataset];
         } else {
           gapJunctionsKeyMap[key]['synapses'][dataset] = synapses[dataset];
