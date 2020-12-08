@@ -11,7 +11,7 @@ let queryAnnotations = async (connection, opts) => {
   const annotationsSql = `
     SELECT pre, post, type, annotation
     FROM annotations
-    WHERE (pre in (${cells}) 
+    WHERE (pre in (${cells})
     ${includeNeighboringCells ? 'OR' : 'AND'} post in (${cells}))
       AND collection in (${datasetType})
   `;
@@ -37,7 +37,7 @@ let queryConnections = async (connection, opts) => {
     SELECT c.pre, c.post, c.type, c.dataset_id, c.synapses from (
       SELECT pre, post, type
       FROM connections
-      WHERE (pre IN (${cells}) 
+      WHERE (pre IN (${cells})
       ${includeNeighboringCells ? 'OR' : 'AND'} post IN (${cells}))
         AND dataset_id IN (${datasetIds})
         AND (
@@ -136,7 +136,46 @@ let queryNematodeConnections = async (connection, opts) => {
     };
   });
 
-  return connections;
+  // gap junctions are unordered but sometimes we have entries for both pairs
+  // e.g. 'AIA-ASI' has entries and 'ASI-AIA' has entries
+  // merge them before returning them
+
+  const gapJunctions = connections.filter(c => c.type == 'electrical');
+  const chemicalSynapses = connections.filter(c => c.type == 'chemical');
+
+  const gapJunctionsKeyMap = {};
+
+  gapJunctions.forEach(gj => {
+    const { pre, post, synapses } = gj;
+    const prePost = [pre, post];
+    prePost.sort();
+    const key = prePost.join('$');
+
+    if(gapJunctionsKeyMap[key] == null){
+      gapJunctionsKeyMap[key] = gj;
+    } else {
+      Object.keys(synapses).forEach(dataset => {
+        if(gapJunctionsKeyMap[key]['synapses'][dataset] != null){
+          gapJunctionsKeyMap[key]['synapses'][dataset] += synapses[dataset];
+        } else {
+          gapJunctionsKeyMap[key]['synapses'][dataset] = synapses[dataset];
+        }
+      });
+    }
+  });
+
+    const mergedGapJunctions = Object.entries(gapJunctionsKeyMap).map( ([gjKey, gjData]) => {
+    const [pre, post] = gjKey.split('$');
+
+    return {
+      pre,
+      post,
+      type: gjData.type,
+      synapses: gjData.synapses,
+      annotations: gjData.annotations
+    }
+  });
+  return [...mergedGapJunctions, ...chemicalSynapses];
 };
 
 module.exports = queryNematodeConnections;
