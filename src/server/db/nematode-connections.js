@@ -6,9 +6,9 @@ const hash = require('object-hash');
 const getConnectionPrimaryKey = (pre, post, type) => hash({ pre, post, type });
 
 
-  // gap junctions are unordered but sometimes we have entries for both pairs
-  // e.g. 'AIA-ASI' has entries and 'ASI-AIA' has entries
-  // merge them before returning them
+// gap junctions are unordered but sometimes we have entries for both pairs
+// e.g. 'AIA-ASI' has entries and 'ASI-AIA' has entries
+// merge them before returning them
 // input: list of gap junction objects containing pre, post, type, annotations, and synapses
 const mergeGapJunctions = gapJunctions => {
   const gapJunctionsKeyMap = {};
@@ -30,7 +30,7 @@ const mergeGapJunctions = gapJunctions => {
     }
   });
 
-  const merged = Object.entries(gapJunctionsKeyMap).map( ([gjKey, gj]) => {
+  const merged = Object.entries(gapJunctionsKeyMap).map(([gjKey, gj]) => {
     const [pre, post] = gjKey.split('$');
     const { type, synapses, annotations } = gj;
 
@@ -188,4 +188,4 @@ let queryNematodeConnections = async (connection, opts) => {
 module.exports = {
   queryNematodeConnections,
   mergeGapJunctions
-}
+};
