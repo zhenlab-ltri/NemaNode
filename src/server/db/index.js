@@ -5,7 +5,7 @@ const ini = require('ini');
 
 const queryCells = require('./nematode-cells');
 const queryDatasets = require('./nematode-datasets');
-const queryConnections = require('./nematode-connections');
+const queryConnections = require('./nematode-connections').queryNematodeConnections;
 const downloadConnectivity = require('./download-data');
 /*const {
   queryTrajectoryNodeData,
