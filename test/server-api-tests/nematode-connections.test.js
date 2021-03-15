@@ -3,7 +3,7 @@ require('regenerator-runtime');
 
 const db = require('../../src/server/db');
 
-const queryNematodeConnections = require('../../src/server/db/nematode-connections');
+const {queryNematodeConnections, mergeGapJunctions} = require('../../src/server/db/nematode-connections');
 
 const fixture1 = require('./nematode-connections-1.json');
 const fixture2 = require('./nematode-connections-2.json');
@@ -20,6 +20,53 @@ beforeAll(() => {
 
 afterAll(() => {
    return connection.end();
+});
+
+test('merge gap junctions with flipped pre/post partners', function(){
+  const inputGapJunctions = [
+    {
+      pre: 'AIAR',
+      post: 'ASIR',
+      type: 'electrical',
+      annotations: [],
+      synapses: {
+        'dataset1': 5,
+        'dataset2': 9
+      }
+    },
+    {
+      pre: 'ASIR',
+      post: 'AIAR',
+      type: 'electrical',
+      annotations: [],
+      synapses: {
+        'dataset0': 20
+      }
+    },
+    {
+      pre: 'ASER',
+      post: 'AWAR',
+      type: 'electrical',
+      annotations: [],
+      synapses: {
+        'dataset4': 1
+      }
+    }
+  ];
+
+  const mergedGapJunctions = mergeGapJunctions(inputGapJunctions);
+  expect(mergedGapJunctions.length).toEqual(2);
+  expect(mergedGapJunctions[0].synapses).toEqual({
+    dataset0: 20,
+    dataset1: 5,
+    dataset2: 9
+  });
+
+  expect(mergedGapJunctions[1].synapses).toEqual({
+    dataset4: 1
+  });
+
+
 });
 
 test('get no connections when cells option is empty', function(){
