@@ -116,7 +116,7 @@ class PopupView extends BaseView {
 
     this.isMobile = false;
 
-    let canView3D = this.model.datasets.includes('witvliet_2020_8');
+    // let canView3D = this.model.datasets.includes('witvliet_2020_8');
 
     $.contextMenu({
       selector: '#cy',
@@ -139,8 +139,8 @@ class PopupView extends BaseView {
           title: 'View 3D neuron models',
           icon: 'neuron',
           className: 'priority',
-          disabled: !canView3D,
-          visible: !canView3D
+          // disabled: !canView3D,
+          // visible: !canView3D
         },
         openGroup: {
           name: '<u>O</u>pen group',
