@@ -18,7 +18,7 @@ const SINGLE_KEY_SHORTCUT_MAP = {
   j: 'join',
   g: 'group',
   u: 'ungroup',
-  v: 'viewTrajectory'
+  v: 'view3D'
 };
 
 const MOD_KEY_SHORTCUT_MAP = {
@@ -32,8 +32,9 @@ const MOD_KEY_SHORTCUT_MAP = {
 };
 
 class PopupView extends BaseView {
-  constructor() {
+  constructor(model) {
     super();
+    this.model = model;
     this.$container = $('#context-menu-container');
 
     this.impossibleActions = ['all'];
@@ -115,6 +116,8 @@ class PopupView extends BaseView {
 
     this.isMobile = false;
 
+    let canView3D = this.model.datasets.includes('witvliet_2020_8');
+
     $.contextMenu({
       selector: '#cy',
       appendTo: '#context-menu',
@@ -130,13 +133,15 @@ class PopupView extends BaseView {
         hide: onHide
       },
       items: {
-        /*viewTrajectory: {
+        view3D: {
           name: '<u>V</u>iew in 3D',
           isHtmlName: true,
-          title: 'View 3D neuron trajectory',
+          title: 'View 3D neuron models',
           icon: 'neuron',
-          className: 'priority'
-        },*/
+          className: 'priority',
+          disabled: !canView3D,
+          visible: !canView3D
+        },
         openGroup: {
           name: '<u>O</u>pen group',
           isHtmlName: true,

@@ -164,6 +164,12 @@ let bindOptionsEvents = ({ view, model, controller }) => {
 
 let bindPopupMenuEvents = ({ model, view }) => {
   view.popup
+    .on('view3D', () => {
+      let selectedNodes = model.getSelected();
+      let classMemberNodes = selectedNodes.filter(node => DataService.isCell(node));		  
+      let url = `http://zhen-tools.com/#3d-viewer?neurons=${classMemberNodes.join(',')}`;	    
+      window.open(url, '_blank').focus();
+    })
     .on('viewTrajectory', () => {
       /*let selectedNodes = model.getSelected();
       let classNodes = selectedNodes.filter(node => DataService.isClass(node));
